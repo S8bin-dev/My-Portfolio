@@ -213,6 +213,12 @@ function initProjectStats() {
           animateCounter(target, 0, parseInt(finalValue), 1500, '+');
         } else if (finalValue.includes('$')) {
           animateCounter(target, 0, parseInt(finalValue.replace('$', '')), 1500, '$', '+');
+        } else if (finalValue === 'GP') {
+          // Just leave it as GP - no animation needed
+          target.textContent = 'GP';
+        } else if (finalValue === 'Full' || finalValue === 'Closed') {
+          // Just leave text-based stats as-is - no animation needed
+          target.textContent = finalValue;
         }
         statsObserver.unobserve(target);
       }
@@ -280,12 +286,12 @@ function initLightbox() {
 
   // Gallery Data
   const galleryImages = [
+    { src: './assets/ossila_mount.jpg', caption: 'Ossila Four-Point Probe Automated Mount' },
+    { src: './assets/n9_holder.jpg', caption: 'North Robotics N9 Drop Cast Holder' },
     { src: './assets/1.5 by 1.5 thinfilmholderwithlid.png', caption: '1.5" × 1.5" Thin Film Holder with Lid' },
-    { src: './assets/2 by 1 2 by 2thinflmhh.png', caption: '2" × 1" and 2" × 2" Thin Film Holders' },
-    { src: './assets/Loadcellcover.png', caption: 'Load Cell Protective Cover' },
-    { src: './assets/loadcellmount1.png', caption: 'Load Cell Mount - Design 1' },
+    { src: './assets/Thinfilmholderfordifferentdimension.png', caption: '2" × 1" and 2" × 2" Thin Film Holders' },
+    { src: './assets/Loadcellcover.png', caption: 'Load Cell Protective Cover (UTM)' },
     { src: './assets/loadcellmount2.png', caption: 'Load Cell Mount - Design 2' },
-    { src: './assets/pipetteholder1.png', caption: 'Pipette Holder - Fume Hood Design' },
     { src: './assets/pipetteholder2.png', caption: 'Pipette Holder - Lab Bench Design' },
     { src: './assets/robosoccerbot.png', caption: 'Robo Soccer Bot - Optimized Ball Handler' },
     { src: './assets/Vileholer.png', caption: 'Custom Vial Holder System' }

@@ -74,6 +74,7 @@
     <div class="logo">Sabin Baral</div>
     <ul class="nav-links">
       <li><a href="#projects">Projects</a></li>
+      <li><a href="#publications">Publications</a></li>
       <li><a href="#experience">Skills</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
@@ -89,6 +90,7 @@
       </div>
       <div class="menu-links">
         <li><a href="#projects" onclick="toggleMenu()">Projects</a></li>
+        <li><a href="#publications" onclick="toggleMenu()">Publications</a></li>
         <li><a href="#experience" onclick="toggleMenu()">Skills</a></li>
         <li><a href="#contact" onclick="toggleMenu()">Contact</a></li>
       </div>
@@ -102,7 +104,7 @@
     <div class="section__text fade-in">
       <p class="section__text__p1">Hello, I'm</p>
       <h1 class="title">Sabin Baral</h1>
-      <p class="section__text__p2">Polymer Researcher and Engineer</p>
+      <p class="section__text__p2 typing-effect">Polymer Researcher and Engineer</p>
 
       <!-- Current Research Badge -->
       <div class="research-badge pulse">
@@ -160,79 +162,162 @@
       <div class="about-containers">
         <div class="details-container color-container project-card fade-in-up">
           <div class="article-container">
-            <img src="./assets/project-1.png" alt="Block Copolymer Thin Film Research" class="project-img"
+            <img src="./assets/autonomous_workflow.png" alt="Autonomous Lab Workflow" class="project-img"
               loading="lazy" />
           </div>
+          <h2 class="experience-sub-title project-title">Autonomous Lab: End-to-End Robotic Orchestration<br><br></h2>
+          <p class="project-duration">August 2025 - Present</p>
+          <div class="project-stats">
+            <div class="stat-item"><span class="stat-number">Full</span><span class="stat-label">Robotic
+                Integration</span></div>
+            <div class="stat-item"><span class="stat-number">Closed</span><span class="stat-label">Loop Cycle</span>
+            </div>
+          </div>
+          <div class="btn-container">
+            <button class="btn btn-color-2 project-btn ripple" onclick="openModal('modal4')">Learn More</button>
+          </div>
+        </div>
+
+        <div class="details-container color-container project-card fade-in-up">
+          <div class="article-container">
+            <img src="./assets/project-1.png" alt="Block Copolymer Research" class="project-img" loading="lazy" />
+          </div>
           <h2 class="experience-sub-title project-title">High Throughput Block Copolymer Thin Film Fabrication and
-            Characterization</h2>
+            Characterization<br></h2>
           <p class="project-duration">May 2025 - Present</p>
           <div class="project-stats">
-            <div class="stat-item">
-              <span class="stat-number">40%</span>
-              <span class="stat-label">Time Reduction</span>
+            <div class="stat-item"><span class="stat-number">40%</span><span class="stat-label">Time Reduction</span>
             </div>
-            <div class="stat-item">
-              <span class="stat-number">1000+</span>
-              <span class="stat-label">Samples Created</span>
+            <div class="stat-item"><span class="stat-number">1000+</span><span class="stat-label">Samples Created</span>
             </div>
           </div>
           <div class="btn-container">
-            <button class="btn btn-color-2 project-btn ripple" onclick="openModal('modal1')"
-              aria-label="Learn more about block copolymer project">
-              Learn More
-            </button>
+            <button class="btn btn-color-2 project-btn ripple" onclick="openModal('modal1')">Learn More</button>
           </div>
         </div>
 
         <div class="details-container color-container project-card fade-in-up">
           <div class="article-container">
-            <img src="./assets/project-2.png" alt="Organic Solar Cells Research" class="project-img" loading="lazy" />
+            <img src="./assets/project-2.png" alt="Organic Solar Cells" class="project-img" loading="lazy" />
           </div>
           <h2 class="experience-sub-title project-title">Fabrication and Thermal Stability Analysis of Organic Solar
-            Cells<br>&nbsp;</h2>
+            Cells</h2>
           <p class="project-duration">Jan 2025 - May 2025</p>
           <div class="project-stats">
-            <div class="stat-item">
-              <span class="stat-number">15%</span>
-              <span class="stat-label">Efficiency Boost</span>
+            <div class="stat-item"><span class="stat-number">15%</span><span class="stat-label">Efficiency Boost</span>
             </div>
-            <div class="stat-item">
-              <span class="stat-number">100+</span>
-              <span class="stat-label">Devices Tested</span>
+            <div class="stat-item"><span class="stat-number">100+</span><span class="stat-label">Devices Tested</span>
             </div>
           </div>
           <div class="btn-container">
-            <button class="btn btn-color-2 project-btn ripple" onclick="openModal('modal2')"
-              aria-label="Learn more about solar cells project">
-              Learn More
-            </button>
+            <button class="btn btn-color-2 project-btn ripple" onclick="openModal('modal2')">Learn More</button>
           </div>
         </div>
 
         <div class="details-container color-container project-card fade-in-up">
           <div class="article-container">
-            <img src="./assets/project-3.png" alt="3D Printing Applications" class="project-img" loading="lazy" />
+            <img src="./assets/project-3.png" alt="3D Printing" class="project-img" loading="lazy" />
           </div>
-          <h2 class="experience-sub-title project-title">Real World Problem Solving Through 3D
-            Printing<br>&nbsp;<br>&nbsp;</h2>
+          <h2 class="experience-sub-title project-title">Real World Problem Solving Through 3D Printing<br>&nbsp;</h2>
           <p class="project-duration">Dec 2024 - Present</p>
           <div class="project-stats">
-            <div class="stat-item">
-              <span class="stat-number">20+</span>
-              <span class="stat-label">Solutions Created</span>
+            <div class="stat-item"><span class="stat-number">20+</span><span class="stat-label">Solutions Created</span>
             </div>
-            <div class="stat-item">
-              <span class="stat-number">500+</span>
-              <span class="stat-label">Printing Hours</span>
+            <div class="stat-item"><span class="stat-number">500+</span><span class="stat-label">Printing Hours</span>
             </div>
           </div>
           <div class="btn-container">
-            <button class="btn btn-color-2 project-btn ripple" onclick="openModal('modal3')"
-              aria-label="Learn more about 3D printing project">
-              Learn More
-            </button>
+            <button class="btn btn-color-2 project-btn ripple" onclick="openModal('modal3')">Learn More</button>
           </div>
         </div>
+      </div>
+    </div>
+    <img src="./assets/arrow.png" alt="Scroll down arrow" class="icon arrow" onclick="location.href='./#publications'"
+      role="button" tabindex="0"
+      onkeydown="if(event.key === 'Enter' || event.key === ' ') location.href='./#publications'" />
+  </section>
+
+  <section id="publications">
+    <p class="section__text__p1 fade-in-up">Academic Contributions</p>
+    <h2 class="title fade-in-up">Publications & Presentations</h2>
+
+    <div class="experience-details-container">
+      <div class="about-containers">
+
+        <div class="details-container hover-lift fade-in-up" style="flex: 2;">
+          <div class="research-badge"
+            style="margin-bottom: 1rem; background: rgba(59, 130, 246, 0.1); color: var(--primary-color); border: 1px solid var(--primary-color);">
+            Under Review: JACS Au
+          </div>
+          <h3 class="experience-sub-title" style="text-align: left; font-size: 1.4rem; line-height: 1.4;">
+            A Robotic High-Throughput Grid-Search Platform for Mapping Phase Behavior in Triblock Copolymer–Homopolymer
+            Blends
+          </h3>
+          <div class="text-container" style="padding: 0;">
+            <p style="margin-bottom: 1rem; font-size: 0.9rem;">
+              Saroj Upreti, Lan Xu, Md. Moniruzzaman, Yunfei Wang, Kailash Adhikari, <strong>Sabin Baral</strong>, Derek
+              Patton, Boran Ma, Jie Xu, Ruipeng Li, Chenhui Zhu, Wenjie Xia, Xiaodan Gu*
+            </p>
+            <p style="font-size: 0.95rem; line-height: 1.6;">
+              Systematically mapped the phase behavior and <strong>Order–Disorder Transition (ODT)</strong> boundaries
+              for triblock copolymer (PS-b-PB-b-PS and PS-b-PI-b-PS) blends using the <strong>NOVA robotic
+                platform</strong>. Investigated domain spacing evolution across three molecular weight regimes
+              (wet-brush, dry-brush, and macrophase separation) using <strong>GISAXS</strong> and <strong>AFM</strong>,
+              supported by <strong>coarse-grained molecular dynamics simulations</strong> to confirm homopolymer
+              distribution.
+            </p>
+          </div>
+        </div>
+
+        <div class="details-container hover-lift fade-in-up">
+          <div class="research-badge"
+            style="margin-bottom: 1rem; background: rgba(16, 185, 129, 0.1); color: var(--success-color); border: 1px solid var(--success-color);">
+            Upcoming: March 2026
+          </div>
+          <h3 class="experience-sub-title">Conference Presentations</h3>
+          <div class="text-container" style="padding: 0;">
+            <p>
+              <strong>ACS Spring 2026 National Meeting</strong><br>
+              <em>Poster Presentation</em>
+            </p>
+            <p
+              style="font-size: 0.9rem; margin-top: 1rem; border-top: 1px solid var(--border-color); padding-top: 1rem;">
+              Presenting research on robotic grid-search methodologies and automated workflows for accelerated polymer
+              morphology studies.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="collaboration-container"
+      style="margin-top: 4rem; text-align: center; border-top: 1px solid var(--border-color); padding-top: 2rem;">
+      <p
+        style="font-size: 0.8rem; color: var(--text-light); margin-bottom: 2rem; text-transform: uppercase; letter-spacing: 2px; font-weight: 600;">
+        Research Conducted In Collaboration With
+      </p>
+      <div style="display: flex; justify-content: center; align-items: center; gap: 3.5rem; flex-wrap: wrap;">
+
+        <div style="display: flex; flex-direction: column; align-items: center; gap: 0.75rem;">
+          <img src="./assets/USM.png" alt="USM" style="height: 55px; width: auto;">
+          <span style="font-size: 0.7rem; font-weight: 600;">USM Polymer Science</span>
+        </div>
+
+        <div style="display: flex; flex-direction: column; align-items: center; gap: 0.75rem;">
+          <img src="./assets/LBNL.jpg" alt="LBNL" style="height: 45px; width: auto;">
+          <span style="font-size: 0.7rem; font-weight: 600;">LBNL / ALS</span>
+        </div>
+
+        <div style="display: flex; flex-direction: column; align-items: center; gap: 0.75rem;">
+          <img src="./assets/ANL.png" alt="ANL" style="height: 45px; width: auto;">
+          <span style="font-size: 0.7rem; font-weight: 600;">Argonne / NST</span>
+        </div>
+
+        <div style="display: flex; flex-direction: column; align-items: center; gap: 0.75rem;">
+          <img src="./assets/BNL.png" alt="BNL" style="height: 45px; width: auto;">
+          <span style="font-size: 0.7rem; font-weight: 600;">Brookhaven / NSLS-II</span>
+        </div>
+
       </div>
     </div>
     <img src="./assets/arrow.png" alt="Scroll down arrow" class="icon arrow" onclick="location.href='./#experience'"
@@ -353,7 +438,7 @@
 
       <div class="modal-body">
         <div class="modal-image">
-          <img src="./assets/project-1.png" alt="Block Copolymer Research Details" loading="lazy" />
+          <img src="./assets/project-1_HD.png" alt="Block Copolymer Research Details" loading="lazy" />
         </div>
 
         <div class="modal-section">
@@ -415,7 +500,7 @@
 
       <div class="modal-body">
         <div class="modal-image">
-          <img src="./assets/project-2.png" alt="Organic Solar Cell Research Details" loading="lazy" />
+          <img src="./assets/project-2_HD.png" alt="Organic Solar Cell Research Details" loading="lazy" />
         </div>
 
         <div class="modal-section">
@@ -481,16 +566,83 @@
 
       <div class="modal-body">
         <div class="modal-image">
-          <img src="./assets/project-3.png" alt="3D Printing Projects Details" loading="lazy" />
+          <img src="./assets/project-3_HD.png" alt="3D Printing Projects Details" loading="lazy" />
         </div>
 
         <div class="modal-section">
           <h3>Project Overview</h3>
-          <p>This ongoing initiative demonstrates the practical application of additive manufacturing to solve
-            real-world challenges in laboratory and everyday settings. By leveraging 3D printing technology, I've
-            developed custom solutions ranging from specialized lab equipment holders to functional prototypes for
-            research applications. The project showcases the intersection of design thinking, materials knowledge, and
-            rapid prototyping.</p>
+          <p>This project has evolved from solving everyday laboratory inconveniences to engineering critical
+            infrastructure for <strong>automated research workflows</strong>. By leveraging additive manufacturing, I
+            design and fabricate custom interfaces that bridge the gap between standard laboratory equipment and
+            advanced robotic systems. Recent work focuses on <strong>high-throughput sample handling</strong> and
+            <strong>automated characterization</strong>, enabling the integration of North Robotics arms and motorized
+            stages into closed-loop experimental cycles. This initiative demonstrates how rapid prototyping can unlock
+            new capabilities in materials science research.
+          </p>
+        </div>
+
+        <div class="modal-section gallery-section">
+
+          <div
+            style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; margin-bottom: 0.5rem; border-bottom: 1px solid var(--border-color); padding-bottom: 0.5rem;">
+            <h3 style="margin: 0;">Recent Design Gallery</h3>
+            <a href="https://www.thingiverse.com/Sabin-designs/designs" target="_blank"
+              style="font-size: 0.85rem; color: var(--primary-color); font-weight: 600; text-decoration: none; display: flex; align-items: center; gap: 5px; transition: all 0.3s ease;">
+              Access these designs using my Thingiverse account &#8599;
+            </a>
+          </div>
+
+          <p style="margin-bottom: 1.5rem; font-style: italic; font-size: 0.9rem; color: var(--text-light);">Click any
+            image to view full size</p>
+
+          <div class="gallery-grid">
+            <div class="gallery-item" onclick="openLightbox(0)" role="button" tabindex="0">
+              <img src="./assets/ossila_mount.jpg" alt="Ossila Automated Mount" loading="lazy" />
+              <div class="gallery-overlay"><span>View Full Size</span></div>
+            </div>
+
+            <div class="gallery-item" onclick="openLightbox(1)" role="button" tabindex="0">
+              <img src="./assets/n9_holder.jpg" alt="North Robotics N9 Holder" loading="lazy" />
+              <div class="gallery-overlay"><span>View Full Size</span></div>
+            </div>
+
+            <div class="gallery-item" onclick="openLightbox(2)" role="button" tabindex="0">
+              <img src="./assets/1.5 by 1.5 thinfilmholderwithlid.png" alt="1.5 by 1.5 Thin Film Holder with Lid"
+                loading="lazy" />
+              <div class="gallery-overlay"><span>View Full Size</span></div>
+            </div>
+
+            <div class="gallery-item" onclick="openLightbox(3)" role="button" tabindex="0">
+              <img src="./assets/Thinfilmholderfordifferentdimension.png"
+                alt="thin film sample holder for various substrate dimensions." loading="lazy" />
+              <div class="gallery-overlay"><span>View Full Size</span></div>
+            </div>
+
+            <div class="gallery-item" onclick="openLightbox(4)" role="button" tabindex="0">
+              <img src="./assets/Loadcellcover.png" alt="Load Cell Cover" loading="lazy" />
+              <div class="gallery-overlay"><span>View Full Size</span></div>
+            </div>
+
+            <div class="gallery-item" onclick="openLightbox(5)" role="button" tabindex="0">
+              <img src="./assets/loadcellmount2.png" alt="Load Cell Mount Design 2" loading="lazy" />
+              <div class="gallery-overlay"><span>View Full Size</span></div>
+            </div>
+
+            <div class="gallery-item" onclick="openLightbox(6)" role="button" tabindex="0">
+              <img src="./assets/pipetteholder2.png" alt="Pipette Holder Design 2" loading="lazy" />
+              <div class="gallery-overlay"><span>View Full Size</span></div>
+            </div>
+
+            <div class="gallery-item" onclick="openLightbox(7)" role="button" tabindex="0">
+              <img src="./assets/robosoccerbot.png" alt="Robo Soccer Bot" loading="lazy" />
+              <div class="gallery-overlay"><span>View Full Size</span></div>
+            </div>
+
+            <div class="gallery-item" onclick="openLightbox(8)" role="button" tabindex="0">
+              <img src="./assets/Vileholer.png" alt="Vial Holder" loading="lazy" />
+              <div class="gallery-overlay"><span>View Full Size</span></div>
+            </div>
+          </div>
         </div>
 
         <div class="modal-section">
@@ -530,91 +682,176 @@
         <div class="modal-section">
           <h3>Example Applications</h3>
           <ul>
-            <li>Engineered and fabricated thin-film sample holders of varying dimensions, optimizing both cost and
-              spatial efficiency — replacing conventional holders that fit only 20 samples, my design accommodates up to
-              100 samples in the same space, achieving a 500% increase in capacity.</li>
-            <li>Developed custom vial holders tailored to different sizes and specific functional requirements.</li>
-            <li>Designed and produced pipette holders for both fume hood applications and general laboratory use,
-              enhancing organization and accessibility.</li>
-            <li>Modeled and designed protective load cell covers and mounts to ensure durability and precision in
-              experimental setups.</li>
-            <li>Conceptualized and designed a soccer robot optimized for superior ball handling and defensive
-              performance, giving our team a competitive edge.</li>
+            <li><strong>Ossila Four-Point Probe Automated Mount</strong><br>
+              <em>The Design:</em> A precision bracket that mounts the Ossila probe head directly onto a Thorlabs
+              KVS30/M motorized vertical stage.<br>
+              <em>Impact:</em> Transitioned the lab from manual to fully automated conductivity measurements. By using
+              Python scripts to control the stage, the probe now contacts samples at the exact same pressure and height
+              every time, completely eliminating human error.
+            </li>
+
+            <li><strong>North Robotics N9 Drop Cast Holder</strong><br>
+              <em>The Design:</em> A custom platform that replaces the standard "wafer garage" on the N9 system,
+              utilizing existing alignment pins for a perfect fit.<br>
+              <em>Impact:</em> This "hack" repurposed a high-end robot for specific thin-film applications, allowing it
+              to directly deposit solutions into drop-cast structures with high repeatability.
+            </li>
+
+            <li><strong>High-Capacity Thin-Film Sample Holders</strong><br>
+              <em>The Design:</em> Custom-engineered holders with optimized spatial geometry to secure thin-film samples
+              during processing.<br>
+              <em>Impact:</em> Redesigned the standard architecture to fit <strong>100 samples</strong> within the same
+              footprint that originally held only 20. This <strong>500% increase in capacity</strong> significantly
+              reduced cost-per-sample and maximized throughput.
+            </li>
+
+            <li><strong>Universal Testing Machine (UTM) Protective Cover</strong><br>
+              <em>The Design:</em> A custom-fitted housing for the Universal Testing Machine's sensitive mechanics.<br>
+              <em>Impact:</em> Protects internal components from dust and accidental splashes during wet tensile
+              testing, preventing corrosion and debris buildup on the drive system.
+            </li>
+
+            <li><strong>Lab Hood Edge-Mount Pipette Holder</strong><br>
+              <em>The Design:</em> A space-saving C-port clip that attaches directly to the metal lip of a fume
+              hood.<br>
+              <em>Impact:</em> Cleared the deck of clutter by moving expensive tools to eye level, improving workflow
+              organization and maintaining better airflow and sterility within the hood.
+            </li>
+
+            <li><strong>Robosoccer Competition Attachments</strong><br>
+              <em>The Design:</em> A two-part system featuring a front-end "pusher/plow" for ball control and a
+              protective top housing.<br>
+              <em>Impact:</em> Turned a base-model robot into a championship winner by providing superior ball handling
+              and protecting the electronics from high-speed collisions.
+            </li>
           </ul>
         </div>
+      </div>
+    </div>
+  </div>
 
-        <div class="modal-section gallery-section">
-          <h3>Recent Design Gallery</h3>
-          <p>Click any image to view full size</p>
-          <div class="gallery-grid">
-            <div class="gallery-item" onclick="openLightbox(0)" role="button" tabindex="0"
-              onkeydown="if(event.key === 'Enter' || event.key === ' ') openLightbox(0)">
-              <img src="./assets/1.5 by 1.5 thinfilmholderwithlid.png" alt="1.5 by 1.5 Thin Film Holder with Lid"
-                loading="lazy" />
-              <div class="gallery-overlay">
-                <span>View Full Size</span>
-              </div>
-            </div>
+  <div id="modal4" class="modal" role="dialog" aria-labelledby="modal4-title" aria-modal="true">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('modal4')" aria-label="Close modal">&times;</span>
 
-            <div class="gallery-item" onclick="openLightbox(1)" role="button" tabindex="0"
-              onkeydown="if(event.key === 'Enter' || event.key === ' ') openLightbox(1)">
-              <img src="./assets/Thinfilmholderfordifferentdimension.png"
-                alt="thin film sample holder for various substrate dimensions." loading="lazy" />
-              <div class="gallery-overlay">
-                <span>View Full Size</span>
-              </div>
+      <div class="modal-body">
+        <h2 id="modal4-title" class="modal-title" style="margin-left: 0; padding-top: 0;">Autonomous Lab: End-to-End
+          Robotic Orchestration</h2>
+        <div class="research-badge pulse" style="margin-bottom: 2rem;">
+          <span class="badge-dot"></span>
+          Vision: Fully Autonomous "Self-Driving" Materials Laboratory
+        </div>
+
+        <div class="modal-image">
+          <img src="./assets/autonomous_workflow_HD.png" alt="Integrated Robotic Workflow Diagram" loading="lazy" />
+        </div>
+
+        <div class="modal-section">
+          <h3>Laying the "Walking Blocks"</h3>
+          <p>A true closed-loop system requires mastering individual instrument control first. By developing custom
+            Python drivers, I have created a <strong>Hardware Abstraction Layer (HAL)</strong> that allows a central
+            computer to coordinate disparate hardware—originally designed as standalone units—into a single, unified
+            laboratory ecosystem.</p>
+        </div>
+
+        <div class="modal-section"
+          style="background: rgba(59, 130, 246, 0.05); padding: 1.5rem; border-radius: 1rem; border: 1px solid var(--border-color);">
+          <h3 style="margin-top: 0;">Developed Hardware Infrastructure</h3>
+          <p style="font-size: 0.9rem; margin-bottom: 1.5rem;">Access the specific drivers developed for each laboratory
+            "block":</p>
+
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px;">
+            <div style="display: flex; flex-direction: column; gap: 8px;">
+              <strong style="font-size: 0.85rem; color: var(--primary-color);">Optical Metrology</strong>
+              <a href="https://github.com/S8bin-dev/Osilla-Flame-Spectrometer" target="_blank" class="btn btn-color-2"
+                style="width: 100%; font-size: 0.75rem; padding: 0.6rem;">Flame Spectrometer Repo</a>
             </div>
-            <div class="gallery-item" onclick="openLightbox(2)" role="button" tabindex="0"
-              onkeydown="if(event.key === 'Enter' || event.key === ' ') openLightbox(2)">
-              <img src="./assets/Loadcellcover.png" alt="Load Cell Cover" loading="lazy" />
-              <div class="gallery-overlay">
-                <span>View Full Size</span>
-              </div>
+            <div style="display: flex; flex-direction: column; gap: 8px;">
+              <strong style="font-size: 0.85rem; color: var(--primary-color);">Precision Motion</strong>
+              <a href="https://github.com/S8bin-dev/Thor-Labs-Linear-Stage" target="_blank" class="btn btn-color-2"
+                style="width: 100%; font-size: 0.75rem; padding: 0.6rem;">Thorlabs Stage Repo</a>
             </div>
-            <div class="gallery-item" onclick="openLightbox(3)" role="button" tabindex="0"
-              onkeydown="if(event.key === 'Enter' || event.key === ' ') openLightbox(3)">
-              <img src="./assets/loadcellmount1.png" alt="Load Cell Mount Design 1" loading="lazy" />
-              <div class="gallery-overlay">
-                <span>View Full Size</span>
-              </div>
+            <div style="display: flex; flex-direction: column; gap: 8px;">
+              <strong style="font-size: 0.85rem; color: var(--primary-color);">System Orchestration</strong>
+              <a href="https://github.com/S8bin-dev/AutomatedProbing" target="_blank" class="btn btn-color-2"
+                style="width: 100%; font-size: 0.75rem; padding: 0.6rem;">Automated Probing Repo</a>
             </div>
-            <div class="gallery-item" onclick="openLightbox(4)" role="button" tabindex="0"
-              onkeydown="if(event.key === 'Enter' || event.key === ' ') openLightbox(4)">
-              <img src="./assets/loadcellmount2.png" alt="Load Cell Mount Design 2" loading="lazy" />
-              <div class="gallery-overlay">
-                <span>View Full Size</span>
-              </div>
-            </div>
-            <div class="gallery-item" onclick="openLightbox(5)" role="button" tabindex="0"
-              onkeydown="if(event.key === 'Enter' || event.key === ' ') openLightbox(5)">
-              <img src="./assets/pipetteholder1.png" alt="Pipette Holder Design 1" loading="lazy" />
-              <div class="gallery-overlay">
-                <span>View Full Size</span>
-              </div>
-            </div>
-            <div class="gallery-item" onclick="openLightbox(6)" role="button" tabindex="0"
-              onkeydown="if(event.key === 'Enter' || event.key === ' ') openLightbox(6)">
-              <img src="./assets/pipetteholder2.png" alt="Pipette Holder Design 2" loading="lazy" />
-              <div class="gallery-overlay">
-                <span>View Full Size</span>
-              </div>
-            </div>
-            <div class="gallery-item" onclick="openLightbox(7)" role="button" tabindex="0"
-              onkeydown="if(event.key === 'Enter' || event.key === ' ') openLightbox(7)">
-              <img src="./assets/robosoccerbot.png" alt="Robo Soccer Bot" loading="lazy" />
-              <div class="gallery-overlay">
-                <span>View Full Size</span>
-              </div>
-            </div>
-            <div class="gallery-item" onclick="openLightbox(8)" role="button" tabindex="0"
-              onkeydown="if(event.key === 'Enter' || event.key === ' ') openLightbox(8)">
-              <img src="./assets/Vileholer.png" alt="Vial Holder" loading="lazy" />
-              <div class="gallery-overlay">
-                <span>View Full Size</span>
-              </div>
+            <div style="display: flex; flex-direction: column; gap: 8px;">
+              <strong style="font-size: 0.85rem; color: var(--primary-color);">Electrical Analysis</strong>
+              <a href="https://github.com/S8bin-dev/Osilla-SMU" target="_blank" class="btn btn-color-2"
+                style="width: 100%; font-size: 0.75rem; padding: 0.6rem;">Osilla SMU Repo</a>
             </div>
           </div>
         </div>
+
+        <div class="modal-section" style="margin-top: 2.5rem;">
+          <h3>The Integrated Autonomous Loop</h3>
+          <p style="margin-bottom: 1.5rem;">I am currently integrating these drivers with our <strong>N9 North
+              Robotics</strong> platform to achieve a fully automated cycle:</p>
+
+          <div style="display: flex; flex-direction: column; gap: 1.5rem;">
+            <div style="display: flex; gap: 1.2rem; align-items: flex-start;">
+              <div
+                style="background: var(--primary-color); color: white; border-radius: 50%; width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-weight: bold; font-size: 0.9rem; box-shadow: 0 4px 10px rgba(59, 130, 246, 0.3);">
+                1</div>
+              <p style="margin: 0;"><strong
+                  style="color: var(--primary-color); display: block; margin-bottom: 2px;">Fabrication</strong> The N9
+                Robot autonomously executes polymer solution deposition, spin-coating, and thermal annealing.</p>
+            </div>
+
+            <div style="display: flex; gap: 1.2rem; align-items: flex-start;">
+              <div
+                style="background: var(--primary-color); color: white; border-radius: 50%; width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-weight: bold; font-size: 0.9rem; box-shadow: 0 4px 10px rgba(59, 130, 246, 0.3);">
+                2</div>
+              <p style="margin: 0;"><strong
+                  style="color: var(--primary-color); display: block; margin-bottom: 2px;">Transfer</strong> The robot
+                moves the sample to the Thorlabs vertical stage for precise height adjustments.</p>
+            </div>
+
+            <div style="display: flex; gap: 1.2rem; align-items: flex-start;">
+              <div
+                style="background: var(--primary-color); color: white; border-radius: 50%; width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-weight: bold; font-size: 0.9rem; box-shadow: 0 4px 10px rgba(59, 130, 246, 0.3);">
+                3</div>
+              <p style="margin: 0;"><strong
+                  style="color: var(--primary-color); display: block; margin-bottom: 2px;">Characterization</strong> The
+                system triggers the Spectrometer to determine film thickness followed by the Osilla SMU for I-V curves
+                and conductivity measurement.</p>
+            </div>
+
+            <div style="display: flex; gap: 1.2rem; align-items: flex-start;">
+              <div
+                style="background: var(--primary-color); color: white; border-radius: 50%; width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-weight: bold; font-size: 0.9rem; box-shadow: 0 4px 10px rgba(59, 130, 246, 0.3);">
+                4</div>
+              <p style="margin: 0;"><strong
+                  style="color: var(--primary-color); display: block; margin-bottom: 2px;">Storage</strong> Upon
+                completion, the N9 Robot autonomously retrieves the sample and places it in the storage garage.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="modal-section gallery-section"
+          style="margin-top: 3rem; border-top: 1px solid var(--border-color); padding-top: 2rem;">
+          <h3>System Operations & Setup</h3>
+          <div class="gallery-grid" style="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px;">
+            <div class="gallery-item" style="aspect-ratio: 16/9;">
+              <video width="100%" height="100%" controls
+                style="object-fit: cover; border-radius: 1rem; background: #000;">
+                <source src="./assets/homing_demo.mp4" type="video/mp4">
+              </video>
+              <div style="padding: 0.5rem; font-size: 0.8rem; text-align: center; color: var(--text-medium);">Integrated
+                System Demo</div>
+            </div>
+            <div class="gallery-item" onclick="openLightbox(9)" style="aspect-ratio: 16/9;">
+              <img src="./assets/spectrometer_setup.jpg" alt="Spectrometer Setup" loading="lazy" />
+              <div class="gallery-overlay"><span>Spectrometer Setup</span></div>
+            </div>
+            <div class="gallery-item" onclick="openLightbox(10)" style="aspect-ratio: 16/9;">
+              <img src="./assets/stage_contact.jpg" alt="Stage & SMU Setup" loading="lazy" />
+              <div class="gallery-overlay"><span>Stage & SMU Setup</span></div>
+            </div>
+          </div>
+        </div>
+
       </div>
     </div>
   </div>
@@ -680,6 +917,7 @@
         <ul class="nav-links">
           <li><a href="#profile">About</a></li>
           <li><a href="#projects">Projects</a></li>
+          <li><a href="#publications">Publications</a></li>
           <li><a href="#experience">Skills</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>
