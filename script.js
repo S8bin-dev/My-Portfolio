@@ -284,29 +284,38 @@ function initLightbox() {
     }
   });
 
-  // Gallery Data
-  const galleryImages = [
-    { src: './assets/ossila_mount.jpg', caption: 'Ossila Four-Point Probe Automated Mount' },
-    { src: './assets/n9_holder.jpg', caption: 'North Robotics N9 Drop Cast Holder' },
-    { src: './assets/1.5 by 1.5 thinfilmholderwithlid.png', caption: '1.5" × 1.5" Thin Film Holder with Lid' },
-    { src: './assets/Thinfilmholderfordifferentdimension.png', caption: '2" × 1" and 2" × 2" Thin Film Holders' },
-    { src: './assets/Loadcellcover.png', caption: 'Load Cell Protective Cover (UTM)' },
-    { src: './assets/loadcellmount2.png', caption: 'Load Cell Mount - Design 2' },
-    { src: './assets/pipetteholder2.png', caption: 'Pipette Holder - Lab Bench Design' },
-    { src: './assets/robosoccerbot.png', caption: 'Robo Soccer Bot - Optimized Ball Handler' },
-    { src: './assets/Vileholer.png', caption: 'Custom Vial Holder System' }
-  ];
+  // Separate Gallery Data for each project
+  const galleries = {
+    printing: [
+      { src: './assets/ossila_mount.jpg', caption: 'Ossila Four-Point Probe Automated Mount' },
+      { src: './assets/n9_holder.jpg', caption: 'North Robotics N9 Drop Cast Holder' },
+      { src: './assets/1.5 by 1.5 thinfilmholderwithlid.png', caption: '1.5" × 1.5" Thin Film Holder with Lid' },
+      { src: './assets/Thinfilmholderfordifferentdimension.png', caption: '2" × 1" and 2" × 2" Thin Film Holders' },
+      { src: './assets/Loadcellcover.png', caption: 'Load Cell Protective Cover (UTM)' },
+      { src: './assets/loadcellmount2.png', caption: 'Load Cell Mount - Design 2' },
+      { src: './assets/pipetteholder2.png', caption: 'Pipette Holder - Lab Bench Design' },
+      { src: './assets/robosoccerbot.png', caption: 'Robo Soccer Bot - Optimized Ball Handler' },
+      { src: './assets/Vileholer.png', caption: 'Custom Vial Holder System' }
+    ],
+    autonomous: [
+      { src: './assets/spectrometer_setup.jpg', caption: 'Spectrometer Setup' },
+      { src: './assets/stage_contact.jpg', caption: 'Stage & SMU Setup' }
+    ]
+  };
 
+  let currentGallery = 'printing';
   let currentImageIndex = 0;
 
-  window.openLightbox = function (index) {
+  window.openLightbox = function (index, gallery = 'printing') {
+    currentGallery = gallery;
     currentImageIndex = index;
+    const galleryImages = galleries[currentGallery];
     const lightbox = document.getElementById('lightbox');
     const lightboxImg = document.getElementById('lightbox-img');
     const lightboxCaption = document.getElementById('lightbox-caption');
     const lightboxCounter = document.getElementById('lightbox-counter');
 
-    if (lightbox && lightboxImg) {
+    if (lightbox && lightboxImg && galleryImages[index]) {
       lightbox.classList.add('active');
       lightboxImg.src = galleryImages[index].src;
       lightboxCaption.textContent = galleryImages[index].caption;
@@ -324,6 +333,7 @@ function initLightbox() {
   };
 
   window.navigateLightbox = function (direction) {
+    const galleryImages = galleries[currentGallery];
     currentImageIndex += direction;
     if (currentImageIndex < 0) currentImageIndex = galleryImages.length - 1;
     else if (currentImageIndex >= galleryImages.length) currentImageIndex = 0;
