@@ -755,7 +755,7 @@
         </div>
 
         <div class="modal-section"
-          style="background: rgba(59, 130, 246, 0.05); padding: 1.5rem; border-radius: 1rem; border: 1px solid var(--border-color);">
+          style="background: rgba(59, 130, 246, 0.05); padding: 1.5rem; border-radius: 1rem; border: 1px solid var(--border-color); margin-bottom: 2.5rem;">
           <h3 style="margin-top: 0;">Developed Hardware Infrastructure</h3>
           <p style="font-size: 0.9rem; margin-bottom: 1.5rem;">Access the specific drivers developed for each laboratory
             "block":</p>
@@ -784,7 +784,39 @@
           </div>
         </div>
 
-        <div class="modal-section" style="margin-top: 2.5rem;">
+        <div class="modal-section gallery-section"
+          style="margin-bottom: 3rem; border-bottom: 1px solid var(--border-color); padding-bottom: 2rem;">
+          <h3>System Operations & Setup</h3>
+          <div class="gallery-grid" style="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px;">
+            
+            <div class="gallery-item" style="aspect-ratio: 16/9;">
+              <video width="100%" height="100%" controls
+                style="object-fit: cover; border-radius: 1rem; background: #000;">
+                <source src="./assets/Full_workflow.mp4" type="video/mp4">
+              </video>
+              <div style="padding: 0.5rem; font-size: 0.8rem; text-align: center; color: var(--text-medium);">Full Workflow Demo</div>
+            </div>
+
+            <div class="gallery-item" style="aspect-ratio: 16/9;">
+              <video width="100%" height="100%" controls
+                style="object-fit: cover; border-radius: 1rem; background: #000;">
+                <source src="./assets/homing_demo.mp4" type="video/mp4">
+              </video>
+              <div style="padding: 0.5rem; font-size: 0.8rem; text-align: center; color: var(--text-medium);">Integrated System Homing</div>
+            </div>
+
+            <div class="gallery-item" onclick="openLightbox(0, 'autonomous')" style="aspect-ratio: 16/9;">
+              <img src="./assets/spectrometer_setup.jpg" alt="Spectrometer Setup" loading="lazy" />
+              <div class="gallery-overlay"><span>Spectrometer Setup</span></div>
+            </div>
+            <div class="gallery-item" onclick="openLightbox(1, 'autonomous')" style="aspect-ratio: 16/9;">
+              <img src="./assets/stage_contact.jpg" alt="Stage & SMU Setup" loading="lazy" />
+              <div class="gallery-overlay"><span>Stage & SMU Setup</span></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="modal-section" style="margin-top: 1rem;">
           <h3>The Integrated Autonomous Loop</h3>
           <p style="margin-bottom: 1.5rem;">I am currently integrating these drivers with our <strong>N9 North
               Robotics</strong> platform to achieve a fully automated cycle:</p>
@@ -825,29 +857,6 @@
               <p style="margin: 0;"><strong
                   style="color: var(--primary-color); display: block; margin-bottom: 2px;">Storage</strong> Upon
                 completion, the N9 Robot autonomously retrieves the sample and places it in the storage garage.</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="modal-section gallery-section"
-          style="margin-top: 3rem; border-top: 1px solid var(--border-color); padding-top: 2rem;">
-          <h3>System Operations & Setup</h3>
-          <div class="gallery-grid" style="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px;">
-            <div class="gallery-item" style="aspect-ratio: 16/9;">
-              <video width="100%" height="100%" controls
-                style="object-fit: cover; border-radius: 1rem; background: #000;">
-                <source src="./assets/homing_demo.mp4" type="video/mp4">
-              </video>
-              <div style="padding: 0.5rem; font-size: 0.8rem; text-align: center; color: var(--text-medium);">Integrated
-                System Demo</div>
-            </div>
-            <div class="gallery-item" onclick="openLightbox(0, 'autonomous')" style="aspect-ratio: 16/9;">
-              <img src="./assets/spectrometer_setup.jpg" alt="Spectrometer Setup" loading="lazy" />
-              <div class="gallery-overlay"><span>Spectrometer Setup</span></div>
-            </div>
-            <div class="gallery-item" onclick="openLightbox(1, 'autonomous')" style="aspect-ratio: 16/9;">
-              <img src="./assets/stage_contact.jpg" alt="Stage & SMU Setup" loading="lazy" />
-              <div class="gallery-overlay"><span>Stage & SMU Setup</span></div>
             </div>
           </div>
         </div>
