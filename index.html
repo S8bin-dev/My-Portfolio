@@ -18,7 +18,7 @@
   <meta property="og:title" content="Sabin Baral | Polymer Researcher & Engineer" />
   <meta property="og:description"
     content="Undergraduate researcher specializing in polymer science, advanced characterization techniques, and materials engineering." />
-  <meta property="og:image" content="./assets/profile-pic.png" />
+  <meta property="og:image" content="./assets/profile/profile-pic.png" />
   <meta property="og:url" content="https://yourwebsite.com" />
   <meta property="og:type" content="website" />
 
@@ -27,15 +27,15 @@
   <meta name="twitter:title" content="Sabin Baral | Polymer Researcher & Engineer" />
   <meta name="twitter:description"
     content="Undergraduate researcher specializing in polymer science and materials engineering." />
-  <meta name="twitter:image" content="./assets/profile-pic.png" />
+  <meta name="twitter:image" content="./assets/profile/profile-pic.png" />
 
   <!-- Favicon -->
-  <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon.png" />
-  <link rel="icon" type="image/png" sizes="16x16" href="./assets/favicon.png" />
-  <link rel="apple-touch-icon" sizes="180x180" href="./assets/favicon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/icons/favicon.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="./assets/icons/favicon.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="./assets/icons/favicon.png" />
   <link rel="stylesheet" type='text/css' href="https://cdn.jsdelivr.net/gh/devicon/devicon@latest/devicon.min.css" />
 
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="style.css?v=2" />
   <link rel="stylesheet" href="mediaqueries.css" />
 </head>
 
@@ -99,7 +99,7 @@
 
   <section id="profile">
     <div class="section__pic-container fade-in">
-      <img src="./assets/profile-pic.png" alt="Sabin Baral - Polymer Researcher" loading="eager" />
+      <img src="./assets/profile/profile-pic.png" alt="Sabin Baral - Polymer Researcher" loading="eager" />
     </div>
     <div class="section__text fade-in">
       <p class="section__text__p1">Hello, I'm</p>
@@ -115,14 +115,14 @@
       <!-- Mini Experience/Education Cards -->
       <div class="hero-mini-cards">
         <div class="mini-card hover-lift">
-          <img src="./assets/experience.png" alt="Experience" class="mini-icon" />
+          <img src="./assets/icons/experience.png" alt="Experience" class="mini-icon" />
           <div class="mini-card-content">
             <h3>Experience</h3>
             <p>1+ years Research</p>
           </div>
         </div>
         <div class="mini-card hover-lift">
-          <img src="./assets/education.png" alt="Education" class="mini-icon" />
+          <img src="./assets/icons/education.png" alt="Education" class="mini-icon" />
           <div class="mini-card-content">
             <h3>Education</h3>
             <p>Pursuing BSc</p>
@@ -131,7 +131,7 @@
       </div>
 
       <div class="btn-container">
-        <button class="btn btn-color-2 ripple" onclick="window.open('./assets/Sabin-Baral-Resume.pdf')"
+        <button class="btn btn-color-2 ripple" onclick="window.open('./assets/profile/Sabin-Baral-Resume.pdf')"
           aria-label="Download CV">
           Download CV
         </button>
@@ -140,15 +140,20 @@
         </button>
       </div>
       <div id="socials-container">
-        <img src="./assets/linkedin.png" alt="LinkedIn Profile - Sabin Baral" class="icon social-icon bounce"
+        <img src="./assets/icons/linkedin.png" alt="LinkedIn Profile - Sabin Baral" class="icon social-icon bounce"
           onclick="location.href='https://www.linkedin.com/in/baralsabin/'" role="button" tabindex="0"
           onkeydown="if(event.key === 'Enter' || event.key === ' ') location.href='https://www.linkedin.com/in/baralsabin/'" />
-        <img src="./assets/github.png" alt="GitHub Profile - Sabin Baral" class="icon social-icon bounce"
+        <img src="./assets/icons/github.png" alt="GitHub Profile - Sabin Baral" class="icon social-icon bounce"
           onclick="location.href='https://github.com/S8bin-dev'" role="button" tabindex="0"
           onkeydown="if(event.key === 'Enter' || event.key === ' ') location.href='https://github.com/S8bin-dev'" />
+        <img src="./assets/icons/google_scholar_icon.png" alt="Google Scholar Profile - Sabin Baral"
+          class="icon social-icon bounce"
+          onclick="location.href='https://scholar.google.com/citations?view_op=list_works&hl=en&hl=en&user=vSl4ZvgAAAAJ'"
+          role="button" tabindex="0"
+          onkeydown="if(event.key === 'Enter' || event.key === ' ') location.href='https://scholar.google.com/citations?view_op=list_works&hl=en&hl=en&user=vSl4ZvgAAAAJ'" />
       </div>
     </div>
-    <img src="./assets/arrow.png" alt="Scroll down arrow" class="icon arrow" onclick="location.href='./#projects'"
+    <img src="./assets/icons/arrow.png" alt="Scroll down arrow" class="icon arrow" onclick="location.href='./#projects'"
       role="button" tabindex="0"
       onkeydown="if(event.key === 'Enter' || event.key === ' ') location.href='./#projects'" />
   </section>
@@ -162,7 +167,7 @@
       <div class="about-containers">
         <div class="details-container color-container project-card fade-in-up">
           <div class="article-container">
-            <img src="./assets/autonomous_workflow.png" alt="Autonomous Lab Workflow" class="project-img"
+            <img src="./assets/projects/autonomous_lab/autonomous.jpg" alt="Autonomous Lab Workflow" class="project-img"
               loading="lazy" />
           </div>
           <h2 class="experience-sub-title project-title">Autonomous Lab: End-to-End Robotic Orchestration<br><br></h2>
@@ -180,7 +185,54 @@
 
         <div class="details-container color-container project-card fade-in-up">
           <div class="article-container">
-            <img src="./assets/project-1.png" alt="Block Copolymer Research" class="project-img" loading="lazy" />
+            <img src="./assets/projects/cms_tracker/cms_tracker.jpg" alt="CMS Inner Tracker Module Testing"
+              class="project-img" loading="lazy" />
+          </div>
+          <h2 class="experience-sub-title project-title">CMS Inner Tracker Upgrade: Bare Module Testing &
+            Automation<br><br>
+          </h2>
+          <p class="project-duration">May 2026 - August 2026</p>
+          <div class="project-stats">
+            <div class="stat-item"><span class="stat-number">40%</span><span class="stat-label">Efficiency
+                Increase</span></div>
+            <div class="stat-item"><span class="stat-number">50+</span><span class="stat-label">Modules Tested</span>
+            </div>
+          </div>
+          <div class="btn-container">
+            <button class="btn btn-color-2 project-btn ripple" onclick="openModal('modal5')">Learn More</button>
+          </div>
+        </div>
+
+        <div class="details-container color-container project-card fade-in-up">
+          <div class="article-container">
+            <img src="./assets/projects/veriscript/veriscript.jpg"
+              alt="VeriScript: AI Transcript Fraud Detection Platform" class="project-img" loading="lazy" />
+          </div>
+          <h2 class="experience-sub-title project-title">VeriScript: AI Transcript Fraud Detection Platform<br><br></h2>
+          <p class="project-duration">March 2026 - May 2026</p>
+          <div class="project-stats">
+            <div class="stat-item"><span class="stat-number">65%</span><span class="stat-label">Cost Reduction</span>
+            </div>
+            <div class="stat-item">
+              <a href="https://github.com/SRVKNDL/msbn-transcript-verification" target="_blank" class="github-stat-link"
+                aria-label="View GitHub Repository">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+                  <path
+                    d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z" />
+                </svg>
+              </a>
+              <span class="stat-label">GitHub</span>
+            </div>
+          </div>
+          <div class="btn-container">
+            <button class="btn btn-color-2 project-btn ripple" onclick="openModal('modal6')">Learn More</button>
+          </div>
+        </div>
+
+        <div class="details-container color-container project-card fade-in-up">
+          <div class="article-container">
+            <img src="./assets/projects/block_copolymer/project-1.jpg" alt="Block Copolymer Research"
+              class="project-img" loading="lazy" />
           </div>
           <h2 class="experience-sub-title project-title">High Throughput Block Copolymer Thin Film Fabrication and
             Characterization<br></h2>
@@ -198,10 +250,11 @@
 
         <div class="details-container color-container project-card fade-in-up">
           <div class="article-container">
-            <img src="./assets/project-2.png" alt="Organic Solar Cells" class="project-img" loading="lazy" />
+            <img src="./assets/projects/solar_cells/project-2.png" alt="Organic Solar Cells" class="project-img"
+              loading="lazy" />
           </div>
           <h2 class="experience-sub-title project-title">Fabrication and Thermal Stability Analysis of Organic Solar
-            Cells</h2>
+            Cells<br><br></h2>
           <p class="project-duration">Jan 2025 - May 2025</p>
           <div class="project-stats">
             <div class="stat-item"><span class="stat-number">15%</span><span class="stat-label">Efficiency Boost</span>
@@ -216,7 +269,8 @@
 
         <div class="details-container color-container project-card fade-in-up">
           <div class="article-container">
-            <img src="./assets/project-3.png" alt="3D Printing" class="project-img" loading="lazy" />
+            <img src="./assets/projects/3d_printing/project-3.png" alt="3D Printing" class="project-img"
+              loading="lazy" />
           </div>
           <h2 class="experience-sub-title project-title">Real World Problem Solving Through 3D Printing<br>&nbsp;</h2>
           <p class="project-duration">Dec 2024 - Present</p>
@@ -232,8 +286,8 @@
         </div>
       </div>
     </div>
-    <img src="./assets/arrow.png" alt="Scroll down arrow" class="icon arrow" onclick="location.href='./#publications'"
-      role="button" tabindex="0"
+    <img src="./assets/icons/arrow.png" alt="Scroll down arrow" class="icon arrow"
+      onclick="location.href='./#publications'" role="button" tabindex="0"
       onkeydown="if(event.key === 'Enter' || event.key === ' ') location.href='./#publications'" />
   </section>
 
@@ -246,17 +300,16 @@
 
         <div class="details-container hover-lift fade-in-up" style="flex: 2;">
           <div class="research-badge"
-            style="margin-bottom: 1rem; background: rgba(59, 130, 246, 0.1); color: var(--primary-color); border: 1px solid var(--primary-color);">
-            Under Review: JACS Au
+            style="margin-bottom: 1rem; background: rgba(16, 185, 129, 0.1); color: var(--success-color); border: 1px solid var(--success-color);">
+            Published: ACS Nano
           </div>
-          <h3 class="experience-sub-title" style="text-align: left; font-size: 1.4rem; line-height: 1.4;">
-            A Robotic High-Throughput Grid-Search Platform for Mapping Phase Behavior in Triblock Copolymer–Homopolymer
-            Blends
-          </h3>
           <div class="text-container" style="padding: 0;">
-            <p style="margin-bottom: 1rem; font-size: 0.9rem;">
-              Saroj Upreti, Lan Xu, Md. Moniruzzaman, Yunfei Wang, Kailash Adhikari, <strong>Sabin Baral</strong>, Derek
-              Patton, Boran Ma, Jie Xu, Ruipeng Li, Chenhui Zhu, Wenjie Xia, Xiaodan Gu*
+            <p style="margin-bottom: 1rem; font-size: 1rem; line-height: 1.5;">
+              Upreti, S., Xu, L., Moniruzzaman, M., Wang, Y., Adhikari, K., <strong>Baral, S.</strong>, Patton, D., Ma,
+              B., Xu, J., Li, R., Zhu, C., Xia, W., &amp; Gu, X. (2026). A Robotic High-Throughput Grid-Search Platform
+              for Mapping Phase Behavior in Triblock Copolymer−Homopolymer Blends. <i>ACS Nano</i>, <i>20</i>,
+              17303-17315. <a href="https://doi.org/10.1021/acsnano.6c01299" target="_blank" rel="noopener noreferrer"
+                style="color: var(--primary-color); text-decoration: underline; word-break: break-all;">https://doi.org/10.1021/acsnano.6c01299</a>
             </p>
             <p style="font-size: 0.95rem; line-height: 1.6;">
               Systematically mapped the phase behavior and <strong>Order–Disorder Transition (ODT)</strong> boundaries
@@ -272,12 +325,12 @@
         <div class="details-container hover-lift fade-in-up">
           <div class="research-badge"
             style="margin-bottom: 1rem; background: rgba(16, 185, 129, 0.1); color: var(--success-color); border: 1px solid var(--success-color);">
-            Upcoming: March 2026
+            Upcoming: August 2026
           </div>
           <h3 class="experience-sub-title">Conference Presentations</h3>
           <div class="text-container" style="padding: 0;">
             <p>
-              <strong>ACS Spring 2026 National Meeting</strong><br>
+              <strong>ACS Fall 2026 National Meeting</strong><br>
               <em>Poster Presentation</em>
             </p>
             <p
@@ -299,29 +352,29 @@
       <div style="display: flex; justify-content: center; align-items: center; gap: 3.5rem; flex-wrap: wrap;">
 
         <div style="display: flex; flex-direction: column; align-items: center; gap: 0.75rem;">
-          <img src="./assets/USM.png" alt="USM" style="height: 55px; width: auto;">
+          <img src="./assets/collaborators/USM.png" alt="USM" style="height: 55px; width: auto;">
           <span style="font-size: 0.7rem; font-weight: 600;">USM Polymer Science</span>
         </div>
 
         <div style="display: flex; flex-direction: column; align-items: center; gap: 0.75rem;">
-          <img src="./assets/LBNL.jpg" alt="LBNL" style="height: 45px; width: auto;">
+          <img src="./assets/collaborators/LBNL.jpg" alt="LBNL" style="height: 45px; width: auto;">
           <span style="font-size: 0.7rem; font-weight: 600;">LBNL / ALS</span>
         </div>
 
         <div style="display: flex; flex-direction: column; align-items: center; gap: 0.75rem;">
-          <img src="./assets/ANL.png" alt="ANL" style="height: 45px; width: auto;">
+          <img src="./assets/collaborators/ANL.png" alt="ANL" style="height: 45px; width: auto;">
           <span style="font-size: 0.7rem; font-weight: 600;">Argonne / NST</span>
         </div>
 
         <div style="display: flex; flex-direction: column; align-items: center; gap: 0.75rem;">
-          <img src="./assets/BNL.png" alt="BNL" style="height: 45px; width: auto;">
+          <img src="./assets/collaborators/BNL.png" alt="BNL" style="height: 45px; width: auto;">
           <span style="font-size: 0.7rem; font-weight: 600;">Brookhaven / NSLS-II</span>
         </div>
 
       </div>
     </div>
-    <img src="./assets/arrow.png" alt="Scroll down arrow" class="icon arrow" onclick="location.href='./#experience'"
-      role="button" tabindex="0"
+    <img src="./assets/icons/arrow.png" alt="Scroll down arrow" class="icon arrow"
+      onclick="location.href='./#experience'" role="button" tabindex="0"
       onkeydown="if(event.key === 'Enter' || event.key === ' ') location.href='./#experience'" />
   </section>
 
@@ -332,7 +385,7 @@
     <div class="experience-details-container">
       <div class="about-containers">
         <div class="details-container hover-lift fade-in-up">
-          <img src="./assets/icon-characterization.png" alt="Characterization Icon" class="category-icon"
+          <img src="./assets/icons/icon-characterization.png" alt="Characterization Icon" class="category-icon"
             style="height: 60px; width: 60px; margin-bottom: 1rem; filter: brightness(0) saturate(100%) invert(43%) sepia(87%) saturate(1475%) hue-rotate(204deg) brightness(97%) contrast(92%);">
           <h2 class="experience-sub-title">Characterization Techniques</h2>
           <div class="article-container">
@@ -369,7 +422,7 @@
           </div>
         </div>
         <div class="details-container hover-lift fade-in-up">
-          <img src="./assets/icon-design.png" alt="Design Icon" class="category-icon"
+          <img src="./assets/icons/icon-design.png" alt="Design Icon" class="category-icon"
             style="height: 60px; width: 60px; margin-bottom: 1rem; filter: brightness(0) saturate(100%) invert(43%) sepia(87%) saturate(1475%) hue-rotate(204deg) brightness(97%) contrast(92%);">
           <h2 class="experience-sub-title">Design and Analysis</h2>
           <div class="article-container">
@@ -397,7 +450,7 @@
           </div>
         </div>
         <div class="details-container hover-lift fade-in-up">
-          <img src="./assets/icon-programming.png" alt="Programming Icon" class="category-icon"
+          <img src="./assets/icons/icon-programming.png" alt="Programming Icon" class="category-icon"
             style="height: 60px; width: 60px; margin-bottom: 1rem; filter: brightness(0) saturate(100%) invert(43%) sepia(87%) saturate(1475%) hue-rotate(204deg) brightness(97%) contrast(92%);">
           <h2 class="experience-sub-title">Programming</h2>
           <div class="article-container">
@@ -424,8 +477,8 @@
           </div>
         </div>
       </div>
-      <img src="./assets/arrow.png" alt="Scroll down arrow" class="icon arrow" onclick="location.href='./#contact'"
-        role="button" tabindex="0"
+      <img src="./assets/icons/arrow.png" alt="Scroll down arrow" class="icon arrow"
+        onclick="location.href='./#contact'" role="button" tabindex="0"
         onkeydown="if(event.key === 'Enter' || event.key === ' ') location.href='./#contact'" />
   </section>
 
@@ -438,7 +491,8 @@
 
       <div class="modal-body">
         <div class="modal-image">
-          <img src="./assets/project-1_HD.png" alt="Block Copolymer Research Details" loading="lazy" />
+          <img src="./assets/projects/block_copolymer/project-1.jpg" alt="Block Copolymer Research Details"
+            loading="lazy" />
         </div>
 
         <div class="modal-section">
@@ -482,6 +536,17 @@
             understanding structure-property relationships in block copolymer systems. Currently preparing 300+ thin
             film samples for our next beamtime at ALS or NSLS.</p>
         </div>
+        <div class="modal-section">
+          <h3 style="margin-bottom: 1.5rem;">Workflow Video</h3>
+          <div style="border-radius: 1rem; overflow: hidden; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);">
+            <video controls preload="metadata" style="width: 100%; display: block; border-radius: 1rem;"
+              aria-label="System Operations Workflow Video">
+              <source src="./assets/projects/block_copolymer/System_Operations_High_Throughput.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+          </div>
+        </div>
+
 
         <div class="modal-section">
           <h3>Links & Resources</h3>
@@ -500,7 +565,8 @@
 
       <div class="modal-body">
         <div class="modal-image">
-          <img src="./assets/project-2_HD.png" alt="Organic Solar Cell Research Details" loading="lazy" />
+          <img src="./assets/projects/solar_cells/project-2_HD.png" alt="Organic Solar Cell Research Details"
+            loading="lazy" />
         </div>
 
         <div class="modal-section">
@@ -548,7 +614,7 @@
         <div class="modal-section">
           <h3>Links & Resources</h3>
           <p>
-            <a href="./assets/researchpos2.png" target="_blank">
+            <a href="./assets/projects/solar_cells/researchpos2.png" target="_blank">
               Research Poster
             </a> |
             <a href="https://www.usm.edu/polymer-science-engineering/optoelec_device_lab.php" target="_blank">Lab
@@ -566,7 +632,7 @@
 
       <div class="modal-body">
         <div class="modal-image">
-          <img src="./assets/project-3_HD.png" alt="3D Printing Projects Details" loading="lazy" />
+          <img src="./assets/projects/3d_printing/project-3_HD.png" alt="3D Printing Projects Details" loading="lazy" />
         </div>
 
         <div class="modal-section">
@@ -592,55 +658,55 @@
             </a>
           </div>
 
-          <p style="margin-bottom: 1.5rem; font-style: italic; font-size: 0.9rem; color: var(--text-light);">Click any
-            image to view full size</p>
 
           <div class="gallery-grid">
             <div class="gallery-item" onclick="openLightbox(0)" role="button" tabindex="0">
-              <img src="./assets/ossila_mount.jpg" alt="Ossila Automated Mount" loading="lazy" />
-              <div class="gallery-overlay"><span>View Full Size</span></div>
+              <img src="./assets/projects/3d_printing/ossila_mount.jpg" alt="Ossila Automated Mount" loading="lazy" />
+
             </div>
 
             <div class="gallery-item" onclick="openLightbox(1)" role="button" tabindex="0">
-              <img src="./assets/n9_holder.jpg" alt="North Robotics N9 Holder" loading="lazy" />
-              <div class="gallery-overlay"><span>View Full Size</span></div>
+              <img src="./assets/projects/3d_printing/n9_holder.jpg" alt="North Robotics N9 Holder" loading="lazy" />
+
             </div>
 
             <div class="gallery-item" onclick="openLightbox(2)" role="button" tabindex="0">
-              <img src="./assets/1.5 by 1.5 thinfilmholderwithlid.png" alt="1.5 by 1.5 Thin Film Holder with Lid"
-                loading="lazy" />
-              <div class="gallery-overlay"><span>View Full Size</span></div>
+              <img src="./assets/projects/3d_printing/1.5 by 1.5 thinfilmholderwithlid.png"
+                alt="1.5 by 1.5 Thin Film Holder with Lid" loading="lazy" />
+
             </div>
 
             <div class="gallery-item" onclick="openLightbox(3)" role="button" tabindex="0">
-              <img src="./assets/Thinfilmholderfordifferentdimension.png"
+              <img src="./assets/projects/3d_printing/Thinfilmholderfordifferentdimension.png"
                 alt="thin film sample holder for various substrate dimensions." loading="lazy" />
-              <div class="gallery-overlay"><span>View Full Size</span></div>
+
             </div>
 
             <div class="gallery-item" onclick="openLightbox(4)" role="button" tabindex="0">
-              <img src="./assets/Loadcellcover.png" alt="Load Cell Cover" loading="lazy" />
-              <div class="gallery-overlay"><span>View Full Size</span></div>
+              <img src="./assets/projects/3d_printing/Loadcellcover.png" alt="Load Cell Cover" loading="lazy" />
+
             </div>
 
             <div class="gallery-item" onclick="openLightbox(5)" role="button" tabindex="0">
-              <img src="./assets/loadcellmount2.png" alt="Load Cell Mount Design 2" loading="lazy" />
-              <div class="gallery-overlay"><span>View Full Size</span></div>
+              <img src="./assets/projects/3d_printing/loadcellmount2.png" alt="Load Cell Mount Design 2"
+                loading="lazy" />
+
             </div>
 
             <div class="gallery-item" onclick="openLightbox(6)" role="button" tabindex="0">
-              <img src="./assets/pipetteholder2.png" alt="Pipette Holder Design 2" loading="lazy" />
-              <div class="gallery-overlay"><span>View Full Size</span></div>
+              <img src="./assets/projects/3d_printing/pipetteholder2.png" alt="Pipette Holder Design 2"
+                loading="lazy" />
+
             </div>
 
             <div class="gallery-item" onclick="openLightbox(7)" role="button" tabindex="0">
-              <img src="./assets/robosoccerbot.png" alt="Robo Soccer Bot" loading="lazy" />
-              <div class="gallery-overlay"><span>View Full Size</span></div>
+              <img src="./assets/projects/3d_printing/robosoccerbot.png" alt="Robo Soccer Bot" loading="lazy" />
+
             </div>
 
             <div class="gallery-item" onclick="openLightbox(8)" role="button" tabindex="0">
-              <img src="./assets/Vileholer.png" alt="Vial Holder" loading="lazy" />
-              <div class="gallery-overlay"><span>View Full Size</span></div>
+              <img src="./assets/projects/3d_printing/Vileholer.png" alt="Vial Holder" loading="lazy" />
+
             </div>
           </div>
         </div>
@@ -743,7 +809,8 @@
         </div>
 
         <div class="modal-image">
-          <img src="./assets/autonomous_workflow_HD.png" alt="Integrated Robotic Workflow Diagram" loading="lazy" />
+          <img src="./assets/projects/autonomous_lab/autonomous.jpg" alt="Integrated Robotic Workflow Diagram"
+            loading="lazy" />
         </div>
 
         <div class="modal-section">
@@ -788,30 +855,31 @@
           style="margin-bottom: 3rem; border-bottom: 1px solid var(--border-color); padding-bottom: 2rem;">
           <h3>System Operations & Setup</h3>
           <div class="gallery-grid" style="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px;">
-            
+
             <div class="gallery-item" style="aspect-ratio: 16/9;">
               <video width="100%" height="100%" controls
                 style="object-fit: cover; border-radius: 1rem; background: #000;">
-                <source src="./assets/Full_workflow.mp4" type="video/mp4">
+                <source src="./assets/projects/autonomous_lab/Full_workflow.mp4" type="video/mp4">
               </video>
-              <div style="padding: 0.5rem; font-size: 0.8rem; text-align: center; color: var(--text-medium);">Full Workflow Demo</div>
+              <div style="padding: 0.5rem; font-size: 0.8rem; text-align: center; color: var(--text-medium);">Full
+                Workflow Demo</div>
             </div>
 
             <div class="gallery-item" style="aspect-ratio: 16/9;">
               <video width="100%" height="100%" controls
                 style="object-fit: cover; border-radius: 1rem; background: #000;">
-                <source src="./assets/homing_demo.mp4" type="video/mp4">
+                <source src="./assets/projects/autonomous_lab/homing_demo.mp4" type="video/mp4">
               </video>
-              <div style="padding: 0.5rem; font-size: 0.8rem; text-align: center; color: var(--text-medium);">Integrated System Homing</div>
+              <div style="padding: 0.5rem; font-size: 0.8rem; text-align: center; color: var(--text-medium);">Integrated
+                System Homing</div>
             </div>
 
             <div class="gallery-item" onclick="openLightbox(0, 'autonomous')" style="aspect-ratio: 16/9;">
-              <img src="./assets/spectrometer_setup.jpg" alt="Spectrometer Setup" loading="lazy" />
-              <div class="gallery-overlay"><span>Spectrometer Setup</span></div>
+              <img src="./assets/projects/autonomous_lab/spectrometer_setup.jpg" alt="Spectrometer Setup"
+                loading="lazy" />
             </div>
             <div class="gallery-item" onclick="openLightbox(1, 'autonomous')" style="aspect-ratio: 16/9;">
-              <img src="./assets/stage_contact.jpg" alt="Stage & SMU Setup" loading="lazy" />
-              <div class="gallery-overlay"><span>Stage & SMU Setup</span></div>
+              <img src="./assets/projects/autonomous_lab/stage_contact.jpg" alt="Stage & SMU Setup" loading="lazy" />
             </div>
           </div>
         </div>
@@ -865,6 +933,260 @@
     </div>
   </div>
 
+  <div id="modal5" class="modal" role="dialog" aria-labelledby="modal5-title" aria-modal="true">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('modal5')" aria-label="Close modal">&times;</span>
+      <h2 id="modal5-title" class="modal-title">CMS Inner Tracker Upgrade: Bare Module Testing & Automation</h2>
+
+      <div class="modal-body">
+        <div class="modal-image">
+          <img src="./assets/projects/cms_tracker/cms_tracker.jpg" alt="CMS Inner Tracker Upgrade Research"
+            loading="lazy" />
+        </div>
+
+        <div class="modal-section">
+          <h3>Project Overview</h3>
+          <p>As part of the U.S. DOE-funded US CMS PURSUE Summer Research Internship, I contributed to the High
+            Luminosity LHC (HL-LHC) upgrade. The program began with intensive computational training at
+            Fermilab—covering the UNIX shell, PyROOT, and machine learning—before I relocated to Kansas State
+            University. At K-State, I joined the US Midwest 2 testing site to focus on the electrical validation of bare
+            modules (silicon sensors bump-bonded to CMS Readout Chips) for the CMS Inner Tracker upgrade.</p>
+        </div>
+
+        <div class="modal-section">
+          <h3>My Role & Responsibilities</h3>
+          <p>I transitioned from executing standard testing protocols to actively optimizing the laboratory's workflow:
+          </p>
+          <ul>
+            <li>Conducted rigorous electrical testing and optical inspections of highly sensitive bare modules inside a
+              Class 10,000 cleanroom.</li>
+            <li>Identified critical efficiency bottlenecks in the terminal-heavy DAQ testing procedures.</li>
+            <li>Designed and developed a centralized Python-based Graphical User Interface (GUI) from the ground up to
+              streamline the testing workflow.</li>
+            <li>Integrated hardware controls directly into the GUI, automating WPAC initialization, contact resistance
+              checks, IREF trim-bit measurements, and Sensor I-V scans.</li>
+          </ul>
+        </div>
+
+        <div class="modal-section">
+          <h3>Techniques & Methods</h3>
+          <ul>
+            <li><strong>Software Engineering</strong> - Python, PyROOT, RDataFrame, and custom GUI development for
+              hardware abstraction.</li>
+            <li><strong>Hardware Integration</strong> - Ph2_ACF framework, Keithley source-meters, and MPI-TS3000 probe
+              station operation.</li>
+            <li><strong>Diagnostic Analysis</strong> - High-Charge scans and coupled/uncoupled crosstalk scans for dead
+              pixel and open-bump identification.</li>
+            <li><strong>Cleanroom Protocol</strong> - ESD-safe handling, ISO 7 cleanroom standards, and microscopy for
+              physical defect inspection.</li>
+          </ul>
+        </div>
+
+        <div class="modal-section">
+          <h3>Results & Outcomes</h3>
+          <p>Successfully abstracted complex, terminal-level commands into an intuitive GUI, drastically improving the
+            team's productivity and testing efficiency. The automated testing suite includes built-in exception handling
+            and safe-exit procedures that automatically cut high-voltage and low-voltage power during faults, securing
+            delicate hardware. Actively processed and graded multiple fragile modules, ensuring the early detection of
+            bump-bonding defects before expensive downstream assembly steps.</p>
+        </div>
+
+        <div class="modal-section">
+          <h3>Links & Resources</h3>
+          <p>
+            <a href="https://cms.fnal.gov/" target="_blank">US CMS Operations at Fermilab</a>
+          </p>
+        </div>
+
+        <div class="modal-section gallery-section">
+          <div
+            style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; margin-bottom: 0.5rem; border-bottom: 1px solid var(--border-color); padding-bottom: 0.5rem;">
+            <h3 style="margin: 0;">More Information</h3>
+          </div>
+
+          <div class="gallery-grid">
+            <div class="gallery-item" onclick="openLightbox(0, 'cms_tracker')" role="button" tabindex="0">
+              <img src="./assets/projects/cms_tracker/site_info_1.jpg" alt="K-State Testing Site Overview - Page 1"
+                loading="lazy" />
+
+            </div>
+
+            <div class="gallery-item" onclick="openLightbox(1, 'cms_tracker')" role="button" tabindex="0">
+              <img src="./assets/projects/cms_tracker/site_info_2.jpg" alt="K-State Testing Site Overview - Page 2"
+                loading="lazy" />
+
+            </div>
+
+            <div class="gallery-item" onclick="openLightbox(2, 'cms_tracker')" role="button" tabindex="0">
+              <img src="./assets/projects/cms_tracker/site_info_3.jpg" alt="K-State Testing Site Overview - Page 3"
+                loading="lazy" />
+
+            </div>
+
+            <div class="gallery-item" onclick="openLightbox(3, 'cms_tracker')" role="button" tabindex="0">
+              <img src="./assets/projects/cms_tracker/site_info_4.jpg" alt="K-State Testing Site Overview - Page 4"
+                loading="lazy" />
+
+            </div>
+
+            <div class="gallery-item" onclick="openLightbox(4, 'cms_tracker')" role="button" tabindex="0">
+              <img src="./assets/projects/cms_tracker/general_chip_info_1.jpg" alt="US Midwest Site Visit - Page 1"
+                loading="lazy" />
+
+            </div>
+
+            <div class="gallery-item" onclick="openLightbox(5, 'cms_tracker')" role="button" tabindex="0">
+              <img src="./assets/projects/cms_tracker/general_chip_info_2.jpg" alt="US Midwest Site Visit - Page 2"
+                loading="lazy" />
+
+            </div>
+
+            <div class="gallery-item" onclick="openLightbox(6, 'cms_tracker')" role="button" tabindex="0">
+              <img src="./assets/projects/cms_tracker/general_chip_info_3.jpg" alt="US Midwest Site Visit - Page 3"
+                loading="lazy" />
+
+            </div>
+
+            <div class="gallery-item" onclick="openLightbox(7, 'cms_tracker')" role="button" tabindex="0">
+              <img src="./assets/projects/cms_tracker/general_chip_info_4.jpg" alt="US Midwest Site Visit - Page 4"
+                loading="lazy" />
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="modal6" class="modal" role="dialog" aria-labelledby="modal6-title" aria-modal="true">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('modal6')" aria-label="Close modal">&times;</span>
+      <h2 id="modal6-title" class="modal-title">VeriScript: AI Transcript Fraud Detection Platform</h2>
+
+      <div class="modal-body">
+        <div class="modal-image">
+          <img src="./assets/projects/veriscript/veriscript.jpg" alt="VeriScript System Architecture and Dashboard"
+            loading="lazy" />
+        </div>
+
+        <div class="modal-section">
+          <h3>Project Overview</h3>
+          <p>Built for the Mississippi State Board of Nursing (MSBN), VeriScript is a serverless, AI-assisted transcript
+            review platform designed to combat nursing credential fraud. The system automatically ingests applicant
+            PDFs, extracts critical academic data, runs a battery of deterministic fraud-detection rules, and routes
+            flagged applications to a human reviewer. Crucially, the system is strictly advisory—it generates a
+            defensible, immutable audit trail to augment staff judgment, making zero final licensing decisions on its
+            own.</p>
+        </div>
+
+        <div class="modal-section">
+          <h3>My Role & Responsibilities</h3>
+          <p>I contributed across the entire full-stack architecture, from the infrastructure pipeline to the reviewer
+            dashboard:</p>
+          <ul>
+            <li>Engineered a resilient, serverless AWS pipeline using Python and CDK, orchestrated by AWS Step Functions
+              to ensure fully logged state transitions.</li>
+            <li>Designed a dual-pass AI extraction engine combining Amazon Textract for visual forensics (detecting
+              tampered text) and Amazon Bedrock Nova Pro for semantic academic extraction.</li>
+            <li>Programmed a robust deterministic rules engine featuring 14 specific fraud checks across physical
+              authenticity, educational chronology, and MSBN curriculum compliance.</li>
+            <li>Developed a responsive, lightweight frontend dashboard in React 19 to translate complex AI outputs and
+              flagged issues into an intuitive UI for MSBN staff.</li>
+          </ul>
+        </div>
+
+        <div class="modal-section">
+          <h3>Techniques & Methods</h3>
+          <ul>
+            <li><strong>Cloud & Infrastructure</strong> - AWS CDK, Lambda, Step Functions, DynamoDB (Single-Table
+              Design), S3, API Gateway, CloudFront, Cognito.</li>
+            <li><strong>Frontend Development</strong> - React 19, TypeScript, Vite, custom JWT authorization.</li>
+            <li><strong>AI & Optical Character Recognition</strong> - Amazon Bedrock (Nova Pro), Amazon Textract, smart
+              aggregation algorithms for multi-page flattening.</li>
+            <li><strong>System Architecture</strong> - Serverless orchestration, idempotent event handling, exponential
+              backoff strategies, and warm Lambda client reuse.</li>
+          </ul>
+        </div>
+
+        <div class="modal-section">
+          <h3>Results & Outcomes</h3>
+          <p>The platform fundamentally modernized the MSBN review process, cutting average manual review times from 45
+            minutes down to 15 minutes per application. By leveraging highly optimized AWS serverless architecture
+            (costing approximately $0.35 per application), the solution delivered a ~65% cost reduction compared to
+            purely manual reviews. The resulting system successfully protects public health by identifying sophisticated
+            credential fraud while maintaining the transparent, appeal-ready documentation required of state regulatory
+            boards.</p>
+        </div>
+
+        <div class="modal-section">
+          <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1.5rem;">
+            <h3 style="margin: 0;">Demo</h3>
+            <a href="https://github.com/SRVKNDL/msbn-transcript-verification" target="_blank" class="github-modal-btn"
+              aria-label="View GitHub Repository">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z" />
+              </svg>
+              GitHub Repo
+            </a>
+          </div>
+          <div style="border-radius: 1rem; overflow: hidden; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);">
+            <video controls preload="metadata" style="width: 100%; display: block; border-radius: 1rem;"
+              aria-label="VeriScript Platform Demo">
+              <source src="./assets/projects/veriscript/demo_2x.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+          </div>
+        </div>
+
+        <div class="modal-section gallery-section">
+          <div
+            style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; margin-bottom: 0.5rem; border-bottom: 1px solid var(--border-color); padding-bottom: 0.5rem;">
+            <h3 style="margin: 0;">Innovation Hub Showcase</h3>
+          </div>
+          <div class="gallery-grid">
+            <div class="gallery-item" onclick="openLightbox(0, 'veriscript_showcase')" role="button" tabindex="0">
+              <img src="./assets/projects/veriscript/showcase1.jpg" alt="Innovation Hub Showcase 1" loading="lazy" />
+            </div>
+            <div class="gallery-item" onclick="openLightbox(1, 'veriscript_showcase')" role="button" tabindex="0">
+              <img src="./assets/projects/veriscript/showcase2.jpg" alt="Innovation Hub Showcase 2" loading="lazy" />
+            </div>
+          </div>
+        </div>
+
+        <div class="modal-section gallery-section">
+          <div
+            style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; margin-bottom: 0.5rem; border-bottom: 1px solid var(--border-color); padding-bottom: 0.5rem;">
+            <h3 style="margin: 0;">More Information</h3>
+          </div>
+          <div class="gallery-grid">
+            <div class="gallery-item" onclick="openLightbox(0, 'veriscript_more_info')" role="button" tabindex="0">
+              <img src="./assets/projects/veriscript/more_info1.jpg" alt="More Information 1" loading="lazy" />
+            </div>
+            <div class="gallery-item" onclick="openLightbox(1, 'veriscript_more_info')" role="button" tabindex="0">
+              <img src="./assets/projects/veriscript/more_info2.jpg" alt="More Information 2" loading="lazy" />
+            </div>
+            <div class="gallery-item" onclick="openLightbox(2, 'veriscript_more_info')" role="button" tabindex="0">
+              <img src="./assets/projects/veriscript/more_info3.jpg" alt="More Information 3" loading="lazy" />
+            </div>
+            <div class="gallery-item" onclick="openLightbox(3, 'veriscript_more_info')" role="button" tabindex="0">
+              <img src="./assets/projects/veriscript/more_info4.jpg" alt="More Information 4" loading="lazy" />
+            </div>
+            <div class="gallery-item" onclick="openLightbox(4, 'veriscript_more_info')" role="button" tabindex="0">
+              <img src="./assets/projects/veriscript/more_info5.jpg" alt="More Information 5" loading="lazy" />
+            </div>
+            <div class="gallery-item" onclick="openLightbox(5, 'veriscript_more_info')" role="button" tabindex="0">
+              <img src="./assets/projects/veriscript/more_info6.jpg" alt="More Information 6" loading="lazy" />
+            </div>
+            <div class="gallery-item" onclick="openLightbox(6, 'veriscript_more_info')" role="button" tabindex="0">
+              <img src="./assets/projects/veriscript/more_info7.jpg" alt="More Information 7" loading="lazy" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <!-- LIGHTBOX FOR GALLERY -->
   <div id="lightbox" class="lightbox" onclick="closeLightbox()">
     <span class="lightbox-close" onclick="closeLightbox()" role="button" tabindex="0"
@@ -910,11 +1232,11 @@
 
     <div class="contact-info-upper-container fade-in-up">
       <div class="contact-info-container">
-        <img src="./assets/email.png" alt="Email icon" class="icon contact-icon email-icon" />
+        <img src="./assets/icons/email.png" alt="Email icon" class="icon contact-icon email-icon" />
         <p><a href="mailto:Sabin.Baral@usm.edu">Sabin.Baral@usm.edu</a></p>
       </div>
       <div class="contact-info-container">
-        <img src="./assets/linkedin.png" alt="LinkedIn icon" class="icon contact-icon" />
+        <img src="./assets/icons/linkedin.png" alt="LinkedIn icon" class="icon contact-icon" />
         <p><a href="https://www.linkedin.com/in/baralsabin/" target="_blank" rel="noopener noreferrer">LinkedIn</a></p>
       </div>
     </div>
@@ -934,7 +1256,7 @@
     </nav>
     <p>Copyright &#169; 2025 Sabin Baral. All Rights Reserved.</p>
   </footer>
-  <script src="script.js"></script>
+  <script src="script.js?v=5"></script>
 </body>
 
 </html>

@@ -287,19 +287,42 @@ function initLightbox() {
   // Separate Gallery Data for each project
   const galleries = {
     printing: [
-      { src: './assets/ossila_mount.jpg', caption: 'Ossila Four-Point Probe Automated Mount' },
-      { src: './assets/n9_holder.jpg', caption: 'North Robotics N9 Drop Cast Holder' },
-      { src: './assets/1.5 by 1.5 thinfilmholderwithlid.png', caption: '1.5" × 1.5" Thin Film Holder with Lid' },
-      { src: './assets/Thinfilmholderfordifferentdimension.png', caption: '2" × 1" and 2" × 2" Thin Film Holders' },
-      { src: './assets/Loadcellcover.png', caption: 'Load Cell Protective Cover (UTM)' },
-      { src: './assets/loadcellmount2.png', caption: 'Load Cell Mount - Design 2' },
-      { src: './assets/pipetteholder2.png', caption: 'Pipette Holder - Lab Bench Design' },
-      { src: './assets/robosoccerbot.png', caption: 'Robo Soccer Bot - Optimized Ball Handler' },
-      { src: './assets/Vileholer.png', caption: 'Custom Vial Holder System' }
+      { src: './assets/projects/3d_printing/ossila_mount.jpg', caption: 'Ossila Four-Point Probe Automated Mount' },
+      { src: './assets/projects/3d_printing/n9_holder.jpg', caption: 'North Robotics N9 Drop Cast Holder' },
+      { src: './assets/projects/3d_printing/1.5 by 1.5 thinfilmholderwithlid.png', caption: '1.5" × 1.5" Thin Film Holder with Lid' },
+      { src: './assets/projects/3d_printing/Thinfilmholderfordifferentdimension.png', caption: '2" × 1" and 2" × 2" Thin Film Holders' },
+      { src: './assets/projects/3d_printing/Loadcellcover.png', caption: 'Load Cell Protective Cover (UTM)' },
+      { src: './assets/projects/3d_printing/loadcellmount2.png', caption: 'Load Cell Mount - Design 2' },
+      { src: './assets/projects/3d_printing/pipetteholder2.png', caption: 'Pipette Holder - Lab Bench Design' },
+      { src: './assets/projects/3d_printing/robosoccerbot.png', caption: 'Robo Soccer Bot - Optimized Ball Handler' },
+      { src: './assets/projects/3d_printing/Vileholer.png', caption: 'Custom Vial Holder System' }
     ],
     autonomous: [
-      { src: './assets/spectrometer_setup.jpg', caption: 'Spectrometer Setup' },
-      { src: './assets/stage_contact.jpg', caption: 'Stage & SMU Setup' }
+      { src: './assets/projects/autonomous_lab/spectrometer_setup.jpg', caption: 'Spectrometer Setup' },
+      { src: './assets/projects/autonomous_lab/stage_contact.jpg', caption: 'Stage & SMU Setup' }
+    ],
+    cms_tracker: [
+      { src: './assets/projects/cms_tracker/site_info_1.jpg', caption: 'Site Info 1' },
+      { src: './assets/projects/cms_tracker/site_info_2.jpg', caption: 'Site Info 2' },
+      { src: './assets/projects/cms_tracker/site_info_3.jpg', caption: 'Site Info 3' },
+      { src: './assets/projects/cms_tracker/site_info_4.jpg', caption: 'Site Info 4' },
+      { src: './assets/projects/cms_tracker/general_chip_info_1.jpg', caption: 'General Chip Info 1' },
+      { src: './assets/projects/cms_tracker/general_chip_info_2.jpg', caption: 'General Chip Info 2' },
+      { src: './assets/projects/cms_tracker/general_chip_info_3.jpg', caption: 'General Chip Info 3' },
+      { src: './assets/projects/cms_tracker/general_chip_info_4.jpg', caption: 'General Chip Info 4' }
+    ],
+    veriscript_showcase: [
+      { src: './assets/projects/veriscript/showcase1.jpg', caption: 'Innovation Hub Showcase 1' },
+      { src: './assets/projects/veriscript/showcase2.jpg', caption: 'Innovation Hub Showcase 2' }
+    ],
+    veriscript_more_info: [
+      { src: './assets/projects/veriscript/more_info1.jpg', caption: 'More Information 1' },
+      { src: './assets/projects/veriscript/more_info2.jpg', caption: 'More Information 2' },
+      { src: './assets/projects/veriscript/more_info3.jpg', caption: 'More Information 3' },
+      { src: './assets/projects/veriscript/more_info4.jpg', caption: 'More Information 4' },
+      { src: './assets/projects/veriscript/more_info5.jpg', caption: 'More Information 5' },
+      { src: './assets/projects/veriscript/more_info6.jpg', caption: 'More Information 6' },
+      { src: './assets/projects/veriscript/more_info7.jpg', caption: 'More Information 7' }
     ]
   };
 
