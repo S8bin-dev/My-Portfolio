@@ -302,14 +302,25 @@ function initLightbox() {
       { src: './assets/projects/autonomous_lab/stage_contact.jpg', caption: 'Stage & SMU Setup' }
     ],
     cms_tracker: [
-      { src: './assets/projects/cms_tracker/site_info_1.jpg', caption: 'Site Info 1' },
-      { src: './assets/projects/cms_tracker/site_info_2.jpg', caption: 'Site Info 2' },
-      { src: './assets/projects/cms_tracker/site_info_3.jpg', caption: 'Site Info 3' },
-      { src: './assets/projects/cms_tracker/site_info_4.jpg', caption: 'Site Info 4' },
-      { src: './assets/projects/cms_tracker/general_chip_info_1.jpg', caption: 'General Chip Info 1' },
-      { src: './assets/projects/cms_tracker/general_chip_info_2.jpg', caption: 'General Chip Info 2' },
-      { src: './assets/projects/cms_tracker/general_chip_info_3.jpg', caption: 'General Chip Info 3' },
-      { src: './assets/projects/cms_tracker/general_chip_info_4.jpg', caption: 'General Chip Info 4' }
+      { src: './assets/projects/cms_tracker/Final_slides_Sabin_Baral._page-0001.jpg', caption: 'Slide 1' },
+      { src: './assets/projects/cms_tracker/Final_slides_Sabin_Baral._page-0002.jpg', caption: 'Slide 2' },
+      { src: './assets/projects/cms_tracker/Final_slides_Sabin_Baral._page-0003.jpg', caption: 'Slide 3' },
+      { src: './assets/projects/cms_tracker/Final_slides_Sabin_Baral._page-0004.jpg', caption: 'Slide 4' },
+      { src: './assets/projects/cms_tracker/Final_slides_Sabin_Baral._page-0005.jpg', caption: 'Slide 5' },
+      { src: './assets/projects/cms_tracker/Final_slides_Sabin_Baral._page-0006.jpg', caption: 'Slide 6' },
+      { src: './assets/projects/cms_tracker/Final_slides_Sabin_Baral._page-0007.jpg', caption: 'Slide 7' },
+      { src: './assets/projects/cms_tracker/Final_slides_Sabin_Baral._page-0008.jpg', caption: 'Slide 8' },
+      { src: './assets/projects/cms_tracker/Final_slides_Sabin_Baral._page-0009.jpg', caption: 'Slide 9' },
+      { src: './assets/projects/cms_tracker/Final_slides_Sabin_Baral._page-0010.jpg', caption: 'Slide 10' },
+      { src: './assets/projects/cms_tracker/Final_slides_Sabin_Baral._page-0011.jpg', caption: 'Slide 11' },
+      { src: './assets/projects/cms_tracker/Final_slides_Sabin_Baral._page-0012.jpg', caption: 'Slide 12' },
+      { src: './assets/projects/cms_tracker/Final_slides_Sabin_Baral._page-0013.jpg', caption: 'Slide 13' },
+      { src: './assets/projects/cms_tracker/Final_slides_Sabin_Baral._page-0014.jpg', caption: 'Slide 14' },
+      { src: './assets/projects/cms_tracker/Final_slides_Sabin_Baral._page-0015.jpg', caption: 'Slide 15' },
+      { src: './assets/projects/cms_tracker/Final_slides_Sabin_Baral._page-0016.jpg', caption: 'Slide 16' },
+      { src: './assets/projects/cms_tracker/Final_slides_Sabin_Baral._page-0017.jpg', caption: 'Slide 17' },
+      { src: './assets/projects/cms_tracker/Final_slides_Sabin_Baral._page-0018.jpg', caption: 'Slide 18' },
+      { src: './assets/projects/cms_tracker/Final_slides_Sabin_Baral._page-0019.jpg', caption: 'Slide 19' }
     ],
     veriscript_showcase: [
       { src: './assets/projects/veriscript/showcase1.jpg', caption: 'Innovation Hub Showcase 1' },
