@@ -1,6 +1,6 @@
 # Sabin Baral — Research & Engineering Portfolio
 
-Version 3 of the local experimental redesign of [sabinbaral.dev](https://sabinbaral.dev). It preserves Version 2's personal hero, six alternating project cards, four expertise categories, institutional logos, contact layout, and original project detail content.
+Version 4 of the local experimental redesign of [sabinbaral.dev](https://sabinbaral.dev). The Version 3 hero, typography, publications, expertise, contact section, footer, and six-palette Theme Lab are preserved.
 
 ## Local preview
 
@@ -10,79 +10,102 @@ From the repository root:
 python3 -m http.server 8000
 ```
 
-Open <http://localhost:8000/>. No installation or build step is required. The static site uses `index.html`, `style.css`, `themes.css`, `theme.js`, `script.js`, and `assets/`. The separate `react-app/` project remains untouched.
+Open <http://localhost:8000/>. No package installation or build step is required. The separate `react-app/` project is untouched.
 
-## Theme Lab
+Editorial Copper is the default palette for new visitors in both light and dark appearance. Existing saved palette choices are retained. Light / Dark / System controls and the other five experimental palettes remain available using the palette icon beside the sun/moon button. If your preview retains a previous palette, choose Editorial Copper in Theme Lab; changing the default does not erase preferences.
 
-Click the palette icon beside the light/dark button in the header. Choose **Light**, **Dark**, or **System**, then select a palette:
+## Project hierarchy
 
-1. Midnight Research
-2. Editorial Copper
-3. Mineral Green
-4. Quantum Violet
-5. Burgundy Volt
-6. Coral Signal
+Featured cards retain the large alternating layout:
 
-All six have light and dark variants. The selector edits the palette for the currently active appearance. For example, choose Light + Mineral Green, then Dark + Quantum Violet; each is remembered independently. System follows the operating system and uses the corresponding saved palette. The existing sun/moon button remains a quick appearance toggle.
+1. High-Throughput Block Copolymer Thin-Film Fabrication and Characterization — text left, image right.
+2. CMS Inner Tracker Upgrade: Bare Module Testing & Automation — image left, text right.
+3. Real-World Problem Solving Through 3D Printing — text left, image right.
 
-Native radio controls support arrow keys; Escape closes the panel and returns focus. Preferences are stored locally under `portfolio-theme-preferences`. `theme.js` initializes the saved appearance and palette before styles load, including migration from the earlier theme preference. Palette colors and semantic supporting colors live in `themes.css`; components consume those tokens.
+More Projects contains three compact cards: Autonomous Lab, VeriScript, and Organic Solar Cells. All six original detail dialogs, research information, project links, and applicable media remain available. Image expansion and Explore Project remain separate actions. The image area is a native button with an accessible name and a subtle expand icon; there are no nested interactive controls.
 
-## Research updates
+## 3D-printing gallery
 
-- Two prominent publication cards appear side by side on desktop and stack on smaller screens.
-- The new SAXS-guided active learning manuscript displays only its approved title, author list, **Submission in progress** status, and approved short summary. Sabin Baral is emphasized in the author list. There is no abstract, manuscript file, invented journal, DOI, submission date, or unpublished download/link in the entry or its source.
-- ACS Spring 2027 replaces the old Fall 2026 conference record. The formal submitted title, New Orleans location, March 21–25 dates, POLY division, and poster type are shown with **Abstract submitted** status. Acceptance or presentation is not claimed.
-- The original ACS Nano citation, authors, and DOI link remain intact.
-- The original institution logos retain their proportions in more compact containers.
+The authoritative CSV was found at:
 
-## Social links and images
+```text
+/home/sabin/Downloads/portfolio-design-images-renamed/portfolio-design-images/image-index.csv
+```
 
-Each social profile is one anchor containing its icon and a label directly below it. Hero and contact groups use evenly sized items with the existing verified URLs.
+A byte-preserving copy is stored at `assets/projects/3d_printing/image-index.csv`. All 20 unique entries were found under their `portfolio_filename` names. There are no missing or duplicate entries. The gallery's titles, categories, filenames, and ordering are generated from that CSV into `assets/projects/3d_printing/gallery.json`.
 
-The Autonomous Lab card now uses the existing spectrometer and measurement setup photograph, distinguishing it from the block-copolymer robot and wafer-handling figure. Its new WebP preview is approximately 113 KB; the original remains untouched. A dedicated GIWAXS/GISAXS or AFM morphology figure would further strengthen the block-copolymer presentation if supplied later.
+| Category | Images |
+| --- | ---: |
+| Instrumentation & Automation | 8 |
+| X-Ray Sample Holders | 3 |
+| Robotic Liquid Handling | 3 |
+| 3D-Printed Labware | 3 |
+| Thin-Film Sample Handling | 2 |
+| Robotics Prototypes | 1 |
+| Total | 20 |
 
-Every main project image opens its original full-resolution asset in the existing lightweight viewer. Images retain their full composition, with keyboard dismissal and focus restoration. Existing project dialogs, galleries, videos, résumé, and repository links remain available. Only legacy inline color declarations were updated to shared tokens; detailed project text and media were preserved.
+The featured image is `automated-four-point-probe-motorized-mount.jpg`, titled **Automated Four-Point Probe and Motorized Stage Mount**. It was selected after inspecting the candidate photographs because the printed fixture is prominent and shown installed on the actual instrument.
+
+Explore Project opens the gallery inside the existing 3D-printing dialog. Filters show the exact category counts. The image viewer displays the original image, CSV title, category, and position within the selected category. It supports previous/next navigation, arrow keys, Escape, focus restoration, and an original-resolution link. Single-image categories omit inactive navigation controls.
+
+Responsive WebP previews are generated at 360 and up to 720 pixels wide, with an additional 1200-pixel featured preview. The 41 generated previews total about 1.1 MB. Smaller originals are not upscaled. Images retain their aspect ratio, use `object-fit: contain`, explicit dimensions, and lazy loading. Gallery metadata is fetched when needed; full-resolution gallery images load only when requested. Supplied source files are not overwritten during optimization.
+
+To regenerate metadata and previews after editing the CSV or supplying images:
+
+```bash
+python3 scripts/build-printing-gallery.py
+```
+
+The generator uses Python's standard library and the existing ImageMagick `identify` and `convert` commands. These tools are only needed to regenerate assets; the website has no new package or runtime dependency.
+
+## Bug fixes and content accuracy
+
+The Argonne PNG contains a two-pixel gray strip at its extreme left edge, separate from the wordmark. The image file is unchanged. A dedicated CSS rule sizes its box to the original aspect ratio and clips one rendered pixel from that outer edge; the legitimate branding remains intact. The other institution assets are unchanged.
+
+The inherited description of sample capacity said 100 samples replacing 20 was a 500% increase. This was corrected to a **400% increase** while preserving the original sample counts.
+
+The block-copolymer 40% metric remains **characterization-time reduction**, matching the explicit detailed text in the original repository. The new brief refers to throughput; confirm if fabrication throughput was intended instead. The 75% detector-testing efficiency increase and 15% solar-cell efficiency improvement are also preserved from the original cards, but their baseline and calculation still need clarification.
+
+The two publication cards and ACS Spring 2027 conference information are unchanged. The SAXS-guided manuscript retains only the approved title, authors, Submission in progress status, and short summary. No full abstract, unpublished quantitative results, manuscript file, or manuscript link was introduced.
 
 ## Verification
 
-The static site has no build command. Both JavaScript files, inline handlers, and both CSS files parse successfully. Asset references, gallery paths, image labels, IDs, anchors, manuscript fields, and conference status were checked.
+The buildless HTML/CSS/JavaScript site needs no compilation step. JavaScript syntax, CSS parsing, HTML attributes/IDs, local paths, CSV/JSON parity, and the staged whitespace check pass. The supplied CSV retains its original CRLF line endings, so that check uses `git -c core.whitespace=cr-at-eol diff --cached --check`.
 
-Isolated headless Chrome passed **512 checks** across all twelve palette/appearance combinations and widths of 320, 375, 768, 1280, 1440, and 1920 pixels. Coverage includes the Theme Lab, native radio keyboard controls, independent preference persistence, operating system changes, navigation, project stacking, image enlargement, nested galleries, dialog focus, contact validation, simulated form responses, and reduced motion. No horizontal overflow, JavaScript runtime errors, or failed local asset requests were observed. Twelve additional checks verified the image-caption focus indicator across all variants.
+A local headless Chrome run passed **233 browser checks** with no JavaScript exceptions or failed local requests. It covered Copper light/dark at 320, 375, 768, 1280, 1440, and 1920 pixels; saved preferences and OS appearance changes; responsive project/gallery layouts; all six project dialogs and main image actions; all 20 gallery originals; category filtering and navigation; keyboard focus trapping/restoration; mobile navigation; Theme Lab; résumé, DOI, navigation, and social destinations; and reduced motion. Corrected gallery renders were visually reviewed at desktop, tablet, and narrow mobile sizes. Across all 12 palette/appearance combinations, 3,456 sampled text contrast checks produced no failures; the lowest sampled ratio was 4.60:1. This is targeted verification, not a formal accessibility certification.
 
-The contrast audit checked 2,328 visible text samples across the twelve combinations, including form feedback and Theme Lab controls, plus project dialog colors. No failures remained after adjusting five legacy labels in Coral Signal light mode. The lowest main-page text ratio measured was 4.6:1. Form boundaries, hover surfaces, and focus tokens also met the tested thresholds. This is targeted automated and visual verification, not a complete accessibility certification.
+The 20 supplied image binaries and updated résumé match their pre-edit backup. The CSV copy matches the supplied CSV byte for byte, the Argonne PNG is unchanged, and publication/conference content matches Version 3. No unpublished manuscript content was added.
 
-Representative desktop and mobile screenshots were captured and inspected, with palette contact sheets used to compare all twelve combinations. The two publication cards, compact facility logos, new instrumentation photo, and small-screen Theme Lab were reviewed.
+Remote checks returned HTTP 200 for GitHub, Google Scholar, project repositories, and research-group links. LinkedIn returned 999; ACS (after DOI redirect), Thingiverse, and CMS returned 403. These four destinations remain unchanged because automated access was denied; their live page contents could not be verified in this run.
 
-The form retains `https://formspree.io/f/xqarlrdl`. Success and failure behavior use simulated responses during testing; no real message was sent, so actual email delivery remains unverified. No package dependency or backend was added.
+The contact form retains the existing Formspree endpoint. Validation and response feedback are tested with simulated responses; no test message is sent, so actual email delivery remains unverified. Existing public link destinations are retained; automated remote availability checks may be limited by access controls or anti-bot responses.
 
-## Content requiring clarification
+## Git safety and recoverable versions
 
-The project metrics were checked against the original repository. The 40% reduction remains **characterization time**, as explicitly stated in the detailed source. The 75% testing efficiency increase and 15% solar-cell efficiency improvement are preserved from the original project cards, but their baseline and calculation are not documented. Confirm those definitions before publication. The manuscript and conference statuses should only be advanced after a confirmed submission or acceptance.
+All work remains on `experiment/portfolio-redesign`. Nothing was pushed, merged, published, or deployed. The production branch, `CNAME`, DNS, and deployment settings were not changed.
 
-## Recoverable Git versions
-
-All changes remain on `experiment/portfolio-redesign`. Nothing was pushed, merged, or deployed. `main`, `CNAME`, DNS, and hosting settings were not changed.
+The working tree initially contained 20 supplied gallery images, 11 removed legacy filenames, and an updated résumé. Their pre-edit state was preserved in `/tmp/portfolio-v4-user-assets-2026-11-09`. With explicit approval, the gallery assets, intentional renames/replacements, and updated résumé are included in the Version 4 local checkpoint. Earlier filenames and source files remain recoverable in Version 3. The supplied images in Downloads are untouched.
 
 | Version | Local checkpoint |
 | --- | --- |
 | Original | `main` and `portfolio-before-redesign-2026-11-08` at `8fe4462` |
-| First redesign | Annotated `portfolio-redesign-v1` at `dc8366b` |
-| Second redesign | Annotated `portfolio-redesign-v2` at `4334e3b` |
-| Version 2 before this work | Annotated `portfolio-redesign-v2-before-v3-2026-11-08` at `4334e3b` |
-| Third iteration | Annotated `portfolio-redesign-v3` and `experiment/portfolio-redesign` |
+| Version 1 | `portfolio-redesign-v1` at `dc8366b` |
+| Version 2 | `portfolio-redesign-v2` at `4334e3b` |
+| Version 3 | `portfolio-redesign-v3` at `c5de0cd` |
+| Before Version 4 | `portfolio-redesign-v3-before-v4-2026-11-09` at `c5de0cd` |
+| Version 4 | `portfolio-redesign-v4` and `experiment/portfolio-redesign` |
 
-After preserving any future uncommitted edits, use:
+After preserving any future uncommitted edits:
 
 ```bash
 # Return to the original website
 git switch main
 
-# Inspect an earlier redesign without modifying its checkpoint
-git switch --detach portfolio-redesign-v1
-git switch --detach portfolio-redesign-v2
+# Inspect a prior version without changing its checkpoint
+git switch --detach portfolio-redesign-v3
 
-# Return to the Version 3 experiment
+# Return to Version 4
 git switch experiment/portfolio-redesign
 ```
 
-Do not discard uncommitted changes automatically. Publication requires explicit approval before a merge or push.
+Do not discard uncommitted changes automatically. Publication requires explicit approval before merging or pushing.

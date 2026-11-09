@@ -29,6 +29,7 @@ window.openModal = function (id) {
   modal.setAttribute('aria-hidden', 'false');
   syncScrollLock();
   modal.querySelector('.close')?.focus();
+  if (id === 'modal3') initPrintingGallery();
 };
 window.closeModal = function (id) {
   const modal = document.getElementById(id);
@@ -40,17 +41,7 @@ window.closeModal = function (id) {
 };
 
   const galleries = {
-    printing: [
-      { src: './assets/projects/3d_printing/ossila_mount.jpg', caption: 'Ossila Four-Point Probe Automated Mount' },
-      { src: './assets/projects/3d_printing/n9_holder.jpg', caption: 'North Robotics N9 Drop Cast Holder' },
-      { src: './assets/projects/3d_printing/1.5 by 1.5 thinfilmholderwithlid.png', caption: '1.5" × 1.5" Thin Film Holder with Lid' },
-      { src: './assets/projects/3d_printing/Thinfilmholderfordifferentdimension.png', caption: '2" × 1" and 2" × 2" Thin Film Holders' },
-      { src: './assets/projects/3d_printing/Loadcellcover.png', caption: 'Load Cell Protective Cover (UTM)' },
-      { src: './assets/projects/3d_printing/loadcellmount2.png', caption: 'Load Cell Mount - Design 2' },
-      { src: './assets/projects/3d_printing/pipetteholder2.png', caption: 'Pipette Holder - Lab Bench Design' },
-      { src: './assets/projects/3d_printing/robosoccerbot.png', caption: 'Robo Soccer Bot - Optimized Ball Handler' },
-      { src: './assets/projects/3d_printing/Vileholer.png', caption: 'Custom Vial Holder System' }
-    ],
+    printing: [],
     autonomous: [
       { src: './assets/projects/autonomous_lab/spectrometer_setup.jpg', caption: 'Spectrometer Setup' },
       { src: './assets/projects/autonomous_lab/stage_contact.jpg', caption: 'Stage & SMU Setup' }
@@ -92,6 +83,134 @@ window.closeModal = function (id) {
   };
 
 
+let printingDataPromise = null;
+let printingData = null;
+let printingCategory = 'all';
+
+function galleryImage(item) {
+  return { src: item.src, caption: item.display_title, category: item.gallery_category };
+}
+
+function loadPrintingData() {
+  if (!printingDataPromise) {
+    printingDataPromise = fetch('./assets/projects/3d_printing/gallery.json')
+      .then(response => {
+        if (!response.ok) throw new Error('Gallery data could not be loaded.');
+        return response.json();
+      })
+      .then(data => {
+        if (!Array.isArray(data.images) || !Array.isArray(data.categories)) throw new Error('Invalid gallery data.');
+        printingData = data;
+        return data;
+      })
+      .catch(error => { printingDataPromise = null; throw error; });
+  }
+  return printingDataPromise;
+}
+
+function applyPrintingFilter(category) {
+  printingCategory = category;
+  const cards = [...document.querySelectorAll('#printingGalleryGrid .design-card')];
+  cards.forEach(card => { card.hidden = category !== 'all' && card.dataset.category !== category; });
+  document.querySelectorAll('#printingGalleryFilters button').forEach(button => {
+    button.setAttribute('aria-pressed', String(button.dataset.category === category));
+  });
+  const count = cards.filter(card => !card.hidden).length;
+  document.getElementById('printingGalleryStatus').textContent = `Showing ${count} of ${printingData.images.length} images`;
+}
+
+function openPrintingImage(filename, trigger) {
+  const images = printingData.images.filter(item => printingCategory === 'all' || item.gallery_category === printingCategory);
+  const index = images.findIndex(item => item.portfolio_filename === filename);
+  if (index < 0) return;
+  galleries.printing = images.map(galleryImage);
+  lightboxReturnFocus = trigger;
+  standaloneImage = null;
+  currentGallery = 'printing';
+  currentImageIndex = index;
+  showLightbox();
+}
+
+async function initPrintingGallery() {
+  const grid = document.getElementById('printingGalleryGrid');
+  const filters = document.getElementById('printingGalleryFilters');
+  const status = document.getElementById('printingGalleryStatus');
+  const retry = document.getElementById('printingGalleryRetry');
+  retry.hidden = true;
+  grid.setAttribute('aria-busy', 'true');
+  try {
+    const data = await loadPrintingData();
+    if (!grid.dataset.rendered) {
+      const categories = [{ name: 'All Designs', count: data.images.length, value: 'all' }, ...data.categories.map(item => ({ ...item, value: item.name }))];
+      filters.replaceChildren(...categories.map(item => {
+        const button = document.createElement('button');
+        button.type = 'button';
+        button.className = 'gallery-filter';
+        button.dataset.category = item.value;
+        button.append(document.createTextNode(item.name + ' '));
+        const count = document.createElement('span');
+        count.textContent = item.count;
+        button.append(count);
+        button.addEventListener('click', () => applyPrintingFilter(item.value));
+        return button;
+      }));
+      grid.replaceChildren(...data.images.map(item => {
+        const button = document.createElement('button');
+        button.type = 'button';
+        button.className = 'design-card';
+        button.dataset.category = item.gallery_category;
+        button.dataset.filename = item.portfolio_filename;
+        button.setAttribute('aria-label', `Enlarge ${item.display_title} — ${item.gallery_category}`);
+        const frame = document.createElement('span');
+        frame.className = 'design-image';
+        const image = document.createElement('img');
+        image.src = item.thumbnail;
+        image.srcset = item.srcset;
+        image.sizes = '(max-width: 520px) calc(100vw - 96px), (max-width: 920px) 40vw, 330px';
+        image.width = item.thumbnail_width;
+        image.height = item.thumbnail_height;
+        image.loading = 'lazy';
+        image.decoding = 'async';
+        image.alt = item.display_title;
+        frame.append(image);
+        frame.append(document.querySelector('.project-media .expand-icon').cloneNode(true));
+        const caption = document.createElement('span');
+        caption.className = 'design-caption';
+        const title = document.createElement('strong');
+        title.textContent = item.display_title;
+        const category = document.createElement('span');
+        category.textContent = item.gallery_category;
+        caption.append(title, category);
+        button.append(frame, caption);
+        button.addEventListener('click', () => openPrintingImage(item.portfolio_filename, button));
+        return button;
+      }));
+      grid.dataset.rendered = 'true';
+    }
+    applyPrintingFilter(printingCategory);
+  } catch (_) {
+    status.textContent = 'The design gallery could not be loaded. Please try again.';
+    retry.hidden = false;
+  } finally {
+    grid.setAttribute('aria-busy', 'false');
+  }
+}
+
+async function handleProjectImage(button) {
+  let caption = button.dataset.imageCaption;
+  let category = '';
+  if (button.dataset.printingFile) {
+    button.setAttribute('aria-busy', 'true');
+    try {
+      const data = await loadPrintingData();
+      const item = data.images.find(item => item.portfolio_filename === button.dataset.printingFile);
+      if (item) { caption = item.display_title; category = item.gallery_category; }
+    } catch (_) { /* The supplied image can still open if gallery metadata fails. */ }
+    finally { button.setAttribute('aria-busy', 'false'); }
+  }
+  openProjectImage(button.dataset.imageSrc, caption, button, category);
+}
+
 function showLightbox() {
   const lightbox = document.getElementById('lightbox');
   lightbox.classList.add('active');
@@ -108,9 +227,9 @@ window.openLightbox = function (index, gallery = 'printing') {
   currentImageIndex = index;
   showLightbox();
 };
-function openProjectImage(src, caption, trigger) {
+function openProjectImage(src, caption, trigger, category = '') {
   lightboxReturnFocus = trigger;
-  standaloneImage = { src, caption };
+  standaloneImage = { src, caption, category };
   currentImageIndex = 0;
   showLightbox();
 }
@@ -121,6 +240,12 @@ function updateLightbox() {
   img.src = item.src;
   img.alt = item.caption;
   document.getElementById('lightbox-caption').textContent = item.caption;
+  const category = document.getElementById('lightbox-category');
+  category.textContent = item.category || '';
+  category.hidden = !item.category;
+  const original = document.getElementById('lightbox-original');
+  original.href = item.src;
+  original.hidden = false;
   const counter = document.getElementById('lightbox-counter');
   counter.textContent = `${currentImageIndex + 1} / ${images.length}`;
   counter.hidden = images.length === 1;
@@ -132,6 +257,8 @@ window.closeLightbox = function () {
   lightbox.classList.remove('active');
   lightbox.setAttribute('aria-hidden', 'true');
   document.getElementById('lightbox-img').removeAttribute('src');
+  document.getElementById('lightbox-original').removeAttribute('href');
+  document.getElementById('lightbox-original').hidden = true;
   syncScrollLock();
   lightboxReturnFocus?.focus();
 };
@@ -188,7 +315,8 @@ document.addEventListener('DOMContentLoaded', () => {
   menu.querySelectorAll('a').forEach(link => link.addEventListener('click', closeMenu));
   matchMedia('(min-width: 921px)').addEventListener('change', event => { if (event.matches) closeMenu(); });
   document.addEventListener('click', event => { if (!event.target.closest('.nav-shell')) closeMenu(); });
-  document.querySelectorAll('[data-image-src]').forEach(button => button.addEventListener('click', () => openProjectImage(button.dataset.imageSrc, button.dataset.imageCaption, button)));
+  document.querySelectorAll('[data-image-src]').forEach(button => button.addEventListener('click', () => handleProjectImage(button)));
+  document.getElementById('printingGalleryRetry').addEventListener('click', initPrintingGallery);
   document.querySelectorAll('[data-modal]').forEach(button => button.addEventListener('click', () => openModal(button.dataset.modal)));
   document.querySelectorAll('.modal').forEach(modal => {
     modal.setAttribute('aria-hidden', 'true');

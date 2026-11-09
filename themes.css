@@ -1,5 +1,4 @@
 /* Palette values live here; components use shared semantic tokens. */
-:root,
 :root[data-palette="midnight"][data-theme="light"] {
   --bg: #f1f6fd;
   --surface: #ffffff;
@@ -18,6 +17,7 @@
   --secondary: #39d4e8;
   --line: #34445c;
 }
+:root,
 :root[data-palette="copper"][data-theme="light"] {
   --bg: #faf6f0;
   --surface: #ffffff;

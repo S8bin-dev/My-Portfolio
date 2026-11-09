@@ -11,7 +11,7 @@
   };
   const appearances = ['light', 'dark', 'system'];
   const system = matchMedia('(prefers-color-scheme: dark)');
-  const preferences = { appearance: 'system', palettes: { light: 'midnight', dark: 'midnight' } };
+  const preferences = { appearance: 'system', palettes: { light: 'copper', dark: 'copper' } };
   try {
     const saved = JSON.parse(localStorage.getItem(storageKey));
     if (saved && typeof saved === 'object') {

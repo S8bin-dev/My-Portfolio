@@ -1,0 +1,293 @@
+{
+  "source": "image-index.csv",
+  "image_count": 20,
+  "featured_filename": "automated-four-point-probe-motorized-mount.jpg",
+  "categories": [
+    {
+      "name": "Instrumentation & Automation",
+      "count": 8
+    },
+    {
+      "name": "X-Ray Sample Holders",
+      "count": 3
+    },
+    {
+      "name": "Robotic Liquid Handling",
+      "count": 3
+    },
+    {
+      "name": "3D-Printed Labware",
+      "count": 3
+    },
+    {
+      "name": "Thin-Film Sample Handling",
+      "count": 2
+    },
+    {
+      "name": "Robotics Prototypes",
+      "count": 1
+    }
+  ],
+  "images": [
+    {
+      "original_filename": "PXL_20261109_182116204.jpg",
+      "portfolio_filename": "xray-multi-sample-holder-closeup.jpg",
+      "display_title": "3D-Printed Multi-Sample X-Ray Holder — Close-Up",
+      "gallery_category": "X-Ray Sample Holders",
+      "src": "./assets/projects/3d_printing/xray-multi-sample-holder-closeup.jpg",
+      "width": 2048,
+      "height": 1542,
+      "thumbnail": "./assets/optimized/3d_printing/xray-multi-sample-holder-closeup-360.webp",
+      "thumbnail_width": 360,
+      "thumbnail_height": 271,
+      "srcset": "./assets/optimized/3d_printing/xray-multi-sample-holder-closeup-360.webp 360w, ./assets/optimized/3d_printing/xray-multi-sample-holder-closeup-720.webp 720w"
+    },
+    {
+      "original_filename": "Load Cell and Four Point Probe Mount.jpg",
+      "portfolio_filename": "automated-four-point-probe-motorized-mount.jpg",
+      "display_title": "Automated Four-Point Probe and Motorized Stage Mount",
+      "gallery_category": "Instrumentation & Automation",
+      "src": "./assets/projects/3d_printing/automated-four-point-probe-motorized-mount.jpg",
+      "width": 2048,
+      "height": 1542,
+      "thumbnail": "./assets/optimized/3d_printing/automated-four-point-probe-motorized-mount-360.webp",
+      "thumbnail_width": 360,
+      "thumbnail_height": 271,
+      "srcset": "./assets/optimized/3d_printing/automated-four-point-probe-motorized-mount-360.webp 360w, ./assets/optimized/3d_printing/automated-four-point-probe-motorized-mount-720.webp 720w, ./assets/optimized/3d_printing/automated-four-point-probe-motorized-mount-1200.webp 1200w"
+    },
+    {
+      "original_filename": "PXL_20261109_181656945.jpg",
+      "portfolio_filename": "automated-sample-tray-48-position.jpg",
+      "display_title": "48-Position Automated Sample Tray",
+      "gallery_category": "Instrumentation & Automation",
+      "src": "./assets/projects/3d_printing/automated-sample-tray-48-position.jpg",
+      "width": 1542,
+      "height": 2048,
+      "thumbnail": "./assets/optimized/3d_printing/automated-sample-tray-48-position-360.webp",
+      "thumbnail_width": 360,
+      "thumbnail_height": 478,
+      "srcset": "./assets/optimized/3d_printing/automated-sample-tray-48-position-360.webp 360w, ./assets/optimized/3d_printing/automated-sample-tray-48-position-720.webp 720w"
+    },
+    {
+      "original_filename": "PXL_20261109_181707550.jpg",
+      "portfolio_filename": "integrated-polymer-lab-automation-system.jpg",
+      "display_title": "Integrated Laboratory Automation Workstation",
+      "gallery_category": "Instrumentation & Automation",
+      "src": "./assets/projects/3d_printing/integrated-polymer-lab-automation-system.jpg",
+      "width": 2048,
+      "height": 1542,
+      "thumbnail": "./assets/optimized/3d_printing/integrated-polymer-lab-automation-system-360.webp",
+      "thumbnail_width": 360,
+      "thumbnail_height": 271,
+      "srcset": "./assets/optimized/3d_printing/integrated-polymer-lab-automation-system-360.webp 360w, ./assets/optimized/3d_printing/integrated-polymer-lab-automation-system-720.webp 720w"
+    },
+    {
+      "original_filename": "PXL_20261109_181920775.jpg",
+      "portfolio_filename": "opentrons-custom-reagent-vial-racks.jpg",
+      "display_title": "Custom Reagent Vial Racks for Opentrons OT-2",
+      "gallery_category": "Robotic Liquid Handling",
+      "src": "./assets/projects/3d_printing/opentrons-custom-reagent-vial-racks.jpg",
+      "width": 2048,
+      "height": 1542,
+      "thumbnail": "./assets/optimized/3d_printing/opentrons-custom-reagent-vial-racks-360.webp",
+      "thumbnail_width": 360,
+      "thumbnail_height": 271,
+      "srcset": "./assets/optimized/3d_printing/opentrons-custom-reagent-vial-racks-360.webp 360w, ./assets/optimized/3d_printing/opentrons-custom-reagent-vial-racks-720.webp 720w"
+    },
+    {
+      "original_filename": "PXL_20261109_181952195.jpg",
+      "portfolio_filename": "opentrons-96-well-plate-support.jpg",
+      "display_title": "3D-Printed 96-Well Plate Support",
+      "gallery_category": "Robotic Liquid Handling",
+      "src": "./assets/projects/3d_printing/opentrons-96-well-plate-support.jpg",
+      "width": 2048,
+      "height": 1542,
+      "thumbnail": "./assets/optimized/3d_printing/opentrons-96-well-plate-support-360.webp",
+      "thumbnail_width": 360,
+      "thumbnail_height": 271,
+      "srcset": "./assets/optimized/3d_printing/opentrons-96-well-plate-support-360.webp 360w, ./assets/optimized/3d_printing/opentrons-96-well-plate-support-720.webp 720w"
+    },
+    {
+      "original_filename": "PXL_20261109_181633206.jpg",
+      "portfolio_filename": "fiber-optic-spectroscopy-probe-mount.jpg",
+      "display_title": "Custom Fiber-Optic Probe Mount",
+      "gallery_category": "Instrumentation & Automation",
+      "src": "./assets/projects/3d_printing/fiber-optic-spectroscopy-probe-mount.jpg",
+      "width": 1542,
+      "height": 2048,
+      "thumbnail": "./assets/optimized/3d_printing/fiber-optic-spectroscopy-probe-mount-360.webp",
+      "thumbnail_width": 360,
+      "thumbnail_height": 478,
+      "srcset": "./assets/optimized/3d_printing/fiber-optic-spectroscopy-probe-mount-360.webp 360w, ./assets/optimized/3d_printing/fiber-optic-spectroscopy-probe-mount-720.webp 720w"
+    },
+    {
+      "original_filename": "PXL_20261109_182140964.jpg",
+      "portfolio_filename": "xray-multi-sample-holder-instrument-installed.jpg",
+      "display_title": "Multi-Sample X-Ray Holder — Instrument Setup",
+      "gallery_category": "X-Ray Sample Holders",
+      "src": "./assets/projects/3d_printing/xray-multi-sample-holder-instrument-installed.jpg",
+      "width": 2048,
+      "height": 1542,
+      "thumbnail": "./assets/optimized/3d_printing/xray-multi-sample-holder-instrument-installed-360.webp",
+      "thumbnail_width": 360,
+      "thumbnail_height": 271,
+      "srcset": "./assets/optimized/3d_printing/xray-multi-sample-holder-instrument-installed-360.webp 360w, ./assets/optimized/3d_printing/xray-multi-sample-holder-instrument-installed-720.webp 720w"
+    },
+    {
+      "original_filename": "Xraybaseholder.jpg",
+      "portfolio_filename": "xray-sample-holder-compact-storage-rack.jpg",
+      "display_title": "Compact X-Ray Sample Holder Storage Rack",
+      "gallery_category": "X-Ray Sample Holders",
+      "src": "./assets/projects/3d_printing/xray-sample-holder-compact-storage-rack.jpg",
+      "width": 1542,
+      "height": 2048,
+      "thumbnail": "./assets/optimized/3d_printing/xray-sample-holder-compact-storage-rack-360.webp",
+      "thumbnail_width": 360,
+      "thumbnail_height": 478,
+      "srcset": "./assets/optimized/3d_printing/xray-sample-holder-compact-storage-rack-360.webp 360w, ./assets/optimized/3d_printing/xray-sample-holder-compact-storage-rack-720.webp 720w"
+    },
+    {
+      "original_filename": "n9_holder.jpg",
+      "portfolio_filename": "automated-pipetting-sample-and-plate-rack.jpg",
+      "display_title": "Robotic Pipetting Sample and Plate Rack",
+      "gallery_category": "Robotic Liquid Handling",
+      "src": "./assets/projects/3d_printing/automated-pipetting-sample-and-plate-rack.jpg",
+      "width": 1542,
+      "height": 2048,
+      "thumbnail": "./assets/optimized/3d_printing/automated-pipetting-sample-and-plate-rack-360.webp",
+      "thumbnail_width": 360,
+      "thumbnail_height": 478,
+      "srcset": "./assets/optimized/3d_printing/automated-pipetting-sample-and-plate-rack-360.webp 360w, ./assets/optimized/3d_printing/automated-pipetting-sample-and-plate-rack-720.webp 720w"
+    },
+    {
+      "original_filename": "ossila_mount.jpg",
+      "portfolio_filename": "ossila-four-point-probe-thorlabs-stage-mount.jpg",
+      "display_title": "Ossila Four-Point Probe and Thorlabs Stage Mount",
+      "gallery_category": "Instrumentation & Automation",
+      "src": "./assets/projects/3d_printing/ossila-four-point-probe-thorlabs-stage-mount.jpg",
+      "width": 2048,
+      "height": 1542,
+      "thumbnail": "./assets/optimized/3d_printing/ossila-four-point-probe-thorlabs-stage-mount-360.webp",
+      "thumbnail_width": 360,
+      "thumbnail_height": 271,
+      "srcset": "./assets/optimized/3d_printing/ossila-four-point-probe-thorlabs-stage-mount-360.webp 360w, ./assets/optimized/3d_printing/ossila-four-point-probe-thorlabs-stage-mount-720.webp 720w"
+    },
+    {
+      "original_filename": "robosoccerbot.png",
+      "portfolio_filename": "robot-soccer-mobile-gripper-prototype.png",
+      "display_title": "Robot Soccer Mobile Gripper Prototype",
+      "gallery_category": "Robotics Prototypes",
+      "src": "./assets/projects/3d_printing/robot-soccer-mobile-gripper-prototype.png",
+      "width": 512,
+      "height": 512,
+      "thumbnail": "./assets/optimized/3d_printing/robot-soccer-mobile-gripper-prototype-360.webp",
+      "thumbnail_width": 360,
+      "thumbnail_height": 360,
+      "srcset": "./assets/optimized/3d_printing/robot-soccer-mobile-gripper-prototype-360.webp 360w, ./assets/optimized/3d_printing/robot-soccer-mobile-gripper-prototype-720.webp 512w"
+    },
+    {
+      "original_filename": "pipetteholder2.png",
+      "portfolio_filename": "bench-clamp-pipette-holder-design.png",
+      "display_title": "Bench-Clamp Pipette Holder Design",
+      "gallery_category": "3D-Printed Labware",
+      "src": "./assets/projects/3d_printing/bench-clamp-pipette-holder-design.png",
+      "width": 512,
+      "height": 512,
+      "thumbnail": "./assets/optimized/3d_printing/bench-clamp-pipette-holder-design-360.webp",
+      "thumbnail_width": 360,
+      "thumbnail_height": 360,
+      "srcset": "./assets/optimized/3d_printing/bench-clamp-pipette-holder-design-360.webp 360w, ./assets/optimized/3d_printing/bench-clamp-pipette-holder-design-720.webp 512w"
+    },
+    {
+      "original_filename": "pipetteholder1.png",
+      "portfolio_filename": "dual-micropipette-stand.png",
+      "display_title": "3D-Printed Dual Micropipette Stand",
+      "gallery_category": "3D-Printed Labware",
+      "src": "./assets/projects/3d_printing/dual-micropipette-stand.png",
+      "width": 512,
+      "height": 512,
+      "thumbnail": "./assets/optimized/3d_printing/dual-micropipette-stand-360.webp",
+      "thumbnail_width": 360,
+      "thumbnail_height": 360,
+      "srcset": "./assets/optimized/3d_printing/dual-micropipette-stand-360.webp 360w, ./assets/optimized/3d_printing/dual-micropipette-stand-720.webp 512w"
+    },
+    {
+      "original_filename": "loadcellmount2.png",
+      "portfolio_filename": "load-cell-mount-installed.png",
+      "display_title": "Custom Load Cell Mount — Installed",
+      "gallery_category": "Instrumentation & Automation",
+      "src": "./assets/projects/3d_printing/load-cell-mount-installed.png",
+      "width": 512,
+      "height": 512,
+      "thumbnail": "./assets/optimized/3d_printing/load-cell-mount-installed-360.webp",
+      "thumbnail_width": 360,
+      "thumbnail_height": 360,
+      "srcset": "./assets/optimized/3d_printing/load-cell-mount-installed-360.webp 360w, ./assets/optimized/3d_printing/load-cell-mount-installed-720.webp 512w"
+    },
+    {
+      "original_filename": "loadcellmount1.png",
+      "portfolio_filename": "load-cell-mount-prototype.png",
+      "display_title": "3D-Printed Load Cell Mount — Prototype",
+      "gallery_category": "Instrumentation & Automation",
+      "src": "./assets/projects/3d_printing/load-cell-mount-prototype.png",
+      "width": 512,
+      "height": 512,
+      "thumbnail": "./assets/optimized/3d_printing/load-cell-mount-prototype-360.webp",
+      "thumbnail_width": 360,
+      "thumbnail_height": 360,
+      "srcset": "./assets/optimized/3d_printing/load-cell-mount-prototype-360.webp 360w, ./assets/optimized/3d_printing/load-cell-mount-prototype-720.webp 512w"
+    },
+    {
+      "original_filename": "Vileholer.png",
+      "portfolio_filename": "custom-lab-sample-vial-rack.png",
+      "display_title": "3D-Printed Laboratory Sample Vial Rack",
+      "gallery_category": "3D-Printed Labware",
+      "src": "./assets/projects/3d_printing/custom-lab-sample-vial-rack.png",
+      "width": 512,
+      "height": 512,
+      "thumbnail": "./assets/optimized/3d_printing/custom-lab-sample-vial-rack-360.webp",
+      "thumbnail_width": 360,
+      "thumbnail_height": 360,
+      "srcset": "./assets/optimized/3d_printing/custom-lab-sample-vial-rack-360.webp 360w, ./assets/optimized/3d_printing/custom-lab-sample-vial-rack-720.webp 512w"
+    },
+    {
+      "original_filename": "Thinfilmholderfordifferentdimension.png",
+      "portfolio_filename": "multi-size-thin-film-sample-holders.png",
+      "display_title": "Modular Thin-Film Holders for Multiple Sample Sizes",
+      "gallery_category": "Thin-Film Sample Handling",
+      "src": "./assets/projects/3d_printing/multi-size-thin-film-sample-holders.png",
+      "width": 512,
+      "height": 512,
+      "thumbnail": "./assets/optimized/3d_printing/multi-size-thin-film-sample-holders-360.webp",
+      "thumbnail_width": 360,
+      "thumbnail_height": 360,
+      "srcset": "./assets/optimized/3d_printing/multi-size-thin-film-sample-holders-360.webp 360w, ./assets/optimized/3d_printing/multi-size-thin-film-sample-holders-720.webp 512w"
+    },
+    {
+      "original_filename": "Loadcellcover.png",
+      "portfolio_filename": "load-cell-protective-enclosures.png",
+      "display_title": "Custom Load Cell Protective Enclosures",
+      "gallery_category": "Instrumentation & Automation",
+      "src": "./assets/projects/3d_printing/load-cell-protective-enclosures.png",
+      "width": 720,
+      "height": 544,
+      "thumbnail": "./assets/optimized/3d_printing/load-cell-protective-enclosures-360.webp",
+      "thumbnail_width": 360,
+      "thumbnail_height": 272,
+      "srcset": "./assets/optimized/3d_printing/load-cell-protective-enclosures-360.webp 360w, ./assets/optimized/3d_printing/load-cell-protective-enclosures-720.webp 720w"
+    },
+    {
+      "original_filename": "1.5 by 1.5 thinfilmholderwithlid.png",
+      "portfolio_filename": "thin-film-sample-holder-with-lid.png",
+      "display_title": "Thin-Film Sample Holder with Matching Lid",
+      "gallery_category": "Thin-Film Sample Handling",
+      "src": "./assets/projects/3d_printing/thin-film-sample-holder-with-lid.png",
+      "width": 512,
+      "height": 512,
+      "thumbnail": "./assets/optimized/3d_printing/thin-film-sample-holder-with-lid-360.webp",
+      "thumbnail_width": 360,
+      "thumbnail_height": 360,
+      "srcset": "./assets/optimized/3d_printing/thin-film-sample-holder-with-lid-360.webp 360w, ./assets/optimized/3d_printing/thin-film-sample-holder-with-lid-720.webp 512w"
+    }
+  ]
+}
