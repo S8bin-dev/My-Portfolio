@@ -13,10 +13,11 @@
     <meta property="og:url" content="https://sabinbaral.dev/">
     <meta property="og:type" content="website">
     <link rel="icon" type="image/png" href="./assets/icons/favicon.png">
-    <script>try{const saved=localStorage.getItem('portfolio-theme');const legacy=localStorage.getItem('darkMode');document.documentElement.dataset.theme=saved || (legacy==='enabled'?'dark':legacy==='disabled'?'light':(matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light'))}catch(e){document.documentElement.dataset.theme=matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light'}</script>
+    <script src="theme.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="themes.css">
     <link rel="stylesheet" href="style.css">
   </head>
   <body>
@@ -44,15 +45,66 @@
           <a class="nav-resume" href="./assets/profile/Sabin-Baral-Resume.pdf" target="_blank" rel="noopener">Résumé <span aria-hidden="true">↗</span>
           </a>
         </div>
-        <button class="theme-toggle" id="themeToggle" type="button" aria-label="Switch to dark theme" aria-pressed="false">
-          <svg class="sun-icon" viewBox="0 0 24 24" aria-hidden="true">
-            <circle cx="12" cy="12" r="4"/>
-            <path d="M12 2v2m0 16v2M4.93 4.93l1.41 1.41m11.32 11.32 1.41 1.41M2 12h2m16 0h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/>
-          </svg>
-          <svg class="moon-icon" viewBox="0 0 24 24" aria-hidden="true">
-            <path d="M20.4 15.4A8.5 8.5 0 0 1 8.6 3.6 8.5 8.5 0 1 0 20.4 15.4Z"/>
-          </svg>
-        </button>
+        <div class="theme-controls">
+          <button class="theme-toggle" id="themeToggle" type="button" aria-label="Switch to dark theme" aria-pressed="false">
+            <svg class="sun-icon" viewBox="0 0 24 24" aria-hidden="true">
+              <circle cx="12" cy="12" r="4"/>
+              <path d="M12 2v2m0 16v2M4.93 4.93l1.41 1.41m11.32 11.32 1.41 1.41M2 12h2m16 0h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/>
+            </svg>
+            <svg class="moon-icon" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M20.4 15.4A8.5 8.5 0 0 1 8.6 3.6 8.5 8.5 0 1 0 20.4 15.4Z"/>
+            </svg>
+          </button>
+          <button class="palette-toggle" id="themeLabToggle" type="button" aria-label="Open Theme Lab" aria-expanded="false" aria-controls="themeLab" aria-haspopup="dialog">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3a9 9 0 1 0 0 18h1a2 2 0 0 0 1.4-3.4 1.4 1.4 0 0 1 1-2.4H18a3 3 0 0 0 3-3c0-5-4-9-9-9Z"/><circle cx="7.5" cy="10" r=".8"/><circle cx="10.5" cy="6.8" r=".8"/><circle cx="15" cy="7.5" r=".8"/><circle cx="17.5" cy="11" r=".8"/></svg>
+          </button>
+          <div class="theme-lab" id="themeLab" role="dialog" aria-labelledby="themeLabTitle" hidden>
+            <div class="theme-lab-heading"><div><h2 id="themeLabTitle">Theme Lab</h2><p>Explore color &amp; appearance</p></div><button type="button" id="themeLabClose" class="theme-lab-close" aria-label="Close Theme Lab">&times;</button></div>
+            <fieldset class="appearance-options">
+              <legend>Appearance</legend>
+              <div class="appearance-segments">
+                <label><input type="radio" name="appearance" value="light"><span>Light</span></label>
+                <label><input type="radio" name="appearance" value="dark"><span>Dark</span></label>
+                <label><input type="radio" name="appearance" value="system"><span>System</span></label>
+              </div>
+            </fieldset>
+            <fieldset class="palette-options">
+              <legend id="paletteLegend">Color palette</legend>
+                <label class="palette-option" data-palette-option="midnight">
+                  <input type="radio" name="palette" value="midnight">
+                  <span class="palette-swatch" aria-hidden="true"><i></i><i></i><i></i></span>
+                  <span>Midnight Research</span><span class="palette-check" aria-hidden="true">✓</span>
+                </label>
+                <label class="palette-option" data-palette-option="copper">
+                  <input type="radio" name="palette" value="copper">
+                  <span class="palette-swatch" aria-hidden="true"><i></i><i></i><i></i></span>
+                  <span>Editorial Copper</span><span class="palette-check" aria-hidden="true">✓</span>
+                </label>
+                <label class="palette-option" data-palette-option="mineral">
+                  <input type="radio" name="palette" value="mineral">
+                  <span class="palette-swatch" aria-hidden="true"><i></i><i></i><i></i></span>
+                  <span>Mineral Green</span><span class="palette-check" aria-hidden="true">✓</span>
+                </label>
+                <label class="palette-option" data-palette-option="violet">
+                  <input type="radio" name="palette" value="violet">
+                  <span class="palette-swatch" aria-hidden="true"><i></i><i></i><i></i></span>
+                  <span>Quantum Violet</span><span class="palette-check" aria-hidden="true">✓</span>
+                </label>
+                <label class="palette-option" data-palette-option="burgundy">
+                  <input type="radio" name="palette" value="burgundy">
+                  <span class="palette-swatch" aria-hidden="true"><i></i><i></i><i></i></span>
+                  <span>Burgundy Volt</span><span class="palette-check" aria-hidden="true">✓</span>
+                </label>
+                <label class="palette-option" data-palette-option="coral">
+                  <input type="radio" name="palette" value="coral">
+                  <span class="palette-swatch" aria-hidden="true"><i></i><i></i><i></i></span>
+                  <span>Coral Signal</span><span class="palette-check" aria-hidden="true">✓</span>
+                </label>
+            </fieldset>
+            <p class="theme-lab-hint">Light and dark palette choices are saved separately.</p>
+            <p class="theme-lab-status" id="themeLabStatus" role="status" aria-live="polite"></p>
+          </div>
+        </div>
       </nav>
     </header>
     <main id="main">
@@ -94,9 +146,10 @@
           </div>
           <div class="project-list">
             <article class="project feature-project">
-              <div class="project-media">
-                <img src="./assets/optimized/autonomous.webp" alt="Autonomous laboratory robot with labeled fabrication and characterization instruments" loading="lazy" decoding="async" width="1000" height="1000">
-              </div>
+              <button type="button" class="project-media" data-image-src="./assets/projects/autonomous_lab/spectrometer_setup.jpg" data-image-caption="Flame spectrometer, optical film thickness instrument, and Python measurement interface on the lab bench" aria-label="View full-resolution image: Flame spectrometer, optical film thickness instrument, and Python measurement interface on the lab bench">
+                <img src="./assets/optimized/autonomous-instrumentation.webp" alt="Flame spectrometer, optical film thickness instrument, and Python measurement interface on the lab bench" loading="lazy" decoding="async" width="1000" height="753">
+                <span class="image-zoom" aria-hidden="true">View full image <span>↗</span></span>
+              </button>
               <div class="project-content">
                 <div class="project-meta"><span>Lab automation</span><span>Nov 2025 — Present</span></div>
                 <h3>Autonomous Lab: End-to-End Robotic Orchestration</h3>
@@ -107,9 +160,10 @@
               </div>
             </article>
             <article class="project feature-project reverse">
-              <div class="project-media">
+              <button type="button" class="project-media" data-image-src="./assets/projects/block_copolymer/project-1.jpg" data-image-caption="Labeled NOVA processing robot and high-throughput wafer handling workflow" aria-label="View full-resolution image: Labeled NOVA processing robot and high-throughput wafer handling workflow">
                 <img src="./assets/optimized/block-copolymer.webp" alt="Labeled NOVA processing robot and high-throughput wafer handling workflow" loading="lazy" decoding="async" width="900" height="900">
-              </div>
+                <span class="image-zoom" aria-hidden="true">View full image <span>↗</span></span>
+              </button>
               <div class="project-content">
                 <div class="project-meta"><span>Polymer research</span><span>May 2025 — Present</span></div>
                 <h3>High-Throughput Block Copolymer Thin-Film Fabrication and Characterization</h3>
@@ -120,9 +174,10 @@
               </div>
             </article>
             <article class="project feature-project">
-              <div class="project-media">
+              <button type="button" class="project-media" data-image-src="./assets/projects/cms_tracker/cms_tracker.jpg" data-image-caption="Six stages of the CMS silicon detector bare module testing workflow" aria-label="View full-resolution image: Six stages of the CMS silicon detector bare module testing workflow">
                 <img src="./assets/optimized/cms-tracker.webp" alt="Six stages of the CMS silicon detector bare module testing workflow" loading="lazy" decoding="async" width="1000" height="1000">
-              </div>
+                <span class="image-zoom" aria-hidden="true">View full image <span>↗</span></span>
+              </button>
               <div class="project-content">
                 <div class="project-meta"><span>Detector testing</span><span>May — Jul 2026</span></div>
                 <h3>CMS Inner Tracker Upgrade: Bare Module Testing &amp; Automation</h3>
@@ -133,9 +188,10 @@
               </div>
             </article>
             <article class="project feature-project reverse">
-              <div class="project-media">
+              <button type="button" class="project-media" data-image-src="./assets/projects/veriscript/veriscript.jpg" data-image-caption="VeriScript reviewer dashboard for nursing credential verification" aria-label="View full-resolution image: VeriScript reviewer dashboard for nursing credential verification">
                 <img src="./assets/optimized/veriscript.webp" alt="VeriScript reviewer dashboard for nursing credential verification" loading="lazy" decoding="async" width="700" height="700">
-              </div>
+                <span class="image-zoom" aria-hidden="true">View full image <span>↗</span></span>
+              </button>
               <div class="project-content">
                 <div class="project-meta"><span>Scientific software</span><span>Mar — May 2026</span></div>
                 <h3>VeriScript: AI Transcript Fraud Detection Platform</h3>
@@ -146,9 +202,10 @@
               </div>
             </article>
             <article class="project feature-project">
-              <div class="project-media">
+              <button type="button" class="project-media" data-image-src="./assets/projects/solar_cells/project-2_HD.png" data-image-caption="Organic solar cell architectures and measured external quantum efficiency curves" aria-label="View full-resolution image: Organic solar cell architectures and measured external quantum efficiency curves">
                 <img src="./assets/optimized/solar-cells.webp" alt="Organic solar cell architectures and measured external quantum efficiency curves" loading="lazy" decoding="async" width="512" height="512">
-              </div>
+                <span class="image-zoom" aria-hidden="true">View full image <span>↗</span></span>
+              </button>
               <div class="project-content">
                 <div class="project-meta"><span>Energy materials</span><span>Oct 2024 — May 2025</span></div>
                 <h3>Fabrication and Thermal Stability Analysis of Organic Solar Cells</h3>
@@ -159,9 +216,10 @@
               </div>
             </article>
             <article class="project feature-project reverse">
-              <div class="project-media">
+              <button type="button" class="project-media" data-image-src="./assets/projects/3d_printing/project-3_HD.png" data-image-caption="Custom printed lab fixtures and CAD models in an iterative design workflow" aria-label="View full-resolution image: Custom printed lab fixtures and CAD models in an iterative design workflow">
                 <img src="./assets/optimized/3d-printing.webp" alt="Custom printed lab fixtures and CAD models in an iterative design workflow" loading="lazy" decoding="async" width="512" height="512">
-              </div>
+                <span class="image-zoom" aria-hidden="true">View full image <span>↗</span></span>
+              </button>
               <div class="project-content">
                 <div class="project-meta"><span>Engineering &amp; prototyping</span><span>Dec 2024 — Present</span></div>
                 <h3>Real-World Problem Solving Through 3D Printing</h3>
@@ -182,19 +240,37 @@
           <div class="publication-grid">
             <article class="paper-card">
               <div class="paper-top"><span class="status-label">Published</span><span><strong>ACS Nano</strong> · 2026</span></div>
-              <h3>A Robotic High-Throughput Grid-Search Platform for Mapping Phase Behavior in Triblock Copolymer−Homopolymer Blends</h3>
+              <h3>A Robotic High-Throughput Grid-Search Platform for Mapping Phase Behavior in Triblock Copolymer–Homopolymer Blends</h3>
               <p class="paper-authors">Upreti, S., Xu, L., Moniruzzaman, M., Wang, Y., Adhikari, K., <strong>Baral, S.</strong>, Patton, D., Ma, B., Xu, J., Li, R., Zhu, C., Xia, W., &amp; Gu, X.</p>
               <p class="paper-citation"><em>ACS Nano</em>, 20, 17303–17315 (2026).</p>
               <p class="paper-summary">Robotic mapping of phase behavior and order–disorder transitions in triblock copolymer blends, supported by GISAXS, AFM, and simulations.</p>
-              <a class="project-link" href="https://doi.org/10.1021/acsnano.6c01299" target="_blank" rel="noopener noreferrer">Read Publication <span aria-hidden="true">↗</span></a>
-              <span class="doi">DOI: 10.1021/acsnano.6c01299</span>
+              <div class="paper-footer">
+                <a class="project-link" href="https://doi.org/10.1021/acsnano.6c01299" target="_blank" rel="noopener noreferrer">Read Publication <span aria-hidden="true">↗</span></a>
+                <span class="doi">DOI: 10.1021/acsnano.6c01299</span>
+              </div>
             </article>
-            <article class="presentation-card">
-              <p class="presentation-type">Conference record · August 2026</p>
-              <h3>ACS Fall 2026 National Meeting</h3>
-              <p>Poster: robotic grid-search methodologies and automated workflows for accelerated polymer morphology studies.</p>
+            <article class="paper-card manuscript-card">
+              <div class="paper-top"><span class="status-label status-progress">Submission in progress</span></div>
+              <h3>Autonomous phase diagram mapping of polymer blends through SAXS-guided active learning</h3>
+              <p class="paper-authors">Saroj Upreti, Kailash Adhikari, <strong>Sabin Baral</strong>, Boran Ma, Chenhui Zhu, Marcus Noack, Xiaodan Gu.</p>
+              <p class="paper-summary">Developed an autonomous experimental workflow combining robotic polymer formulation, small-angle X-ray scattering, and Gaussian-process active learning to efficiently map phase behavior in polymer blends.</p>
             </article>
           </div>
+          <article class="conference-card">
+            <div class="conference-heading"><h3>ACS Spring 2027 National Meeting</h3><span class="status-label status-progress">Abstract submitted</span></div>
+            <div class="conference-content">
+              <div>
+                <h4>Toward autonomous optimization of sequentially doped conjugated polymer films using Bayesian optimization</h4>
+                <p>Developing a guided robotic workflow for sequentially doped conjugated polymer films, integrating experimental characterization and Bayesian optimization toward autonomous materials processing.</p>
+              </div>
+              <dl class="conference-meta">
+                <div><dt>Location</dt><dd>New Orleans, Louisiana</dd></div>
+                <div><dt>Dates</dt><dd>March 21–25, 2027</dd></div>
+                <div><dt>Division</dt><dd>Polymer Chemistry (POLY)</dd></div>
+                <div><dt>Presentation</dt><dd>Undergraduate Research in Polymer Science — In-person poster</dd></div>
+              </dl>
+            </div>
+          </article>
           <div class="collaborators">
             <div class="collaborator-heading"><h3>Institutions &amp; facilities</h3><p>Research settings and scientific facilities represented in my project work.</p></div>
             <div class="collaborator-list">
@@ -290,7 +366,7 @@
           </div>
           <div class="modal-section">
             <h3 style="margin-bottom: 1.5rem;">Workflow Video</h3>
-            <div style="border-radius: 1rem; overflow: hidden; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);">
+            <div style="border-radius: 1rem; overflow: hidden; box-shadow: var(--shadow);">
               <video controls preload="metadata" style="width: 100%; display: block; border-radius: 1rem;"
               aria-label="System Operations Workflow Video">
               <source src="./assets/projects/block_copolymer/System_Operations_High_Throughput.mp4" type="video/mp4">
@@ -551,7 +627,7 @@
           laboratory ecosystem.</p>
       </div>
       <div class="modal-section"
-      style="background: rgba(59, 130, 246, 0.05); padding: 1.5rem; border-radius: 1rem; border: 1px solid var(--border-color); margin-bottom: 2.5rem;">
+      style="background: var(--surface-soft); padding: 1.5rem; border-radius: 1rem; border: 1px solid var(--border-color); margin-bottom: 2.5rem;">
       <h3 style="margin-top: 0;">Developed Hardware Infrastructure</h3>
       <p style="font-size: 0.9rem; margin-bottom: 1.5rem;">Access the specific drivers developed for each laboratory
         "block":</p>
@@ -584,7 +660,7 @@ style="margin-bottom: 3rem; border-bottom: 1px solid var(--border-color); paddin
 <div class="gallery-grid" style="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px;">
   <div class="gallery-item" style="aspect-ratio: 16/9;">
     <video preload="none"  width="100%" height="100%" controls
-    style="object-fit: cover; border-radius: 1rem; background: #000;">
+    style="object-fit: cover; border-radius: 1rem; background: var(--media-bg);">
     <source src="./assets/projects/autonomous_lab/Full_workflow.mp4" type="video/mp4">
   </video>
   <div style="padding: 0.5rem; font-size: 0.8rem; text-align: center; color: var(--text-medium);">Full
@@ -592,7 +668,7 @@ style="margin-bottom: 3rem; border-bottom: 1px solid var(--border-color); paddin
 </div>
 <div class="gallery-item" style="aspect-ratio: 16/9;">
   <video preload="none"  width="100%" height="100%" controls
-  style="object-fit: cover; border-radius: 1rem; background: #000;">
+  style="object-fit: cover; border-radius: 1rem; background: var(--media-bg);">
   <source src="./assets/projects/autonomous_lab/homing_demo.mp4" type="video/mp4">
 </video>
 <div style="padding: 0.5rem; font-size: 0.8rem; text-align: center; color: var(--text-medium);">Integrated
@@ -614,7 +690,7 @@ style="margin-bottom: 3rem; border-bottom: 1px solid var(--border-color); paddin
   <div style="display: flex; flex-direction: column; gap: 1.5rem;">
     <div style="display: flex; gap: 1.2rem; align-items: flex-start;">
       <div
-      style="background: var(--primary-color); color: white; border-radius: 50%; width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-weight: bold; font-size: 0.9rem; box-shadow: 0 4px 10px rgba(59, 130, 246, 0.3);">
+      style="background: var(--button-bg); color: var(--button-text); border-radius: 50%; width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-weight: bold; font-size: 0.9rem; box-shadow: var(--shadow);">
       1</div>
     <p style="margin: 0;">
       <strong
@@ -623,7 +699,7 @@ style="margin-bottom: 3rem; border-bottom: 1px solid var(--border-color); paddin
 </div>
 <div style="display: flex; gap: 1.2rem; align-items: flex-start;">
   <div
-  style="background: var(--primary-color); color: white; border-radius: 50%; width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-weight: bold; font-size: 0.9rem; box-shadow: 0 4px 10px rgba(59, 130, 246, 0.3);">
+  style="background: var(--button-bg); color: var(--button-text); border-radius: 50%; width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-weight: bold; font-size: 0.9rem; box-shadow: var(--shadow);">
   2</div>
 <p style="margin: 0;">
   <strong
@@ -632,7 +708,7 @@ moves the sample to the Thorlabs vertical stage for precise height adjustments.<
 </div>
 <div style="display: flex; gap: 1.2rem; align-items: flex-start;">
   <div
-  style="background: var(--primary-color); color: white; border-radius: 50%; width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-weight: bold; font-size: 0.9rem; box-shadow: 0 4px 10px rgba(59, 130, 246, 0.3);">
+  style="background: var(--button-bg); color: var(--button-text); border-radius: 50%; width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-weight: bold; font-size: 0.9rem; box-shadow: var(--shadow);">
   3</div>
 <p style="margin: 0;">
   <strong
@@ -642,7 +718,7 @@ and conductivity measurement.</p>
 </div>
 <div style="display: flex; gap: 1.2rem; align-items: flex-start;">
   <div
-  style="background: var(--primary-color); color: white; border-radius: 50%; width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-weight: bold; font-size: 0.9rem; box-shadow: 0 4px 10px rgba(59, 130, 246, 0.3);">
+  style="background: var(--button-bg); color: var(--button-text); border-radius: 50%; width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-weight: bold; font-size: 0.9rem; box-shadow: var(--shadow);">
   4</div>
 <p style="margin: 0;">
   <strong
@@ -855,7 +931,7 @@ completion, the N9 Robot autonomously retrieves the sample and places it in the 
           GitHub Repo
         </a>
       </div>
-      <div style="border-radius: 1rem; overflow: hidden; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);">
+      <div style="border-radius: 1rem; overflow: hidden; box-shadow: var(--shadow);">
         <video controls preload="metadata" style="width: 100%; display: block; border-radius: 1rem;"
         aria-label="VeriScript Platform Demo">
         <source src="./assets/projects/veriscript/demo_2x.mp4" type="video/mp4">

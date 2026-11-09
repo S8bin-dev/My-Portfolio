@@ -1,0 +1,167 @@
+/* Palette values live here; components use shared semantic tokens. */
+:root,
+:root[data-palette="midnight"][data-theme="light"] {
+  --bg: #f1f6fd;
+  --surface: #ffffff;
+  --text: #152237;
+  --muted: #56667d;
+  --accent: #315fd6;
+  --secondary: #079eb8;
+  --line: #d6e1f2;
+}
+:root[data-palette="midnight"][data-theme="dark"] {
+  --bg: #0b1424;
+  --surface: #192840;
+  --text: #f4f8ff;
+  --muted: #acbdd4;
+  --accent: #79a5ff;
+  --secondary: #39d4e8;
+  --line: #34445c;
+}
+:root[data-palette="copper"][data-theme="light"] {
+  --bg: #faf6f0;
+  --surface: #ffffff;
+  --text: #282724;
+  --muted: #6e655d;
+  --accent: #b44b23;
+  --secondary: #2a7e87;
+  --line: #e9dccf;
+}
+:root[data-palette="copper"][data-theme="dark"] {
+  --bg: #191919;
+  --surface: #2a2926;
+  --text: #f8f3eb;
+  --muted: #c2b5a8;
+  --accent: #ffa274;
+  --secondary: #71c5c9;
+  --line: #45403b;
+}
+:root[data-palette="mineral"][data-theme="light"] {
+  --bg: #f1f7f3;
+  --surface: #ffffff;
+  --text: #17332c;
+  --muted: #587268;
+  --accent: #167b67;
+  --secondary: #ac8640;
+  --line: #d2e5d9;
+}
+:root[data-palette="mineral"][data-theme="dark"] {
+  --bg: #0b1b1a;
+  --surface: #19302b;
+  --text: #f0faf5;
+  --muted: #afcbc0;
+  --accent: #66d8b0;
+  --secondary: #e6bd6c;
+  --line: #355148;
+}
+:root[data-palette="violet"][data-theme="light"] {
+  --bg: #f6f3ff;
+  --surface: #ffffff;
+  --text: #261d3a;
+  --muted: #655b79;
+  --accent: #7143d3;
+  --secondary: #008b93;
+  --line: #e2d8f3;
+}
+:root[data-palette="violet"][data-theme="dark"] {
+  --bg: #150f2a;
+  --surface: #271e42;
+  --text: #f7f2ff;
+  --muted: #c8badd;
+  --accent: #bea1ff;
+  --secondary: #56dfd8;
+  --line: #4a3c6a;
+}
+:root[data-palette="burgundy"][data-theme="light"] {
+  --bg: #fcf6f9;
+  --surface: #ffffff;
+  --text: #301d2b;
+  --muted: #745d6b;
+  --accent: #98284f;
+  --secondary: #788500;
+  --line: #ecd8e1;
+}
+:root[data-palette="burgundy"][data-theme="dark"] {
+  --bg: #1d1220;
+  --surface: #312134;
+  --text: #fff1f7;
+  --muted: #d7b9cc;
+  --accent: #ff82a8;
+  --secondary: #d3eb5b;
+  --line: #55364a;
+}
+:root[data-palette="coral"][data-theme="light"] {
+  --bg: #f6faff;
+  --surface: #ffffff;
+  --text: #17304b;
+  --muted: #5d6e83;
+  --accent: #c64167;
+  --secondary: #177fa6;
+  --line: #dce6f1;
+}
+:root[data-palette="coral"][data-theme="dark"] {
+  --bg: #121e32;
+  --surface: #24344b;
+  --text: #f5f9ff;
+  --muted: #b6c8dd;
+  --accent: #ffa2af;
+  --secondary: #69d3ec;
+  --line: #405269;
+}
+
+:root {
+  color-scheme: light;
+  --surface-soft: color-mix(in srgb, var(--bg) 97%, var(--accent));
+  --surface-strong: color-mix(in srgb, var(--bg) 90%, var(--accent));
+  --hero: var(--bg);
+  --section-bg: color-mix(in srgb, var(--bg) 60%, var(--surface));
+  --subtle: var(--muted);
+  --accent-soft: color-mix(in srgb, var(--surface) 92%, var(--accent));
+  --secondary-soft: color-mix(in srgb, var(--surface) 90%, var(--secondary));
+  --accent-hover: color-mix(in srgb, var(--accent) 82%, var(--text));
+  --interactive-text: color-mix(in srgb, var(--accent) 84%, var(--text));
+  --hover-surface: color-mix(in srgb, var(--surface) 94%, var(--accent));
+  --button-bg: var(--accent);
+  --button-text: #ffffff;
+  --button-hover: color-mix(in srgb, var(--accent) 85%, var(--text));
+  --control-line: color-mix(in srgb, var(--muted) 78%, var(--surface));
+  --focus-ring: var(--accent);
+  --error: #b42318;
+  --shadow: 0 22px 60px rgb(24 30 40 / 8%);
+  --overlay: rgb(3 8 16 / 88%);
+  --image-bg: #ffffff;
+  --media-bg: #000000;
+  --image-text: #152237;
+  --viewer-text: #f4f8ff;
+  --viewer-muted: #acbdd4;
+  --primary-color: var(--interactive-text);
+  --text-medium: var(--muted);
+  --border-color: var(--line);
+}
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --surface-soft: color-mix(in srgb, var(--bg) 70%, var(--surface));
+  --surface-strong: color-mix(in srgb, var(--surface) 88%, var(--accent));
+  --accent-soft: color-mix(in srgb, var(--surface) 86%, var(--accent));
+  --secondary-soft: color-mix(in srgb, var(--surface) 88%, var(--secondary));
+  --accent-hover: color-mix(in srgb, var(--accent) 85%, var(--text));
+  --interactive-text: var(--accent);
+  --hover-surface: color-mix(in srgb, var(--surface) 91%, var(--accent));
+  --button-text: var(--bg);
+  --button-hover: color-mix(in srgb, var(--accent) 85%, var(--text));
+  --error: #ffb4ab;
+  --shadow: 0 22px 60px rgb(0 0 0 / 18%);
+}
+
+.palette-option[data-palette-option="midnight"] { --swatch-bg: #F1F6FD; --swatch-accent: #315FD6; --swatch-secondary: #079EB8; }
+:root[data-theme="dark"] .palette-option[data-palette-option="midnight"] { --swatch-bg: #0B1424; --swatch-accent: #79A5FF; --swatch-secondary: #39D4E8; }
+.palette-option[data-palette-option="copper"] { --swatch-bg: #FAF6F0; --swatch-accent: #B44B23; --swatch-secondary: #2A7E87; }
+:root[data-theme="dark"] .palette-option[data-palette-option="copper"] { --swatch-bg: #191919; --swatch-accent: #FFA274; --swatch-secondary: #71C5C9; }
+.palette-option[data-palette-option="mineral"] { --swatch-bg: #F1F7F3; --swatch-accent: #167B67; --swatch-secondary: #AC8640; }
+:root[data-theme="dark"] .palette-option[data-palette-option="mineral"] { --swatch-bg: #0B1B1A; --swatch-accent: #66D8B0; --swatch-secondary: #E6BD6C; }
+.palette-option[data-palette-option="violet"] { --swatch-bg: #F6F3FF; --swatch-accent: #7143D3; --swatch-secondary: #008B93; }
+:root[data-theme="dark"] .palette-option[data-palette-option="violet"] { --swatch-bg: #150F2A; --swatch-accent: #BEA1FF; --swatch-secondary: #56DFD8; }
+.palette-option[data-palette-option="burgundy"] { --swatch-bg: #FCF6F9; --swatch-accent: #98284F; --swatch-secondary: #788500; }
+:root[data-theme="dark"] .palette-option[data-palette-option="burgundy"] { --swatch-bg: #1D1220; --swatch-accent: #FF82A8; --swatch-secondary: #D3EB5B; }
+.palette-option[data-palette-option="coral"] { --swatch-bg: #F6FAFF; --swatch-accent: #C64167; --swatch-secondary: #177FA6; }
+:root[data-theme="dark"] .palette-option[data-palette-option="coral"] { --swatch-bg: #121E32; --swatch-accent: #FFA2AF; --swatch-secondary: #69D3EC; }

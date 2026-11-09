@@ -1,19 +1,9 @@
-const root = document.documentElement;
 let activeModal = null;
 let modalReturnFocus = null;
 let lightboxReturnFocus = null;
 let currentGallery = 'printing';
 let currentImageIndex = 0;
-
-function setTheme(theme) {
-  root.dataset.theme = theme;
-  const toggle = document.getElementById('themeToggle');
-  if (toggle) {
-    toggle.setAttribute('aria-pressed', String(theme === 'dark'));
-    toggle.setAttribute('aria-label', `Switch to ${theme === 'dark' ? 'light' : 'dark'} theme`);
-  }
-  try { localStorage.setItem('portfolio-theme', theme); } catch (_) {}
-}
+let standaloneImage = null;
 
 function closeMenu() {
   const menu = document.getElementById('primaryNav');
@@ -102,25 +92,39 @@ window.closeModal = function (id) {
   };
 
 
-window.openLightbox = function (index, gallery = 'printing') {
-  if (!galleries[gallery]?.[index]) return;
-  lightboxReturnFocus = document.activeElement;
-  currentGallery = gallery;
-  currentImageIndex = index;
+function showLightbox() {
   const lightbox = document.getElementById('lightbox');
   lightbox.classList.add('active');
   lightbox.setAttribute('aria-hidden', 'false');
   updateLightbox();
   syncScrollLock();
   lightbox.querySelector('.lightbox-close').focus();
+}
+window.openLightbox = function (index, gallery = 'printing') {
+  if (!galleries[gallery]?.[index]) return;
+  lightboxReturnFocus = document.activeElement;
+  standaloneImage = null;
+  currentGallery = gallery;
+  currentImageIndex = index;
+  showLightbox();
 };
+function openProjectImage(src, caption, trigger) {
+  lightboxReturnFocus = trigger;
+  standaloneImage = { src, caption };
+  currentImageIndex = 0;
+  showLightbox();
+}
 function updateLightbox() {
-  const item = galleries[currentGallery][currentImageIndex];
+  const images = standaloneImage ? [standaloneImage] : galleries[currentGallery];
+  const item = images[currentImageIndex];
   const img = document.getElementById('lightbox-img');
   img.src = item.src;
   img.alt = item.caption;
   document.getElementById('lightbox-caption').textContent = item.caption;
-  document.getElementById('lightbox-counter').textContent = `${currentImageIndex + 1} / ${galleries[currentGallery].length}`;
+  const counter = document.getElementById('lightbox-counter');
+  counter.textContent = `${currentImageIndex + 1} / ${images.length}`;
+  counter.hidden = images.length === 1;
+  document.querySelectorAll('.lightbox-prev, .lightbox-next').forEach(button => { button.hidden = images.length === 1; });
 }
 window.closeLightbox = function () {
   const lightbox = document.getElementById('lightbox');
@@ -132,6 +136,7 @@ window.closeLightbox = function () {
   lightboxReturnFocus?.focus();
 };
 window.navigateLightbox = function (direction) {
+  if (standaloneImage) return;
   const length = galleries[currentGallery].length;
   currentImageIndex = (currentImageIndex + direction + length) % length;
   updateLightbox();
@@ -172,11 +177,6 @@ async function handleContact(event) {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-  const themeToggle = document.getElementById('themeToggle');
-  const initialTheme = root.dataset.theme || 'light';
-  themeToggle.setAttribute('aria-pressed', String(initialTheme === 'dark'));
-  themeToggle.setAttribute('aria-label', `Switch to ${initialTheme === 'dark' ? 'light' : 'dark'} theme`);
-  themeToggle.addEventListener('click', () => setTheme(root.dataset.theme === 'dark' ? 'light' : 'dark'));
   document.getElementById('copyrightYear').textContent = new Date().getFullYear();
   const menuToggle = document.getElementById('menuToggle');
   const menu = document.getElementById('primaryNav');
@@ -188,6 +188,7 @@ document.addEventListener('DOMContentLoaded', () => {
   menu.querySelectorAll('a').forEach(link => link.addEventListener('click', closeMenu));
   matchMedia('(min-width: 921px)').addEventListener('change', event => { if (event.matches) closeMenu(); });
   document.addEventListener('click', event => { if (!event.target.closest('.nav-shell')) closeMenu(); });
+  document.querySelectorAll('[data-image-src]').forEach(button => button.addEventListener('click', () => openProjectImage(button.dataset.imageSrc, button.dataset.imageCaption, button)));
   document.querySelectorAll('[data-modal]').forEach(button => button.addEventListener('click', () => openModal(button.dataset.modal)));
   document.querySelectorAll('.modal').forEach(modal => {
     modal.setAttribute('aria-hidden', 'true');
