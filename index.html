@@ -1,574 +1,423 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-  <!-- SEO Meta Tags -->
-  <title>Sabin Baral | Polymer Researcher & Engineer Portfolio</title>
-  <meta name="description"
-    content="Sabin Baral - Polymer Science and Engineering researcher specializing in block copolymers, organic solar cells, and advanced characterization techniques including GIWAXS, GISAXS, and AFM." />
-  <meta name="keywords"
-    content="Sabin Baral, Polymer Science, Materials Engineering, GIWAXS, GISAXS, Block Copolymers, Organic Solar Cells, Research Portfolio" />
-  <meta name="author" content="Sabin Baral" />
-
-  <!-- Open Graph Tags for Social Sharing -->
-  <meta property="og:title" content="Sabin Baral | Polymer Researcher & Engineer" />
-  <meta property="og:description"
-    content="Undergraduate researcher specializing in polymer science, advanced characterization techniques, and materials engineering." />
-  <meta property="og:image" content="./assets/profile/profile-pic.png" />
-  <meta property="og:url" content="https://yourwebsite.com" />
-  <meta property="og:type" content="website" />
-
-  <!-- Twitter Card Tags -->
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Sabin Baral | Polymer Researcher & Engineer" />
-  <meta name="twitter:description"
-    content="Undergraduate researcher specializing in polymer science and materials engineering." />
-  <meta name="twitter:image" content="./assets/profile/profile-pic.png" />
-
-  <!-- Favicon -->
-  <link rel="icon" type="image/png" sizes="32x32" href="./assets/icons/favicon.png" />
-  <link rel="icon" type="image/png" sizes="16x16" href="./assets/icons/favicon.png" />
-  <link rel="apple-touch-icon" sizes="180x180" href="./assets/icons/favicon.png" />
-  <link rel="stylesheet" type='text/css' href="https://cdn.jsdelivr.net/gh/devicon/devicon@latest/devicon.min.css" />
-
-  <link rel="stylesheet" href="style.css?v=2" />
-  <link rel="stylesheet" href="mediaqueries.css" />
-</head>
-
-<body>
-  <!-- Particle Background Canvas -->
-
-
-  <!-- Dark Mode Toggle -->
-  <button id="darkModeToggle" class="dark-mode-toggle" aria-label="Toggle dark mode">
-    <svg class="sun-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-      <circle cx="12" cy="12" r="5"></circle>
-      <line x1="12" y1="1" x2="12" y2="3"></line>
-      <line x1="12" y1="21" x2="12" y2="23"></line>
-      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
-      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
-      <line x1="1" y1="12" x2="3" y2="12"></line>
-      <line x1="21" y1="12" x2="23" y2="12"></line>
-      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
-      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
-    </svg>
-    <svg class="moon-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-      stroke-width="2">
-      <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
-    </svg>
-  </button>
-
-  <!-- Back to Top Button -->
-  <button id="backToTop" class="back-to-top" aria-label="Back to top">
-    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-      stroke-linecap="round" stroke-linejoin="round">
-      <polyline points="18 15 12 9 6 15"></polyline>
-    </svg>
-  </button>
-
-  <nav id="desktop-nav">
-    <div class="logo">Sabin Baral</div>
-    <ul class="nav-links">
-      <li><a href="#projects">Projects</a></li>
-      <li><a href="#publications">Publications</a></li>
-      <li><a href="#experience">Skills</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-  </nav>
-  <nav id="hamburger-nav">
-    <div class="logo">Sabin Baral</div>
-    <div class="hamburger-menu">
-      <div class="hamburger-icon" onclick="toggleMenu()" role="button" tabindex="0"
-        onkeydown="if(event.key === 'Enter' || event.key === ' ') toggleMenu()">
-        <span></span>
-        <span></span>
-        <span></span>
-      </div>
-      <div class="menu-links">
-        <li><a href="#projects" onclick="toggleMenu()">Projects</a></li>
-        <li><a href="#publications" onclick="toggleMenu()">Publications</a></li>
-        <li><a href="#experience" onclick="toggleMenu()">Skills</a></li>
-        <li><a href="#contact" onclick="toggleMenu()">Contact</a></li>
-      </div>
-    </div>
-  </nav>
-
-  <section id="profile">
-    <div class="section__pic-container fade-in">
-      <img src="./assets/profile/profile-pic.png" alt="Sabin Baral - Polymer Researcher" loading="eager" />
-    </div>
-    <div class="section__text fade-in">
-      <p class="section__text__p1">Hello, I'm</p>
-      <h1 class="title">Sabin Baral</h1>
-      <p class="section__text__p2 typing-effect">Polymer Researcher and Engineer</p>
-
-      <!-- Current Research Badge -->
-      <div class="research-badge pulse">
-        <span class="badge-dot"></span>
-        Currently Researching: Block Copolymer Self-Assembly
-      </div>
-
-      <!-- Mini Experience/Education Cards -->
-      <div class="hero-mini-cards">
-        <div class="mini-card hover-lift">
-          <img src="./assets/icons/experience.png" alt="Experience" class="mini-icon" />
-          <div class="mini-card-content">
-            <h3>Experience</h3>
-            <p>1.5+ years Research</p>
-          </div>
-        </div>
-        <div class="mini-card hover-lift">
-          <img src="./assets/icons/education.png" alt="Education" class="mini-icon" />
-          <div class="mini-card-content">
-            <h3>Education</h3>
-            <p>Pursuing BSc</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="btn-container">
-        <button class="btn btn-color-2 ripple" onclick="window.open('./assets/profile/Sabin-Baral-Resume.pdf')"
-          aria-label="Download Resume">
-          Download Resume
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="color-scheme" content="light dark">
+    <title>Sabin Baral — Polymer Research, Automation &amp; Engineering</title>
+    <meta name="description" content="Sabin Baral is a Polymer Science and Engineering undergraduate at the University of Southern Mississippi working across materials research, scientific instrumentation, and laboratory automation.">
+    <meta name="author" content="Sabin Baral">
+    <meta property="og:title" content="Sabin Baral — Polymer Research, Automation &amp; Engineering">
+    <meta property="og:description" content="Materials research, scientific instrumentation, and laboratory automation.">
+    <meta property="og:image" content="https://sabinbaral.dev/assets/optimized/portrait.webp">
+    <meta property="og:url" content="https://sabinbaral.dev/">
+    <meta property="og:type" content="website">
+    <link rel="icon" type="image/png" href="./assets/icons/favicon.png">
+    <script>try{const saved=localStorage.getItem('portfolio-theme');const legacy=localStorage.getItem('darkMode');document.documentElement.dataset.theme=saved || (legacy==='enabled'?'dark':legacy==='disabled'?'light':(matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light'))}catch(e){document.documentElement.dataset.theme=matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light'}</script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header">
+      <nav class="nav-shell" aria-label="Main navigation">
+        <a class="brand" href="#home" aria-label="Sabin Baral, home">
+          <span class="brand-mark">S<span class="brand-dot">.</span>B</span>
+          <span class="brand-name">Sabin Baral<small>Research &amp; Engineering</small>
+          </span>
+        </a>
+        <button class="menu-toggle" id="menuToggle" type="button" aria-expanded="false" aria-controls="primaryNav" aria-label="Open navigation">
+          <span>
+          </span>
+          <span>
+          </span>
+          <span>
+          </span>
         </button>
-        <button class="btn btn-color-1 ripple" onclick="location.href='./#contact'" aria-label="Contact Information">
-          Contact Info
+        <div class="nav-links" id="primaryNav">
+          <a href="#research">Research</a>
+          <a href="#publications">Publications</a>
+          <a href="#skills">Expertise</a>
+          <a href="#contact">Contact</a>
+          <a class="nav-resume" href="./assets/profile/Sabin-Baral-Resume.pdf" target="_blank" rel="noopener">Résumé <span aria-hidden="true">↗</span>
+          </a>
+        </div>
+        <button class="theme-toggle" id="themeToggle" type="button" aria-label="Switch to dark theme" aria-pressed="false">
+          <svg class="sun-icon" viewBox="0 0 24 24" aria-hidden="true">
+            <circle cx="12" cy="12" r="4"/>
+            <path d="M12 2v2m0 16v2M4.93 4.93l1.41 1.41m11.32 11.32 1.41 1.41M2 12h2m16 0h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/>
+          </svg>
+          <svg class="moon-icon" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M20.4 15.4A8.5 8.5 0 0 1 8.6 3.6 8.5 8.5 0 1 0 20.4 15.4Z"/>
+          </svg>
         </button>
-      </div>
-      <div id="socials-container">
-        <img src="./assets/icons/linkedin.png" alt="LinkedIn Profile - Sabin Baral" class="icon social-icon bounce"
-          onclick="location.href='https://www.linkedin.com/in/baralsabin/'" role="button" tabindex="0"
-          onkeydown="if(event.key === 'Enter' || event.key === ' ') location.href='https://www.linkedin.com/in/baralsabin/'" />
-        <img src="./assets/icons/github.png" alt="GitHub Profile - Sabin Baral" class="icon social-icon bounce"
-          onclick="location.href='https://github.com/S8bin-dev'" role="button" tabindex="0"
-          onkeydown="if(event.key === 'Enter' || event.key === ' ') location.href='https://github.com/S8bin-dev'" />
-        <img src="./assets/icons/google_scholar_icon.png" alt="Google Scholar Profile - Sabin Baral"
-          class="icon social-icon bounce"
-          onclick="location.href='https://scholar.google.com/citations?view_op=list_works&hl=en&hl=en&user=vSl4ZvgAAAAJ'"
-          role="button" tabindex="0"
-          onkeydown="if(event.key === 'Enter' || event.key === ' ') location.href='https://scholar.google.com/citations?view_op=list_works&hl=en&hl=en&user=vSl4ZvgAAAAJ'" />
-      </div>
-    </div>
-    <img src="./assets/icons/arrow.png" alt="Scroll down arrow" class="icon arrow" onclick="location.href='./#projects'"
-      role="button" tabindex="0"
-      onkeydown="if(event.key === 'Enter' || event.key === ' ') location.href='./#projects'" />
-  </section>
-
-
-
-  <section id="projects">
-    <p class="section__text__p1 fade-in-up">Browse My Recent</p>
-    <h2 class="title fade-in-up">Research and Projects</h2>
-    <div class="experience-details-container">
-      <div class="about-containers">
-        <div class="details-container color-container project-card fade-in-up">
-          <div class="article-container">
-            <img src="./assets/projects/autonomous_lab/autonomous.jpg" alt="Autonomous Lab Workflow" class="project-img"
-              loading="lazy" />
-          </div>
-          <h2 class="experience-sub-title project-title">Autonomous Lab: End-to-End Robotic Orchestration<br><br></h2>
-          <p class="project-duration">November 2025 - Present</p>
-          <div class="project-stats">
-            <div class="stat-item"><span class="stat-number">Full</span><span class="stat-label">Robotic
-                Integration</span></div>
-            <div class="stat-item"><span class="stat-number">Closed</span><span class="stat-label">Loop Cycle</span>
-            </div>
-          </div>
-          <div class="btn-container">
-            <button class="btn btn-color-2 project-btn ripple" onclick="openModal('modal4')">Learn More</button>
-          </div>
+      </nav>
+    </header>
+    <main id="main">
+      <section class="hero" id="home" aria-labelledby="hero-title">
+        <div class="hero-grid" aria-hidden="true">
         </div>
-
-        <div class="details-container color-container project-card fade-in-up">
-          <div class="article-container">
-            <img src="./assets/projects/cms_tracker/cms_tracker.jpg?v=2" alt="CMS Inner Tracker Module Testing"
-              class="project-img" loading="lazy" />
-          </div>
-          <h2 class="experience-sub-title project-title">CMS Inner Tracker Upgrade: Bare Module Testing &
-            Automation<br><br>
-          </h2>
-          <p class="project-duration">May 2026 - July 2026</p>
-          <div class="project-stats">
-            <div class="stat-item"><span class="stat-number">75%</span><span class="stat-label">Efficiency
-                Increase</span></div>
-            <div class="stat-item"><span class="stat-number">50+</span><span class="stat-label">Modules Tested</span>
-            </div>
-          </div>
-          <div class="btn-container">
-            <button class="btn btn-color-2 project-btn ripple" onclick="openModal('modal5')">Learn More</button>
-          </div>
-        </div>
-
-        <div class="details-container color-container project-card fade-in-up">
-          <div class="article-container">
-            <img src="./assets/projects/veriscript/veriscript.jpg"
-              alt="VeriScript: AI Transcript Fraud Detection Platform" class="project-img" loading="lazy" />
-          </div>
-          <h2 class="experience-sub-title project-title">VeriScript: AI Transcript Fraud Detection Platform<br><br></h2>
-          <p class="project-duration">Mar 2026 - May 2026</p>
-          <div class="project-stats">
-            <div class="stat-item"><span class="stat-number">65%</span><span class="stat-label">Cost Reduction</span>
-            </div>
-            <div class="stat-item">
-              <a href="https://github.com/SRVKNDL/msbn-transcript-verification" target="_blank" class="github-stat-link"
-                aria-label="View GitHub Repository">
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
-                  <path
-                    d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z" />
-                </svg>
+        <div class="container hero-layout">
+          <div class="hero-copy">
+            <p class="eyebrow">
+              <span class="eyebrow-line">
+              </span> POLYMER SCIENCE · AUTOMATION · ENGINEERING</p>
+            <h1 id="hero-title">Making materials research <em>move forward.</em>
+            </h1>
+            <p class="hero-intro">I'm <strong>Sabin Baral</strong>, an undergraduate Polymer Science and Engineering researcher at the University of Southern Mississippi. I build experimental workflows that connect materials, instrumentation, and code.</p>
+            <div class="hero-actions">
+              <a class="button button-primary" href="#research">Explore research <span aria-hidden="true">↗</span>
               </a>
-              <span class="stat-label">GitHub</span>
+              <a class="button button-secondary" href="./assets/profile/Sabin-Baral-Resume.pdf" target="_blank" rel="noopener">View résumé <span aria-hidden="true">↗</span>
+              </a>
+              <a class="text-link" href="#contact">Contact me <span aria-hidden="true">→</span>
+              </a>
+            </div>
+            <div class="hero-socials" aria-label="Professional profiles">
+              <a href="https://www.linkedin.com/in/baralsabin/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
+              <a href="https://github.com/S8bin-dev" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+              <a href="https://scholar.google.com/citations?view_op=list_works&amp;hl=en&amp;user=vSl4ZvgAAAAJ" target="_blank" rel="noopener noreferrer">Google Scholar ↗</a>
             </div>
           </div>
-          <div class="btn-container">
-            <button class="btn btn-color-2 project-btn ripple" onclick="openModal('modal6')">Learn More</button>
-          </div>
-        </div>
-
-        <div class="details-container color-container project-card fade-in-up">
-          <div class="article-container">
-            <img src="./assets/projects/block_copolymer/project-1.jpg" alt="Block Copolymer Research"
-              class="project-img" loading="lazy" />
-          </div>
-          <h2 class="experience-sub-title project-title">High Throughput Block Copolymer Thin Film Fabrication and
-            Characterization<br></h2>
-          <p class="project-duration">May 2025 - Present</p>
-          <div class="project-stats">
-            <div class="stat-item"><span class="stat-number">40%</span><span class="stat-label">Time Reduction</span>
+          <div class="hero-visual">
+            <div class="portrait-frame">
+              <img src="./assets/optimized/portrait.webp" alt="Portrait of Sabin Baral" width="700" height="692" fetchpriority="high">
+              <span class="portrait-index">FIG. 01 / SABIN BARAL</span>
             </div>
-            <div class="stat-item"><span class="stat-number">1000+</span><span class="stat-label">Samples Created</span>
+            <div class="visual-note">
+              <span class="note-pulse">
+              </span>
+              <span>Working at the intersection of<br>
+                <strong>materials + autonomous systems</strong>
+              </span>
             </div>
           </div>
-          <div class="btn-container">
-            <button class="btn btn-color-2 project-btn ripple" onclick="openModal('modal1')">Learn More</button>
-          </div>
         </div>
-
-        <div class="details-container color-container project-card fade-in-up">
-          <div class="article-container">
-            <img src="./assets/projects/solar_cells/project-2.png" alt="Organic Solar Cells" class="project-img"
-              loading="lazy" />
-          </div>
-          <h2 class="experience-sub-title project-title">Fabrication and Thermal Stability Analysis of Organic Solar
-            Cells<br><br></h2>
-          <p class="project-duration">Oct 2024 - May 2025</p>
-          <div class="project-stats">
-            <div class="stat-item"><span class="stat-number">15%</span><span class="stat-label">Efficiency Boost</span>
+        <div class="container hero-foot">
+          <span>RESEARCH PORTFOLIO / 2026</span>
+          <a href="#research">SCROLL TO EXPLORE <span aria-hidden="true">↓</span>
+          </a>
+        </div>
+      </section>
+      <section class="intro-band" aria-label="Research focus">
+        <div class="container intro-band-grid">
+          <p class="band-label">THE FOCUS</p>
+          <p>From polymer thin films to automated characterization, I approach research as a connected system: <strong>design the experiment, build the tools, and learn from the data.</strong>
+          </p>
+          <span class="band-symbol" aria-hidden="true">✳</span>
+        </div>
+      </section>
+      <section class="section research-section" id="research" aria-labelledby="research-title">
+        <div class="container">
+          <div class="section-heading">
+            <div>
+              <p class="eyebrow">01 / SELECTED WORK</p>
+              <h2 id="research-title">Research &amp; projects<span class="period">.</span>
+              </h2>
             </div>
-            <div class="stat-item"><span class="stat-number">100+</span><span class="stat-label">Devices Tested</span>
+            <p>Scientific problems, practical tools, and the systems that connect them. Select a project to explore methods, media, and outcomes.</p>
+          </div>
+          <div class="project-list">
+            <article class="project feature-project">
+              <div class="project-media">
+                <img src="./assets/optimized/autonomous.webp" alt="Diagram of the autonomous laboratory workflow" loading="lazy">
+                <span class="media-caption">AUTONOMOUS SYSTEMS / 01</span>
+              </div>
+              <div class="project-content">
+                <div class="project-meta">
+                  <span>LAB AUTOMATION</span>
+                  <span>Nov 2025 — Present</span>
+                </div>
+                <h3>Autonomous Lab: End-to-End Robotic Orchestration</h3>
+                <p>Developing Python instrument drivers and a hardware abstraction layer to coordinate fabrication, motion, optical metrology, and electrical measurement. Integration of the complete autonomous loop is ongoing.</p>
+                <div class="project-tags">
+                  <span>Python</span>
+                  <span>Robotics</span>
+                  <span>Instrumentation</span>
+                </div>
+                <button type="button" class="project-link" data-modal="modal4">Explore project <span aria-hidden="true">↗</span>
+                </button>
+              </div>
+            </article>
+            <article class="project feature-project reverse">
+              <div class="project-media">
+                <img src="./assets/optimized/block-copolymer.webp" alt="Block copolymer thin film research image" loading="lazy">
+                <span class="media-caption">POLYMER RESEARCH / 02</span>
+              </div>
+              <div class="project-content">
+                <div class="project-meta">
+                  <span>MATERIALS RESEARCH</span>
+                  <span>May 2025 — Present</span>
+                </div>
+                <h3>High-Throughput Block Copolymer Thin-Film Fabrication and Characterization</h3>
+                <p>Using automated fabrication and GIWAXS, GISAXS, and AFM to investigate block copolymer self-assembly. The existing project record reports more than 1,000 samples and a 40% reduction in fabrication time.</p>
+                <div class="project-tags">
+                  <span>GIWAXS / GISAXS</span>
+                  <span>AFM</span>
+                  <span>Thin films</span>
+                </div>
+                <button type="button" class="project-link" data-modal="modal1">Explore project <span aria-hidden="true">↗</span>
+                </button>
+              </div>
+            </article>
+            <article class="project feature-project">
+              <div class="project-media">
+                <img src="./assets/optimized/cms-tracker.webp" alt="CMS inner tracker module testing image" loading="lazy">
+                <span class="media-caption">INSTRUMENTATION / 03</span>
+              </div>
+              <div class="project-content">
+                <div class="project-meta">
+                  <span>DETECTOR TESTING</span>
+                  <span>May — Jul 2026</span>
+                </div>
+                <h3>CMS Inner Tracker Upgrade: Bare Module Testing &amp; Automation</h3>
+                <p>Tested silicon detector modules and improved the module testing workflow through technical automation. The documented project reports more than 50 modules tested and a 75% efficiency increase.</p>
+                <div class="project-tags">
+                  <span>Silicon detectors</span>
+                  <span>Automation</span>
+                  <span>Quality control</span>
+                </div>
+                <button type="button" class="project-link" data-modal="modal5">Explore project <span aria-hidden="true">↗</span>
+                </button>
+              </div>
+            </article>
+          </div>
+          <div class="more-work-heading">
+            <h3>More explorations</h3>
+            <span>ENGINEERING / SOFTWARE / PROTOTYPING</span>
+          </div>
+          <div class="more-work-grid">
+            <article class="work-card">
+              <div class="work-image">
+                <img src="./assets/optimized/veriscript.webp" alt="VeriScript platform project visual" loading="lazy">
+              </div>
+              <div class="work-content">
+                <p class="project-meta">SOFTWARE · Mar — May 2026</p>
+                <h4>VeriScript: AI Transcript Fraud Detection Platform</h4>
+                <p>Built a responsive review interface for an AI assisted nursing credential verification workflow. The original project reports a 65% cost reduction compared with manual review.</p>
+                <button type="button" class="project-link" data-modal="modal6">Project details <span aria-hidden="true">↗</span>
+                </button>
+              </div>
+            </article>
+            <article class="work-card">
+              <div class="work-image">
+                <img src="./assets/optimized/solar-cells.webp" alt="Organic solar cell research project image" loading="lazy">
+              </div>
+              <div class="work-content">
+                <p class="project-meta">ENERGY MATERIALS · Oct 2024 — May 2025</p>
+                <h4>Fabrication and Thermal Stability Analysis of Organic Solar Cells</h4>
+                <p>Studied device performance under thermal stress through fabrication, electrical testing, and morphology analysis. The original project reports a 15% efficiency boost across more than 100 tested devices.</p>
+                <button type="button" class="project-link" data-modal="modal2">Project details <span aria-hidden="true">↗</span>
+                </button>
+              </div>
+            </article>
+            <article class="work-card">
+              <div class="work-image">
+                <img src="./assets/optimized/3d-printing.webp" alt="Custom 3D printed laboratory components" loading="lazy">
+              </div>
+              <div class="work-content">
+                <p class="project-meta">PROTOTYPING · Dec 2024 — Present</p>
+                <h4>Real-World Problem Solving Through 3D Printing</h4>
+                <p>Designing practical fixtures and sample holders to remove friction from everyday laboratory work. The original project lists more than 20 solutions and 500 printing hours.</p>
+                <button type="button" class="project-link" data-modal="modal3">Project details <span aria-hidden="true">↗</span>
+                </button>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+      <section class="section publication-section" id="publications" aria-labelledby="publication-title">
+        <div class="container">
+          <div class="section-heading">
+            <div>
+              <p class="eyebrow">02 / SCHOLARLY WORK</p>
+              <h2 id="publication-title">Publications &amp;<br>presentations<span class="period">.</span>
+              </h2>
+            </div>
+            <p>Published research and conference communication, presented with their documented status.</p>
+          </div>
+          <div class="publication-grid">
+            <article class="paper-card">
+              <div class="paper-top">
+                <span class="status-label">PUBLISHED RESEARCH</span>
+                <span>2026 / ACS NANO</span>
+              </div>
+              <h3>A Robotic High-Throughput Grid-Search Platform for Mapping Phase Behavior in Triblock Copolymer−Homopolymer Blends</h3>
+              <p class="paper-authors">Upreti, S., Xu, L., Moniruzzaman, M., Wang, Y., Adhikari, K., <strong>Baral, S.</strong>, Patton, D., Ma, B., Xu, J., Li, R., Zhu, C., Xia, W., &amp; Gu, X.</p>
+              <p class="paper-citation">
+                <em>ACS Nano</em>, 20, 17303–17315 (2026).</p>
+              <p class="paper-summary">A robotic platform mapped phase behavior and order–disorder transitions in triblock copolymer blends, supported by GISAXS, AFM, and simulations.</p>
+              <a class="project-link" href="https://doi.org/10.1021/acsnano.6c01299" target="_blank" rel="noopener noreferrer">Read publication <span aria-hidden="true">↗</span>
+              </a>
+            </article>
+            <article class="presentation-card">
+              <div class="paper-top">
+                <span class="status-label status-review">STATUS TO VERIFY</span>
+                <span>AUG 2026</span>
+              </div>
+              <p class="presentation-type">CONFERENCE POSTER</p>
+              <h3>ACS Fall 2026 National Meeting</h3>
+              <p>Poster on robotic grid-search methods and automated workflows for accelerated polymer morphology studies.</p>
+              <p class="review-note">The original site listed this as upcoming in August 2026. Presentation status needs confirmation.</p>
+            </article>
+          </div>
+          <div class="collaborators">
+            <p class="eyebrow">RESEARCH COLLABORATIONS &amp; FACILITIES</p>
+            <div class="collaborator-list">
+              <div>
+                <img src="./assets/collaborators/USM.png" alt="University of Southern Mississippi logo" loading="lazy">
+                <span>USM Polymer Science</span>
+              </div>
+              <div>
+                <img src="./assets/collaborators/LBNL.jpg" alt="Lawrence Berkeley National Laboratory logo" loading="lazy">
+                <span>LBNL / ALS</span>
+              </div>
+              <div>
+                <img src="./assets/collaborators/ANL.png" alt="Argonne National Laboratory logo" loading="lazy">
+                <span>Argonne / NST</span>
+              </div>
+              <div>
+                <img src="./assets/collaborators/BNL.png" alt="Brookhaven National Laboratory logo" loading="lazy">
+                <span>Brookhaven / NSLS-II</span>
+              </div>
             </div>
           </div>
-          <div class="btn-container">
-            <button class="btn btn-color-2 project-btn ripple" onclick="openModal('modal2')">Learn More</button>
-          </div>
         </div>
-
-        <div class="details-container color-container project-card fade-in-up">
-          <div class="article-container">
-            <img src="./assets/projects/3d_printing/project-3.png" alt="3D Printing" class="project-img"
-              loading="lazy" />
-          </div>
-          <h2 class="experience-sub-title project-title">Real World Problem Solving Through 3D Printing<br>&nbsp;</h2>
-          <p class="project-duration">Dec 2024 - Present</p>
-          <div class="project-stats">
-            <div class="stat-item"><span class="stat-number">20+</span><span class="stat-label">Solutions Created</span>
+      </section>
+      <section class="section skills-section" id="skills" aria-labelledby="skills-title">
+        <div class="container">
+          <div class="section-heading">
+            <div>
+              <p class="eyebrow">03 / TECHNICAL PRACTICE</p>
+              <h2 id="skills-title">Tools of the trade<span class="period">.</span>
+              </h2>
             </div>
-            <div class="stat-item"><span class="stat-number">500+</span><span class="stat-label">Printing Hours</span>
+            <p>Hands-on methods and software used across the research and engineering work documented here.</p>
+          </div>
+          <div class="skills-grid">
+            <div class="skill-group">
+              <span class="skill-number">01</span>
+              <h3>Scientific characterization</h3>
+              <p>Connecting structure, properties, and performance.</p>
+              <div class="skill-tags">
+                <span>GIWAXS</span>
+                <span>GISAXS</span>
+                <span>AFM</span>
+                <span>DLS</span>
+                <span>TGA</span>
+                <span>DSC</span>
+              </div>
+            </div>
+            <div class="skill-group">
+              <span class="skill-number">02</span>
+              <h3>Design &amp; analysis</h3>
+              <p>From experimental plans to physical lab tools.</p>
+              <div class="skill-tags">
+                <span>AutoCAD</span>
+                <span>OpenSCAD</span>
+                <span>ChemDraw</span>
+                <span>OriginPro</span>
+              </div>
+            </div>
+            <div class="skill-group">
+              <span class="skill-number">03</span>
+              <h3>Programming &amp; automation</h3>
+              <p>Software that brings instruments and data together.</p>
+              <div class="skill-tags">
+                <span>Python</span>
+                <span>MATLAB</span>
+                <span>HTML</span>
+                <span>CSS</span>
+              </div>
             </div>
           </div>
-          <div class="btn-container">
-            <button class="btn btn-color-2 project-btn ripple" onclick="openModal('modal3')">Learn More</button>
-          </div>
         </div>
-      </div>
-    </div>
-    <img src="./assets/icons/arrow.png" alt="Scroll down arrow" class="icon arrow"
-      onclick="location.href='./#publications'" role="button" tabindex="0"
-      onkeydown="if(event.key === 'Enter' || event.key === ' ') location.href='./#publications'" />
-  </section>
-
-  <section id="publications">
-    <p class="section__text__p1 fade-in-up">Academic Contributions</p>
-    <h2 class="title fade-in-up">Publications & Presentations</h2>
-
-    <div class="experience-details-container">
-      <div class="about-containers">
-
-        <div class="details-container hover-lift fade-in-up" style="flex: 2;">
-          <div class="research-badge"
-            style="margin-bottom: 1rem; background: rgba(16, 185, 129, 0.1); color: var(--success-color); border: 1px solid var(--success-color);">
-            Published: ACS Nano
-          </div>
-          <div class="text-container" style="padding: 0;">
-            <p style="margin-bottom: 1rem; font-size: 1rem; line-height: 1.5;">
-              Upreti, S., Xu, L., Moniruzzaman, M., Wang, Y., Adhikari, K., <strong>Baral, S.</strong>, Patton, D., Ma,
-              B., Xu, J., Li, R., Zhu, C., Xia, W., &amp; Gu, X. (2026). A Robotic High-Throughput Grid-Search Platform
-              for Mapping Phase Behavior in Triblock Copolymer−Homopolymer Blends. <i>ACS Nano</i>, <i>20</i>,
-              17303-17315. <a href="https://doi.org/10.1021/acsnano.6c01299" target="_blank" rel="noopener noreferrer"
-                style="color: var(--primary-color); text-decoration: underline; word-break: break-all;">https://doi.org/10.1021/acsnano.6c01299</a>
-            </p>
-            <p style="font-size: 0.95rem; line-height: 1.6;">
-              Systematically mapped the phase behavior and <strong>Order–Disorder Transition (ODT)</strong> boundaries
-              for triblock copolymer (PS-b-PB-b-PS and PS-b-PI-b-PS) blends using the <strong>NOVA robotic
-                platform</strong>. Investigated domain spacing evolution across three molecular weight regimes
-              (wet-brush, dry-brush, and macrophase separation) using <strong>GISAXS</strong> and <strong>AFM</strong>,
-              supported by <strong>coarse-grained molecular dynamics simulations</strong> to confirm homopolymer
-              distribution.
-            </p>
-          </div>
-        </div>
-
-        <div class="details-container hover-lift fade-in-up">
-          <div class="research-badge"
-            style="margin-bottom: 1rem; background: rgba(16, 185, 129, 0.1); color: var(--success-color); border: 1px solid var(--success-color);">
-            Upcoming: August 2026
-          </div>
-          <h3 class="experience-sub-title">Conference Presentations</h3>
-          <div class="text-container" style="padding: 0;">
-            <p>
-              <strong>ACS Fall 2026 National Meeting</strong><br>
-              <em>Poster Presentation</em>
-            </p>
-            <p
-              style="font-size: 0.9rem; margin-top: 1rem; border-top: 1px solid var(--border-color); padding-top: 1rem;">
-              Presenting research on robotic grid-search methodologies and automated workflows for accelerated polymer
-              morphology studies.
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="collaboration-container"
-      style="margin-top: 4rem; text-align: center; border-top: 1px solid var(--border-color); padding-top: 2rem;">
-      <p
-        style="font-size: 0.8rem; color: var(--text-light); margin-bottom: 2rem; text-transform: uppercase; letter-spacing: 2px; font-weight: 600;">
-        Research Conducted In Collaboration With
-      </p>
-      <div style="display: flex; justify-content: center; align-items: center; gap: 3.5rem; flex-wrap: wrap;">
-
-        <div style="display: flex; flex-direction: column; align-items: center; gap: 0.75rem;">
-          <img src="./assets/collaborators/USM.png" alt="USM" style="height: 55px; width: auto;">
-          <span style="font-size: 0.7rem; font-weight: 600;">USM Polymer Science</span>
-        </div>
-
-        <div style="display: flex; flex-direction: column; align-items: center; gap: 0.75rem;">
-          <img src="./assets/collaborators/LBNL.jpg" alt="LBNL" style="height: 45px; width: auto;">
-          <span style="font-size: 0.7rem; font-weight: 600;">LBNL / ALS</span>
-        </div>
-
-        <div style="display: flex; flex-direction: column; align-items: center; gap: 0.75rem;">
-          <img src="./assets/collaborators/ANL.png" alt="ANL" style="height: 45px; width: auto;">
-          <span style="font-size: 0.7rem; font-weight: 600;">Argonne / NST</span>
-        </div>
-
-        <div style="display: flex; flex-direction: column; align-items: center; gap: 0.75rem;">
-          <img src="./assets/collaborators/BNL.png" alt="BNL" style="height: 45px; width: auto;">
-          <span style="font-size: 0.7rem; font-weight: 600;">Brookhaven / NSLS-II</span>
-        </div>
-
-      </div>
-    </div>
-    <img src="./assets/icons/arrow.png" alt="Scroll down arrow" class="icon arrow"
-      onclick="location.href='./#experience'" role="button" tabindex="0"
-      onkeydown="if(event.key === 'Enter' || event.key === ' ') location.href='./#experience'" />
-  </section>
-
-  <section id="experience">
-    <p class="section__text__p1 fade-in-up">Explore My</p>
-    <h2 class="title fade-in-up">Skills</h2>
-
-    <div class="experience-details-container">
-      <div class="about-containers">
-        <div class="details-container hover-lift fade-in-up">
-          <img src="./assets/icons/icon-characterization.png" alt="Characterization Icon" class="category-icon"
-            style="height: 60px; width: 60px; margin-bottom: 1rem; filter: brightness(0) saturate(100%) invert(43%) sepia(87%) saturate(1475%) hue-rotate(204deg) brightness(97%) contrast(92%);">
-          <h2 class="experience-sub-title">Characterization Techniques</h2>
-          <div class="article-container">
-            <article>
-              <div>
-                <h3>GIWAXS</h3>
-              </div>
-            </article>
-            <article>
-              <div>
-                <h3>GISAXS</h3>
-              </div>
-            </article>
-            <article>
-              <div>
-                <h3>AFM</h3>
-              </div>
-            </article>
-            <article>
-              <div>
-                <h3>DLS</h3>
-              </div>
-            </article>
-            <article>
-              <div>
-                <h3>TGA</h3>
-              </div>
-            </article>
-            <article>
-              <div>
-                <h3>DSC</h3>
-              </div>
-            </article>
-          </div>
-        </div>
-        <div class="details-container hover-lift fade-in-up">
-          <img src="./assets/icons/icon-design.png" alt="Design Icon" class="category-icon"
-            style="height: 60px; width: 60px; margin-bottom: 1rem; filter: brightness(0) saturate(100%) invert(43%) sepia(87%) saturate(1475%) hue-rotate(204deg) brightness(97%) contrast(92%);">
-          <h2 class="experience-sub-title">Design and Analysis</h2>
-          <div class="article-container">
-            <article>
-              <div>
-                <h3>AutoCAD</h3>
-              </div>
-            </article>
-            <article>
-              <div>
-                <h3>OpenSCAD</h3>
-              </div>
-            </article>
-
-            <article>
-              <div>
-                <h3>ChemDraw</h3>
-              </div>
-            </article>
-            <article>
-              <div>
-                <h3>OriginPro</h3>
-              </div>
-            </article>
-          </div>
-        </div>
-        <div class="details-container hover-lift fade-in-up">
-          <img src="./assets/icons/icon-programming.png" alt="Programming Icon" class="category-icon"
-            style="height: 60px; width: 60px; margin-bottom: 1rem; filter: brightness(0) saturate(100%) invert(43%) sepia(87%) saturate(1475%) hue-rotate(204deg) brightness(97%) contrast(92%);">
-          <h2 class="experience-sub-title">Programming</h2>
-          <div class="article-container">
-            <article>
-              <div>
-                <h3>MATLAB</h3>
-              </div>
-            </article>
-            <article>
-              <div>
-                <h3>Python</h3>
-              </div>
-            </article>
-            <article>
-              <div>
-                <h3>HTML</h3>
-              </div>
-            </article>
-            <article>
-              <div>
-                <h3>CSS</h3>
-              </div>
-            </article>
-          </div>
-        </div>
-      </div>
-      <img src="./assets/icons/arrow.png" alt="Scroll down arrow" class="icon arrow"
-        onclick="location.href='./#contact'" role="button" tabindex="0"
-        onkeydown="if(event.key === 'Enter' || event.key === ' ') location.href='./#contact'" />
-  </section>
-
-  <!-- PROJECT MODALS -->
-  <div id="modal1" class="modal" role="dialog" aria-labelledby="modal1-title" aria-modal="true">
-    <div class="modal-content">
-      <span class="close" onclick="closeModal('modal1')" aria-label="Close modal">&times;</span>
-      <h2 id="modal1-title" class="modal-title">High Throughput Block Copolymer Thin Film Fabrication and
-        Characterization</h2>
-
-      <div class="modal-body">
-        <div class="modal-image">
-          <img src="./assets/projects/block_copolymer/project-1.jpg" alt="Block Copolymer Research Details"
+      </section>
+    </main>
+    <!-- PROJECT MODALS -->
+    <div id="modal1" class="modal" role="dialog" aria-labelledby="modal1-title" aria-modal="true">
+      <div class="modal-content">
+        <button type="button" class="close" onclick="closeModal('modal1')" aria-label="Close project details">&times;</button>
+        <h2 id="modal1-title" class="modal-title">High Throughput Block Copolymer Thin Film Fabrication and
+          Characterization</h2>
+        <div class="modal-body">
+          <div class="modal-image">
+            <img src="./assets/projects/block_copolymer/project-1.jpg" alt="Block Copolymer Research Details"
             loading="lazy" />
-        </div>
-
-        <div class="modal-section">
-          <h3>Project Overview</h3>
-          <p>This research focuses on developing efficient methodologies for fabricating and characterizing block
-            copolymer thin films at scale. Block copolymers self-assemble into nanoscale structures that have
-            applications in next-generation semiconductor manufacturing, filtration membranes, and energy storage
-            devices. The high-throughput approach allows for rapid screening of processing conditions to optimize film
-            morphology and properties.</p>
-        </div>
-
-        <div class="modal-section">
-          <h3>My Role & Responsibilities</h3>
-          <p>As the lead undergraduate researcher on this project, I designed and executed the experimental workflow
-            including:</p>
-          <ul>
-            <li>Sample preparation using spin-coating and thermal annealing techniques</li>
-            <li>Conducting GIWAXS and GISAXS measurements at synchrotron facilities</li>
-            <li>Data analysis and pattern interpretation using IgorPro and Python</li>
-            <li>Developing automated processing scripts to handle large datasets</li>
-          </ul>
-        </div>
-
-        <div class="modal-section">
-          <h3>Techniques & Methods</h3>
-          <ul>
-            <li><strong>Grazing-Incidence Wide-Angle X-ray Scattering (GIWAXS)</strong> - Crystalline structure analysis
-            </li>
-            <li><strong>Grazing-Incidence Small-Angle X-ray Scattering (GISAXS)</strong> - Morphology characterization
-            </li>
-            <li><strong>Atomic Force Microscopy (AFM)</strong> - Surface topography imaging</li>
-            <li><strong>Thermal Analysis</strong> - DSC and TGA for phase behavior studies</li>
-            <li><strong>Computational Tools</strong> - MATLAB and Python for data processing and visualization</li>
-          </ul>
-        </div>
-
-        <div class="modal-section">
-          <h3>Results & Outcomes</h3>
-          <p>Developed a streamlined workflow that reduced characterization time by 40% while maintaining data quality.
-            Identified key processing parameters that influence domain spacing and orientation. Results contributed to
-            understanding structure-property relationships in block copolymer systems. Currently preparing 300+ thin
-            film samples for our next beamtime at ALS or NSLS.</p>
-        </div>
-        <div class="modal-section">
-          <h3 style="margin-bottom: 1.5rem;">Workflow Video</h3>
-          <div style="border-radius: 1rem; overflow: hidden; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);">
-            <video controls preload="metadata" style="width: 100%; display: block; border-radius: 1rem;"
+          </div>
+          <div class="modal-section">
+            <h3>Project Overview</h3>
+            <p>This research focuses on developing efficient methodologies for fabricating and characterizing block
+              copolymer thin films at scale. Block copolymers self-assemble into nanoscale structures that have
+              applications in next-generation semiconductor manufacturing, filtration membranes, and energy storage
+              devices. The high-throughput approach allows for rapid screening of processing conditions to optimize film
+              morphology and properties.</p>
+          </div>
+          <div class="modal-section">
+            <h3>My Role & Responsibilities</h3>
+            <p>As the lead undergraduate researcher on this project, I designed and executed the experimental workflow
+              including:</p>
+            <ul>
+              <li>Sample preparation using spin-coating and thermal annealing techniques</li>
+              <li>Conducting GIWAXS and GISAXS measurements at synchrotron facilities</li>
+              <li>Data analysis and pattern interpretation using IgorPro and Python</li>
+              <li>Developing automated processing scripts to handle large datasets</li>
+            </ul>
+          </div>
+          <div class="modal-section">
+            <h3>Techniques & Methods</h3>
+            <ul>
+              <li>
+                <strong>Grazing-Incidence Wide-Angle X-ray Scattering (GIWAXS)</strong> - Crystalline structure analysis
+              </li>
+              <li>
+                <strong>Grazing-Incidence Small-Angle X-ray Scattering (GISAXS)</strong> - Morphology characterization
+              </li>
+              <li>
+                <strong>Atomic Force Microscopy (AFM)</strong> - Surface topography imaging</li>
+              <li>
+                <strong>Thermal Analysis</strong> - DSC and TGA for phase behavior studies</li>
+              <li>
+                <strong>Computational Tools</strong> - MATLAB and Python for data processing and visualization</li>
+            </ul>
+          </div>
+          <div class="modal-section">
+            <h3>Results & Outcomes</h3>
+            <p>Developed a streamlined workflow that reduced characterization time by 40% while maintaining data quality.
+              Identified key processing parameters that influence domain spacing and orientation. Results contributed to
+              understanding structure-property relationships in block copolymer systems. Currently preparing 300+ thin
+              film samples for our next beamtime at ALS or NSLS.</p>
+          </div>
+          <div class="modal-section">
+            <h3 style="margin-bottom: 1.5rem;">Workflow Video</h3>
+            <div style="border-radius: 1rem; overflow: hidden; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);">
+              <video controls preload="metadata" style="width: 100%; display: block; border-radius: 1rem;"
               aria-label="System Operations Workflow Video">
               <source src="./assets/projects/block_copolymer/System_Operations_High_Throughput.mp4" type="video/mp4">
               Your browser does not support the video tag.
             </video>
           </div>
         </div>
-
-
         <div class="modal-section">
           <h3>Links & Resources</h3>
           <p>
-            <a href="https://xiaodangu.wixsite.com/guresearchgroup/research" target="_blank">Lab Group Website</a>
+            <a href="https://xiaodangu.wixsite.com/guresearchgroup/research" target="_blank" rel="noopener noreferrer">Lab Group Website</a>
           </p>
         </div>
       </div>
     </div>
   </div>
-
   <div id="modal2" class="modal" role="dialog" aria-labelledby="modal2-title" aria-modal="true">
     <div class="modal-content">
-      <span class="close" onclick="closeModal('modal2')" aria-label="Close modal">&times;</span>
+      <button type="button" class="close" onclick="closeModal('modal2')" aria-label="Close project details">&times;</button>
       <h2 id="modal2-title" class="modal-title">Fabrication and Thermal Stability Analysis of Organic Solar Cells</h2>
-
       <div class="modal-body">
         <div class="modal-image">
           <img src="./assets/projects/solar_cells/project-2_HD.png" alt="Organic Solar Cell Research Details"
-            loading="lazy" />
+          loading="lazy" />
         </div>
-
         <div class="modal-section">
           <h3>Project Overview</h3>
           <p>Organic photovoltaics (OPVs) offer a promising pathway to sustainable energy with advantages like
@@ -577,7 +426,6 @@
             viability. Understanding degradation mechanisms under thermal stress is critical for extending device
             lifetime and improving performance reliability.</p>
         </div>
-
         <div class="modal-section">
           <h3>My Role & Responsibilities</h3>
           <p>I was responsible for the complete device lifecycle from fabrication to characterization:</p>
@@ -590,19 +438,23 @@
             <li>Correlating performance degradation with structural and compositional changes</li>
           </ul>
         </div>
-
         <div class="modal-section">
           <h3>Techniques & Methods</h3>
           <ul>
-            <li><strong>Device Fabrication</strong> - Spin coating, thermal evaporation, and encapsulation</li>
-            <li><strong>J-V Characterization</strong> - Solar simulator and source meter measurements</li>
-            <li><strong>Atomic Force Microscopy (AFM)</strong> - Surface morphology and phase separation analysis</li>
-            <li><strong>Thermal Analysis</strong> - TGA for decomposition temperature, DSC for glass transition</li>
-            <li><strong>UV-Vis Spectroscopy</strong> - Absorption spectra and optical bandgap determination</li>
-            <li><strong>Data Analysis</strong> - OriginPro and Python for statistical analysis and visualization</li>
+            <li>
+              <strong>Device Fabrication</strong> - Spin coating, thermal evaporation, and encapsulation</li>
+            <li>
+              <strong>J-V Characterization</strong> - Solar simulator and source meter measurements</li>
+            <li>
+              <strong>Atomic Force Microscopy (AFM)</strong> - Surface morphology and phase separation analysis</li>
+            <li>
+              <strong>Thermal Analysis</strong> - TGA for decomposition temperature, DSC for glass transition</li>
+            <li>
+              <strong>UV-Vis Spectroscopy</strong> - Absorption spectra and optical bandgap determination</li>
+            <li>
+              <strong>Data Analysis</strong> - OriginPro and Python for statistical analysis and visualization</li>
           </ul>
         </div>
-
         <div class="modal-section">
           <h3>Results & Outcomes</h3>
           <p>Identified critical temperature thresholds beyond which device performance degrades significantly.
@@ -610,31 +462,27 @@
             Proposed optimized annealing protocols that improve initial efficiency while maintaining better long-term
             stability.</p>
         </div>
-
         <div class="modal-section">
           <h3>Links & Resources</h3>
           <p>
-            <a href="./assets/projects/solar_cells/researchpos2.png" target="_blank">
+            <a href="./assets/projects/solar_cells/researchpos2.png" target="_blank" rel="noopener noreferrer">
               Research Poster
             </a> |
-            <a href="https://www.usm.edu/polymer-science-engineering/optoelec_device_lab.php" target="_blank">Lab
+            <a href="https://www.usm.edu/polymer-science-engineering/optoelec_device_lab.php" target="_blank" rel="noopener noreferrer">Lab
               Website</a>
           </p>
         </div>
       </div>
     </div>
   </div>
-
   <div id="modal3" class="modal" role="dialog" aria-labelledby="modal3-title" aria-modal="true">
     <div class="modal-content">
-      <span class="close" onclick="closeModal('modal3')" aria-label="Close modal">&times;</span>
+      <button type="button" class="close" onclick="closeModal('modal3')" aria-label="Close project details">&times;</button>
       <h2 id="modal3-title" class="modal-title">Real World Problem Solving Through 3D Printing</h2>
-
       <div class="modal-body">
         <div class="modal-image">
           <img src="./assets/projects/3d_printing/project-3_HD.png" alt="3D Printing Projects Details" loading="lazy" />
         </div>
-
         <div class="modal-section">
           <h3>Project Overview</h3>
           <p>This project has evolved from solving everyday laboratory inconveniences to engineering critical
@@ -646,628 +494,587 @@
             new capabilities in materials science research.
           </p>
         </div>
-
-        <div class="modal-section gallery-section">
-
-          <div
-            style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; margin-bottom: 0.5rem; border-bottom: 1px solid var(--border-color); padding-bottom: 0.5rem;">
-            <h3 style="margin: 0;">Recent Design Gallery</h3>
-            <a href="https://www.thingiverse.com/Sabin-designs/designs" target="_blank"
-              style="font-size: 0.85rem; color: var(--primary-color); font-weight: 600; text-decoration: none; display: flex; align-items: center; gap: 5px; transition: all 0.3s ease;">
-              Access these designs using my Thingiverse account &#8599;
-            </a>
-          </div>
-
-
-          <div class="gallery-grid">
-            <div class="gallery-item" onclick="openLightbox(0)" role="button" tabindex="0">
-              <img src="./assets/projects/3d_printing/ossila_mount.jpg" alt="Ossila Automated Mount" loading="lazy" />
-
-            </div>
-
-            <div class="gallery-item" onclick="openLightbox(1)" role="button" tabindex="0">
-              <img src="./assets/projects/3d_printing/n9_holder.jpg" alt="North Robotics N9 Holder" loading="lazy" />
-
-            </div>
-
-            <div class="gallery-item" onclick="openLightbox(2)" role="button" tabindex="0">
-              <img src="./assets/projects/3d_printing/1.5 by 1.5 thinfilmholderwithlid.png"
-                alt="1.5 by 1.5 Thin Film Holder with Lid" loading="lazy" />
-
-            </div>
-
-            <div class="gallery-item" onclick="openLightbox(3)" role="button" tabindex="0">
-              <img src="./assets/projects/3d_printing/Thinfilmholderfordifferentdimension.png"
-                alt="thin film sample holder for various substrate dimensions." loading="lazy" />
-
-            </div>
-
-            <div class="gallery-item" onclick="openLightbox(4)" role="button" tabindex="0">
-              <img src="./assets/projects/3d_printing/Loadcellcover.png" alt="Load Cell Cover" loading="lazy" />
-
-            </div>
-
-            <div class="gallery-item" onclick="openLightbox(5)" role="button" tabindex="0">
-              <img src="./assets/projects/3d_printing/loadcellmount2.png" alt="Load Cell Mount Design 2"
-                loading="lazy" />
-
-            </div>
-
-            <div class="gallery-item" onclick="openLightbox(6)" role="button" tabindex="0">
-              <img src="./assets/projects/3d_printing/pipetteholder2.png" alt="Pipette Holder Design 2"
-                loading="lazy" />
-
-            </div>
-
-            <div class="gallery-item" onclick="openLightbox(7)" role="button" tabindex="0">
-              <img src="./assets/projects/3d_printing/robosoccerbot.png" alt="Robo Soccer Bot" loading="lazy" />
-
-            </div>
-
-            <div class="gallery-item" onclick="openLightbox(8)" role="button" tabindex="0">
-              <img src="./assets/projects/3d_printing/Vileholer.png" alt="Vial Holder" loading="lazy" />
-
-            </div>
-          </div>
-        </div>
-
-        <div class="modal-section">
-          <h3>My Role & Responsibilities</h3>
-          <p>End-to-end ownership of the design and fabrication process:</p>
-          <ul>
-            <li>Identifying problems and needs in laboratory and practical settings</li>
-            <li>Conceptualizing and designing solutions using CAD software (AutoCAD, OpenSCAD)</li>
-            <li>Optimizing designs for printability, structural integrity, and material efficiency</li>
-            <li>3D printing using FDM technology with mostly PLA</li>
-            <li>Post-processing and quality testing of printed components</li>
-            <li>Iterating designs based on lab members feedback and performance testing</li>
-          </ul>
-        </div>
-
-        <div class="modal-section">
-          <h3>Techniques & Methods</h3>
-          <ul>
-            <li><strong>CAD Design</strong> - AutoCAD for complex geometries, OpenSCAD for parametric modeling</li>
-            <li><strong>3D Printing</strong> - FDM (Fused Deposition Modeling) with PLA, PETG, and ABS materials</li>
-            <li><strong>Material Selection</strong> - Choosing appropriate polymers based on mechanical requirements
-            </li>
-            <li><strong>Process Optimization</strong> - Print parameter tuning for quality and efficiency</li>
-            <li><strong>Iterative Design</strong> - Rapid prototyping and testing cycles</li>
-          </ul>
-        </div>
-
-        <div class="modal-section">
-          <h3>Results & Outcomes</h3>
-          <p>Successfully designed and fabricated over 20 unique solutions including custom sample holders for
-            characterization equipment, modular storage systems for laboratory consumables, and specialized fixtures for
-            experimental setups. These tools have improved lab efficiency and reduced equipment costs. The project has
-            also enhanced my skills in design thinking, materials selection, and practical engineering problem-solving.
-          </p>
-        </div>
-
-        <div class="modal-section">
-          <h3>Example Applications</h3>
-          <ul>
-            <li><strong>Ossila Four-Point Probe Automated Mount</strong><br>
-              <em>The Design:</em> A precision bracket that mounts the Ossila probe head directly onto a Thorlabs
-              KVS30/M motorized vertical stage.<br>
-              <em>Impact:</em> Transitioned the lab from manual to fully automated conductivity measurements. By using
-              Python scripts to control the stage, the probe now contacts samples at the exact same pressure and height
-              every time, completely eliminating human error.
-            </li>
-
-            <li><strong>North Robotics N9 Drop Cast Holder</strong><br>
-              <em>The Design:</em> A custom platform that replaces the standard "wafer garage" on the N9 system,
-              utilizing existing alignment pins for a perfect fit.<br>
-              <em>Impact:</em> This "hack" repurposed a high-end robot for specific thin-film applications, allowing it
-              to directly deposit solutions into drop-cast structures with high repeatability.
-            </li>
-
-            <li><strong>High-Capacity Thin-Film Sample Holders</strong><br>
-              <em>The Design:</em> Custom-engineered holders with optimized spatial geometry to secure thin-film samples
-              during processing.<br>
-              <em>Impact:</em> Redesigned the standard architecture to fit <strong>100 samples</strong> within the same
-              footprint that originally held only 20. This <strong>500% increase in capacity</strong> significantly
-              reduced cost-per-sample and maximized throughput.
-            </li>
-
-            <li><strong>Universal Testing Machine (UTM) Protective Cover</strong><br>
-              <em>The Design:</em> A custom-fitted housing for the Universal Testing Machine's sensitive mechanics.<br>
-              <em>Impact:</em> Protects internal components from dust and accidental splashes during wet tensile
-              testing, preventing corrosion and debris buildup on the drive system.
-            </li>
-
-            <li><strong>Lab Hood Edge-Mount Pipette Holder</strong><br>
-              <em>The Design:</em> A space-saving C-port clip that attaches directly to the metal lip of a fume
-              hood.<br>
-              <em>Impact:</em> Cleared the deck of clutter by moving expensive tools to eye level, improving workflow
-              organization and maintaining better airflow and sterility within the hood.
-            </li>
-
-            <li><strong>Robosoccer Competition Attachments</strong><br>
-              <em>The Design:</em> A two-part system featuring a front-end "pusher/plow" for ball control and a
-              protective top housing.<br>
-              <em>Impact:</em> Turned a base-model robot into a championship winner by providing superior ball handling
-              and protecting the electronics from high-speed collisions.
-            </li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div id="modal4" class="modal" role="dialog" aria-labelledby="modal4-title" aria-modal="true">
-    <div class="modal-content">
-      <span class="close" onclick="closeModal('modal4')" aria-label="Close modal">&times;</span>
-
-      <div class="modal-body">
-        <h2 id="modal4-title" class="modal-title" style="margin-left: 0; padding-top: 0;">Autonomous Lab: End-to-End
-          Robotic Orchestration</h2>
-        <div class="research-badge pulse" style="margin-bottom: 2rem;">
-          <span class="badge-dot"></span>
-          Vision: Fully Autonomous "Self-Driving" Materials Laboratory
-        </div>
-
-        <div class="modal-image">
-          <img src="./assets/projects/autonomous_lab/autonomous.jpg" alt="Integrated Robotic Workflow Diagram"
-            loading="lazy" />
-        </div>
-
-        <div class="modal-section">
-          <h3>Laying the "Walking Blocks"</h3>
-          <p>A true closed-loop system requires mastering individual instrument control first. By developing custom
-            Python drivers, I have created a <strong>Hardware Abstraction Layer (HAL)</strong> that allows a central
-            computer to coordinate disparate hardware—originally designed as standalone units—into a single, unified
-            laboratory ecosystem.</p>
-        </div>
-
-        <div class="modal-section"
-          style="background: rgba(59, 130, 246, 0.05); padding: 1.5rem; border-radius: 1rem; border: 1px solid var(--border-color); margin-bottom: 2.5rem;">
-          <h3 style="margin-top: 0;">Developed Hardware Infrastructure</h3>
-          <p style="font-size: 0.9rem; margin-bottom: 1.5rem;">Access the specific drivers developed for each laboratory
-            "block":</p>
-
-          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px;">
-            <div style="display: flex; flex-direction: column; gap: 8px;">
-              <strong style="font-size: 0.85rem; color: var(--primary-color);">Optical Metrology</strong>
-              <a href="https://github.com/S8bin-dev/Osilla-Flame-Spectrometer" target="_blank" class="btn btn-color-2"
-                style="width: 100%; font-size: 0.75rem; padding: 0.6rem;">Flame Spectrometer Repo</a>
-            </div>
-            <div style="display: flex; flex-direction: column; gap: 8px;">
-              <strong style="font-size: 0.85rem; color: var(--primary-color);">Precision Motion</strong>
-              <a href="https://github.com/S8bin-dev/Thor-Labs-Linear-Stage" target="_blank" class="btn btn-color-2"
-                style="width: 100%; font-size: 0.75rem; padding: 0.6rem;">Thorlabs Stage Repo</a>
-            </div>
-            <div style="display: flex; flex-direction: column; gap: 8px;">
-              <strong style="font-size: 0.85rem; color: var(--primary-color);">System Orchestration</strong>
-              <a href="https://github.com/S8bin-dev/AutomatedProbing" target="_blank" class="btn btn-color-2"
-                style="width: 100%; font-size: 0.75rem; padding: 0.6rem;">Automated Probing Repo</a>
-            </div>
-            <div style="display: flex; flex-direction: column; gap: 8px;">
-              <strong style="font-size: 0.85rem; color: var(--primary-color);">Electrical Analysis</strong>
-              <a href="https://github.com/S8bin-dev/Osilla-SMU" target="_blank" class="btn btn-color-2"
-                style="width: 100%; font-size: 0.75rem; padding: 0.6rem;">Osilla SMU Repo</a>
-            </div>
-          </div>
-        </div>
-
-        <div class="modal-section gallery-section"
-          style="margin-bottom: 3rem; border-bottom: 1px solid var(--border-color); padding-bottom: 2rem;">
-          <h3>System Operations & Setup</h3>
-          <div class="gallery-grid" style="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px;">
-
-            <div class="gallery-item" style="aspect-ratio: 16/9;">
-              <video width="100%" height="100%" controls
-                style="object-fit: cover; border-radius: 1rem; background: #000;">
-                <source src="./assets/projects/autonomous_lab/Full_workflow.mp4" type="video/mp4">
-              </video>
-              <div style="padding: 0.5rem; font-size: 0.8rem; text-align: center; color: var(--text-medium);">Full
-                Workflow Demo</div>
-            </div>
-
-            <div class="gallery-item" style="aspect-ratio: 16/9;">
-              <video width="100%" height="100%" controls
-                style="object-fit: cover; border-radius: 1rem; background: #000;">
-                <source src="./assets/projects/autonomous_lab/homing_demo.mp4" type="video/mp4">
-              </video>
-              <div style="padding: 0.5rem; font-size: 0.8rem; text-align: center; color: var(--text-medium);">Integrated
-                System Homing</div>
-            </div>
-
-            <div class="gallery-item" onclick="openLightbox(0, 'autonomous')" style="aspect-ratio: 16/9;">
-              <img src="./assets/projects/autonomous_lab/spectrometer_setup.jpg" alt="Spectrometer Setup"
-                loading="lazy" />
-            </div>
-            <div class="gallery-item" onclick="openLightbox(1, 'autonomous')" style="aspect-ratio: 16/9;">
-              <img src="./assets/projects/autonomous_lab/stage_contact.jpg" alt="Stage & SMU Setup" loading="lazy" />
-            </div>
-          </div>
-        </div>
-
-        <div class="modal-section" style="margin-top: 1rem;">
-          <h3>The Integrated Autonomous Loop</h3>
-          <p style="margin-bottom: 1.5rem;">I am currently integrating these drivers with our <strong>N9 North
-              Robotics</strong> platform to achieve a fully automated cycle:</p>
-
-          <div style="display: flex; flex-direction: column; gap: 1.5rem;">
-            <div style="display: flex; gap: 1.2rem; align-items: flex-start;">
-              <div
-                style="background: var(--primary-color); color: white; border-radius: 50%; width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-weight: bold; font-size: 0.9rem; box-shadow: 0 4px 10px rgba(59, 130, 246, 0.3);">
-                1</div>
-              <p style="margin: 0;"><strong
-                  style="color: var(--primary-color); display: block; margin-bottom: 2px;">Fabrication</strong> The N9
-                Robot autonomously executes polymer solution deposition, spin-coating, and thermal annealing.</p>
-            </div>
-
-            <div style="display: flex; gap: 1.2rem; align-items: flex-start;">
-              <div
-                style="background: var(--primary-color); color: white; border-radius: 50%; width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-weight: bold; font-size: 0.9rem; box-shadow: 0 4px 10px rgba(59, 130, 246, 0.3);">
-                2</div>
-              <p style="margin: 0;"><strong
-                  style="color: var(--primary-color); display: block; margin-bottom: 2px;">Transfer</strong> The robot
-                moves the sample to the Thorlabs vertical stage for precise height adjustments.</p>
-            </div>
-
-            <div style="display: flex; gap: 1.2rem; align-items: flex-start;">
-              <div
-                style="background: var(--primary-color); color: white; border-radius: 50%; width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-weight: bold; font-size: 0.9rem; box-shadow: 0 4px 10px rgba(59, 130, 246, 0.3);">
-                3</div>
-              <p style="margin: 0;"><strong
-                  style="color: var(--primary-color); display: block; margin-bottom: 2px;">Characterization</strong> The
-                system triggers the Spectrometer to determine film thickness followed by the Osilla SMU for I-V curves
-                and conductivity measurement.</p>
-            </div>
-
-            <div style="display: flex; gap: 1.2rem; align-items: flex-start;">
-              <div
-                style="background: var(--primary-color); color: white; border-radius: 50%; width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-weight: bold; font-size: 0.9rem; box-shadow: 0 4px 10px rgba(59, 130, 246, 0.3);">
-                4</div>
-              <p style="margin: 0;"><strong
-                  style="color: var(--primary-color); display: block; margin-bottom: 2px;">Storage</strong> Upon
-                completion, the N9 Robot autonomously retrieves the sample and places it in the storage garage.</p>
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </div>
-
-  <div id="modal5" class="modal" role="dialog" aria-labelledby="modal5-title" aria-modal="true">
-    <div class="modal-content">
-      <span class="close" onclick="closeModal('modal5')" aria-label="Close modal">&times;</span>
-      <h2 id="modal5-title" class="modal-title">CMS Inner Tracker Upgrade: Bare Module Testing & Automation</h2>
-
-      <div class="modal-body">
-        <div class="modal-image">
-          <img src="./assets/projects/cms_tracker/cms_tracker.jpg?v=2" alt="CMS Inner Tracker Upgrade Research"
-            loading="lazy" />
-        </div>
-
-        <div class="modal-section">
-          <h3>Project Overview</h3>
-          <p>As part of the U.S. DOE-funded US CMS PURSUE Summer Research Internship, I contributed to the High
-            Luminosity LHC (HL-LHC) upgrade. The program began with intensive computational training at
-            Fermilab—covering the UNIX shell, PyROOT, and machine learning—before I relocated to Kansas State
-            University. At K-State, I joined the US Midwest 2 testing site to focus on the electrical validation of bare
-            modules (silicon sensors bump-bonded to CMS Readout Chips) for the CMS Inner Tracker upgrade.</p>
-        </div>
-
-        <div class="modal-section">
-          <h3>My Role & Responsibilities</h3>
-          <p>I transitioned from executing standard testing protocols to actively optimizing the laboratory's workflow:
-          </p>
-          <ul>
-            <li>Conducted rigorous electrical testing and optical inspections of highly sensitive bare modules inside a
-              Class 10,000 cleanroom.</li>
-            <li>Identified critical efficiency bottlenecks in the terminal-heavy DAQ testing procedures.</li>
-            <li>Designed and developed a centralized Python-based Graphical User Interface (GUI) from the ground up to
-              streamline the testing workflow.</li>
-            <li>Integrated hardware controls directly into the GUI, automating WPAC initialization, contact resistance
-              checks, IREF trim-bit measurements, and Sensor I-V scans.</li>
-          </ul>
-        </div>
-
-        <div class="modal-section">
-          <h3>Techniques & Methods</h3>
-          <ul>
-            <li><strong>Software Engineering</strong> - Python, PyROOT, RDataFrame, and custom GUI development for
-              hardware abstraction.</li>
-            <li><strong>Hardware Integration</strong> - Ph2_ACF framework, Keithley source-meters, and MPI-TS3000 probe
-              station operation.</li>
-            <li><strong>Diagnostic Analysis</strong> - High-Charge scans and coupled/uncoupled crosstalk scans for dead
-              pixel and open-bump identification.</li>
-            <li><strong>Cleanroom Protocol</strong> - ESD-safe handling, ISO 7 cleanroom standards, and microscopy for
-              physical defect inspection.</li>
-          </ul>
-        </div>
-
-        <div class="modal-section">
-          <h3>Results & Outcomes</h3>
-          <p>Successfully abstracted complex, terminal-level commands into an intuitive GUI, drastically improving the
-            team's productivity and testing efficiency. The automated testing suite includes built-in exception handling
-            and safe-exit procedures that automatically cut high-voltage and low-voltage power during faults, securing
-            delicate hardware. Actively processed and graded multiple fragile modules, ensuring the early detection of
-            bump-bonding defects before expensive downstream assembly steps.</p>
-        </div>
-
-        <div class="modal-section">
-          <h3>Links & Resources</h3>
-          <p>
-            <a href="https://cms.fnal.gov/" target="_blank">US CMS Operations at Fermilab</a>
-          </p>
-        </div>
-
         <div class="modal-section gallery-section">
           <div
-            style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; margin-bottom: 0.5rem; border-bottom: 1px solid var(--border-color); padding-bottom: 0.5rem;">
-            <h3 style="margin: 0;">Final Talk Slides</h3>
-          </div>
-
-          <div class="gallery-grid">
-            <div class="gallery-item" onclick="openLightbox(0, 'cms_tracker')" role="button" tabindex="0">
-              <img src="./assets/projects/cms_tracker/Final_slides_Sabin_Baral._page-0001.jpg" alt="Slide 1" loading="lazy" />
-            </div>
-            <div class="gallery-item" onclick="openLightbox(1, 'cms_tracker')" role="button" tabindex="0">
-              <img src="./assets/projects/cms_tracker/Final_slides_Sabin_Baral._page-0002.jpg" alt="Slide 2" loading="lazy" />
-            </div>
-            <div class="gallery-item" onclick="openLightbox(2, 'cms_tracker')" role="button" tabindex="0">
-              <img src="./assets/projects/cms_tracker/Final_slides_Sabin_Baral._page-0003.jpg" alt="Slide 3" loading="lazy" />
-            </div>
-            <div class="gallery-item" onclick="openLightbox(3, 'cms_tracker')" role="button" tabindex="0">
-              <img src="./assets/projects/cms_tracker/Final_slides_Sabin_Baral._page-0004.jpg" alt="Slide 4" loading="lazy" />
-            </div>
-            <div class="gallery-item" onclick="openLightbox(4, 'cms_tracker')" role="button" tabindex="0">
-              <img src="./assets/projects/cms_tracker/Final_slides_Sabin_Baral._page-0005.jpg" alt="Slide 5" loading="lazy" />
-            </div>
-            <div class="gallery-item" onclick="openLightbox(5, 'cms_tracker')" role="button" tabindex="0">
-              <img src="./assets/projects/cms_tracker/Final_slides_Sabin_Baral._page-0006.jpg" alt="Slide 6" loading="lazy" />
-            </div>
-            <div class="gallery-item" onclick="openLightbox(6, 'cms_tracker')" role="button" tabindex="0">
-              <img src="./assets/projects/cms_tracker/Final_slides_Sabin_Baral._page-0007.jpg" alt="Slide 7" loading="lazy" />
-            </div>
-            <div class="gallery-item" onclick="openLightbox(7, 'cms_tracker')" role="button" tabindex="0">
-              <img src="./assets/projects/cms_tracker/Final_slides_Sabin_Baral._page-0008.jpg" alt="Slide 8" loading="lazy" />
-            </div>
-            <div class="gallery-item" onclick="openLightbox(8, 'cms_tracker')" role="button" tabindex="0">
-              <img src="./assets/projects/cms_tracker/Final_slides_Sabin_Baral._page-0009.jpg" alt="Slide 9" loading="lazy" />
-            </div>
-            <div class="gallery-item" onclick="openLightbox(9, 'cms_tracker')" role="button" tabindex="0">
-              <img src="./assets/projects/cms_tracker/Final_slides_Sabin_Baral._page-0010.jpg" alt="Slide 10" loading="lazy" />
-            </div>
-            <div class="gallery-item" onclick="openLightbox(10, 'cms_tracker')" role="button" tabindex="0">
-              <img src="./assets/projects/cms_tracker/Final_slides_Sabin_Baral._page-0011.jpg" alt="Slide 11" loading="lazy" />
-            </div>
-            <div class="gallery-item" onclick="openLightbox(11, 'cms_tracker')" role="button" tabindex="0">
-              <img src="./assets/projects/cms_tracker/Final_slides_Sabin_Baral._page-0012.jpg" alt="Slide 12" loading="lazy" />
-            </div>
-            <div class="gallery-item" onclick="openLightbox(12, 'cms_tracker')" role="button" tabindex="0">
-              <img src="./assets/projects/cms_tracker/Final_slides_Sabin_Baral._page-0013.jpg" alt="Slide 13" loading="lazy" />
-            </div>
-            <div class="gallery-item" onclick="openLightbox(13, 'cms_tracker')" role="button" tabindex="0">
-              <img src="./assets/projects/cms_tracker/Final_slides_Sabin_Baral._page-0014.jpg" alt="Slide 14" loading="lazy" />
-            </div>
-            <div class="gallery-item" onclick="openLightbox(14, 'cms_tracker')" role="button" tabindex="0">
-              <img src="./assets/projects/cms_tracker/Final_slides_Sabin_Baral._page-0015.jpg" alt="Slide 15" loading="lazy" />
-            </div>
-            <div class="gallery-item" onclick="openLightbox(15, 'cms_tracker')" role="button" tabindex="0">
-              <img src="./assets/projects/cms_tracker/Final_slides_Sabin_Baral._page-0016.jpg" alt="Slide 16" loading="lazy" />
-            </div>
-            <div class="gallery-item" onclick="openLightbox(16, 'cms_tracker')" role="button" tabindex="0">
-              <img src="./assets/projects/cms_tracker/Final_slides_Sabin_Baral._page-0017.jpg" alt="Slide 17" loading="lazy" />
-            </div>
-            <div class="gallery-item" onclick="openLightbox(17, 'cms_tracker')" role="button" tabindex="0">
-              <img src="./assets/projects/cms_tracker/Final_slides_Sabin_Baral._page-0018.jpg" alt="Slide 18" loading="lazy" />
-            </div>
-            <div class="gallery-item" onclick="openLightbox(18, 'cms_tracker')" role="button" tabindex="0">
-              <img src="./assets/projects/cms_tracker/Final_slides_Sabin_Baral._page-0019.jpg" alt="Slide 19" loading="lazy" />
-            </div>
-          </div>
-          </div>
+          style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; margin-bottom: 0.5rem; border-bottom: 1px solid var(--border-color); padding-bottom: 0.5rem;">
+          <h3 style="margin: 0;">Recent Design Gallery</h3>
+          <a href="https://www.thingiverse.com/Sabin-designs/designs" target="_blank"
+          style="font-size: 0.85rem; color: var(--primary-color); font-weight: 600; text-decoration: none; display: flex; align-items: center; gap: 5px; transition: all 0.3s ease;" rel="noopener noreferrer">
+          Access these designs using my Thingiverse account &#8599;
+        </a>
+      </div>
+      <div class="gallery-grid">
+        <div class="gallery-item" role="button" tabindex="0" onkeydown="if(event.key === 'Enter' || event.key === ' ') { event.preventDefault(); this.click(); }" onclick="openLightbox(0)">
+          <img src="./assets/projects/3d_printing/ossila_mount.jpg" alt="Ossila Automated Mount" loading="lazy" />
+        </div>
+        <div class="gallery-item" role="button" tabindex="0" onkeydown="if(event.key === 'Enter' || event.key === ' ') { event.preventDefault(); this.click(); }" onclick="openLightbox(1)">
+          <img src="./assets/projects/3d_printing/n9_holder.jpg" alt="North Robotics N9 Holder" loading="lazy" />
+        </div>
+        <div class="gallery-item" role="button" tabindex="0" onkeydown="if(event.key === 'Enter' || event.key === ' ') { event.preventDefault(); this.click(); }" onclick="openLightbox(2)">
+          <img src="./assets/projects/3d_printing/1.5 by 1.5 thinfilmholderwithlid.png"
+          alt="1.5 by 1.5 Thin Film Holder with Lid" loading="lazy" />
+        </div>
+        <div class="gallery-item" role="button" tabindex="0" onkeydown="if(event.key === 'Enter' || event.key === ' ') { event.preventDefault(); this.click(); }" onclick="openLightbox(3)">
+          <img src="./assets/projects/3d_printing/Thinfilmholderfordifferentdimension.png"
+          alt="thin film sample holder for various substrate dimensions." loading="lazy" />
+        </div>
+        <div class="gallery-item" role="button" tabindex="0" onkeydown="if(event.key === 'Enter' || event.key === ' ') { event.preventDefault(); this.click(); }" onclick="openLightbox(4)">
+          <img src="./assets/projects/3d_printing/Loadcellcover.png" alt="Load Cell Cover" loading="lazy" />
+        </div>
+        <div class="gallery-item" role="button" tabindex="0" onkeydown="if(event.key === 'Enter' || event.key === ' ') { event.preventDefault(); this.click(); }" onclick="openLightbox(5)">
+          <img src="./assets/projects/3d_printing/loadcellmount2.png" alt="Load Cell Mount Design 2"
+          loading="lazy" />
+        </div>
+        <div class="gallery-item" role="button" tabindex="0" onkeydown="if(event.key === 'Enter' || event.key === ' ') { event.preventDefault(); this.click(); }" onclick="openLightbox(6)">
+          <img src="./assets/projects/3d_printing/pipetteholder2.png" alt="Pipette Holder Design 2"
+          loading="lazy" />
+        </div>
+        <div class="gallery-item" role="button" tabindex="0" onkeydown="if(event.key === 'Enter' || event.key === ' ') { event.preventDefault(); this.click(); }" onclick="openLightbox(7)">
+          <img src="./assets/projects/3d_printing/robosoccerbot.png" alt="Robo Soccer Bot" loading="lazy" />
+        </div>
+        <div class="gallery-item" role="button" tabindex="0" onkeydown="if(event.key === 'Enter' || event.key === ' ') { event.preventDefault(); this.click(); }" onclick="openLightbox(8)">
+          <img src="./assets/projects/3d_printing/Vileholer.png" alt="Vial Holder" loading="lazy" />
         </div>
       </div>
+    </div>
+    <div class="modal-section">
+      <h3>My Role & Responsibilities</h3>
+      <p>End-to-end ownership of the design and fabrication process:</p>
+      <ul>
+        <li>Identifying problems and needs in laboratory and practical settings</li>
+        <li>Conceptualizing and designing solutions using CAD software (AutoCAD, OpenSCAD)</li>
+        <li>Optimizing designs for printability, structural integrity, and material efficiency</li>
+        <li>3D printing using FDM technology with mostly PLA</li>
+        <li>Post-processing and quality testing of printed components</li>
+        <li>Iterating designs based on lab members feedback and performance testing</li>
+      </ul>
+    </div>
+    <div class="modal-section">
+      <h3>Techniques & Methods</h3>
+      <ul>
+        <li>
+          <strong>CAD Design</strong> - AutoCAD for complex geometries, OpenSCAD for parametric modeling</li>
+        <li>
+          <strong>3D Printing</strong> - FDM (Fused Deposition Modeling) with PLA, PETG, and ABS materials</li>
+        <li>
+          <strong>Material Selection</strong> - Choosing appropriate polymers based on mechanical requirements
+        </li>
+        <li>
+          <strong>Process Optimization</strong> - Print parameter tuning for quality and efficiency</li>
+        <li>
+          <strong>Iterative Design</strong> - Rapid prototyping and testing cycles</li>
+      </ul>
+    </div>
+    <div class="modal-section">
+      <h3>Results & Outcomes</h3>
+      <p>Successfully designed and fabricated over 20 unique solutions including custom sample holders for
+        characterization equipment, modular storage systems for laboratory consumables, and specialized fixtures for
+        experimental setups. These tools have improved lab efficiency and reduced equipment costs. The project has
+        also enhanced my skills in design thinking, materials selection, and practical engineering problem-solving.
+      </p>
+    </div>
+    <div class="modal-section">
+      <h3>Example Applications</h3>
+      <ul>
+        <li>
+          <strong>Ossila Four-Point Probe Automated Mount</strong>
+          <br>
+          <em>The Design:</em> A precision bracket that mounts the Ossila probe head directly onto a Thorlabs
+          KVS30/M motorized vertical stage.<br>
+          <em>Impact:</em> Transitioned the lab from manual to fully automated conductivity measurements. By using
+          Python scripts to control the stage, the probe now contacts samples at the exact same pressure and height
+          every time, completely eliminating human error.
+        </li>
+        <li>
+          <strong>North Robotics N9 Drop Cast Holder</strong>
+          <br>
+          <em>The Design:</em> A custom platform that replaces the standard "wafer garage" on the N9 system,
+          utilizing existing alignment pins for a perfect fit.<br>
+          <em>Impact:</em> This "hack" repurposed a high-end robot for specific thin-film applications, allowing it
+          to directly deposit solutions into drop-cast structures with high repeatability.
+        </li>
+        <li>
+          <strong>High-Capacity Thin-Film Sample Holders</strong>
+          <br>
+          <em>The Design:</em> Custom-engineered holders with optimized spatial geometry to secure thin-film samples
+          during processing.<br>
+          <em>Impact:</em> Redesigned the standard architecture to fit <strong>100 samples</strong> within the same
+          footprint that originally held only 20. This <strong>500% increase in capacity</strong> significantly
+          reduced cost-per-sample and maximized throughput.
+        </li>
+        <li>
+          <strong>Universal Testing Machine (UTM) Protective Cover</strong>
+          <br>
+          <em>The Design:</em> A custom-fitted housing for the Universal Testing Machine's sensitive mechanics.<br>
+          <em>Impact:</em> Protects internal components from dust and accidental splashes during wet tensile
+          testing, preventing corrosion and debris buildup on the drive system.
+        </li>
+        <li>
+          <strong>Lab Hood Edge-Mount Pipette Holder</strong>
+          <br>
+          <em>The Design:</em> A space-saving C-port clip that attaches directly to the metal lip of a fume
+          hood.<br>
+          <em>Impact:</em> Cleared the deck of clutter by moving expensive tools to eye level, improving workflow
+          organization and maintaining better airflow and sterility within the hood.
+        </li>
+        <li>
+          <strong>Robosoccer Competition Attachments</strong>
+          <br>
+          <em>The Design:</em> A two-part system featuring a front-end "pusher/plow" for ball control and a
+          protective top housing.<br>
+          <em>Impact:</em> Turned a base-model robot into a championship winner by providing superior ball handling
+          and protecting the electronics from high-speed collisions.
+        </li>
+      </ul>
     </div>
   </div>
-
-  <div id="modal6" class="modal" role="dialog" aria-labelledby="modal6-title" aria-modal="true">
-    <div class="modal-content">
-      <span class="close" onclick="closeModal('modal6')" aria-label="Close modal">&times;</span>
-      <h2 id="modal6-title" class="modal-title">VeriScript: AI Transcript Fraud Detection Platform</h2>
-
-      <div class="modal-body">
-        <div class="modal-image">
-          <img src="./assets/projects/veriscript/veriscript.jpg" alt="VeriScript System Architecture and Dashboard"
-            loading="lazy" />
-        </div>
-
-        <div class="modal-section">
-          <h3>Project Overview</h3>
-          <p>Built for the Mississippi State Board of Nursing (MSBN), VeriScript is a serverless, AI-assisted transcript
-            review platform designed to combat nursing credential fraud. The system automatically ingests applicant
-            PDFs, extracts critical academic data, runs a battery of deterministic fraud-detection rules, and routes
-            flagged applications to a human reviewer. Crucially, the system is strictly advisory—it generates a
-            defensible, immutable audit trail to augment staff judgment, making zero final licensing decisions on its
-            own.</p>
-        </div>
-
-        <div class="modal-section">
-          <h3>My Role & Responsibilities</h3>
-          <p>I contributed across the entire full-stack architecture, from the infrastructure pipeline to the reviewer
-            dashboard:</p>
-          <ul>
-            <li>Engineered a resilient, serverless AWS pipeline using Python and CDK, orchestrated by AWS Step Functions
-              to ensure fully logged state transitions.</li>
-            <li>Designed a dual-pass AI extraction engine combining Amazon Textract for visual forensics (detecting
-              tampered text) and Amazon Bedrock Nova Pro for semantic academic extraction.</li>
-            <li>Programmed a robust deterministic rules engine featuring 14 specific fraud checks across physical
-              authenticity, educational chronology, and MSBN curriculum compliance.</li>
-            <li>Developed a responsive, lightweight frontend dashboard in React 19 to translate complex AI outputs and
-              flagged issues into an intuitive UI for MSBN staff.</li>
-          </ul>
-        </div>
-
-        <div class="modal-section">
-          <h3>Techniques & Methods</h3>
-          <ul>
-            <li><strong>Cloud & Infrastructure</strong> - AWS CDK, Lambda, Step Functions, DynamoDB (Single-Table
-              Design), S3, API Gateway, CloudFront, Cognito.</li>
-            <li><strong>Frontend Development</strong> - React 19, TypeScript, Vite, custom JWT authorization.</li>
-            <li><strong>AI & Optical Character Recognition</strong> - Amazon Bedrock (Nova Pro), Amazon Textract, smart
-              aggregation algorithms for multi-page flattening.</li>
-            <li><strong>System Architecture</strong> - Serverless orchestration, idempotent event handling, exponential
-              backoff strategies, and warm Lambda client reuse.</li>
-          </ul>
-        </div>
-
-        <div class="modal-section">
-          <h3>Results & Outcomes</h3>
-          <p>The platform fundamentally modernized the MSBN review process, cutting average manual review times from 45
-            minutes down to 15 minutes per application. By leveraging highly optimized AWS serverless architecture
-            (costing approximately $0.35 per application), the solution delivered a ~65% cost reduction compared to
-            purely manual reviews. The resulting system successfully protects public health by identifying sophisticated
-            credential fraud while maintaining the transparent, appeal-ready documentation required of state regulatory
-            boards.</p>
-        </div>
-
-        <div class="modal-section">
-          <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1.5rem;">
-            <h3 style="margin: 0;">Demo</h3>
-            <a href="https://github.com/SRVKNDL/msbn-transcript-verification" target="_blank" class="github-modal-btn"
-              aria-label="View GitHub Repository">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                <path
-                  d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z" />
-              </svg>
-              GitHub Repo
-            </a>
-          </div>
-          <div style="border-radius: 1rem; overflow: hidden; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);">
-            <video controls preload="metadata" style="width: 100%; display: block; border-radius: 1rem;"
-              aria-label="VeriScript Platform Demo">
-              <source src="./assets/projects/veriscript/demo_2x.mp4" type="video/mp4">
-              Your browser does not support the video tag.
-            </video>
-          </div>
-        </div>
-
-        <div class="modal-section gallery-section">
-          <div
-            style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; margin-bottom: 0.5rem; border-bottom: 1px solid var(--border-color); padding-bottom: 0.5rem;">
-            <h3 style="margin: 0;">Innovation Hub Showcase</h3>
-          </div>
-          <div class="gallery-grid">
-            <div class="gallery-item" onclick="openLightbox(0, 'veriscript_showcase')" role="button" tabindex="0">
-              <img src="./assets/projects/veriscript/showcase1.jpg" alt="Innovation Hub Showcase 1" loading="lazy" />
-            </div>
-            <div class="gallery-item" onclick="openLightbox(1, 'veriscript_showcase')" role="button" tabindex="0">
-              <img src="./assets/projects/veriscript/showcase2.jpg" alt="Innovation Hub Showcase 2" loading="lazy" />
-            </div>
-          </div>
-        </div>
-
-        <div class="modal-section gallery-section">
-          <div
-            style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; margin-bottom: 0.5rem; border-bottom: 1px solid var(--border-color); padding-bottom: 0.5rem;">
-            <h3 style="margin: 0;">More Information</h3>
-          </div>
-          <div class="gallery-grid">
-            <div class="gallery-item" onclick="openLightbox(0, 'veriscript_more_info')" role="button" tabindex="0">
-              <img src="./assets/projects/veriscript/more_info1.jpg" alt="More Information 1" loading="lazy" />
-            </div>
-            <div class="gallery-item" onclick="openLightbox(1, 'veriscript_more_info')" role="button" tabindex="0">
-              <img src="./assets/projects/veriscript/more_info2.jpg" alt="More Information 2" loading="lazy" />
-            </div>
-            <div class="gallery-item" onclick="openLightbox(2, 'veriscript_more_info')" role="button" tabindex="0">
-              <img src="./assets/projects/veriscript/more_info3.jpg" alt="More Information 3" loading="lazy" />
-            </div>
-            <div class="gallery-item" onclick="openLightbox(3, 'veriscript_more_info')" role="button" tabindex="0">
-              <img src="./assets/projects/veriscript/more_info4.jpg" alt="More Information 4" loading="lazy" />
-            </div>
-            <div class="gallery-item" onclick="openLightbox(4, 'veriscript_more_info')" role="button" tabindex="0">
-              <img src="./assets/projects/veriscript/more_info5.jpg" alt="More Information 5" loading="lazy" />
-            </div>
-            <div class="gallery-item" onclick="openLightbox(5, 'veriscript_more_info')" role="button" tabindex="0">
-              <img src="./assets/projects/veriscript/more_info6.jpg" alt="More Information 6" loading="lazy" />
-            </div>
-            <div class="gallery-item" onclick="openLightbox(6, 'veriscript_more_info')" role="button" tabindex="0">
-              <img src="./assets/projects/veriscript/more_info7.jpg" alt="More Information 7" loading="lazy" />
-            </div>
-          </div>
-        </div>
+</div>
+</div>
+<div id="modal4" class="modal" role="dialog" aria-labelledby="modal4-title" aria-modal="true">
+  <div class="modal-content">
+    <button type="button" class="close" onclick="closeModal('modal4')" aria-label="Close project details">&times;</button>
+    <div class="modal-body">
+      <h2 id="modal4-title" class="modal-title" style="margin-left: 0; padding-top: 0;">Autonomous Lab: End-to-End
+        Robotic Orchestration</h2>
+      <div class="research-badge pulse" style="margin-bottom: 2rem;">
+        <span class="badge-dot">
+        </span>
+        Vision: Fully Autonomous "Self-Driving" Materials Laboratory
       </div>
+      <div class="modal-image">
+        <img src="./assets/projects/autonomous_lab/autonomous.jpg" alt="Integrated Robotic Workflow Diagram"
+        loading="lazy" />
+      </div>
+      <div class="modal-section">
+        <h3>Laying the "Walking Blocks"</h3>
+        <p>A true closed-loop system requires mastering individual instrument control first. By developing custom
+          Python drivers, I have created a <strong>Hardware Abstraction Layer (HAL)</strong> that allows a central
+          computer to coordinate disparate hardware—originally designed as standalone units—into a single, unified
+          laboratory ecosystem.</p>
+      </div>
+      <div class="modal-section"
+      style="background: rgba(59, 130, 246, 0.05); padding: 1.5rem; border-radius: 1rem; border: 1px solid var(--border-color); margin-bottom: 2.5rem;">
+      <h3 style="margin-top: 0;">Developed Hardware Infrastructure</h3>
+      <p style="font-size: 0.9rem; margin-bottom: 1.5rem;">Access the specific drivers developed for each laboratory
+        "block":</p>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px;">
+        <div style="display: flex; flex-direction: column; gap: 8px;">
+          <strong style="font-size: 0.85rem; color: var(--primary-color);">Optical Metrology</strong>
+          <a href="https://github.com/S8bin-dev/Osilla-Flame-Spectrometer" target="_blank" class="btn btn-color-2"
+          style="width: 100%; font-size: 0.75rem; padding: 0.6rem;" rel="noopener noreferrer">Flame Spectrometer Repo</a>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 8px;">
+        <strong style="font-size: 0.85rem; color: var(--primary-color);">Precision Motion</strong>
+        <a href="https://github.com/S8bin-dev/Thor-Labs-Linear-Stage" target="_blank" class="btn btn-color-2"
+        style="width: 100%; font-size: 0.75rem; padding: 0.6rem;" rel="noopener noreferrer">Thorlabs Stage Repo</a>
     </div>
+    <div style="display: flex; flex-direction: column; gap: 8px;">
+      <strong style="font-size: 0.85rem; color: var(--primary-color);">System Orchestration</strong>
+      <a href="https://github.com/S8bin-dev/AutomatedProbing" target="_blank" class="btn btn-color-2"
+      style="width: 100%; font-size: 0.75rem; padding: 0.6rem;" rel="noopener noreferrer">Automated Probing Repo</a>
   </div>
-
-  <!-- LIGHTBOX FOR GALLERY -->
-  <div id="lightbox" class="lightbox" onclick="closeLightbox()">
-    <span class="lightbox-close" onclick="closeLightbox()" role="button" tabindex="0"
-      onkeydown="if(event.key === 'Enter' || event.key === ' ') closeLightbox()">&times;</span>
-    <span class="lightbox-prev" onclick="event.stopPropagation(); navigateLightbox(-1)" role="button" tabindex="0"
-      onkeydown="if(event.key === 'Enter' || event.key === ' ') { event.stopPropagation(); navigateLightbox(-1); }">&#10094;</span>
-    <span class="lightbox-next" onclick="event.stopPropagation(); navigateLightbox(1)" role="button" tabindex="0"
-      onkeydown="if(event.key === 'Enter' || event.key === ' ') { event.stopPropagation(); navigateLightbox(1); }">&#10095;</span>
-    <img class="lightbox-content" id="lightbox-img" onclick="event.stopPropagation()" />
-    <div class="lightbox-caption" id="lightbox-caption"></div>
-    <div class="lightbox-counter" id="lightbox-counter"></div>
-  </div>
-
-  <section id="contact">
-    <p class="section__text__p1 fade-in-up">Get in Touch</p>
-    <h2 class="title fade-in-up">Contact Me</h2>
-
-    <!-- Contact Form -->
-    <div class="contact-form-container fade-in-up">
-      <form id="contactForm" class="contact-form" action="https://formspree.io/f/xqarlrdl" method="POST">
-        <div class="form-group">
-          <input type="text" id="name" name="name" placeholder="Your Name" required>
-        </div>
-        <div class="form-group">
-          <input type="email" id="email" name="email" placeholder="Your Email" required>
-        </div>
-        <div class="form-group">
-          <textarea id="message" name="message" placeholder="Your Message" rows="5" required></textarea>
-        </div>
-        <button type="submit" class="btn btn-color-1 ripple">Send Message</button>
-      </form>
-      <div id="formSuccess" class="form-success">
-        <svg width="50" height="50" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
-          <polyline points="22 4 12 14.01 9 11.01"></polyline>
-        </svg>
-        <h3>Message Sent!</h3>
-        <p>Thank you for reaching out. I'll get back to you soon!</p>
+  <div style="display: flex; flex-direction: column; gap: 8px;">
+    <strong style="font-size: 0.85rem; color: var(--primary-color);">Electrical Analysis</strong>
+    <a href="https://github.com/S8bin-dev/Osilla-SMU" target="_blank" class="btn btn-color-2"
+    style="width: 100%; font-size: 0.75rem; padding: 0.6rem;" rel="noopener noreferrer">Osilla SMU Repo</a>
+</div>
+</div>
+</div>
+<div class="modal-section gallery-section"
+style="margin-bottom: 3rem; border-bottom: 1px solid var(--border-color); padding-bottom: 2rem;">
+<h3>System Operations & Setup</h3>
+<div class="gallery-grid" style="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px;">
+  <div class="gallery-item" style="aspect-ratio: 16/9;">
+    <video preload="none"  width="100%" height="100%" controls
+    style="object-fit: cover; border-radius: 1rem; background: #000;">
+    <source src="./assets/projects/autonomous_lab/Full_workflow.mp4" type="video/mp4">
+  </video>
+  <div style="padding: 0.5rem; font-size: 0.8rem; text-align: center; color: var(--text-medium);">Full
+    Workflow Demo</div>
+</div>
+<div class="gallery-item" style="aspect-ratio: 16/9;">
+  <video preload="none"  width="100%" height="100%" controls
+  style="object-fit: cover; border-radius: 1rem; background: #000;">
+  <source src="./assets/projects/autonomous_lab/homing_demo.mp4" type="video/mp4">
+</video>
+<div style="padding: 0.5rem; font-size: 0.8rem; text-align: center; color: var(--text-medium);">Integrated
+  System Homing</div>
+</div>
+<div class="gallery-item" role="button" tabindex="0" onkeydown="if(event.key === 'Enter' || event.key === ' ') { event.preventDefault(); this.click(); }" onclick="openLightbox(0, 'autonomous')" style="aspect-ratio: 16/9;">
+  <img src="./assets/projects/autonomous_lab/spectrometer_setup.jpg" alt="Spectrometer Setup"
+  loading="lazy" />
+</div>
+<div class="gallery-item" role="button" tabindex="0" onkeydown="if(event.key === 'Enter' || event.key === ' ') { event.preventDefault(); this.click(); }" onclick="openLightbox(1, 'autonomous')" style="aspect-ratio: 16/9;">
+  <img src="./assets/projects/autonomous_lab/stage_contact.jpg" alt="Stage & SMU Setup" loading="lazy" />
+</div>
+</div>
+</div>
+<div class="modal-section" style="margin-top: 1rem;">
+  <h3>The Integrated Autonomous Loop</h3>
+  <p style="margin-bottom: 1.5rem;">I am currently integrating these drivers with our <strong>N9 North
+      Robotics</strong> platform to achieve a fully automated cycle:</p>
+  <div style="display: flex; flex-direction: column; gap: 1.5rem;">
+    <div style="display: flex; gap: 1.2rem; align-items: flex-start;">
+      <div
+      style="background: var(--primary-color); color: white; border-radius: 50%; width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-weight: bold; font-size: 0.9rem; box-shadow: 0 4px 10px rgba(59, 130, 246, 0.3);">
+      1</div>
+    <p style="margin: 0;">
+      <strong
+      style="color: var(--primary-color); display: block; margin-bottom: 2px;">Fabrication</strong> The N9
+    Robot autonomously executes polymer solution deposition, spin-coating, and thermal annealing.</p>
+</div>
+<div style="display: flex; gap: 1.2rem; align-items: flex-start;">
+  <div
+  style="background: var(--primary-color); color: white; border-radius: 50%; width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-weight: bold; font-size: 0.9rem; box-shadow: 0 4px 10px rgba(59, 130, 246, 0.3);">
+  2</div>
+<p style="margin: 0;">
+  <strong
+  style="color: var(--primary-color); display: block; margin-bottom: 2px;">Transfer</strong> The robot
+moves the sample to the Thorlabs vertical stage for precise height adjustments.</p>
+</div>
+<div style="display: flex; gap: 1.2rem; align-items: flex-start;">
+  <div
+  style="background: var(--primary-color); color: white; border-radius: 50%; width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-weight: bold; font-size: 0.9rem; box-shadow: 0 4px 10px rgba(59, 130, 246, 0.3);">
+  3</div>
+<p style="margin: 0;">
+  <strong
+  style="color: var(--primary-color); display: block; margin-bottom: 2px;">Characterization</strong> The
+system triggers the Spectrometer to determine film thickness followed by the Osilla SMU for I-V curves
+and conductivity measurement.</p>
+</div>
+<div style="display: flex; gap: 1.2rem; align-items: flex-start;">
+  <div
+  style="background: var(--primary-color); color: white; border-radius: 50%; width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-weight: bold; font-size: 0.9rem; box-shadow: 0 4px 10px rgba(59, 130, 246, 0.3);">
+  4</div>
+<p style="margin: 0;">
+  <strong
+  style="color: var(--primary-color); display: block; margin-bottom: 2px;">Storage</strong> Upon
+completion, the N9 Robot autonomously retrieves the sample and places it in the storage garage.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="modal5" class="modal" role="dialog" aria-labelledby="modal5-title" aria-modal="true">
+  <div class="modal-content">
+    <button type="button" class="close" onclick="closeModal('modal5')" aria-label="Close project details">&times;</button>
+    <h2 id="modal5-title" class="modal-title">CMS Inner Tracker Upgrade: Bare Module Testing & Automation</h2>
+    <div class="modal-body">
+      <div class="modal-image">
+        <img src="./assets/projects/cms_tracker/cms_tracker.jpg?v=2" alt="CMS Inner Tracker Upgrade Research"
+        loading="lazy" />
       </div>
-    </div>
-
-    <p class="contact-divider fade-in-up">OR</p>
-
-    <div class="contact-info-upper-container fade-in-up">
-      <div class="contact-info-container">
-        <img src="./assets/icons/email.png" alt="Email icon" class="icon contact-icon email-icon" />
-        <p><a href="mailto:Sabin.Baral@usm.edu">Sabin.Baral@usm.edu</a></p>
+      <div class="modal-section">
+        <h3>Project Overview</h3>
+        <p>As part of the U.S. DOE-funded US CMS PURSUE Summer Research Internship, I contributed to the High
+          Luminosity LHC (HL-LHC) upgrade. The program began with intensive computational training at
+          Fermilab—covering the UNIX shell, PyROOT, and machine learning—before I relocated to Kansas State
+          University. At K-State, I joined the US Midwest 2 testing site to focus on the electrical validation of bare
+          modules (silicon sensors bump-bonded to CMS Readout Chips) for the CMS Inner Tracker upgrade.</p>
       </div>
-      <div class="contact-info-container">
-        <img src="./assets/icons/linkedin.png" alt="LinkedIn icon" class="icon contact-icon" />
-        <p><a href="https://www.linkedin.com/in/baralsabin/" target="_blank" rel="noopener noreferrer">LinkedIn</a></p>
-      </div>
-    </div>
-  </section>
-  <footer>
-
-    <nav>
-      <div class="nav-links-container">
-        <ul class="nav-links">
-          <li><a href="#profile">About</a></li>
-          <li><a href="#projects">Projects</a></li>
-          <li><a href="#publications">Publications</a></li>
-          <li><a href="#experience">Skills</a></li>
-          <li><a href="#contact">Contact</a></li>
+      <div class="modal-section">
+        <h3>My Role & Responsibilities</h3>
+        <p>I transitioned from executing standard testing protocols to actively optimizing the laboratory's workflow:
+        </p>
+        <ul>
+          <li>Conducted rigorous electrical testing and optical inspections of highly sensitive bare modules inside a
+            Class 10,000 cleanroom.</li>
+          <li>Identified critical efficiency bottlenecks in the terminal-heavy DAQ testing procedures.</li>
+          <li>Designed and developed a centralized Python-based Graphical User Interface (GUI) from the ground up to
+            streamline the testing workflow.</li>
+          <li>Integrated hardware controls directly into the GUI, automating WPAC initialization, contact resistance
+            checks, IREF trim-bit measurements, and Sensor I-V scans.</li>
         </ul>
       </div>
-    </nav>
-    <p>Copyright &#169; 2025 Sabin Baral. All Rights Reserved.</p>
-  </footer>
-  <script src="script.js?v=5"></script>
+      <div class="modal-section">
+        <h3>Techniques & Methods</h3>
+        <ul>
+          <li>
+            <strong>Software Engineering</strong> - Python, PyROOT, RDataFrame, and custom GUI development for
+            hardware abstraction.</li>
+          <li>
+            <strong>Hardware Integration</strong> - Ph2_ACF framework, Keithley source-meters, and MPI-TS3000 probe
+            station operation.</li>
+          <li>
+            <strong>Diagnostic Analysis</strong> - High-Charge scans and coupled/uncoupled crosstalk scans for dead
+            pixel and open-bump identification.</li>
+          <li>
+            <strong>Cleanroom Protocol</strong> - ESD-safe handling, ISO 7 cleanroom standards, and microscopy for
+            physical defect inspection.</li>
+        </ul>
+      </div>
+      <div class="modal-section">
+        <h3>Results & Outcomes</h3>
+        <p>Successfully abstracted complex, terminal-level commands into an intuitive GUI, drastically improving the
+          team's productivity and testing efficiency. The automated testing suite includes built-in exception handling
+          and safe-exit procedures that automatically cut high-voltage and low-voltage power during faults, securing
+          delicate hardware. Actively processed and graded multiple fragile modules, ensuring the early detection of
+          bump-bonding defects before expensive downstream assembly steps.</p>
+      </div>
+      <div class="modal-section">
+        <h3>Links & Resources</h3>
+        <p>
+          <a href="https://cms.fnal.gov/" target="_blank" rel="noopener noreferrer">US CMS Operations at Fermilab</a>
+        </p>
+      </div>
+      <div class="modal-section gallery-section">
+        <div
+        style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; margin-bottom: 0.5rem; border-bottom: 1px solid var(--border-color); padding-bottom: 0.5rem;">
+        <h3 style="margin: 0;">Final Talk Slides</h3>
+      </div>
+      <div class="gallery-grid">
+        <div class="gallery-item" role="button" tabindex="0" onkeydown="if(event.key === 'Enter' || event.key === ' ') { event.preventDefault(); this.click(); }" onclick="openLightbox(0, 'cms_tracker')">
+          <img src="./assets/projects/cms_tracker/Final_slides_Sabin_Baral._page-0001.jpg" alt="CMS tracker presentation slide 1" loading="lazy" />
+        </div>
+        <div class="gallery-item" role="button" tabindex="0" onkeydown="if(event.key === 'Enter' || event.key === ' ') { event.preventDefault(); this.click(); }" onclick="openLightbox(1, 'cms_tracker')">
+          <img src="./assets/projects/cms_tracker/Final_slides_Sabin_Baral._page-0002.jpg" alt="CMS tracker presentation slide 2" loading="lazy" />
+        </div>
+        <div class="gallery-item" role="button" tabindex="0" onkeydown="if(event.key === 'Enter' || event.key === ' ') { event.preventDefault(); this.click(); }" onclick="openLightbox(2, 'cms_tracker')">
+          <img src="./assets/projects/cms_tracker/Final_slides_Sabin_Baral._page-0003.jpg" alt="CMS tracker presentation slide 3" loading="lazy" />
+        </div>
+        <div class="gallery-item" role="button" tabindex="0" onkeydown="if(event.key === 'Enter' || event.key === ' ') { event.preventDefault(); this.click(); }" onclick="openLightbox(3, 'cms_tracker')">
+          <img src="./assets/projects/cms_tracker/Final_slides_Sabin_Baral._page-0004.jpg" alt="CMS tracker presentation slide 4" loading="lazy" />
+        </div>
+        <div class="gallery-item" role="button" tabindex="0" onkeydown="if(event.key === 'Enter' || event.key === ' ') { event.preventDefault(); this.click(); }" onclick="openLightbox(4, 'cms_tracker')">
+          <img src="./assets/projects/cms_tracker/Final_slides_Sabin_Baral._page-0005.jpg" alt="CMS tracker presentation slide 5" loading="lazy" />
+        </div>
+        <div class="gallery-item" role="button" tabindex="0" onkeydown="if(event.key === 'Enter' || event.key === ' ') { event.preventDefault(); this.click(); }" onclick="openLightbox(5, 'cms_tracker')">
+          <img src="./assets/projects/cms_tracker/Final_slides_Sabin_Baral._page-0006.jpg" alt="CMS tracker presentation slide 6" loading="lazy" />
+        </div>
+        <div class="gallery-item" role="button" tabindex="0" onkeydown="if(event.key === 'Enter' || event.key === ' ') { event.preventDefault(); this.click(); }" onclick="openLightbox(6, 'cms_tracker')">
+          <img src="./assets/projects/cms_tracker/Final_slides_Sabin_Baral._page-0007.jpg" alt="CMS tracker presentation slide 7" loading="lazy" />
+        </div>
+        <div class="gallery-item" role="button" tabindex="0" onkeydown="if(event.key === 'Enter' || event.key === ' ') { event.preventDefault(); this.click(); }" onclick="openLightbox(7, 'cms_tracker')">
+          <img src="./assets/projects/cms_tracker/Final_slides_Sabin_Baral._page-0008.jpg" alt="CMS tracker presentation slide 8" loading="lazy" />
+        </div>
+        <div class="gallery-item" role="button" tabindex="0" onkeydown="if(event.key === 'Enter' || event.key === ' ') { event.preventDefault(); this.click(); }" onclick="openLightbox(8, 'cms_tracker')">
+          <img src="./assets/projects/cms_tracker/Final_slides_Sabin_Baral._page-0009.jpg" alt="CMS tracker presentation slide 9" loading="lazy" />
+        </div>
+        <div class="gallery-item" role="button" tabindex="0" onkeydown="if(event.key === 'Enter' || event.key === ' ') { event.preventDefault(); this.click(); }" onclick="openLightbox(9, 'cms_tracker')">
+          <img src="./assets/projects/cms_tracker/Final_slides_Sabin_Baral._page-0010.jpg" alt="CMS tracker presentation slide 10" loading="lazy" />
+        </div>
+        <div class="gallery-item" role="button" tabindex="0" onkeydown="if(event.key === 'Enter' || event.key === ' ') { event.preventDefault(); this.click(); }" onclick="openLightbox(10, 'cms_tracker')">
+          <img src="./assets/projects/cms_tracker/Final_slides_Sabin_Baral._page-0011.jpg" alt="CMS tracker presentation slide 11" loading="lazy" />
+        </div>
+        <div class="gallery-item" role="button" tabindex="0" onkeydown="if(event.key === 'Enter' || event.key === ' ') { event.preventDefault(); this.click(); }" onclick="openLightbox(11, 'cms_tracker')">
+          <img src="./assets/projects/cms_tracker/Final_slides_Sabin_Baral._page-0012.jpg" alt="CMS tracker presentation slide 12" loading="lazy" />
+        </div>
+        <div class="gallery-item" role="button" tabindex="0" onkeydown="if(event.key === 'Enter' || event.key === ' ') { event.preventDefault(); this.click(); }" onclick="openLightbox(12, 'cms_tracker')">
+          <img src="./assets/projects/cms_tracker/Final_slides_Sabin_Baral._page-0013.jpg" alt="CMS tracker presentation slide 13" loading="lazy" />
+        </div>
+        <div class="gallery-item" role="button" tabindex="0" onkeydown="if(event.key === 'Enter' || event.key === ' ') { event.preventDefault(); this.click(); }" onclick="openLightbox(13, 'cms_tracker')">
+          <img src="./assets/projects/cms_tracker/Final_slides_Sabin_Baral._page-0014.jpg" alt="CMS tracker presentation slide 14" loading="lazy" />
+        </div>
+        <div class="gallery-item" role="button" tabindex="0" onkeydown="if(event.key === 'Enter' || event.key === ' ') { event.preventDefault(); this.click(); }" onclick="openLightbox(14, 'cms_tracker')">
+          <img src="./assets/projects/cms_tracker/Final_slides_Sabin_Baral._page-0015.jpg" alt="CMS tracker presentation slide 15" loading="lazy" />
+        </div>
+        <div class="gallery-item" role="button" tabindex="0" onkeydown="if(event.key === 'Enter' || event.key === ' ') { event.preventDefault(); this.click(); }" onclick="openLightbox(15, 'cms_tracker')">
+          <img src="./assets/projects/cms_tracker/Final_slides_Sabin_Baral._page-0016.jpg" alt="CMS tracker presentation slide 16" loading="lazy" />
+        </div>
+        <div class="gallery-item" role="button" tabindex="0" onkeydown="if(event.key === 'Enter' || event.key === ' ') { event.preventDefault(); this.click(); }" onclick="openLightbox(16, 'cms_tracker')">
+          <img src="./assets/projects/cms_tracker/Final_slides_Sabin_Baral._page-0017.jpg" alt="CMS tracker presentation slide 17" loading="lazy" />
+        </div>
+        <div class="gallery-item" role="button" tabindex="0" onkeydown="if(event.key === 'Enter' || event.key === ' ') { event.preventDefault(); this.click(); }" onclick="openLightbox(17, 'cms_tracker')">
+          <img src="./assets/projects/cms_tracker/Final_slides_Sabin_Baral._page-0018.jpg" alt="CMS tracker presentation slide 18" loading="lazy" />
+        </div>
+        <div class="gallery-item" role="button" tabindex="0" onkeydown="if(event.key === 'Enter' || event.key === ' ') { event.preventDefault(); this.click(); }" onclick="openLightbox(18, 'cms_tracker')">
+          <img src="./assets/projects/cms_tracker/Final_slides_Sabin_Baral._page-0019.jpg" alt="CMS tracker presentation slide 19" loading="lazy" />
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+</div>
+<div id="modal6" class="modal" role="dialog" aria-labelledby="modal6-title" aria-modal="true">
+  <div class="modal-content">
+    <button type="button" class="close" onclick="closeModal('modal6')" aria-label="Close project details">&times;</button>
+    <h2 id="modal6-title" class="modal-title">VeriScript: AI Transcript Fraud Detection Platform</h2>
+    <div class="modal-body">
+      <div class="modal-image">
+        <img src="./assets/projects/veriscript/veriscript.jpg" alt="VeriScript System Architecture and Dashboard"
+        loading="lazy" />
+      </div>
+      <div class="modal-section">
+        <h3>Project Overview</h3>
+        <p>Built for the Mississippi State Board of Nursing (MSBN), VeriScript is a serverless, AI-assisted transcript
+          review platform designed to combat nursing credential fraud. The system automatically ingests applicant
+          PDFs, extracts critical academic data, runs a battery of deterministic fraud-detection rules, and routes
+          flagged applications to a human reviewer. Crucially, the system is strictly advisory—it generates a
+          defensible, immutable audit trail to augment staff judgment, making zero final licensing decisions on its
+          own.</p>
+      </div>
+      <div class="modal-section">
+        <h3>My Role & Responsibilities</h3>
+        <p>I contributed across the entire full-stack architecture, from the infrastructure pipeline to the reviewer
+          dashboard:</p>
+        <ul>
+          <li>Engineered a resilient, serverless AWS pipeline using Python and CDK, orchestrated by AWS Step Functions
+            to ensure fully logged state transitions.</li>
+          <li>Designed a dual-pass AI extraction engine combining Amazon Textract for visual forensics (detecting
+            tampered text) and Amazon Bedrock Nova Pro for semantic academic extraction.</li>
+          <li>Programmed a robust deterministic rules engine featuring 14 specific fraud checks across physical
+            authenticity, educational chronology, and MSBN curriculum compliance.</li>
+          <li>Developed a responsive, lightweight frontend dashboard in React 19 to translate complex AI outputs and
+            flagged issues into an intuitive UI for MSBN staff.</li>
+        </ul>
+      </div>
+      <div class="modal-section">
+        <h3>Techniques & Methods</h3>
+        <ul>
+          <li>
+            <strong>Cloud & Infrastructure</strong> - AWS CDK, Lambda, Step Functions, DynamoDB (Single-Table
+            Design), S3, API Gateway, CloudFront, Cognito.</li>
+          <li>
+            <strong>Frontend Development</strong> - React 19, TypeScript, Vite, custom JWT authorization.</li>
+          <li>
+            <strong>AI & Optical Character Recognition</strong> - Amazon Bedrock (Nova Pro), Amazon Textract, smart
+            aggregation algorithms for multi-page flattening.</li>
+          <li>
+            <strong>System Architecture</strong> - Serverless orchestration, idempotent event handling, exponential
+            backoff strategies, and warm Lambda client reuse.</li>
+        </ul>
+      </div>
+      <div class="modal-section">
+        <h3>Results & Outcomes</h3>
+        <p>The platform fundamentally modernized the MSBN review process, cutting average manual review times from 45
+          minutes down to 15 minutes per application. By leveraging highly optimized AWS serverless architecture
+          (costing approximately $0.35 per application), the solution delivered a ~65% cost reduction compared to
+          purely manual reviews. The resulting system successfully protects public health by identifying sophisticated
+          credential fraud while maintaining the transparent, appeal-ready documentation required of state regulatory
+          boards.</p>
+      </div>
+      <div class="modal-section">
+        <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1.5rem;">
+          <h3 style="margin: 0;">Demo</h3>
+          <a href="https://github.com/SRVKNDL/msbn-transcript-verification" target="_blank" class="github-modal-btn"
+          aria-label="View GitHub Repository" rel="noopener noreferrer">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+            <path
+            d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z" />
+          </svg>
+          GitHub Repo
+        </a>
+      </div>
+      <div style="border-radius: 1rem; overflow: hidden; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);">
+        <video controls preload="metadata" style="width: 100%; display: block; border-radius: 1rem;"
+        aria-label="VeriScript Platform Demo">
+        <source src="./assets/projects/veriscript/demo_2x.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+    </div>
+  </div>
+  <div class="modal-section gallery-section">
+    <div
+    style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; margin-bottom: 0.5rem; border-bottom: 1px solid var(--border-color); padding-bottom: 0.5rem;">
+    <h3 style="margin: 0;">Innovation Hub Showcase</h3>
+  </div>
+  <div class="gallery-grid">
+    <div class="gallery-item" role="button" tabindex="0" onkeydown="if(event.key === 'Enter' || event.key === ' ') { event.preventDefault(); this.click(); }" onclick="openLightbox(0, 'veriscript_showcase')">
+      <img src="./assets/projects/veriscript/showcase1.jpg" alt="Innovation Hub Showcase 1" loading="lazy" />
+    </div>
+    <div class="gallery-item" role="button" tabindex="0" onkeydown="if(event.key === 'Enter' || event.key === ' ') { event.preventDefault(); this.click(); }" onclick="openLightbox(1, 'veriscript_showcase')">
+      <img src="./assets/projects/veriscript/showcase2.jpg" alt="Innovation Hub Showcase 2" loading="lazy" />
+    </div>
+  </div>
+</div>
+<div class="modal-section gallery-section">
+  <div
+  style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; margin-bottom: 0.5rem; border-bottom: 1px solid var(--border-color); padding-bottom: 0.5rem;">
+  <h3 style="margin: 0;">More Information</h3>
+</div>
+<div class="gallery-grid">
+  <div class="gallery-item" role="button" tabindex="0" onkeydown="if(event.key === 'Enter' || event.key === ' ') { event.preventDefault(); this.click(); }" onclick="openLightbox(0, 'veriscript_more_info')">
+    <img src="./assets/projects/veriscript/more_info1.jpg" alt="VeriScript supporting project image 1" loading="lazy" />
+  </div>
+  <div class="gallery-item" role="button" tabindex="0" onkeydown="if(event.key === 'Enter' || event.key === ' ') { event.preventDefault(); this.click(); }" onclick="openLightbox(1, 'veriscript_more_info')">
+    <img src="./assets/projects/veriscript/more_info2.jpg" alt="VeriScript supporting project image 2" loading="lazy" />
+  </div>
+  <div class="gallery-item" role="button" tabindex="0" onkeydown="if(event.key === 'Enter' || event.key === ' ') { event.preventDefault(); this.click(); }" onclick="openLightbox(2, 'veriscript_more_info')">
+    <img src="./assets/projects/veriscript/more_info3.jpg" alt="VeriScript supporting project image 3" loading="lazy" />
+  </div>
+  <div class="gallery-item" role="button" tabindex="0" onkeydown="if(event.key === 'Enter' || event.key === ' ') { event.preventDefault(); this.click(); }" onclick="openLightbox(3, 'veriscript_more_info')">
+    <img src="./assets/projects/veriscript/more_info4.jpg" alt="VeriScript supporting project image 4" loading="lazy" />
+  </div>
+  <div class="gallery-item" role="button" tabindex="0" onkeydown="if(event.key === 'Enter' || event.key === ' ') { event.preventDefault(); this.click(); }" onclick="openLightbox(4, 'veriscript_more_info')">
+    <img src="./assets/projects/veriscript/more_info5.jpg" alt="VeriScript supporting project image 5" loading="lazy" />
+  </div>
+  <div class="gallery-item" role="button" tabindex="0" onkeydown="if(event.key === 'Enter' || event.key === ' ') { event.preventDefault(); this.click(); }" onclick="openLightbox(5, 'veriscript_more_info')">
+    <img src="./assets/projects/veriscript/more_info6.jpg" alt="VeriScript supporting project image 6" loading="lazy" />
+  </div>
+  <div class="gallery-item" role="button" tabindex="0" onkeydown="if(event.key === 'Enter' || event.key === ' ') { event.preventDefault(); this.click(); }" onclick="openLightbox(6, 'veriscript_more_info')">
+    <img src="./assets/projects/veriscript/more_info7.jpg" alt="VeriScript supporting project image 7" loading="lazy" />
+  </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="lightbox" class="lightbox" role="dialog" aria-modal="true" aria-label="Project image gallery" aria-hidden="true">
+  <button type="button" class="lightbox-close" onclick="closeLightbox()" aria-label="Close gallery">&times;</button>
+  <button type="button" class="lightbox-prev" onclick="navigateLightbox(-1)" aria-label="Previous image">&#10094;</button>
+  <img class="lightbox-content" id="lightbox-img" alt="">
+  <button type="button" class="lightbox-next" onclick="navigateLightbox(1)" aria-label="Next image">&#10095;</button>
+  <div class="lightbox-caption" id="lightbox-caption">
+  </div>
+  <div class="lightbox-counter" id="lightbox-counter">
+  </div>
+</div>
+<section class="contact-section" id="contact" aria-labelledby="contact-title">
+  <div class="container contact-grid">
+    <div class="contact-copy">
+      <p class="eyebrow">04 / GET IN TOUCH</p>
+      <h2 id="contact-title">Let's build the next experiment<span class="period">.</span>
+      </h2>
+      <p>Interested in materials research, instrumentation, or laboratory automation? I'd be glad to connect.</p>
+      <a class="contact-email" href="mailto:Sabin.Baral@usm.edu">Sabin.Baral@usm.edu <span aria-hidden="true">↗</span>
+      </a>
+      <div class="contact-socials">
+        <a href="https://www.linkedin.com/in/baralsabin/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
+        <a href="https://github.com/S8bin-dev" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+        <a href="https://scholar.google.com/citations?view_op=list_works&amp;hl=en&amp;user=vSl4ZvgAAAAJ" target="_blank" rel="noopener noreferrer">Google Scholar ↗</a>
+      </div>
+    </div>
+    <div class="contact-form-panel">
+      <p class="panel-kicker">SEND A MESSAGE</p>
+      <form id="contactForm" class="contact-form" action="https://formspree.io/f/xqarlrdl" method="POST">
+        <div class="form-group">
+          <label for="name">Your name</label>
+          <input type="text" id="name" name="name" autocomplete="name" required>
+        </div>
+        <div class="form-group">
+          <label for="email">Email address</label>
+          <input type="email" id="email" name="email" autocomplete="email" required>
+        </div>
+        <div class="form-group">
+          <label for="message">Message</label>
+          <textarea id="message" name="message" rows="5" required>
+          </textarea>
+        </div>
+        <button type="submit" class="button button-primary">Send message <span aria-hidden="true">↗</span>
+        </button>
+        <p class="form-error" id="formError" role="alert" hidden>Message could not be sent. Please try again or email me directly.</p>
+      </form>
+      <div id="formSuccess" class="form-success" role="status" hidden>
+        <h3>Message sent.</h3>
+        <p>Thank you for reaching out. I'll get back to you soon.</p>
+      </div>
+    </div>
+  </div>
+</section>
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <div>
+      <a class="footer-brand" href="#home">Sabin Baral<span class="period">.</span>
+      </a>
+      <p>Polymer science · Research automation · Engineering</p>
+    </div>
+    <p>© <span id="copyrightYear">2026</span> Sabin Baral</p>
+    <a href="#home">Back to top ↑</a>
+  </div>
+</footer>
+<script src="script.js">
+</script>
 </body>
-
 </html>

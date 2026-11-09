@@ -1,290 +1,54 @@
+const root = document.documentElement;
+let activeModal = null;
+let modalReturnFocus = null;
+let lightboxReturnFocus = null;
+let currentGallery = 'printing';
+let currentImageIndex = 0;
 
-// ========================================
-// PORTFOLIO - JAVASCRIPT
-// ========================================
-
-document.addEventListener('DOMContentLoaded', () => {
-  initDarkMode();
-  initNavigation();
-  initScrollEffects();
-  initTypingEffect();
-  initContactForm();
-  initRippleEffect();
-  initProjectStats();
-  initLightbox();
-
-  // Reveal sections
-  revealSections();
-
-  console.log('🎉 Portfolio fully loaded and initialized!');
-});
-
-
-// ========================================
-// DARK MODE
-// ========================================
-function initDarkMode() {
-  const darkModeToggle = document.getElementById('darkModeToggle');
-  const body = document.body;
-
-  const savedMode = localStorage.getItem('darkMode');
-  const systemPrefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
-
-  // Enable dark mode if saved as 'enabled' OR (not saved AND system prefers dark)
-  if (savedMode === 'enabled' || (!savedMode && systemPrefersDark)) {
-    body.classList.add('dark-mode');
+function setTheme(theme) {
+  root.dataset.theme = theme;
+  const toggle = document.getElementById('themeToggle');
+  if (toggle) {
+    toggle.setAttribute('aria-pressed', String(theme === 'dark'));
+    toggle.setAttribute('aria-label', `Switch to ${theme === 'dark' ? 'light' : 'dark'} theme`);
   }
-
-  if (darkModeToggle) {
-    darkModeToggle.addEventListener('click', () => {
-      body.classList.toggle('dark-mode');
-      if (body.classList.contains('dark-mode')) {
-        localStorage.setItem('darkMode', 'enabled');
-      } else {
-        localStorage.setItem('darkMode', 'disabled');
-      }
-    });
-  }
+  try { localStorage.setItem('portfolio-theme', theme); } catch (_) {}
 }
 
-// ========================================
-// NAVIGATION
-// ========================================
-function initNavigation() {
-  // Hamburger Menu
-  window.toggleMenu = function () {
-    const menu = document.querySelector(".menu-links");
-    const icon = document.querySelector(".hamburger-icon");
-    menu.classList.toggle("open");
-    icon.classList.toggle("open");
-  };
+function closeMenu() {
+  const menu = document.getElementById('primaryNav');
+  const toggle = document.getElementById('menuToggle');
+  menu.classList.remove('open');
+  toggle.setAttribute('aria-expanded', 'false');
+  toggle.setAttribute('aria-label', 'Open navigation');
 }
 
-// ========================================
-// SCROLL EFFECTS
-// ========================================
-function initScrollEffects() {
-  // Back to Top
-  const backToTopButton = document.getElementById('backToTop');
-  if (backToTopButton) {
-    window.addEventListener('scroll', () => {
-      if (window.pageYOffset > 300) {
-        backToTopButton.classList.add('show');
-      } else {
-        backToTopButton.classList.remove('show');
-      }
-    });
-
-    backToTopButton.addEventListener('click', () => {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    });
-  }
-
-  // Intersection Observer for Fade In
-  const observerOptions = {
-    threshold: 0.1,
-    rootMargin: '0px 0px -50px 0px'
-  };
-
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.style.opacity = '1';
-        entry.target.style.transform = 'translateY(0)';
-        entry.target.style.animation = 'none'; // Stop CSS animation to allow manual control if needed
-      }
-    });
-  }, observerOptions);
-
-  const fadeElements = document.querySelectorAll('.fade-in-up, .fade-in-left, .fade-in-right');
-  fadeElements.forEach(el => observer.observe(el));
+function syncScrollLock() {
+  const lightboxOpen = document.getElementById('lightbox').classList.contains('active');
+  const overlayOpen = Boolean(activeModal) || lightboxOpen;
+  document.body.classList.toggle('no-scroll', overlayOpen);
+  document.querySelectorAll('.site-header, main, .contact-section, .site-footer').forEach(el => { el.inert = overlayOpen; });
+  if (activeModal) activeModal.inert = lightboxOpen;
 }
 
-// ========================================
-// TYPING EFFECT
-// ========================================
-function initTypingEffect() {
-  const titleElement = document.querySelector('.typing-effect');
-  if (titleElement) {
-    const text = titleElement.textContent;
-    titleElement.textContent = '';
-    titleElement.style.opacity = '1';
+window.openModal = function (id) {
+  const modal = document.getElementById(id);
+  if (!modal) return;
+  modalReturnFocus = document.activeElement;
+  activeModal = modal;
+  modal.setAttribute('aria-hidden', 'false');
+  syncScrollLock();
+  modal.querySelector('.close')?.focus();
+};
+window.closeModal = function (id) {
+  const modal = document.getElementById(id);
+  if (!modal) return;
+  modal.setAttribute('aria-hidden', 'true');
+  activeModal = null;
+  syncScrollLock();
+  modalReturnFocus?.focus();
+};
 
-    let i = 0;
-    function typeWriter() {
-      if (i < text.length) {
-        titleElement.textContent += text.charAt(i);
-        i++;
-        setTimeout(typeWriter, 100);
-      }
-    }
-    setTimeout(typeWriter, 500);
-  }
-}
-
-// ========================================
-// CONTACT FORM
-// ========================================
-function initContactForm() {
-  const contactForm = document.getElementById('contactForm');
-  const formSuccess = document.getElementById('formSuccess');
-
-  if (contactForm) {
-    contactForm.addEventListener('submit', async (e) => {
-      e.preventDefault();
-
-      const submitBtn = contactForm.querySelector('button[type="submit"]');
-      const originalBtnText = submitBtn.textContent;
-      submitBtn.textContent = 'Sending...';
-      submitBtn.disabled = true;
-
-      try {
-        const formData = new FormData(contactForm);
-        const response = await fetch('https://formspree.io/f/xqarlrdl', {
-          method: 'POST',
-          body: formData,
-          headers: {
-            'Accept': 'application/json'
-          }
-        });
-
-        if (response.ok) {
-          contactForm.style.display = 'none';
-          if (formSuccess) formSuccess.classList.add('show');
-          contactForm.reset();
-
-          // Reset form view after delay
-          setTimeout(() => {
-            contactForm.style.display = 'flex';
-            if (formSuccess) formSuccess.classList.remove('show');
-            submitBtn.textContent = originalBtnText;
-            submitBtn.disabled = false;
-          }, 5000);
-        } else {
-          throw new Error('Form submission failed');
-        }
-      } catch (error) {
-        console.error('Error:', error);
-        alert('Oops! There was a problem submitting your form. Please try again or email me directly.');
-        submitBtn.textContent = originalBtnText;
-        submitBtn.disabled = false;
-      }
-    });
-  }
-}
-
-// ========================================
-// RIPPLE EFFECT
-// ========================================
-function initRippleEffect() {
-  document.querySelectorAll('.ripple').forEach(button => {
-    button.addEventListener('click', function (e) {
-      const ripple = document.createElement('span');
-      const rect = button.getBoundingClientRect();
-      const size = Math.max(rect.width, rect.height);
-      const x = e.clientX - rect.left - size / 2;
-      const y = e.clientY - rect.top - size / 2;
-
-      ripple.style.width = ripple.style.height = size + 'px';
-      ripple.style.left = x + 'px';
-      ripple.style.top = y + 'px';
-      ripple.classList.add('ripple-effect');
-
-      button.appendChild(ripple);
-      setTimeout(() => ripple.remove(), 600);
-    });
-  });
-}
-
-// ========================================
-// PROJECT STATS
-// ========================================
-function initProjectStats() {
-  const statNumbers = document.querySelectorAll('.stat-number');
-  const statsObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        const target = entry.target;
-        const finalValue = target.textContent;
-
-        if (finalValue.includes('%')) {
-          animateCounter(target, 0, parseInt(finalValue), 1500, '%');
-        } else if (finalValue.includes('+')) {
-          animateCounter(target, 0, parseInt(finalValue), 1500, '+');
-        } else if (finalValue.includes('$')) {
-          animateCounter(target, 0, parseInt(finalValue.replace('$', '')), 1500, '$', '+');
-        } else if (finalValue === 'GP') {
-          // Just leave it as GP - no animation needed
-          target.textContent = 'GP';
-        } else if (finalValue === 'Full' || finalValue === 'Closed') {
-          // Just leave text-based stats as-is - no animation needed
-          target.textContent = finalValue;
-        }
-        statsObserver.unobserve(target);
-      }
-    });
-  }, { threshold: 0.5 });
-
-  statNumbers.forEach(stat => statsObserver.observe(stat));
-}
-
-function animateCounter(element, start, end, duration, suffix = '', prefix = '') {
-  const startTime = performance.now();
-  function update(currentTime) {
-    const elapsed = currentTime - startTime;
-    const progress = Math.min(elapsed / duration, 1);
-    const easeOutQuart = 1 - Math.pow(1 - progress, 4);
-    const current = Math.floor(start + (end - start) * easeOutQuart);
-    element.textContent = prefix + current + suffix;
-    if (progress < 1) requestAnimationFrame(update);
-    else element.textContent = prefix + end + suffix;
-  }
-  requestAnimationFrame(update);
-}
-
-// ========================================
-// LIGHTBOX GALLERY
-// ========================================
-function initLightbox() {
-  // Expose functions to global scope for onclick handlers
-  window.openModal = function (modalId) {
-    const modal = document.getElementById(modalId);
-    if (modal) {
-      modal.style.display = "block";
-      document.body.style.overflow = "hidden";
-    }
-  };
-
-  window.closeModal = function (modalId) {
-    const modal = document.getElementById(modalId);
-    if (modal) {
-      modal.style.display = "none";
-      document.body.style.overflow = "auto";
-    }
-  };
-
-  // Close modal when clicking outside
-  window.onclick = function (event) {
-    if (event.target.classList.contains('modal')) {
-      event.target.style.display = "none";
-      document.body.style.overflow = "auto";
-    }
-  };
-
-  // Escape key for modals
-  document.addEventListener('keydown', (event) => {
-    if (event.key === "Escape") {
-      document.querySelectorAll('.modal').forEach(modal => {
-        if (modal.style.display === "block") {
-          modal.style.display = "none";
-          document.body.style.overflow = "auto";
-        }
-      });
-      closeLightbox();
-    }
-  });
-
-  // Separate Gallery Data for each project
   const galleries = {
     printing: [
       { src: './assets/projects/3d_printing/ossila_mount.jpg', caption: 'Ossila Four-Point Probe Automated Mount' },
@@ -337,73 +101,107 @@ function initLightbox() {
     ]
   };
 
-  let currentGallery = 'printing';
-  let currentImageIndex = 0;
 
-  window.openLightbox = function (index, gallery = 'printing') {
-    currentGallery = gallery;
-    currentImageIndex = index;
-    const galleryImages = galleries[currentGallery];
-    const lightbox = document.getElementById('lightbox');
-    const lightboxImg = document.getElementById('lightbox-img');
-    const lightboxCaption = document.getElementById('lightbox-caption');
-    const lightboxCounter = document.getElementById('lightbox-counter');
+window.openLightbox = function (index, gallery = 'printing') {
+  if (!galleries[gallery]?.[index]) return;
+  lightboxReturnFocus = document.activeElement;
+  currentGallery = gallery;
+  currentImageIndex = index;
+  const lightbox = document.getElementById('lightbox');
+  lightbox.classList.add('active');
+  lightbox.setAttribute('aria-hidden', 'false');
+  updateLightbox();
+  syncScrollLock();
+  lightbox.querySelector('.lightbox-close').focus();
+};
+function updateLightbox() {
+  const item = galleries[currentGallery][currentImageIndex];
+  const img = document.getElementById('lightbox-img');
+  img.src = item.src;
+  img.alt = item.caption;
+  document.getElementById('lightbox-caption').textContent = item.caption;
+  document.getElementById('lightbox-counter').textContent = `${currentImageIndex + 1} / ${galleries[currentGallery].length}`;
+}
+window.closeLightbox = function () {
+  const lightbox = document.getElementById('lightbox');
+  if (!lightbox.classList.contains('active')) return;
+  lightbox.classList.remove('active');
+  lightbox.setAttribute('aria-hidden', 'true');
+  document.getElementById('lightbox-img').removeAttribute('src');
+  syncScrollLock();
+  lightboxReturnFocus?.focus();
+};
+window.navigateLightbox = function (direction) {
+  const length = galleries[currentGallery].length;
+  currentImageIndex = (currentImageIndex + direction + length) % length;
+  updateLightbox();
+};
 
-    if (lightbox && lightboxImg && galleryImages[index]) {
-      lightbox.classList.add('active');
-      lightboxImg.src = galleryImages[index].src;
-      lightboxCaption.textContent = galleryImages[index].caption;
-      lightboxCounter.textContent = `${index + 1} / ${galleryImages.length}`;
-      document.body.style.overflow = 'hidden';
-    }
-  };
-
-  window.closeLightbox = function () {
-    const lightbox = document.getElementById('lightbox');
-    if (lightbox) {
-      lightbox.classList.remove('active');
-      document.body.style.overflow = 'auto';
-    }
-  };
-
-  window.navigateLightbox = function (direction) {
-    const galleryImages = galleries[currentGallery];
-    currentImageIndex += direction;
-    if (currentImageIndex < 0) currentImageIndex = galleryImages.length - 1;
-    else if (currentImageIndex >= galleryImages.length) currentImageIndex = 0;
-
-    const lightboxImg = document.getElementById('lightbox-img');
-    const lightboxCaption = document.getElementById('lightbox-caption');
-    const lightboxCounter = document.getElementById('lightbox-counter');
-
-    if (lightboxImg) {
-      lightboxImg.style.opacity = '0';
-      setTimeout(() => {
-        lightboxImg.src = galleryImages[currentImageIndex].src;
-        lightboxCaption.textContent = galleryImages[currentImageIndex].caption;
-        lightboxCounter.textContent = `${currentImageIndex + 1} / ${galleryImages.length}`;
-        lightboxImg.style.opacity = '1';
-      }, 150);
-    }
-  };
-
-  // Keyboard navigation for lightbox
-  document.addEventListener('keydown', (event) => {
-    const lightbox = document.getElementById('lightbox');
-    if (lightbox && lightbox.classList.contains('active')) {
-      if (event.key === 'ArrowLeft') window.navigateLightbox(-1);
-      else if (event.key === 'ArrowRight') window.navigateLightbox(1);
-    }
-  });
+function trapFocus(event, container) {
+  const focusable = [...container.querySelectorAll('a[href], button:not([disabled]), [tabindex="0"], input, textarea, video[controls]')].filter(el => el.getClientRects().length);
+  if (!focusable.length) return;
+  const first = focusable[0], last = focusable[focusable.length - 1];
+  if (event.shiftKey && document.activeElement === first) { event.preventDefault(); last.focus(); }
+  else if (!event.shiftKey && document.activeElement === last) { event.preventDefault(); first.focus(); }
 }
 
-function revealSections() {
-  const sections = document.querySelectorAll('section');
-  sections.forEach((section, index) => {
-    section.style.opacity = '0';
-    setTimeout(() => {
-      section.style.transition = 'opacity 0.6s ease';
-      section.style.opacity = '1';
-    }, index * 100);
-  });
+async function handleContact(event) {
+  event.preventDefault();
+  const form = event.currentTarget;
+  const button = form.querySelector('button[type="submit"]');
+  const error = document.getElementById('formError');
+  error.hidden = true;
+  button.disabled = true;
+  button.textContent = 'Sending…';
+  try {
+    const response = await fetch(form.action, { method: 'POST', body: new FormData(form), headers: { Accept: 'application/json' } });
+    if (!response.ok) throw new Error(`Form submission failed: ${response.status}`);
+    form.hidden = true;
+    document.getElementById('formSuccess').hidden = false;
+    form.reset();
+  } catch (err) {
+    error.hidden = false;
+    button.disabled = false;
+    button.innerHTML = 'Send message <span aria-hidden="true">↗</span>';
+  }
 }
+
+document.addEventListener('DOMContentLoaded', () => {
+  const themeToggle = document.getElementById('themeToggle');
+  const initialTheme = root.dataset.theme || 'light';
+  themeToggle.setAttribute('aria-pressed', String(initialTheme === 'dark'));
+  themeToggle.setAttribute('aria-label', `Switch to ${initialTheme === 'dark' ? 'light' : 'dark'} theme`);
+  themeToggle.addEventListener('click', () => setTheme(root.dataset.theme === 'dark' ? 'light' : 'dark'));
+  document.getElementById('copyrightYear').textContent = new Date().getFullYear();
+  const menuToggle = document.getElementById('menuToggle');
+  const menu = document.getElementById('primaryNav');
+  menuToggle.addEventListener('click', () => {
+    const open = menu.classList.toggle('open');
+    menuToggle.setAttribute('aria-expanded', String(open));
+    menuToggle.setAttribute('aria-label', open ? 'Close navigation' : 'Open navigation');
+  });
+  menu.querySelectorAll('a').forEach(link => link.addEventListener('click', closeMenu));
+  document.querySelectorAll('[data-modal]').forEach(button => button.addEventListener('click', () => openModal(button.dataset.modal)));
+  document.querySelectorAll('.modal').forEach(modal => {
+    modal.setAttribute('aria-hidden', 'true');
+    modal.addEventListener('click', event => { if (event.target === modal) closeModal(modal.id); });
+  });
+  document.getElementById('lightbox').addEventListener('click', event => { if (event.target.id === 'lightbox') closeLightbox(); });
+  document.getElementById('contactForm').addEventListener('submit', handleContact);
+  document.addEventListener('keydown', event => {
+    const lightbox = document.getElementById('lightbox');
+    if (lightbox.classList.contains('active')) {
+      if (event.key === 'Escape') closeLightbox();
+      if (event.key === 'ArrowLeft') navigateLightbox(-1);
+      if (event.key === 'ArrowRight') navigateLightbox(1);
+      if (event.key === 'Tab') trapFocus(event, lightbox);
+      return;
+    }
+    if (activeModal) {
+      if (event.key === 'Escape') closeModal(activeModal.id);
+      if (event.key === 'Tab') trapFocus(event, activeModal);
+      return;
+    }
+    if (event.key === 'Escape') closeMenu();
+  });
+});
