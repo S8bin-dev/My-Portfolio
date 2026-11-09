@@ -1,6 +1,6 @@
 # Sabin Baral — Research & Engineering Portfolio
 
-An experimental redesign of [sabinbaral.dev](https://sabinbaral.dev), built with static HTML, CSS, and vanilla JavaScript. It presents polymer research, laboratory automation, instrumentation, publications, skills, and contact information.
+A local experimental redesign of [sabinbaral.dev](https://sabinbaral.dev), built with static HTML, CSS, and vanilla JavaScript. Version 2 refines the first redesign while preserving its alternating research card layout and original project details.
 
 ## Local preview
 
@@ -10,40 +10,54 @@ From the repository root:
 python3 -m http.server 8000
 ```
 
-Open <http://localhost:8000/>. No package installation or build step is required. `index.html`, `style.css`, `script.js`, and `assets/` are the deployed static site; `react-app/` is a separate, untouched project and is not needed for this preview.
+Open <http://localhost:8000/>. No package installation or build step is required. `index.html`, `style.css`, `script.js`, and `assets/` form the static website. The separate `react-app/` project is untouched and is not needed for preview.
 
-The contact form retains its Formspree endpoint. A real submission requires network access and sends the entered message to that service; no test message was submitted during this redesign.
+## Version 2 refinements
 
-## Design and interactions
+- A personal hero led by Sabin's name, a simple uncropped portrait, the original favicon branding, and recognizable social icons.
+- All six projects use large alternating feature cards, with natural descriptions, documented outcomes, subtle technical tags, and consistent Explore Project actions.
+- A compact research philosophy statement and ACS Nano highlight connect the hero to research.
+- More readable publication information, a neutral conference record, and larger institution logos with their original proportions.
+- Four expertise categories supported by the repository: scientific characterization, robotics and automation, engineering and design, and programming and data analysis. FTIR and Fusion 360 are not listed because the source does not substantiate them.
+- A compact contact layout with labels, validation, pending state, inline failure feedback, and focused success feedback after an accepted response.
 
-- Light and dark themes use system preference on first visit, honor the previous site's stored theme preference, and remember a manual choice in local storage.
-- Six project summaries open the original detailed project content, including galleries, videos, and repository links.
-- Main page images use smaller WebP derivatives in `assets/optimized/`; original scientific images remain in `assets/projects/` for project details and full fidelity.
-- The contact form retains its existing Formspree endpoint and reports success or an inline error.
-- Responsive navigation, keyboard focus, dialog focus handling, reduced motion support, and semantic headings are included.
+The six original project detail dialogs, figures, galleries, videos, repository links, publication DOI, résumé, and professional profile links remain available. The original project detail markup is unchanged from Version 1. Smaller WebP images serve the main page; original media remain in `assets/`.
 
-## Content requiring review
+## Verification
 
-The original page listed an ACS Fall 2026 poster as **upcoming** in August 2026. The redesign labels its status for verification because that date has passed. Confirm whether it was presented and provide the final poster title, authors, and link if available.
+The static site has no build command. JavaScript, inline handlers, and CSS were parsed successfully. Local asset paths, gallery paths, IDs, anchors, and image alt attributes were checked.
 
-The page keeps the project dates, figures, and publication citation documented in the original repository. Please review those details before any publication of this branch.
+Isolated headless Chrome passed 77 layout and interaction checks in light and dark themes at 375, 768, and 1440 pixels, plus four focused checks after the final tablet expertise refinement. Screenshots were visually inspected for the hero, projects, publications, institutional logos, expertise, and contact layouts. Checks covered horizontal overflow, alternating or stacked project layouts, navigation, dialog and gallery keyboard behavior, theme persistence, reduced motion, form validation, and simulated form success and failure. No JavaScript runtime errors or failed local asset requests were observed.
 
-Recommended media additions: a current high resolution portrait with a rectangular composition; a candid laboratory photograph showing Sabin with the autonomous setup; a close view of the polymer thin film workflow; a detector testing photograph; and a poster thumbnail or conference photograph if the presentation was completed. The current scientific figures stay uncropped in the project cards.
+The form retains `https://formspree.io/f/xqarlrdl`. Its client behavior was tested with simulated responses; no real message was sent, so backend acceptance and email delivery remain unverified. No new service or dependency was added.
 
-## Git safety
+## Content requiring confirmation
 
-The original site is preserved on `main` at commit `8fe4462b12b1385113144ba86b693232d6edd58e` and in the local tag `portfolio-before-redesign-2026-11-08`. Redesign work is on `experiment/portfolio-redesign` only. No branch was pushed or deployed.
+- The repository listed an ACS Fall 2026 poster as upcoming in August 2026. The page now retains a neutral conference record without claiming that the poster was presented. Confirm participation and provide the final title, authors, and poster link if available.
+- Project outcome numbers come from the original repository. The 40% reduction is described as **characterization time**, matching the detailed block copolymer project text.
+- A current rectangular portrait, a photograph of Sabin with the autonomous setup, detector testing photos, and a confirmed conference poster image would strengthen future iterations. The current portrait and scientific figures retain their full composition.
 
-After committing any future local edits to the experiment branch, return to the original site with:
+## Recoverable Git versions
+
+All work remains on `experiment/portfolio-redesign`. No changes were pushed, merged, or deployed; `main`, `CNAME`, and hosting configuration were not modified.
+
+| Version | Local reference |
+| --- | --- |
+| Original website | `main` and `portfolio-before-redesign-2026-11-08` at `8fe4462` |
+| First redesign | Annotated tag `portfolio-redesign-v1` at `dc8366b` |
+| Second iteration | Annotated tag `portfolio-redesign-v2` and `experiment/portfolio-redesign` |
+
+The checkpoints preserve the source files as well as the original assets. After preserving any future uncommitted edits, use:
 
 ```bash
+# Return to the original website
 git switch main
-```
 
-Return to the experiment with:
+# Inspect Version 1 without modifying a branch
+git switch --detach portfolio-redesign-v1
 
-```bash
+# Return to Version 2
 git switch experiment/portfolio-redesign
 ```
 
-If there are uncommitted changes, commit or otherwise preserve them before switching; do not discard them automatically. Publication requires explicit approval, followed by review, merge to the deployment branch, and push to the configured remote. The repository has a `CNAME` for `sabinbaral.dev` and no tracked GitHub Actions deployment workflow.
+Do not discard uncommitted changes automatically. Publication requires explicit approval before any merge or push. The existing `CNAME` points to `sabinbaral.dev`; no tracked GitHub Actions deployment workflow was changed.

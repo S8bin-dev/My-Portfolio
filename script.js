@@ -150,6 +150,7 @@ async function handleContact(event) {
   const form = event.currentTarget;
   const button = form.querySelector('button[type="submit"]');
   const error = document.getElementById('formError');
+  form.setAttribute('aria-busy', 'true');
   error.hidden = true;
   button.disabled = true;
   button.textContent = 'Sending…';
@@ -157,12 +158,16 @@ async function handleContact(event) {
     const response = await fetch(form.action, { method: 'POST', body: new FormData(form), headers: { Accept: 'application/json' } });
     if (!response.ok) throw new Error(`Form submission failed: ${response.status}`);
     form.hidden = true;
-    document.getElementById('formSuccess').hidden = false;
+    const success = document.getElementById('formSuccess');
+    success.hidden = false;
+    success.focus();
     form.reset();
   } catch (err) {
     error.hidden = false;
     button.disabled = false;
     button.innerHTML = 'Send message <span aria-hidden="true">↗</span>';
+  } finally {
+    form.setAttribute('aria-busy', 'false');
   }
 }
 
@@ -181,6 +186,8 @@ document.addEventListener('DOMContentLoaded', () => {
     menuToggle.setAttribute('aria-label', open ? 'Close navigation' : 'Open navigation');
   });
   menu.querySelectorAll('a').forEach(link => link.addEventListener('click', closeMenu));
+  matchMedia('(min-width: 921px)').addEventListener('change', event => { if (event.matches) closeMenu(); });
+  document.addEventListener('click', event => { if (!event.target.closest('.nav-shell')) closeMenu(); });
   document.querySelectorAll('[data-modal]').forEach(button => button.addEventListener('click', () => openModal(button.dataset.modal)));
   document.querySelectorAll('.modal').forEach(modal => {
     modal.setAttribute('aria-hidden', 'true');
@@ -202,6 +209,6 @@ document.addEventListener('DOMContentLoaded', () => {
       if (event.key === 'Tab') trapFocus(event, activeModal);
       return;
     }
-    if (event.key === 'Escape') closeMenu();
+    if (event.key === 'Escape' && menu.classList.contains('open')) { closeMenu(); menuToggle.focus(); }
   });
 });
