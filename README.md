@@ -1,6 +1,6 @@
 # Sabin Baral — Research & Engineering Portfolio
 
-Version 4 of the local experimental redesign of [sabinbaral.dev](https://sabinbaral.dev). The Version 3 hero, typography, publications, expertise, contact section, footer, and six-palette Theme Lab are preserved.
+Final responsive polish of the local experimental redesign of [sabinbaral.dev](https://sabinbaral.dev), built on Version 4. The Editorial Copper identity, approved main-page copy, project hierarchy, publications, expertise, and contact information are preserved, with two metric labels corrected against the supplied résumé.
 
 ## Local preview
 
@@ -10,29 +10,48 @@ From the repository root:
 python3 -m http.server 8000
 ```
 
-Open <http://localhost:8000/>. No package installation or build step is required. The separate `react-app/` project is untouched.
+Open <http://localhost:8000/>. This is a buildless HTML/CSS/JavaScript site: no package installation or compilation is required. The unrelated `react-app/` project is untouched.
 
-Editorial Copper is the default palette for new visitors in both light and dark appearance. Existing saved palette choices are retained. Light / Dark / System controls and the other five experimental palettes remain available using the palette icon beside the sun/moon button. If your preview retains a previous palette, choose Editorial Copper in Theme Lab; changing the default does not erase preferences.
+## Files changed
 
-## Project hierarchy
+| File | Purpose |
+| --- | --- |
+| `index.html` | Landing wrapper and mobile reading order; remove Theme Lab; contact inside main; consistent modal headers; native image buttons; optimized detail previews; résumé-supported metric wording |
+| `style.css` | Viewport-aware landing, responsive layouts, touch targets, one scrolling surface per modal, reusable detail styles, image-viewer readability |
+| `theme.js` | Copper-only appearance toggle, system default, saved manual preference, legacy-storage migration |
+| `themes.css` | Only Editorial Copper light/dark tokens; stronger dark card borders; remove unused palette configurations and aliases |
+| `script.js` | Mobile navigation dismissal, explicit triggering-control focus restoration, fixed-body scroll lock, video pause on modal close |
+| `README.md` | Current behavior, verification, content-review notes, preview, and recovery instructions |
 
-Featured cards retain the large alternating layout:
+No supplied image, video, résumé, CSV, generated gallery data, or image-generator file was modified in this polish pass. No dependency was added.
 
-1. High-Throughput Block Copolymer Thin-Film Fabrication and Characterization — text left, image right.
-2. CMS Inner Tracker Upgrade: Bare Module Testing & Automation — image left, text right.
-3. Real-World Problem Solving Through 3D Printing — text left, image right.
+## Responsive landing and navigation
 
-More Projects contains three compact cards: Autonomous Lab, VeriScript, and Organic Solar Cells. All six original detail dialogs, research information, project links, and applicable media remain available. Image expansion and Explore Project remain separate actions. The image area is a native button with an accessible name and a subtle expand icon; there are no nested interactive controls.
+Above 920 CSS pixels, `.landing` groups the hero and research-philosophy strip in a two-row grid. Its minimum height is `calc(100svh - var(--header-height))`, with a `vh` fallback. The hero takes the remaining space and centers its contents; the philosophy strip stays at the bottom. Research starts below the first viewport. Intrinsic content height can exceed that minimum, so short screens scroll naturally instead of clipping. Height-aware padding reduces excess space on shorter desktop viewports. The existing 1240-pixel content limit keeps line lengths comfortable on large monitors.
 
-## 3D-printing gallery
+At 920 pixels and below, the landing minimum height is removed. The hero reads as introduction/name, headline, complete description, proportional portrait, actions, and social cards. Phones scroll naturally. The portrait and spacing use fluid sizing; phone action buttons form a balanced grid and social cards retain their icon-and-label design.
 
-The authoritative CSV was found at:
+The mobile hamburger opens a disclosure below the header. Links have at least 48-pixel height; the hamburger and theme toggle are 44 pixels. The disclosure has a dynamic-viewport height limit and can scroll on short landscape screens. It closes after selecting a section, outside interaction, theme-toggle use, keyboard focus leaving the header, Escape, or return to desktop width. Escape restores focus to the hamburger. Anchor scroll padding keeps section headings below the sticky navigation.
+
+## Project cards and detail dialogs
+
+Featured order remains Block Copolymer, CMS Tracker, and 3D Printing, with the existing alternating desktop layout. At 760 pixels and below, each image appears above its description. Scientific figures use `object-fit: contain`; tags and metadata wrap naturally.
+
+More Projects remains Autonomous Lab, VeriScript, and Organic Solar Cells. The grid uses three columns above 1100 pixels, two columns down to 681 pixels, and one column on phones. Card heights follow their content. Publication cards, conference metadata, institution logos, expertise cards, and contact form adapt to narrower widths without hiding essential text. Publication authors and project body copy remain readable at approximately 16 pixels or more.
+
+Each detail dialog has a sticky title/close header and a single vertically scrolling content panel. The outer overlay does not scroll, avoiding the old nested-scroll behavior. The content panel uses dynamic viewport height, narrow phone margins, and contained overscroll. Closing restores the invoking control and page scroll position. The fixed-body lock also handles the background when an image viewer opens over a project dialog. Videos pause when the project dialog closes.
+
+Repeated inline styles were replaced with resource-grid, workflow-step, video-frame, section-heading, and media-caption classes. Existing gallery image actions are native buttons. Detail figures use existing optimized previews and open their original-resolution source on request. All four videos retain their original sources and use `preload="none"`.
+
+## Gallery and image viewer
+
+The authoritative CSV copy remains `assets/projects/3d_printing/image-index.csv`, originally supplied at:
 
 ```text
 /home/sabin/Downloads/portfolio-design-images-renamed/portfolio-design-images/image-index.csv
 ```
 
-A byte-preserving copy is stored at `assets/projects/3d_printing/image-index.csv`. All 20 unique entries were found under their `portfolio_filename` names. There are no missing or duplicate entries. The gallery's titles, categories, filenames, and ordering are generated from that CSV into `assets/projects/3d_printing/gallery.json`.
+All 20 images remain integrated, with no missing entries. Titles, categories, ordering, filenames, counts, and original-resolution references remain generated from the CSV in `gallery.json`.
 
 | Category | Images |
 | --- | ---: |
@@ -42,70 +61,97 @@ A byte-preserving copy is stored at `assets/projects/3d_printing/image-index.csv
 | 3D-Printed Labware | 3 |
 | Thin-Film Sample Handling | 2 |
 | Robotics Prototypes | 1 |
-| Total | 20 |
 
-The featured image is `automated-four-point-probe-motorized-mount.jpg`, titled **Automated Four-Point Probe and Motorized Stage Mount**. It was selected after inspecting the candidate photographs because the printed fixture is prominent and shown installed on the actual instrument.
+Filters wrap on larger screens and scroll horizontally on phones. Each has a minimum 44-pixel height, and keyboard focus scrolls the selected control into view. The gallery uses three, two, or one columns as space allows. Portrait and landscape images retain their proportions.
 
-Explore Project opens the gallery inside the existing 3D-printing dialog. Filters show the exact category counts. The image viewer displays the original image, CSV title, category, and position within the selected category. It supports previous/next navigation, arrow keys, Escape, focus restoration, and an original-resolution link. Single-image categories omit inactive navigation controls.
+The viewer supports Escape, previous/next and arrow keys within the filtered category, keyboard focus trapping/restoration, CSV captions, categories, and an original-resolution link. Touch controls and the original-image link remain visible in phone portrait and landscape. A darker viewer overlay reduces competing background text. Browser pinch zoom remains enabled.
 
-Responsive WebP previews are generated at 360 and up to 720 pixels wide, with an additional 1200-pixel featured preview. The 41 generated previews total about 1.1 MB. Smaller originals are not upscaled. Images retain their aspect ratio, use `object-fit: contain`, explicit dimensions, and lazy loading. Gallery metadata is fetched when needed; full-resolution gallery images load only when requested. Supplied source files are not overwritten during optimization.
+Version 4's selected main photograph, `automated-four-point-probe-motorized-mount.jpg`, and 41 WebP previews totaling about 1.1 MB are preserved. Full originals load on request. To regenerate gallery data/previews, use `python3 scripts/build-printing-gallery.py` with the existing ImageMagick tools; regeneration was unnecessary for this pass.
 
-To regenerate metadata and previews after editing the CSV or supplying images:
+## Copper-only appearance
 
-```bash
-python3 scripts/build-printing-gallery.py
-```
+Only Editorial Copper light and dark remain. Theme Lab, its header icon, the other five palettes, palette swatches, and palette-switching logic are removed.
 
-The generator uses Python's standard library and the existing ImageMagick `identify` and `convert` commands. These tools are only needed to regenerate assets; the website has no new package or runtime dependency.
+First-time visitors follow `prefers-color-scheme`. The sun/moon button saves a manual light/dark selection under `portfolio-appearance`. A saved selection takes precedence over later OS changes. Existing Version 4 and older appearance choices migrate; obsolete `portfolio-theme-preferences`, `portfolio-theme`, and `darkMode` keys are removed. Saved palette names cannot affect the new site. Malformed or inaccessible storage does not disable appearance switching. Appearance is applied before styles load.
 
-## Bug fixes and content accuracy
+## Accessibility and compatibility
 
-The Argonne PNG contains a two-pixel gray strip at its extreme left edge, separate from the wordmark. The image file is unchanged. A dedicated CSS rule sizes its box to the original aspect ratio and clips one rendered pixel from that outer edge; the legitimate branding remains intact. The other institution assets are unchanged.
+Contact is now inside the main landmark, and the keyboard skip link focuses that landmark. All six dialogs have consistent heading/close structure. Native image buttons, descriptive labels, visible focus rings, focus restoration, inert backgrounds, and reduced-motion support are retained or improved. Inputs use 16-pixel text to avoid small-input autozoom on phones. Important controls and inline-looking resource links have comfortable touch areas. No zoom-disabling viewport setting was added.
 
-The inherited description of sample capacity said 100 samples replacing 20 was a 500% increase. This was corrected to a **400% increase** while preserving the original sample counts.
-
-The block-copolymer 40% metric remains **characterization-time reduction**, matching the explicit detailed text in the original repository. The new brief refers to throughput; confirm if fabrication throughput was intended instead. The 75% detector-testing efficiency increase and 15% solar-cell efficiency improvement are also preserved from the original cards, but their baseline and calculation still need clarification.
-
-The two publication cards and ACS Spring 2027 conference information are unchanged. The SAXS-guided manuscript retains only the approved title, authors, Submission in progress status, and short summary. No full abstract, unpublished quantitative results, manuscript file, or manuscript link was introduced.
+The implementation uses `svh` for the desktop minimum landing height, `dvh` for modal limits, safe-area padding, and `vh` fallbacks. WebKit documents [viewport-unit support](https://webkit.org/blog/12445/new-webkit-features-in-safari-15-4/) and [inert support](https://webkit.org/blog/12669/new-webkit-features-in-safari-15-5/). These compatibility checks do not replace real Safari testing. This environment provides Chrome and Firefox; iPhone Safari, physical Android/Firefox devices, virtual-keyboard behavior, notches, and live address-bar transitions remain unverified on hardware.
 
 ## Verification
 
-The buildless HTML/CSS/JavaScript site needs no compilation step. JavaScript syntax, CSS parsing, HTML attributes/IDs, local paths, CSV/JSON parity, and the staged whitespace check pass. The supplied CSV retains its original CRLF line endings, so that check uses `git -c core.whitespace=cr-at-eol diff --cached --check`.
+- **644 Chrome checks passed** with no JavaScript exceptions or failed local resource requests.
+- **103 Firefox 156 checks passed** for responsive landing, all six dialogs, filters, nested image viewer, and mobile navigation.
+- **19 targeted checks passed**, including actual playback of all four videos, pausing on modal close, keyboard skip navigation, compact scrollable filters, and mobile/landscape image-viewer actions.
+- **2,541 sampled text-contrast checks** across the page/gallery and five other dialogs in both appearances had no failures; the lowest sampled ratio was **4.91:1**. Control, hover, and focus-token checks also passed. This is targeted QA, not a formal accessibility certification.
+- JavaScript syntax, CSS parsing/custom-property references, HTML attributes/IDs/alt text, local assets, anchor targets, publication/privacy preservation, gallery data preservation, and `git diff --check` pass.
 
-A local headless Chrome run passed **233 browser checks** with no JavaScript exceptions or failed local requests. It covered Copper light/dark at 320, 375, 768, 1280, 1440, and 1920 pixels; saved preferences and OS appearance changes; responsive project/gallery layouts; all six project dialogs and main image actions; all 20 gallery originals; category filtering and navigation; keyboard focus trapping/restoration; mobile navigation; Theme Lab; résumé, DOI, navigation, and social destinations; and reduced motion. Corrected gallery renders were visually reviewed at desktop, tablet, and narrow mobile sizes. Across all 12 palette/appearance combinations, 3,456 sampled text contrast checks produced no failures; the lowest sampled ratio was 4.60:1. This is targeted verification, not a formal accessibility certification.
+Chrome responsive checks ran in both themes at:
 
-The 20 supplied image binaries and updated résumé match their pre-edit backup. The CSV copy matches the supplied CSV byte for byte, the Argonne PNG is unchanged, and publication/conference content matches Version 3. No unpublished manuscript content was added.
+| Context | Viewport |
+| --- | --- |
+| Small mobile | 320 × 640 |
+| iPhone-sized mobile | 375 × 667 |
+| Modern smartphone | 390 × 844 |
+| Large smartphone | 430 × 932 |
+| Tablet portrait | 768 × 1024 |
+| Tablet landscape | 1024 × 768 |
+| Laptop | 1366 × 768 |
+| External monitor | 1654 × 928 |
+| Desktop | 1920 × 1080 |
+| Large monitor | 2560 × 1440 |
+| Phone landscape | 667 × 375 and 844 × 390 |
+| Short desktop | 1280 × 500 |
 
-Remote checks returned HTTP 200 for GitHub, Google Scholar, project repositories, and research-group links. LinkedIn returned 999; ACS (after DOI redirect), Thingiverse, and CMS returned 403. These four destinations remain unchanged because automated access was denied; their live page contents could not be verified in this run.
+The phone tests used Chrome touch emulation. Firefox supplied an independent desktop-engine check at narrow, tablet, monitor, and landscape sizes. Desktop reflow was also tested at CSS viewport dimensions corresponding to 100%, 125%, and 150% zoom on 1366 × 768 and 1654 × 928 displays; this is **zoom-equivalent layout testing**, not verification of native browser zoom controls. Desktop, mobile, tablet, dialog, and gallery screenshots were visually inspected.
 
-The contact form retains the existing Formspree endpoint. Validation and response feedback are tested with simulated responses; no test message is sent, so actual email delivery remains unverified. Existing public link destinations are retained; automated remote availability checks may be limited by access controls or anti-bot responses.
+The contact form retains the existing Formspree backend. Browser validation and accepted/rejected response handling pass simulated checks; no test message was sent. Actual email delivery remains unverified. Public link destinations are unchanged. Version 4's remote checks found LinkedIn (999), ACS, Thingiverse, and CMS (403) denied automated access; those destinations require normal-browser review. Other checked public destinations returned 200 in that run.
 
-## Git safety and recoverable versions
+Local QA artifacts are in `/tmp/portfolio-final-qa`, `/tmp/portfolio-final-firefox`, and `/tmp/portfolio-final-media`; temporary directories are not durable Git checkpoints.
 
-All work remains on `experiment/portfolio-redesign`. Nothing was pushed, merged, published, or deployed. The production branch, `CNAME`, DNS, and deployment settings were not changed.
+## Content review and remaining confirmation
 
-The working tree initially contained 20 supplied gallery images, 11 removed legacy filenames, and an updated résumé. Their pre-edit state was preserved in `/tmp/portfolio-v4-user-assets-2026-11-09`. With explicit approval, the gallery assets, intentional renames/replacements, and updated résumé are included in the Version 4 local checkpoint. Earlier filenames and source files remain recoverable in Version 3. The supplied images in Downloads are untouched.
+The supplied, updated résumé states that fabricating and AFM-characterizing 1,000+ block-copolymer samples improved **throughput by 40%**. It separately states that the CMS testing GUI reduced **setup time by 75%**. These more direct source statements replace the inherited website's characterization-time and generic efficiency labels in the cards and relevant detail text. The résumé PDF itself was not edited.
 
-| Version | Local checkpoint |
+The following inherited statements are flagged for review rather than silently rewritten:
+
+- The block-copolymer detail still says “Currently preparing 300+ thin film samples for our next beamtime at ALS or NSLS.” Confirm the present sample count, facility, and whether that beamtime has occurred.
+- Autonomous Lab's full-loop integration remains described as ongoing; confirm that status before publication.
+- The solar project's 15% efficiency-improvement baseline/calculation, and VeriScript's review-time/cost figures, are inherited project claims without further supporting measurements in this checkout.
+- Some original 3D-printing application text uses absolute language about human error, repeatability, airflow, and sterility; confirm the scope of those claims. The résumé lists a RoboSoccer tournament win, but does not establish causation by a particular attachment.
+- The résumé still says 500% storage-capacity increase; the website preserves Version 4's arithmetic correction: 100 samples replacing 20 is **400% more capacity**, or five times the original capacity. Confirm whether the résumé refers to the same fixture.
+
+The ACS Nano citation, submission-in-progress manuscript, and ACS Spring 2027 conference content are unchanged. No unpublished abstract, confidential quantitative findings, manuscript file, or public manuscript link was added. Confirm publication/conference statuses again when authorizing eventual publication.
+
+## Git safety and recovery
+
+All work remains on `experiment/portfolio-redesign`. Nothing was pushed, merged, published, or deployed. `main`, `CNAME`, DNS, and deployment settings are unchanged.
+
+| Version | Recoverable local checkpoint |
 | --- | --- |
 | Original | `main` and `portfolio-before-redesign-2026-11-08` at `8fe4462` |
 | Version 1 | `portfolio-redesign-v1` at `dc8366b` |
 | Version 2 | `portfolio-redesign-v2` at `4334e3b` |
 | Version 3 | `portfolio-redesign-v3` at `c5de0cd` |
-| Before Version 4 | `portfolio-redesign-v3-before-v4-2026-11-09` at `c5de0cd` |
-| Version 4 | `portfolio-redesign-v4` and `experiment/portfolio-redesign` |
+| Version 4 | `portfolio-redesign-v4` at `572fca4` |
+| Before final polish | `portfolio-redesign-v4-before-final-polish-2026-11-09` at `572fca4` |
+| Final polish | `portfolio-final-polish-2026-11-09` and `experiment/portfolio-redesign` |
 
-After preserving any future uncommitted edits:
+The working tree was clean before this pass. No existing tag was overwritten. The approved Version 4 gallery assets, renames/replacements, and résumé remain in its checkpoint; earlier filenames remain recoverable in Version 3.
+
+After preserving any future uncommitted work:
 
 ```bash
+# Inspect Version 4 without changing its checkpoint
+git switch --detach portfolio-redesign-v4
+
+# Return to final polish
+git switch experiment/portfolio-redesign
+
 # Return to the original website
 git switch main
-
-# Inspect a prior version without changing its checkpoint
-git switch --detach portfolio-redesign-v3
-
-# Return to Version 4
-git switch experiment/portfolio-redesign
 ```
 
-Do not discard uncommitted changes automatically. Publication requires explicit approval before merging or pushing.
+Do not discard future uncommitted changes automatically. Publication still requires explicit approval.

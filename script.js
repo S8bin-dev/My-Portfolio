@@ -4,6 +4,7 @@ let lightboxReturnFocus = null;
 let currentGallery = 'printing';
 let currentImageIndex = 0;
 let standaloneImage = null;
+let lockedScrollY = null;
 
 function closeMenu() {
   const menu = document.getElementById('primaryNav');
@@ -16,17 +17,30 @@ function closeMenu() {
 function syncScrollLock() {
   const lightboxOpen = document.getElementById('lightbox').classList.contains('active');
   const overlayOpen = Boolean(activeModal) || lightboxOpen;
-  document.body.classList.toggle('no-scroll', overlayOpen);
-  document.querySelectorAll('.site-header, main, .contact-section, .site-footer').forEach(el => { el.inert = overlayOpen; });
+  if (overlayOpen && lockedScrollY === null) {
+    lockedScrollY = window.scrollY;
+    document.body.style.top = `-${lockedScrollY}px`;
+    document.body.classList.add('no-scroll');
+  } else if (!overlayOpen && lockedScrollY !== null) {
+    const position = lockedScrollY;
+    lockedScrollY = null;
+    document.body.classList.remove('no-scroll');
+    document.body.style.removeProperty('top');
+    window.scrollTo({ top: position, behavior: 'instant' });
+  }
+  document.querySelectorAll('.site-header, main, .site-footer').forEach(el => { el.inert = overlayOpen; });
   if (activeModal) activeModal.inert = lightboxOpen;
 }
 
-window.openModal = function (id) {
+window.openModal = function (id, trigger = document.activeElement) {
   const modal = document.getElementById(id);
   if (!modal) return;
-  modalReturnFocus = document.activeElement;
+  modalReturnFocus = trigger;
   activeModal = modal;
+  closeMenu();
+  modal.inert = false;
   modal.setAttribute('aria-hidden', 'false');
+  modal.querySelector('.modal-content').scrollTop = 0;
   syncScrollLock();
   modal.querySelector('.close')?.focus();
   if (id === 'modal3') initPrintingGallery();
@@ -34,10 +48,11 @@ window.openModal = function (id) {
 window.closeModal = function (id) {
   const modal = document.getElementById(id);
   if (!modal) return;
+  modal.querySelectorAll('video').forEach(video => video.pause());
   modal.setAttribute('aria-hidden', 'true');
   activeModal = null;
   syncScrollLock();
-  modalReturnFocus?.focus();
+  modalReturnFocus?.focus({ preventScroll: true });
 };
 
   const galleries = {
@@ -219,9 +234,9 @@ function showLightbox() {
   syncScrollLock();
   lightbox.querySelector('.lightbox-close').focus();
 }
-window.openLightbox = function (index, gallery = 'printing') {
+window.openLightbox = function (index, gallery = 'printing', trigger = document.activeElement) {
   if (!galleries[gallery]?.[index]) return;
-  lightboxReturnFocus = document.activeElement;
+  lightboxReturnFocus = trigger;
   standaloneImage = null;
   currentGallery = gallery;
   currentImageIndex = index;
@@ -260,7 +275,7 @@ window.closeLightbox = function () {
   document.getElementById('lightbox-original').removeAttribute('href');
   document.getElementById('lightbox-original').hidden = true;
   syncScrollLock();
-  lightboxReturnFocus?.focus();
+  lightboxReturnFocus?.focus({ preventScroll: true });
 };
 window.navigateLightbox = function (direction) {
   if (standaloneImage) return;
@@ -314,10 +329,11 @@ document.addEventListener('DOMContentLoaded', () => {
   });
   menu.querySelectorAll('a').forEach(link => link.addEventListener('click', closeMenu));
   matchMedia('(min-width: 921px)').addEventListener('change', event => { if (event.matches) closeMenu(); });
-  document.addEventListener('click', event => { if (!event.target.closest('.nav-shell')) closeMenu(); });
+  document.addEventListener('click', event => { if (!event.target.closest('.nav-shell') || event.target.closest('#themeToggle')) closeMenu(); });
+  document.addEventListener('focusin', event => { if (!event.target.closest('.nav-shell')) closeMenu(); });
   document.querySelectorAll('[data-image-src]').forEach(button => button.addEventListener('click', () => handleProjectImage(button)));
   document.getElementById('printingGalleryRetry').addEventListener('click', initPrintingGallery);
-  document.querySelectorAll('[data-modal]').forEach(button => button.addEventListener('click', () => openModal(button.dataset.modal)));
+  document.querySelectorAll('[data-modal]').forEach(button => button.addEventListener('click', () => openModal(button.dataset.modal, button)));
   document.querySelectorAll('.modal').forEach(modal => {
     modal.setAttribute('aria-hidden', 'true');
     modal.addEventListener('click', event => { if (event.target === modal) closeModal(modal.id); });

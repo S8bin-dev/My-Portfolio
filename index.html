@@ -45,7 +45,6 @@
           <a class="nav-resume" href="./assets/profile/Sabin-Baral-Resume.pdf" target="_blank" rel="noopener">Résumé <span aria-hidden="true">↗</span>
           </a>
         </div>
-        <div class="theme-controls">
           <button class="theme-toggle" id="themeToggle" type="button" aria-label="Switch to dark theme" aria-pressed="false">
             <svg class="sun-icon" viewBox="0 0 24 24" aria-hidden="true">
               <circle cx="12" cy="12" r="4"/>
@@ -55,59 +54,10 @@
               <path d="M20.4 15.4A8.5 8.5 0 0 1 8.6 3.6 8.5 8.5 0 1 0 20.4 15.4Z"/>
             </svg>
           </button>
-          <button class="palette-toggle" id="themeLabToggle" type="button" aria-label="Open Theme Lab" aria-expanded="false" aria-controls="themeLab" aria-haspopup="dialog">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3a9 9 0 1 0 0 18h1a2 2 0 0 0 1.4-3.4 1.4 1.4 0 0 1 1-2.4H18a3 3 0 0 0 3-3c0-5-4-9-9-9Z"/><circle cx="7.5" cy="10" r=".8"/><circle cx="10.5" cy="6.8" r=".8"/><circle cx="15" cy="7.5" r=".8"/><circle cx="17.5" cy="11" r=".8"/></svg>
-          </button>
-          <div class="theme-lab" id="themeLab" role="dialog" aria-labelledby="themeLabTitle" hidden>
-            <div class="theme-lab-heading"><div><h2 id="themeLabTitle">Theme Lab</h2><p>Explore color &amp; appearance</p></div><button type="button" id="themeLabClose" class="theme-lab-close" aria-label="Close Theme Lab">&times;</button></div>
-            <fieldset class="appearance-options">
-              <legend>Appearance</legend>
-              <div class="appearance-segments">
-                <label><input type="radio" name="appearance" value="light"><span>Light</span></label>
-                <label><input type="radio" name="appearance" value="dark"><span>Dark</span></label>
-                <label><input type="radio" name="appearance" value="system"><span>System</span></label>
-              </div>
-            </fieldset>
-            <fieldset class="palette-options">
-              <legend id="paletteLegend">Color palette</legend>
-                <label class="palette-option" data-palette-option="midnight">
-                  <input type="radio" name="palette" value="midnight">
-                  <span class="palette-swatch" aria-hidden="true"><i></i><i></i><i></i></span>
-                  <span>Midnight Research</span><span class="palette-check" aria-hidden="true">✓</span>
-                </label>
-                <label class="palette-option" data-palette-option="copper">
-                  <input type="radio" name="palette" value="copper">
-                  <span class="palette-swatch" aria-hidden="true"><i></i><i></i><i></i></span>
-                  <span>Editorial Copper</span><span class="palette-check" aria-hidden="true">✓</span>
-                </label>
-                <label class="palette-option" data-palette-option="mineral">
-                  <input type="radio" name="palette" value="mineral">
-                  <span class="palette-swatch" aria-hidden="true"><i></i><i></i><i></i></span>
-                  <span>Mineral Green</span><span class="palette-check" aria-hidden="true">✓</span>
-                </label>
-                <label class="palette-option" data-palette-option="violet">
-                  <input type="radio" name="palette" value="violet">
-                  <span class="palette-swatch" aria-hidden="true"><i></i><i></i><i></i></span>
-                  <span>Quantum Violet</span><span class="palette-check" aria-hidden="true">✓</span>
-                </label>
-                <label class="palette-option" data-palette-option="burgundy">
-                  <input type="radio" name="palette" value="burgundy">
-                  <span class="palette-swatch" aria-hidden="true"><i></i><i></i><i></i></span>
-                  <span>Burgundy Volt</span><span class="palette-check" aria-hidden="true">✓</span>
-                </label>
-                <label class="palette-option" data-palette-option="coral">
-                  <input type="radio" name="palette" value="coral">
-                  <span class="palette-swatch" aria-hidden="true"><i></i><i></i><i></i></span>
-                  <span>Coral Signal</span><span class="palette-check" aria-hidden="true">✓</span>
-                </label>
-            </fieldset>
-            <p class="theme-lab-hint">Light and dark palette choices are saved separately.</p>
-            <p class="theme-lab-status" id="themeLabStatus" role="status" aria-live="polite"></p>
-          </div>
-        </div>
       </nav>
     </header>
-    <main id="main">
+    <main id="main" tabindex="-1">
+      <div class="landing">
       <section class="hero" id="home" aria-labelledby="hero-title">
         <div class="hero-grid" aria-hidden="true"></div>
         <div class="container hero-layout">
@@ -116,6 +66,12 @@
             <h1 id="hero-title"><span class="hero-greeting">Hi, I'm</span> Sabin Baral<span class="period">.</span></h1>
             <p class="hero-headline">Building tools for faster<br class="desktop-break"> materials discovery.</p>
             <p class="hero-intro">I'm an undergraduate researcher in Polymer Science and Engineering at the University of Southern Mississippi, working at the intersection of materials research, scientific instrumentation, and laboratory automation.</p>
+
+          </div>
+          <div class="hero-visual">
+            <img class="hero-portrait" src="./assets/optimized/portrait.webp" alt="Sabin Baral wearing a blazer outdoors" width="700" height="692" fetchpriority="high">
+          </div>
+          <div class="hero-links">
             <div class="hero-actions">
               <a class="button button-primary" href="#research">Explore Research <span aria-hidden="true">↗</span></a>
               <a class="button button-secondary" href="./assets/profile/Sabin-Baral-Resume.pdf" target="_blank" rel="noopener">View Résumé <span aria-hidden="true">↗</span></a>
@@ -127,9 +83,6 @@
   <a href="https://scholar.google.com/citations?view_op=list_works&amp;hl=en&amp;user=vSl4ZvgAAAAJ" target="_blank" rel="noopener noreferrer" aria-label="Sabin Baral on Google Scholar"><img src="./assets/icons/google_scholar_icon.png" alt="" width="24" height="24"><span>Google Scholar</span></a>
 </div>
           </div>
-          <div class="hero-visual">
-            <img class="hero-portrait" src="./assets/optimized/portrait.webp" alt="Sabin Baral wearing a blazer outdoors" width="700" height="692" fetchpriority="high">
-          </div>
         </div>
       </section>
       <div class="intro-band">
@@ -137,6 +90,7 @@
           <p>From polymer thin films to automated characterization, I approach research as a connected system: <strong>design the experiment, build the tools, and learn from the data.</strong></p>
           <a class="publication-highlight" href="https://doi.org/10.1021/acsnano.6c01299" target="_blank" rel="noopener noreferrer"><span>Published research in</span><strong>ACS Nano <span aria-hidden="true">↗</span></strong></a>
         </div>
+      </div>
       </div>
       <section class="section research-section" id="research" aria-labelledby="research-title">
         <div class="container">
@@ -154,7 +108,7 @@
                 <div class="project-meta"><span>Polymer research</span><span>May 2025 — Present</span></div>
                 <h3>High-Throughput Block Copolymer Thin-Film Fabrication and Characterization</h3>
                 <p>I designed and ran thin-film experiments to investigate block copolymer self-assembly, combining automated sample preparation with synchrotron scattering, AFM, and Python analysis.</p>
-                <p class="project-outcome">1,000+ samples created · 40% reduction in characterization time</p>
+                <p class="project-outcome">1,000+ samples created · 40% throughput improvement</p>
                 <div class="project-tags"><span>GIWAXS / GISAXS</span><span>AFM</span><span>Thin films</span></div>
                 <button type="button" class="project-link" data-modal="modal1">Explore Project <span aria-hidden="true">↗</span></button>
               </div>
@@ -168,7 +122,7 @@
                 <div class="project-meta"><span>Detector testing</span><span>May — Jul 2026</span></div>
                 <h3>CMS Inner Tracker Upgrade: Bare Module Testing &amp; Automation</h3>
                 <p>I tested silicon detector modules and developed a Python GUI that brings hardware controls, electrical scans, and fault handling into one testing workflow.</p>
-                <p class="project-outcome">50+ modules tested · 75% efficiency increase</p>
+                <p class="project-outcome">50+ modules tested · 75% reduction in setup time</p>
                 <div class="project-tags"><span>Silicon detectors</span><span>Python</span><span>Automation</span></div>
                 <button type="button" class="project-link" data-modal="modal5">Explore Project <span aria-hidden="true">↗</span></button>
               </div>
@@ -309,18 +263,55 @@
           </div>
         </div>
       </section>
-    </main>
+<section class="contact-section" id="contact" aria-labelledby="contact-title">
+  <div class="container contact-grid">
+    <div class="contact-copy">
+      <h2 id="contact-title">Let's Connect<span class="period">.</span>
+      </h2>
+      <p>I'm always interested in discussing materials research, scientific instrumentation, laboratory automation, and opportunities for collaboration.</p>
+      <a class="contact-email" href="mailto:Sabin.Baral@usm.edu">Sabin.Baral@usm.edu <span aria-hidden="true">↗</span>
+      </a>
+<div class="social-links contact-socials" aria-label="Professional profiles">
+  <a href="https://www.linkedin.com/in/baralsabin/" target="_blank" rel="noopener noreferrer" aria-label="Sabin Baral on LinkedIn"><img src="./assets/icons/linkedin.png" alt="" width="24" height="24"><span>LinkedIn</span></a>
+  <a href="https://github.com/S8bin-dev" target="_blank" rel="noopener noreferrer" aria-label="Sabin Baral on GitHub"><img src="./assets/icons/github.png" alt="" width="24" height="24"><span>GitHub</span></a>
+  <a href="https://scholar.google.com/citations?view_op=list_works&amp;hl=en&amp;user=vSl4ZvgAAAAJ" target="_blank" rel="noopener noreferrer" aria-label="Sabin Baral on Google Scholar"><img src="./assets/icons/google_scholar_icon.png" alt="" width="24" height="24"><span>Google Scholar</span></a>
+</div>
+    </div>
+    <div class="contact-form-panel">
+      <h3 class="panel-kicker">Send a message</h3>
+      <form id="contactForm" class="contact-form" action="https://formspree.io/f/xqarlrdl" method="POST">
+        <div class="form-group">
+          <label for="name">Your name</label>
+          <input type="text" id="name" name="name" autocomplete="name" required>
+        </div>
+        <div class="form-group">
+          <label for="email">Email address</label>
+          <input type="email" id="email" name="email" autocomplete="email" required>
+        </div>
+        <div class="form-group">
+          <label for="message">Message</label>
+          <textarea id="message" name="message" rows="4" required></textarea>
+        </div>
+        <button type="submit" class="button button-primary">Send message <span aria-hidden="true">↗</span>
+        </button>
+        <p class="form-error" id="formError" role="alert" hidden>Message could not be sent. Please try again or email me directly.</p>
+      </form>
+      <div id="formSuccess" class="form-success" role="status" tabindex="-1" hidden>
+        <h3>Message sent.</h3>
+        <p>Thank you for reaching out. I'll get back to you soon.</p>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
     <!-- PROJECT MODALS -->
     <div id="modal1" class="modal" role="dialog" aria-labelledby="modal1-title" aria-modal="true">
       <div class="modal-content">
-        <button type="button" class="close" onclick="closeModal('modal1')" aria-label="Close project details">&times;</button>
-        <h2 id="modal1-title" class="modal-title">High Throughput Block Copolymer Thin Film Fabrication and
-          Characterization</h2>
-        <div class="modal-body">
-          <div class="modal-image">
-            <img src="./assets/projects/block_copolymer/project-1.jpg" alt="Block Copolymer Research Details"
-            loading="lazy" />
-          </div>
+        <div class="modal-header"><h2 id="modal1-title" class="modal-title">High-Throughput Block Copolymer Thin-Film Fabrication and
+          Characterization</h2><button type="button" class="close" onclick="closeModal('modal1')" aria-label="Close project details">&times;</button></div>
+      <div class="modal-body">
+          <div class="modal-image"><button type="button" class="modal-figure" data-image-src="./assets/projects/block_copolymer/project-1.jpg" data-image-caption="Block Copolymer Research Details" aria-label="Enlarge Block Copolymer Research Details"><img src="./assets/optimized/block-copolymer.webp" alt="Block Copolymer Research Details"
+            loading="lazy" width="900" height="900" /><span class="expand-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 4h6v6M20 4l-7 7M10 20H4v-6M4 20l7-7"/></svg></span></button></div>
           <div class="modal-section">
             <h3>Project Overview</h3>
             <p>This research focuses on developing efficient methodologies for fabricating and characterizing block
@@ -359,16 +350,16 @@
           </div>
           <div class="modal-section">
             <h3>Results & Outcomes</h3>
-            <p>Developed a streamlined workflow that reduced characterization time by 40% while maintaining data quality.
+            <p>Developed a streamlined workflow for thin-film fabrication and AFM characterization, improving throughput by 40%.
               Identified key processing parameters that influence domain spacing and orientation. Results contributed to
               understanding structure-property relationships in block copolymer systems. Currently preparing 300+ thin
               film samples for our next beamtime at ALS or NSLS.</p>
           </div>
           <div class="modal-section">
-            <h3 style="margin-bottom: 1.5rem;">Workflow Video</h3>
-            <div style="border-radius: 1rem; overflow: hidden; box-shadow: var(--shadow);">
-              <video controls preload="metadata" style="width: 100%; display: block; border-radius: 1rem;"
-              aria-label="System Operations Workflow Video">
+            <h3 class="section-subheading">Workflow Video</h3>
+            <div class="video-frame">
+              <video controls preload="none"
+              aria-label="System Operations Workflow Video" class="project-video">
               <source src="./assets/projects/block_copolymer/System_Operations_High_Throughput.mp4" type="video/mp4">
               Your browser does not support the video tag.
             </video>
@@ -385,13 +376,10 @@
   </div>
   <div id="modal2" class="modal" role="dialog" aria-labelledby="modal2-title" aria-modal="true">
     <div class="modal-content">
-      <button type="button" class="close" onclick="closeModal('modal2')" aria-label="Close project details">&times;</button>
-      <h2 id="modal2-title" class="modal-title">Fabrication and Thermal Stability Analysis of Organic Solar Cells</h2>
+      <div class="modal-header"><h2 id="modal2-title" class="modal-title">Fabrication and Thermal Stability Analysis of Organic Solar Cells</h2><button type="button" class="close" onclick="closeModal('modal2')" aria-label="Close project details">&times;</button></div>
       <div class="modal-body">
-        <div class="modal-image">
-          <img src="./assets/projects/solar_cells/project-2_HD.png" alt="Organic Solar Cell Research Details"
-          loading="lazy" />
-        </div>
+        <div class="modal-image"><button type="button" class="modal-figure" data-image-src="./assets/projects/solar_cells/project-2_HD.png" data-image-caption="Organic Solar Cell Research Details" aria-label="Enlarge Organic Solar Cell Research Details"><img src="./assets/optimized/solar-cells.webp" alt="Organic Solar Cell Research Details"
+          loading="lazy" width="512" height="512" /><span class="expand-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 4h6v6M20 4l-7 7M10 20H4v-6M4 20l7-7"/></svg></span></button></div>
         <div class="modal-section">
           <h3>Project Overview</h3>
           <p>Organic photovoltaics (OPVs) offer a promising pathway to sustainable energy with advantages like
@@ -451,8 +439,7 @@
   </div>
   <div id="modal3" class="modal" role="dialog" aria-labelledby="modal3-title" aria-modal="true">
     <div class="modal-content printing-modal">
-      <button type="button" class="close" onclick="closeModal('modal3')" aria-label="Close project details">&times;</button>
-      <h2 id="modal3-title" class="modal-title">Real-World Problem Solving Through 3D Printing</h2>
+      <div class="modal-header"><h2 id="modal3-title" class="modal-title">Real-World Problem Solving Through 3D Printing</h2><button type="button" class="close" onclick="closeModal('modal3')" aria-label="Close project details">&times;</button></div>
       <div class="modal-body">
         <div class="modal-section">
           <h3>Project Overview</h3>
@@ -571,19 +558,18 @@
 </div>
 <div id="modal4" class="modal" role="dialog" aria-labelledby="modal4-title" aria-modal="true">
   <div class="modal-content">
-    <button type="button" class="close" onclick="closeModal('modal4')" aria-label="Close project details">&times;</button>
-    <div class="modal-body">
-      <h2 id="modal4-title" class="modal-title" style="margin-left: 0; padding-top: 0;">Autonomous Lab: End-to-End
-        Robotic Orchestration</h2>
-      <div class="research-badge pulse" style="margin-bottom: 2rem;">
+
+    <div class="modal-header"><h2 id="modal4-title" class="modal-title">Autonomous Lab: End-to-End
+        Robotic Orchestration</h2><button type="button" class="close" onclick="closeModal('modal4')" aria-label="Close project details">&times;</button></div>
+      <div class="modal-body">
+
+      <div class="research-badge pulse">
         <span class="badge-dot">
         </span>
         Vision: Fully Autonomous "Self-Driving" Materials Laboratory
       </div>
-      <div class="modal-image">
-        <img src="./assets/projects/autonomous_lab/autonomous.jpg" alt="Integrated Robotic Workflow Diagram"
-        loading="lazy" />
-      </div>
+      <div class="modal-image"><button type="button" class="modal-figure" data-image-src="./assets/projects/autonomous_lab/autonomous.jpg" data-image-caption="Integrated Robotic Workflow Diagram" aria-label="Enlarge Integrated Robotic Workflow Diagram"><img src="./assets/optimized/autonomous.webp" alt="Integrated Robotic Workflow Diagram"
+        loading="lazy" width="1000" height="1000" /><span class="expand-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 4h6v6M20 4l-7 7M10 20H4v-6M4 20l7-7"/></svg></span></button></div>
       <div class="modal-section">
         <h3>Laying the "Walking Blocks"</h3>
         <p>A true closed-loop system requires mastering individual instrument control first. By developing custom
@@ -591,103 +577,102 @@
           computer to coordinate disparate hardware—originally designed as standalone units—into a single, unified
           laboratory ecosystem.</p>
       </div>
-      <div class="modal-section"
-      style="background: var(--surface-soft); padding: 1.5rem; border-radius: 1rem; border: 1px solid var(--border-color); margin-bottom: 2.5rem;">
-      <h3 style="margin-top: 0;">Developed Hardware Infrastructure</h3>
-      <p style="font-size: 0.9rem; margin-bottom: 1.5rem;">Access the specific drivers developed for each laboratory
+      <div class="modal-section resource-panel"
+     >
+      <h3>Developed Hardware Infrastructure</h3>
+      <p class="resource-intro">Access the specific drivers developed for each laboratory
         "block":</p>
-      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px;">
-        <div style="display: flex; flex-direction: column; gap: 8px;">
-          <strong style="font-size: 0.85rem; color: var(--primary-color);">Optical Metrology</strong>
-          <a href="https://github.com/S8bin-dev/Osilla-Flame-Spectrometer" target="_blank" class="btn btn-color-2"
-          style="width: 100%; font-size: 0.75rem; padding: 0.6rem;" rel="noopener noreferrer">Flame Spectrometer Repo</a>
+      <div class="resource-grid">
+        <div class="resource-item">
+          <strong class="resource-label">Optical Metrology</strong>
+          <a href="https://github.com/S8bin-dev/Osilla-Flame-Spectrometer" target="_blank" class="btn btn-color-2 resource-link"
+          rel="noopener noreferrer">Flame Spectrometer Repo</a>
       </div>
-      <div style="display: flex; flex-direction: column; gap: 8px;">
-        <strong style="font-size: 0.85rem; color: var(--primary-color);">Precision Motion</strong>
-        <a href="https://github.com/S8bin-dev/Thor-Labs-Linear-Stage" target="_blank" class="btn btn-color-2"
-        style="width: 100%; font-size: 0.75rem; padding: 0.6rem;" rel="noopener noreferrer">Thorlabs Stage Repo</a>
+      <div class="resource-item">
+        <strong class="resource-label">Precision Motion</strong>
+        <a href="https://github.com/S8bin-dev/Thor-Labs-Linear-Stage" target="_blank" class="btn btn-color-2 resource-link"
+        rel="noopener noreferrer">Thorlabs Stage Repo</a>
     </div>
-    <div style="display: flex; flex-direction: column; gap: 8px;">
-      <strong style="font-size: 0.85rem; color: var(--primary-color);">System Orchestration</strong>
-      <a href="https://github.com/S8bin-dev/AutomatedProbing" target="_blank" class="btn btn-color-2"
-      style="width: 100%; font-size: 0.75rem; padding: 0.6rem;" rel="noopener noreferrer">Automated Probing Repo</a>
+    <div class="resource-item">
+      <strong class="resource-label">System Orchestration</strong>
+      <a href="https://github.com/S8bin-dev/AutomatedProbing" target="_blank" class="btn btn-color-2 resource-link"
+      rel="noopener noreferrer">Automated Probing Repo</a>
   </div>
-  <div style="display: flex; flex-direction: column; gap: 8px;">
-    <strong style="font-size: 0.85rem; color: var(--primary-color);">Electrical Analysis</strong>
-    <a href="https://github.com/S8bin-dev/Osilla-SMU" target="_blank" class="btn btn-color-2"
-    style="width: 100%; font-size: 0.75rem; padding: 0.6rem;" rel="noopener noreferrer">Osilla SMU Repo</a>
+  <div class="resource-item">
+    <strong class="resource-label">Electrical Analysis</strong>
+    <a href="https://github.com/S8bin-dev/Osilla-SMU" target="_blank" class="btn btn-color-2 resource-link"
+    rel="noopener noreferrer">Osilla SMU Repo</a>
 </div>
 </div>
 </div>
-<div class="modal-section gallery-section"
-style="margin-bottom: 3rem; border-bottom: 1px solid var(--border-color); padding-bottom: 2rem;">
+<div class="modal-section gallery-section">
 <h3>System Operations & Setup</h3>
-<div class="gallery-grid" style="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px;">
-  <div class="gallery-item" style="aspect-ratio: 16/9;">
-    <video preload="none"  width="100%" height="100%" controls
-    style="object-fit: cover; border-radius: 1rem; background: var(--media-bg);">
+<div class="gallery-grid system-gallery">
+  <div class="gallery-item system-media">
+    <video preload="none"   controls
+    class="project-video">
     <source src="./assets/projects/autonomous_lab/Full_workflow.mp4" type="video/mp4">
   </video>
-  <div style="padding: 0.5rem; font-size: 0.8rem; text-align: center; color: var(--text-medium);">Full
+  <div class="media-caption">Full
     Workflow Demo</div>
 </div>
-<div class="gallery-item" style="aspect-ratio: 16/9;">
-  <video preload="none"  width="100%" height="100%" controls
-  style="object-fit: cover; border-radius: 1rem; background: var(--media-bg);">
+<div class="gallery-item system-media">
+  <video preload="none"   controls
+  class="project-video">
   <source src="./assets/projects/autonomous_lab/homing_demo.mp4" type="video/mp4">
 </video>
-<div style="padding: 0.5rem; font-size: 0.8rem; text-align: center; color: var(--text-medium);">Integrated
+<div class="media-caption">Integrated
   System Homing</div>
 </div>
-<div class="gallery-item" role="button" tabindex="0" onkeydown="if(event.key === 'Enter' || event.key === ' ') { event.preventDefault(); this.click(); }" onclick="openLightbox(0, 'autonomous')" style="aspect-ratio: 16/9;">
+<button type="button" class="gallery-item system-media" aria-label="Enlarge Spectrometer Setup" onclick="openLightbox(0, 'autonomous', this)">
   <img src="./assets/projects/autonomous_lab/spectrometer_setup.jpg" alt="Spectrometer Setup"
-  loading="lazy" />
+  loading="lazy" width="4080" height="3072" />
+</button>
+<button type="button" class="gallery-item system-media" aria-label="Enlarge Stage & SMU Setup" onclick="openLightbox(1, 'autonomous', this)">
+  <img src="./assets/projects/autonomous_lab/stage_contact.jpg" alt="Stage & SMU Setup" loading="lazy" width="1080" height="1920" />
+</button>
 </div>
-<div class="gallery-item" role="button" tabindex="0" onkeydown="if(event.key === 'Enter' || event.key === ' ') { event.preventDefault(); this.click(); }" onclick="openLightbox(1, 'autonomous')" style="aspect-ratio: 16/9;">
-  <img src="./assets/projects/autonomous_lab/stage_contact.jpg" alt="Stage & SMU Setup" loading="lazy" />
 </div>
-</div>
-</div>
-<div class="modal-section" style="margin-top: 1rem;">
+<div class="modal-section">
   <h3>The Integrated Autonomous Loop</h3>
-  <p style="margin-bottom: 1.5rem;">I am currently integrating these drivers with our <strong>N9 North
+  <p class="section-subheading">I am currently integrating these drivers with our <strong>N9 North
       Robotics</strong> platform to achieve a fully automated cycle:</p>
-  <div style="display: flex; flex-direction: column; gap: 1.5rem;">
-    <div style="display: flex; gap: 1.2rem; align-items: flex-start;">
+  <div class="workflow-steps">
+    <div class="workflow-step">
       <div
-      style="background: var(--button-bg); color: var(--button-text); border-radius: 50%; width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-weight: bold; font-size: 0.9rem; box-shadow: var(--shadow);">
+      class="workflow-number">
       1</div>
-    <p style="margin: 0;">
+    <p>
       <strong
-      style="color: var(--primary-color); display: block; margin-bottom: 2px;">Fabrication</strong> The N9
+      class="workflow-label">Fabrication</strong> The N9
     Robot autonomously executes polymer solution deposition, spin-coating, and thermal annealing.</p>
 </div>
-<div style="display: flex; gap: 1.2rem; align-items: flex-start;">
+<div class="workflow-step">
   <div
-  style="background: var(--button-bg); color: var(--button-text); border-radius: 50%; width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-weight: bold; font-size: 0.9rem; box-shadow: var(--shadow);">
+  class="workflow-number">
   2</div>
-<p style="margin: 0;">
+<p>
   <strong
-  style="color: var(--primary-color); display: block; margin-bottom: 2px;">Transfer</strong> The robot
+  class="workflow-label">Transfer</strong> The robot
 moves the sample to the Thorlabs vertical stage for precise height adjustments.</p>
 </div>
-<div style="display: flex; gap: 1.2rem; align-items: flex-start;">
+<div class="workflow-step">
   <div
-  style="background: var(--button-bg); color: var(--button-text); border-radius: 50%; width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-weight: bold; font-size: 0.9rem; box-shadow: var(--shadow);">
+  class="workflow-number">
   3</div>
-<p style="margin: 0;">
+<p>
   <strong
-  style="color: var(--primary-color); display: block; margin-bottom: 2px;">Characterization</strong> The
+  class="workflow-label">Characterization</strong> The
 system triggers the Spectrometer to determine film thickness followed by the Osilla SMU for I-V curves
 and conductivity measurement.</p>
 </div>
-<div style="display: flex; gap: 1.2rem; align-items: flex-start;">
+<div class="workflow-step">
   <div
-  style="background: var(--button-bg); color: var(--button-text); border-radius: 50%; width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-weight: bold; font-size: 0.9rem; box-shadow: var(--shadow);">
+  class="workflow-number">
   4</div>
-<p style="margin: 0;">
+<p>
   <strong
-  style="color: var(--primary-color); display: block; margin-bottom: 2px;">Storage</strong> Upon
+  class="workflow-label">Storage</strong> Upon
 completion, the N9 Robot autonomously retrieves the sample and places it in the storage garage.</p>
 </div>
 </div>
@@ -697,13 +682,10 @@ completion, the N9 Robot autonomously retrieves the sample and places it in the 
 </div>
 <div id="modal5" class="modal" role="dialog" aria-labelledby="modal5-title" aria-modal="true">
   <div class="modal-content">
-    <button type="button" class="close" onclick="closeModal('modal5')" aria-label="Close project details">&times;</button>
-    <h2 id="modal5-title" class="modal-title">CMS Inner Tracker Upgrade: Bare Module Testing & Automation</h2>
-    <div class="modal-body">
-      <div class="modal-image">
-        <img src="./assets/projects/cms_tracker/cms_tracker.jpg?v=2" alt="CMS Inner Tracker Upgrade Research"
-        loading="lazy" />
-      </div>
+    <div class="modal-header"><h2 id="modal5-title" class="modal-title">CMS Inner Tracker Upgrade: Bare Module Testing & Automation</h2><button type="button" class="close" onclick="closeModal('modal5')" aria-label="Close project details">&times;</button></div>
+      <div class="modal-body">
+      <div class="modal-image"><button type="button" class="modal-figure" data-image-src="./assets/projects/cms_tracker/cms_tracker.jpg" data-image-caption="CMS Inner Tracker Upgrade Research" aria-label="Enlarge CMS Inner Tracker Upgrade Research"><img src="./assets/optimized/cms-tracker.webp" alt="CMS Inner Tracker Upgrade Research"
+        loading="lazy" width="1000" height="1000" /><span class="expand-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 4h6v6M20 4l-7 7M10 20H4v-6M4 20l7-7"/></svg></span></button></div>
       <div class="modal-section">
         <h3>Project Overview</h3>
         <p>As part of the U.S. DOE-funded US CMS PURSUE Summer Research Internship, I contributed to the High
@@ -746,7 +728,7 @@ completion, the N9 Robot autonomously retrieves the sample and places it in the 
       <div class="modal-section">
         <h3>Results & Outcomes</h3>
         <p>Successfully abstracted complex, terminal-level commands into an intuitive GUI, drastically improving the
-          team's productivity and testing efficiency. The automated testing suite includes built-in exception handling
+          team's workflow and reducing setup time by 75%. The automated testing suite includes built-in exception handling
           and safe-exit procedures that automatically cut high-voltage and low-voltage power during faults, securing
           delicate hardware. Actively processed and graded multiple fragile modules, ensuring the early detection of
           bump-bonding defects before expensive downstream assembly steps.</p>
@@ -759,82 +741,78 @@ completion, the N9 Robot autonomously retrieves the sample and places it in the 
       </div>
       <div class="modal-section gallery-section">
         <div
-        style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; margin-bottom: 0.5rem; border-bottom: 1px solid var(--border-color); padding-bottom: 0.5rem;">
-        <h3 style="margin: 0;">Final Talk Slides</h3>
+        class="modal-section-heading">
+        <h3>Final Talk Slides</h3>
       </div>
       <div class="gallery-grid">
-        <div class="gallery-item" role="button" tabindex="0" onkeydown="if(event.key === 'Enter' || event.key === ' ') { event.preventDefault(); this.click(); }" onclick="openLightbox(0, 'cms_tracker')">
-          <img src="./assets/projects/cms_tracker/Final_slides_Sabin_Baral._page-0001.jpg" alt="CMS tracker presentation slide 1" loading="lazy" />
-        </div>
-        <div class="gallery-item" role="button" tabindex="0" onkeydown="if(event.key === 'Enter' || event.key === ' ') { event.preventDefault(); this.click(); }" onclick="openLightbox(1, 'cms_tracker')">
-          <img src="./assets/projects/cms_tracker/Final_slides_Sabin_Baral._page-0002.jpg" alt="CMS tracker presentation slide 2" loading="lazy" />
-        </div>
-        <div class="gallery-item" role="button" tabindex="0" onkeydown="if(event.key === 'Enter' || event.key === ' ') { event.preventDefault(); this.click(); }" onclick="openLightbox(2, 'cms_tracker')">
-          <img src="./assets/projects/cms_tracker/Final_slides_Sabin_Baral._page-0003.jpg" alt="CMS tracker presentation slide 3" loading="lazy" />
-        </div>
-        <div class="gallery-item" role="button" tabindex="0" onkeydown="if(event.key === 'Enter' || event.key === ' ') { event.preventDefault(); this.click(); }" onclick="openLightbox(3, 'cms_tracker')">
-          <img src="./assets/projects/cms_tracker/Final_slides_Sabin_Baral._page-0004.jpg" alt="CMS tracker presentation slide 4" loading="lazy" />
-        </div>
-        <div class="gallery-item" role="button" tabindex="0" onkeydown="if(event.key === 'Enter' || event.key === ' ') { event.preventDefault(); this.click(); }" onclick="openLightbox(4, 'cms_tracker')">
-          <img src="./assets/projects/cms_tracker/Final_slides_Sabin_Baral._page-0005.jpg" alt="CMS tracker presentation slide 5" loading="lazy" />
-        </div>
-        <div class="gallery-item" role="button" tabindex="0" onkeydown="if(event.key === 'Enter' || event.key === ' ') { event.preventDefault(); this.click(); }" onclick="openLightbox(5, 'cms_tracker')">
-          <img src="./assets/projects/cms_tracker/Final_slides_Sabin_Baral._page-0006.jpg" alt="CMS tracker presentation slide 6" loading="lazy" />
-        </div>
-        <div class="gallery-item" role="button" tabindex="0" onkeydown="if(event.key === 'Enter' || event.key === ' ') { event.preventDefault(); this.click(); }" onclick="openLightbox(6, 'cms_tracker')">
-          <img src="./assets/projects/cms_tracker/Final_slides_Sabin_Baral._page-0007.jpg" alt="CMS tracker presentation slide 7" loading="lazy" />
-        </div>
-        <div class="gallery-item" role="button" tabindex="0" onkeydown="if(event.key === 'Enter' || event.key === ' ') { event.preventDefault(); this.click(); }" onclick="openLightbox(7, 'cms_tracker')">
-          <img src="./assets/projects/cms_tracker/Final_slides_Sabin_Baral._page-0008.jpg" alt="CMS tracker presentation slide 8" loading="lazy" />
-        </div>
-        <div class="gallery-item" role="button" tabindex="0" onkeydown="if(event.key === 'Enter' || event.key === ' ') { event.preventDefault(); this.click(); }" onclick="openLightbox(8, 'cms_tracker')">
-          <img src="./assets/projects/cms_tracker/Final_slides_Sabin_Baral._page-0009.jpg" alt="CMS tracker presentation slide 9" loading="lazy" />
-        </div>
-        <div class="gallery-item" role="button" tabindex="0" onkeydown="if(event.key === 'Enter' || event.key === ' ') { event.preventDefault(); this.click(); }" onclick="openLightbox(9, 'cms_tracker')">
-          <img src="./assets/projects/cms_tracker/Final_slides_Sabin_Baral._page-0010.jpg" alt="CMS tracker presentation slide 10" loading="lazy" />
-        </div>
-        <div class="gallery-item" role="button" tabindex="0" onkeydown="if(event.key === 'Enter' || event.key === ' ') { event.preventDefault(); this.click(); }" onclick="openLightbox(10, 'cms_tracker')">
-          <img src="./assets/projects/cms_tracker/Final_slides_Sabin_Baral._page-0011.jpg" alt="CMS tracker presentation slide 11" loading="lazy" />
-        </div>
-        <div class="gallery-item" role="button" tabindex="0" onkeydown="if(event.key === 'Enter' || event.key === ' ') { event.preventDefault(); this.click(); }" onclick="openLightbox(11, 'cms_tracker')">
-          <img src="./assets/projects/cms_tracker/Final_slides_Sabin_Baral._page-0012.jpg" alt="CMS tracker presentation slide 12" loading="lazy" />
-        </div>
-        <div class="gallery-item" role="button" tabindex="0" onkeydown="if(event.key === 'Enter' || event.key === ' ') { event.preventDefault(); this.click(); }" onclick="openLightbox(12, 'cms_tracker')">
-          <img src="./assets/projects/cms_tracker/Final_slides_Sabin_Baral._page-0013.jpg" alt="CMS tracker presentation slide 13" loading="lazy" />
-        </div>
-        <div class="gallery-item" role="button" tabindex="0" onkeydown="if(event.key === 'Enter' || event.key === ' ') { event.preventDefault(); this.click(); }" onclick="openLightbox(13, 'cms_tracker')">
-          <img src="./assets/projects/cms_tracker/Final_slides_Sabin_Baral._page-0014.jpg" alt="CMS tracker presentation slide 14" loading="lazy" />
-        </div>
-        <div class="gallery-item" role="button" tabindex="0" onkeydown="if(event.key === 'Enter' || event.key === ' ') { event.preventDefault(); this.click(); }" onclick="openLightbox(14, 'cms_tracker')">
-          <img src="./assets/projects/cms_tracker/Final_slides_Sabin_Baral._page-0015.jpg" alt="CMS tracker presentation slide 15" loading="lazy" />
-        </div>
-        <div class="gallery-item" role="button" tabindex="0" onkeydown="if(event.key === 'Enter' || event.key === ' ') { event.preventDefault(); this.click(); }" onclick="openLightbox(15, 'cms_tracker')">
-          <img src="./assets/projects/cms_tracker/Final_slides_Sabin_Baral._page-0016.jpg" alt="CMS tracker presentation slide 16" loading="lazy" />
-        </div>
-        <div class="gallery-item" role="button" tabindex="0" onkeydown="if(event.key === 'Enter' || event.key === ' ') { event.preventDefault(); this.click(); }" onclick="openLightbox(16, 'cms_tracker')">
-          <img src="./assets/projects/cms_tracker/Final_slides_Sabin_Baral._page-0017.jpg" alt="CMS tracker presentation slide 17" loading="lazy" />
-        </div>
-        <div class="gallery-item" role="button" tabindex="0" onkeydown="if(event.key === 'Enter' || event.key === ' ') { event.preventDefault(); this.click(); }" onclick="openLightbox(17, 'cms_tracker')">
-          <img src="./assets/projects/cms_tracker/Final_slides_Sabin_Baral._page-0018.jpg" alt="CMS tracker presentation slide 18" loading="lazy" />
-        </div>
-        <div class="gallery-item" role="button" tabindex="0" onkeydown="if(event.key === 'Enter' || event.key === ' ') { event.preventDefault(); this.click(); }" onclick="openLightbox(18, 'cms_tracker')">
-          <img src="./assets/projects/cms_tracker/Final_slides_Sabin_Baral._page-0019.jpg" alt="CMS tracker presentation slide 19" loading="lazy" />
-        </div>
+        <button type="button" class="gallery-item" aria-label="Enlarge CMS tracker presentation slide 1" onclick="openLightbox(0, 'cms_tracker', this)">
+          <img src="./assets/projects/cms_tracker/Final_slides_Sabin_Baral._page-0001.jpg" alt="CMS tracker presentation slide 1" loading="lazy" width="4000" height="2250" />
+        </button>
+        <button type="button" class="gallery-item" aria-label="Enlarge CMS tracker presentation slide 2" onclick="openLightbox(1, 'cms_tracker', this)">
+          <img src="./assets/projects/cms_tracker/Final_slides_Sabin_Baral._page-0002.jpg" alt="CMS tracker presentation slide 2" loading="lazy" width="4000" height="2250" />
+        </button>
+        <button type="button" class="gallery-item" aria-label="Enlarge CMS tracker presentation slide 3" onclick="openLightbox(2, 'cms_tracker', this)">
+          <img src="./assets/projects/cms_tracker/Final_slides_Sabin_Baral._page-0003.jpg" alt="CMS tracker presentation slide 3" loading="lazy" width="4000" height="2250" />
+        </button>
+        <button type="button" class="gallery-item" aria-label="Enlarge CMS tracker presentation slide 4" onclick="openLightbox(3, 'cms_tracker', this)">
+          <img src="./assets/projects/cms_tracker/Final_slides_Sabin_Baral._page-0004.jpg" alt="CMS tracker presentation slide 4" loading="lazy" width="4000" height="2250" />
+        </button>
+        <button type="button" class="gallery-item" aria-label="Enlarge CMS tracker presentation slide 5" onclick="openLightbox(4, 'cms_tracker', this)">
+          <img src="./assets/projects/cms_tracker/Final_slides_Sabin_Baral._page-0005.jpg" alt="CMS tracker presentation slide 5" loading="lazy" width="4000" height="2250" />
+        </button>
+        <button type="button" class="gallery-item" aria-label="Enlarge CMS tracker presentation slide 6" onclick="openLightbox(5, 'cms_tracker', this)">
+          <img src="./assets/projects/cms_tracker/Final_slides_Sabin_Baral._page-0006.jpg" alt="CMS tracker presentation slide 6" loading="lazy" width="4000" height="2250" />
+        </button>
+        <button type="button" class="gallery-item" aria-label="Enlarge CMS tracker presentation slide 7" onclick="openLightbox(6, 'cms_tracker', this)">
+          <img src="./assets/projects/cms_tracker/Final_slides_Sabin_Baral._page-0007.jpg" alt="CMS tracker presentation slide 7" loading="lazy" width="4000" height="2250" />
+        </button>
+        <button type="button" class="gallery-item" aria-label="Enlarge CMS tracker presentation slide 8" onclick="openLightbox(7, 'cms_tracker', this)">
+          <img src="./assets/projects/cms_tracker/Final_slides_Sabin_Baral._page-0008.jpg" alt="CMS tracker presentation slide 8" loading="lazy" width="4000" height="2250" />
+        </button>
+        <button type="button" class="gallery-item" aria-label="Enlarge CMS tracker presentation slide 9" onclick="openLightbox(8, 'cms_tracker', this)">
+          <img src="./assets/projects/cms_tracker/Final_slides_Sabin_Baral._page-0009.jpg" alt="CMS tracker presentation slide 9" loading="lazy" width="4000" height="2250" />
+        </button>
+        <button type="button" class="gallery-item" aria-label="Enlarge CMS tracker presentation slide 10" onclick="openLightbox(9, 'cms_tracker', this)">
+          <img src="./assets/projects/cms_tracker/Final_slides_Sabin_Baral._page-0010.jpg" alt="CMS tracker presentation slide 10" loading="lazy" width="4000" height="2250" />
+        </button>
+        <button type="button" class="gallery-item" aria-label="Enlarge CMS tracker presentation slide 11" onclick="openLightbox(10, 'cms_tracker', this)">
+          <img src="./assets/projects/cms_tracker/Final_slides_Sabin_Baral._page-0011.jpg" alt="CMS tracker presentation slide 11" loading="lazy" width="4000" height="2250" />
+        </button>
+        <button type="button" class="gallery-item" aria-label="Enlarge CMS tracker presentation slide 12" onclick="openLightbox(11, 'cms_tracker', this)">
+          <img src="./assets/projects/cms_tracker/Final_slides_Sabin_Baral._page-0012.jpg" alt="CMS tracker presentation slide 12" loading="lazy" width="4000" height="2250" />
+        </button>
+        <button type="button" class="gallery-item" aria-label="Enlarge CMS tracker presentation slide 13" onclick="openLightbox(12, 'cms_tracker', this)">
+          <img src="./assets/projects/cms_tracker/Final_slides_Sabin_Baral._page-0013.jpg" alt="CMS tracker presentation slide 13" loading="lazy" width="4000" height="2250" />
+        </button>
+        <button type="button" class="gallery-item" aria-label="Enlarge CMS tracker presentation slide 14" onclick="openLightbox(13, 'cms_tracker', this)">
+          <img src="./assets/projects/cms_tracker/Final_slides_Sabin_Baral._page-0014.jpg" alt="CMS tracker presentation slide 14" loading="lazy" width="4000" height="2250" />
+        </button>
+        <button type="button" class="gallery-item" aria-label="Enlarge CMS tracker presentation slide 15" onclick="openLightbox(14, 'cms_tracker', this)">
+          <img src="./assets/projects/cms_tracker/Final_slides_Sabin_Baral._page-0015.jpg" alt="CMS tracker presentation slide 15" loading="lazy" width="4000" height="2250" />
+        </button>
+        <button type="button" class="gallery-item" aria-label="Enlarge CMS tracker presentation slide 16" onclick="openLightbox(15, 'cms_tracker', this)">
+          <img src="./assets/projects/cms_tracker/Final_slides_Sabin_Baral._page-0016.jpg" alt="CMS tracker presentation slide 16" loading="lazy" width="4000" height="2250" />
+        </button>
+        <button type="button" class="gallery-item" aria-label="Enlarge CMS tracker presentation slide 17" onclick="openLightbox(16, 'cms_tracker', this)">
+          <img src="./assets/projects/cms_tracker/Final_slides_Sabin_Baral._page-0017.jpg" alt="CMS tracker presentation slide 17" loading="lazy" width="4000" height="2250" />
+        </button>
+        <button type="button" class="gallery-item" aria-label="Enlarge CMS tracker presentation slide 18" onclick="openLightbox(17, 'cms_tracker', this)">
+          <img src="./assets/projects/cms_tracker/Final_slides_Sabin_Baral._page-0018.jpg" alt="CMS tracker presentation slide 18" loading="lazy" width="4000" height="2250" />
+        </button>
+        <button type="button" class="gallery-item" aria-label="Enlarge CMS tracker presentation slide 19" onclick="openLightbox(18, 'cms_tracker', this)">
+          <img src="./assets/projects/cms_tracker/Final_slides_Sabin_Baral._page-0019.jpg" alt="CMS tracker presentation slide 19" loading="lazy" width="4000" height="2250" />
+        </button>
       </div>
     </div>
   </div>
 </div>
 </div>
-</div>
 <div id="modal6" class="modal" role="dialog" aria-labelledby="modal6-title" aria-modal="true">
   <div class="modal-content">
-    <button type="button" class="close" onclick="closeModal('modal6')" aria-label="Close project details">&times;</button>
-    <h2 id="modal6-title" class="modal-title">VeriScript: AI Transcript Fraud Detection Platform</h2>
-    <div class="modal-body">
-      <div class="modal-image">
-        <img src="./assets/projects/veriscript/veriscript.jpg" alt="VeriScript System Architecture and Dashboard"
-        loading="lazy" />
-      </div>
+    <div class="modal-header"><h2 id="modal6-title" class="modal-title">VeriScript: AI Transcript Fraud Detection Platform</h2><button type="button" class="close" onclick="closeModal('modal6')" aria-label="Close project details">&times;</button></div>
+      <div class="modal-body">
+      <div class="modal-image"><button type="button" class="modal-figure" data-image-src="./assets/projects/veriscript/veriscript.jpg" data-image-caption="VeriScript System Architecture and Dashboard" aria-label="Enlarge VeriScript System Architecture and Dashboard"><img src="./assets/optimized/veriscript.webp" alt="VeriScript System Architecture and Dashboard"
+        loading="lazy" width="700" height="700" /><span class="expand-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 4h6v6M20 4l-7 7M10 20H4v-6M4 20l7-7"/></svg></span></button></div>
       <div class="modal-section">
         <h3>Project Overview</h3>
         <p>Built for the Mississippi State Board of Nursing (MSBN), VeriScript is a serverless, AI-assisted transcript
@@ -885,8 +863,8 @@ completion, the N9 Robot autonomously retrieves the sample and places it in the 
           boards.</p>
       </div>
       <div class="modal-section">
-        <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1.5rem;">
-          <h3 style="margin: 0;">Demo</h3>
+        <div class="modal-section-heading">
+          <h3>Demo</h3>
           <a href="https://github.com/SRVKNDL/msbn-transcript-verification" target="_blank" class="github-modal-btn"
           aria-label="View GitHub Repository" rel="noopener noreferrer">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
@@ -896,9 +874,9 @@ completion, the N9 Robot autonomously retrieves the sample and places it in the 
           GitHub Repo
         </a>
       </div>
-      <div style="border-radius: 1rem; overflow: hidden; box-shadow: var(--shadow);">
-        <video controls preload="metadata" style="width: 100%; display: block; border-radius: 1rem;"
-        aria-label="VeriScript Platform Demo">
+      <div class="video-frame">
+        <video controls preload="none"
+        aria-label="VeriScript Platform Demo" class="project-video">
         <source src="./assets/projects/veriscript/demo_2x.mp4" type="video/mp4">
         Your browser does not support the video tag.
       </video>
@@ -906,45 +884,45 @@ completion, the N9 Robot autonomously retrieves the sample and places it in the 
   </div>
   <div class="modal-section gallery-section">
     <div
-    style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; margin-bottom: 0.5rem; border-bottom: 1px solid var(--border-color); padding-bottom: 0.5rem;">
-    <h3 style="margin: 0;">Innovation Hub Showcase</h3>
+    class="modal-section-heading">
+    <h3>Innovation Hub Showcase</h3>
   </div>
   <div class="gallery-grid">
-    <div class="gallery-item" role="button" tabindex="0" onkeydown="if(event.key === 'Enter' || event.key === ' ') { event.preventDefault(); this.click(); }" onclick="openLightbox(0, 'veriscript_showcase')">
-      <img src="./assets/projects/veriscript/showcase1.jpg" alt="Innovation Hub Showcase 1" loading="lazy" />
-    </div>
-    <div class="gallery-item" role="button" tabindex="0" onkeydown="if(event.key === 'Enter' || event.key === ' ') { event.preventDefault(); this.click(); }" onclick="openLightbox(1, 'veriscript_showcase')">
-      <img src="./assets/projects/veriscript/showcase2.jpg" alt="Innovation Hub Showcase 2" loading="lazy" />
-    </div>
+    <button type="button" class="gallery-item" aria-label="Enlarge Innovation Hub Showcase 1" onclick="openLightbox(0, 'veriscript_showcase', this)">
+      <img src="./assets/projects/veriscript/showcase1.jpg" alt="Innovation Hub Showcase 1" loading="lazy" width="2048" height="1163" />
+    </button>
+    <button type="button" class="gallery-item" aria-label="Enlarge Innovation Hub Showcase 2" onclick="openLightbox(1, 'veriscript_showcase', this)">
+      <img src="./assets/projects/veriscript/showcase2.jpg" alt="Innovation Hub Showcase 2" loading="lazy" width="2047" height="1677" />
+    </button>
   </div>
 </div>
 <div class="modal-section gallery-section">
   <div
-  style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; margin-bottom: 0.5rem; border-bottom: 1px solid var(--border-color); padding-bottom: 0.5rem;">
-  <h3 style="margin: 0;">More Information</h3>
+  class="modal-section-heading">
+  <h3>More Information</h3>
 </div>
 <div class="gallery-grid">
-  <div class="gallery-item" role="button" tabindex="0" onkeydown="if(event.key === 'Enter' || event.key === ' ') { event.preventDefault(); this.click(); }" onclick="openLightbox(0, 'veriscript_more_info')">
-    <img src="./assets/projects/veriscript/more_info1.jpg" alt="VeriScript supporting project image 1" loading="lazy" />
-  </div>
-  <div class="gallery-item" role="button" tabindex="0" onkeydown="if(event.key === 'Enter' || event.key === ' ') { event.preventDefault(); this.click(); }" onclick="openLightbox(1, 'veriscript_more_info')">
-    <img src="./assets/projects/veriscript/more_info2.jpg" alt="VeriScript supporting project image 2" loading="lazy" />
-  </div>
-  <div class="gallery-item" role="button" tabindex="0" onkeydown="if(event.key === 'Enter' || event.key === ' ') { event.preventDefault(); this.click(); }" onclick="openLightbox(2, 'veriscript_more_info')">
-    <img src="./assets/projects/veriscript/more_info3.jpg" alt="VeriScript supporting project image 3" loading="lazy" />
-  </div>
-  <div class="gallery-item" role="button" tabindex="0" onkeydown="if(event.key === 'Enter' || event.key === ' ') { event.preventDefault(); this.click(); }" onclick="openLightbox(3, 'veriscript_more_info')">
-    <img src="./assets/projects/veriscript/more_info4.jpg" alt="VeriScript supporting project image 4" loading="lazy" />
-  </div>
-  <div class="gallery-item" role="button" tabindex="0" onkeydown="if(event.key === 'Enter' || event.key === ' ') { event.preventDefault(); this.click(); }" onclick="openLightbox(4, 'veriscript_more_info')">
-    <img src="./assets/projects/veriscript/more_info5.jpg" alt="VeriScript supporting project image 5" loading="lazy" />
-  </div>
-  <div class="gallery-item" role="button" tabindex="0" onkeydown="if(event.key === 'Enter' || event.key === ' ') { event.preventDefault(); this.click(); }" onclick="openLightbox(5, 'veriscript_more_info')">
-    <img src="./assets/projects/veriscript/more_info6.jpg" alt="VeriScript supporting project image 6" loading="lazy" />
-  </div>
-  <div class="gallery-item" role="button" tabindex="0" onkeydown="if(event.key === 'Enter' || event.key === ' ') { event.preventDefault(); this.click(); }" onclick="openLightbox(6, 'veriscript_more_info')">
-    <img src="./assets/projects/veriscript/more_info7.jpg" alt="VeriScript supporting project image 7" loading="lazy" />
-  </div>
+  <button type="button" class="gallery-item" aria-label="Enlarge VeriScript supporting project image 1" onclick="openLightbox(0, 'veriscript_more_info', this)">
+    <img src="./assets/projects/veriscript/more_info1.jpg" alt="VeriScript supporting project image 1" loading="lazy" width="3000" height="1688" />
+  </button>
+  <button type="button" class="gallery-item" aria-label="Enlarge VeriScript supporting project image 2" onclick="openLightbox(1, 'veriscript_more_info', this)">
+    <img src="./assets/projects/veriscript/more_info2.jpg" alt="VeriScript supporting project image 2" loading="lazy" width="3000" height="1688" />
+  </button>
+  <button type="button" class="gallery-item" aria-label="Enlarge VeriScript supporting project image 3" onclick="openLightbox(2, 'veriscript_more_info', this)">
+    <img src="./assets/projects/veriscript/more_info3.jpg" alt="VeriScript supporting project image 3" loading="lazy" width="3000" height="1688" />
+  </button>
+  <button type="button" class="gallery-item" aria-label="Enlarge VeriScript supporting project image 4" onclick="openLightbox(3, 'veriscript_more_info', this)">
+    <img src="./assets/projects/veriscript/more_info4.jpg" alt="VeriScript supporting project image 4" loading="lazy" width="3000" height="1688" />
+  </button>
+  <button type="button" class="gallery-item" aria-label="Enlarge VeriScript supporting project image 5" onclick="openLightbox(4, 'veriscript_more_info', this)">
+    <img src="./assets/projects/veriscript/more_info5.jpg" alt="VeriScript supporting project image 5" loading="lazy" width="3000" height="1688" />
+  </button>
+  <button type="button" class="gallery-item" aria-label="Enlarge VeriScript supporting project image 6" onclick="openLightbox(5, 'veriscript_more_info', this)">
+    <img src="./assets/projects/veriscript/more_info6.jpg" alt="VeriScript supporting project image 6" loading="lazy" width="3000" height="1688" />
+  </button>
+  <button type="button" class="gallery-item" aria-label="Enlarge VeriScript supporting project image 7" onclick="openLightbox(6, 'veriscript_more_info', this)">
+    <img src="./assets/projects/veriscript/more_info7.jpg" alt="VeriScript supporting project image 7" loading="lazy" width="3000" height="1688" />
+  </button>
 </div>
 </div>
 </div>
@@ -962,46 +940,6 @@ completion, the N9 Robot autonomously retrieves the sample and places it in the 
   <div class="lightbox-counter" id="lightbox-counter">
   </div>
 </div>
-<section class="contact-section" id="contact" aria-labelledby="contact-title">
-  <div class="container contact-grid">
-    <div class="contact-copy">
-      <h2 id="contact-title">Let's Connect<span class="period">.</span>
-      </h2>
-      <p>I'm always interested in discussing materials research, scientific instrumentation, laboratory automation, and opportunities for collaboration.</p>
-      <a class="contact-email" href="mailto:Sabin.Baral@usm.edu">Sabin.Baral@usm.edu <span aria-hidden="true">↗</span>
-      </a>
-<div class="social-links contact-socials" aria-label="Professional profiles">
-  <a href="https://www.linkedin.com/in/baralsabin/" target="_blank" rel="noopener noreferrer" aria-label="Sabin Baral on LinkedIn"><img src="./assets/icons/linkedin.png" alt="" width="24" height="24"><span>LinkedIn</span></a>
-  <a href="https://github.com/S8bin-dev" target="_blank" rel="noopener noreferrer" aria-label="Sabin Baral on GitHub"><img src="./assets/icons/github.png" alt="" width="24" height="24"><span>GitHub</span></a>
-  <a href="https://scholar.google.com/citations?view_op=list_works&amp;hl=en&amp;user=vSl4ZvgAAAAJ" target="_blank" rel="noopener noreferrer" aria-label="Sabin Baral on Google Scholar"><img src="./assets/icons/google_scholar_icon.png" alt="" width="24" height="24"><span>Google Scholar</span></a>
-</div>
-    </div>
-    <div class="contact-form-panel">
-      <h3 class="panel-kicker">Send a message</h3>
-      <form id="contactForm" class="contact-form" action="https://formspree.io/f/xqarlrdl" method="POST">
-        <div class="form-group">
-          <label for="name">Your name</label>
-          <input type="text" id="name" name="name" autocomplete="name" required>
-        </div>
-        <div class="form-group">
-          <label for="email">Email address</label>
-          <input type="email" id="email" name="email" autocomplete="email" required>
-        </div>
-        <div class="form-group">
-          <label for="message">Message</label>
-          <textarea id="message" name="message" rows="4" required></textarea>
-        </div>
-        <button type="submit" class="button button-primary">Send message <span aria-hidden="true">↗</span>
-        </button>
-        <p class="form-error" id="formError" role="alert" hidden>Message could not be sent. Please try again or email me directly.</p>
-      </form>
-      <div id="formSuccess" class="form-success" role="status" tabindex="-1" hidden>
-        <h3>Message sent.</h3>
-        <p>Thank you for reaching out. I'll get back to you soon.</p>
-      </div>
-    </div>
-  </div>
-</section>
 <footer class="site-footer">
   <div class="container footer-inner">
     <div>
