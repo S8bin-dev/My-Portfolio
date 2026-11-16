@@ -3,7 +3,7 @@
   const storageKey = 'portfolio-appearance';
   const system = matchMedia('(prefers-color-scheme: dark)');
   const valid = value => ['light', 'dark', 'system'].includes(value);
-  let appearance = 'system';
+  let appearance = 'light';
   try {
     const current = localStorage.getItem(storageKey);
     if (valid(current)) appearance = current;
@@ -18,8 +18,7 @@
       else if (oldMode === 'disabled') appearance = 'light';
     }
     // Retain only the appearance preference, removing retired palette metadata.
-    if (appearance === 'system') localStorage.removeItem(storageKey);
-    else localStorage.setItem(storageKey, appearance);
+    localStorage.setItem(storageKey, appearance);
     for (const key of ['portfolio-theme-preferences', 'portfolio-theme', 'darkMode']) localStorage.removeItem(key);
   } catch (_) { /* Private browsing/storage restrictions must not disable the toggle. */ }
 
@@ -37,8 +36,7 @@
     if (!valid(value)) return;
     appearance = value;
     try {
-      if (value === 'system') localStorage.removeItem(storageKey);
-      else localStorage.setItem(storageKey, value);
+      localStorage.setItem(storageKey, value);
     } catch (_) {}
     apply();
   }

@@ -107,9 +107,13 @@
               <div class="project-content">
                 <div class="project-meta"><span>Polymer research</span><span>May 2025 — Present</span></div>
                 <h3>High-Throughput Block Copolymer Thin-Film Fabrication and Characterization</h3>
-                <p>I designed and ran thin-film experiments to investigate block copolymer self-assembly, combining automated sample preparation with synchrotron scattering, AFM, and Python analysis.</p>
-                <p class="project-outcome">1,000+ samples created · 40% throughput improvement</p>
-                <div class="project-tags"><span>GIWAXS / GISAXS</span><span>AFM</span><span>Thin films</span></div>
+                <p>I use the N9 and Opentrons OT-2 to prepare polymer blends and make thin films. I then analyze X-ray scattering data and use active learning to prioritize which blends to test next.</p>
+                <p class="project-outcome">1,000+ thin films fabricated and characterized by AFM · 40% throughput improvement</p>
+                <div class="project-tags">
+                  <span>Robotic fabrication</span>
+                  <span>SAXS / GISAXS</span>
+                  <span>Active learning</span>
+                </div>
                 <button type="button" class="project-link" data-modal="modal1">Explore Project <span aria-hidden="true">↗</span></button>
               </div>
             </article>
@@ -207,24 +211,35 @@
               <div class="paper-top"><span class="status-label status-progress">Submission in progress</span></div>
               <h3>Autonomous phase diagram mapping of polymer blends through SAXS-guided active learning</h3>
               <p class="paper-authors">Saroj Upreti, Kailash Adhikari, <strong>Sabin Baral</strong>, Boran Ma, Chenhui Zhu, Marcus Noack, Xiaodan Gu.</p>
-              <p class="paper-summary">Developed an autonomous experimental workflow combining robotic polymer formulation, small-angle X-ray scattering, and Gaussian-process active learning to efficiently map phase behavior in polymer blends.</p>
+              <p class="paper-summary">Combines robotic blend preparation, small-angle X-ray scattering, and Gaussian-process active learning to choose new compositions and map phase behavior in polymer blends.</p>
             </article>
-          </div>
-          <article class="conference-card">
-            <div class="conference-heading"><h3>ACS Spring 2027 National Meeting</h3><span class="status-label status-progress">Abstract submitted</span></div>
-            <div class="conference-content">
-              <div>
-                <h4>Toward autonomous optimization of sequentially doped conjugated polymer films using Bayesian optimization</h4>
-                <p>Developing a guided robotic workflow for sequentially doped conjugated polymer films, integrating experimental characterization and Bayesian optimization toward autonomous materials processing.</p>
+            <article class="paper-card manuscript-card">
+              <div class="paper-top">
+                <span class="status-label status-progress">Submission in progress</span>
               </div>
+              <h3>Polymer Morphology: A Sample-Centered Database Infrastructure for Block Copolymer Thin-Film Morphology Research</h3>
+              <p class="paper-authors">Upreti, S.; Pandey, P.; <strong>Baral, S.</strong>; Adhikari, K.; Gu, X.</p>
+              <p class="paper-summary">A database that links each block copolymer thin-film sample’s formulation and processing history to AFM and GISAXS images and raw instrument files. Researchers can filter and export datasets without losing those links.</p>
+              <p class="paper-citation">September 2026 audit: 2,220 sample records, 2,306 image records, and 24,202 raw instrument file records.</p>
+              <div class="paper-footer">
+                <a class="project-link" href="https://polymermorphology.org/" target="_blank" rel="noopener noreferrer">
+                  Explore the Polymer Morphology Database <span aria-hidden="true">↗</span>
+                </a>
+              </div>
+            </article>
+            <article class="paper-card conference-card">
+              <div class="paper-top"><span class="status-label status-progress">Abstract submitted</span></div>
+              <h3>Toward autonomous optimization of sequentially doped conjugated polymer films using Bayesian optimization</h3>
+              <p class="paper-citation">ACS Spring 2027 National Meeting</p>
+              <p class="paper-summary">Developing a guided robotic workflow for sequentially doped conjugated polymer films, integrating experimental characterization and Bayesian optimization toward autonomous materials processing.</p>
               <dl class="conference-meta">
                 <div><dt>Location</dt><dd>New Orleans, Louisiana</dd></div>
                 <div><dt>Dates</dt><dd>March 21–25, 2027</dd></div>
                 <div><dt>Division</dt><dd>Polymer Chemistry (POLY)</dd></div>
                 <div><dt>Presentation</dt><dd>Undergraduate Research in Polymer Science — In-person poster</dd></div>
               </dl>
-            </div>
-          </article>
+            </article>
+          </div>
           <div class="collaborators">
             <div class="collaborator-heading"><h3>Institutions &amp; facilities</h3><p>Research settings and scientific facilities represented in my project work.</p></div>
             <div class="collaborator-list">
@@ -243,7 +258,7 @@
             <article class="skill-group">
               <div class="skill-heading"><span class="skill-icon"><img src="./assets/icons/icon-characterization.png" alt="" width="32" height="32"></span><h3>Scientific Characterization</h3></div>
               <p>Connecting nanoscale structure with material and device performance.</p>
-              <ul class="skill-tags"><li>GIWAXS</li><li>GISAXS</li><li>AFM</li><li>DSC</li><li>TGA</li><li>DLS</li><li>UV-Vis</li><li>Four-point probe</li></ul>
+              <ul class="skill-tags"><li>SAXS</li><li>WAXS</li><li>GISAXS</li><li>GIWAXS</li><li>AFM</li><li>DLS</li><li>NMR</li><li>IR</li><li>UV-Vis</li><li>DSC</li><li>TGA</li><li>DMA</li><li>Four-point probe</li></ul>
             </article>
             <article class="skill-group">
               <div class="skill-heading"><span class="skill-icon"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 28h22M9 28v-6h10v6M14 22v-7L7 9l4-5 12 8-5 7M23 12l3 1 2 5-3 2M7 9l-2 2-2-3 3-3"/><circle cx="14" cy="17" r="2.5"/><circle cx="22" cy="13" r="2.5"/></svg></span><h3>Robotics &amp; Automation</h3></div>
@@ -314,46 +329,22 @@
             loading="lazy" width="900" height="900" /><span class="expand-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 4h6v6M20 4l-7 7M10 20H4v-6M4 20l7-7"/></svg></span></button></div>
           <div class="modal-section">
             <h3>Project Overview</h3>
-            <p>This research focuses on developing efficient methodologies for fabricating and characterizing block
-              copolymer thin films at scale. Block copolymers self-assemble into nanoscale structures that have
-              applications in next-generation semiconductor manufacturing, filtration membranes, and energy storage
-              devices. The high-throughput approach allows for rapid screening of processing conditions to optimize film
-              morphology and properties.</p>
+            <p>I study how blend composition and processing affect the nanoscale structures that form when block copolymer thin films self-assemble. I develop Python protocols for robotic sample preparation, build instrument-control tools and custom fixtures, and analyze scattering data to help decide what to test next.</p>
           </div>
           <div class="modal-section">
-            <h3>My Role & Responsibilities</h3>
-            <p>As the lead undergraduate researcher on this project, I designed and executed the experimental workflow
-              including:</p>
-            <ul>
-              <li>Sample preparation using spin-coating and thermal annealing techniques</li>
-              <li>Conducting GIWAXS and GISAXS measurements at synchrotron facilities</li>
-              <li>Data analysis and pattern interpretation using IgorPro and Python</li>
-              <li>Developing automated processing scripts to handle large datasets</li>
-            </ul>
+            <h3>Experimental Workflow</h3>
+            <ol>
+              <li><strong>Plan compositions and prepare blends.</strong> Convert Excel composition plans into Python protocols for the North Robotics N9 and Opentrons OT-2. For OT-2 dispensing into 96-well plates, check volumes, model aspiration depths as source vials empty, and simulate the protocol before running it.</li>
+              <li><strong>Fabricate the films.</strong> Use the N9 platform for automated substrate handling, spin coating, and thermal annealing.</li>
+              <li><strong>Measure the structure.</strong> Use atomic force microscopy (AFM) to image film surfaces and X-ray scattering to probe nanoscale structure. I support synchrotron GISAXS/GIWAXS experiments and perform in-house scattering measurements.</li>
+              <li><strong>Reduce data and review peak fits.</strong> In NOVA Pro, mask and reduce SAXS/GISAXS detector images to scattering profiles, then review the fitted peaks to compare domain spacing and peak ratios across compositions.</li>
+              <li><strong>Select the next batch.</strong> Use Gaussian-process active learning to prioritize blend compositions based on the scattering results and where the model is uncertain. Use those suggestions to plan the next round of robotic preparation.</li>
+            </ol>
+            <p>Sample preparation and parts of the analysis are automated. The research team still runs the X-ray measurements.</p>
           </div>
           <div class="modal-section">
-            <h3>Techniques & Methods</h3>
-            <ul>
-              <li>
-                <strong>Grazing-Incidence Wide-Angle X-ray Scattering (GIWAXS)</strong> - Crystalline structure analysis
-              </li>
-              <li>
-                <strong>Grazing-Incidence Small-Angle X-ray Scattering (GISAXS)</strong> - Morphology characterization
-              </li>
-              <li>
-                <strong>Atomic Force Microscopy (AFM)</strong> - Surface topography imaging</li>
-              <li>
-                <strong>Thermal Analysis</strong> - DSC and TGA for phase behavior studies</li>
-              <li>
-                <strong>Computational Tools</strong> - MATLAB and Python for data processing and visualization</li>
-            </ul>
-          </div>
-          <div class="modal-section">
-            <h3>Results & Outcomes</h3>
-            <p>Developed a streamlined workflow for thin-film fabrication and AFM characterization, improving throughput by 40%.
-              Identified key processing parameters that influence domain spacing and orientation. Results contributed to
-              understanding structure-property relationships in block copolymer systems. Currently preparing 300+ thin
-              film samples for our next beamtime at ALS or NSLS.</p>
+            <h3>Results &amp; Outcomes</h3>
+            <p>I fabricated and characterized more than 1,000 block copolymer thin films by AFM. The streamlined fabrication and characterization workflow improved throughput by 40%.</p>
           </div>
           <div class="modal-section">
             <h3 class="section-subheading">Workflow Video</h3>

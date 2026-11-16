@@ -2,6 +2,14 @@
 
 Final responsive polish of the local experimental redesign of [sabinbaral.dev](https://sabinbaral.dev), built on Version 4. The Editorial Copper identity, approved main-page copy, project hierarchy, publications, expertise, and contact information are preserved, with two metric labels corrected against the supplied résumé.
 
+## Latest updates — November 15, 2026
+
+- Light mode is the default for new visitors; returning visitors retain their saved appearance choice.
+- Three publication/manuscript cards and the ACS presentation share an equal-sized two-by-two grid, stacking on smaller screens.
+- The Polymer Morphology manuscript includes the approved short summary, September 2026 record counts, and database link. The SAXS-guided manuscript summary and block-copolymer project workflow use the supplied updated text.
+- Scientific Characterization includes SAXS, WAXS, NMR, IR, and DMA, grouped with related methods. The updated résumé is included.
+- Current checks cover theme defaults and saved preferences, JavaScript syntax, CSS parsing, publication structure/content preservation, and local asset delivery. Browser visual inspection was unavailable for these follow-up edits; the browser counts below describe the earlier final-polish checkpoint.
+
 ## Local preview
 
 From the repository root:
@@ -18,7 +26,7 @@ Open <http://localhost:8000/>. This is a buildless HTML/CSS/JavaScript site: no 
 | --- | --- |
 | `index.html` | Landing wrapper and mobile reading order; remove Theme Lab; contact inside main; consistent modal headers; native image buttons; optimized detail previews; résumé-supported metric wording |
 | `style.css` | Viewport-aware landing, responsive layouts, touch targets, one scrolling surface per modal, reusable detail styles, image-viewer readability |
-| `theme.js` | Copper-only appearance toggle, system default, saved manual preference, legacy-storage migration |
+| `theme.js` | Copper-only appearance toggle, light default, saved manual preference, legacy-storage migration |
 | `themes.css` | Only Editorial Copper light/dark tokens; stronger dark card borders; remove unused palette configurations and aliases |
 | `script.js` | Mobile navigation dismissal, explicit triggering-control focus restoration, fixed-body scroll lock, video pause on modal close |
 | `README.md` | Current behavior, verification, content-review notes, preview, and recovery instructions |
@@ -72,7 +80,7 @@ Version 4's selected main photograph, `automated-four-point-probe-motorized-moun
 
 Only Editorial Copper light and dark remain. Theme Lab, its header icon, the other five palettes, palette swatches, and palette-switching logic are removed.
 
-First-time visitors follow `prefers-color-scheme`. The sun/moon button saves a manual light/dark selection under `portfolio-appearance`. A saved selection takes precedence over later OS changes. Existing Version 4 and older appearance choices migrate; obsolete `portfolio-theme-preferences`, `portfolio-theme`, and `darkMode` keys are removed. Saved palette names cannot affect the new site. Malformed or inaccessible storage does not disable appearance switching. Appearance is applied before styles load.
+First-time visitors start in light mode, regardless of their device's color scheme. The sun/moon button saves a manual light/dark selection under `portfolio-appearance`. A saved selection takes precedence on future visits. Existing Version 4 and older appearance choices migrate; an explicitly saved system preference continues to follow `prefers-color-scheme`. Obsolete `portfolio-theme-preferences`, `portfolio-theme`, and `darkMode` keys are removed. Saved palette names cannot affect the new site. Malformed or inaccessible storage does not disable appearance switching. Appearance is applied before styles load.
 
 ## Accessibility and compatibility
 
@@ -117,17 +125,16 @@ The supplied, updated résumé states that fabricating and AFM-characterizing 1,
 
 The following inherited statements are flagged for review rather than silently rewritten:
 
-- The block-copolymer detail still says “Currently preparing 300+ thin film samples for our next beamtime at ALS or NSLS.” Confirm the present sample count, facility, and whether that beamtime has occurred.
 - Autonomous Lab's full-loop integration remains described as ongoing; confirm that status before publication.
 - The solar project's 15% efficiency-improvement baseline/calculation, and VeriScript's review-time/cost figures, are inherited project claims without further supporting measurements in this checkout.
 - Some original 3D-printing application text uses absolute language about human error, repeatability, airflow, and sterility; confirm the scope of those claims. The résumé lists a RoboSoccer tournament win, but does not establish causation by a particular attachment.
 - The résumé still says 500% storage-capacity increase; the website preserves Version 4's arithmetic correction: 100 samples replacing 20 is **400% more capacity**, or five times the original capacity. Confirm whether the résumé refers to the same fixture.
 
-The ACS Nano citation, submission-in-progress manuscript, and ACS Spring 2027 conference content are unchanged. No unpublished abstract, confidential quantitative findings, manuscript file, or public manuscript link was added. Confirm publication/conference statuses again when authorizing eventual publication.
+The ACS Nano citation and ACS Spring 2027 conference content are preserved. The submission-in-progress manuscripts use the approved short summaries, including the Polymer Morphology audit counts and database link; no full unpublished abstract or manuscript file was added. Confirm publication/conference statuses again when authorizing eventual publication.
 
 ## Git safety and recovery
 
-All work remains on `experiment/portfolio-redesign`. Nothing was pushed, merged, published, or deployed. `main`, `CNAME`, DNS, and deployment settings are unchanged.
+This version is maintained on `experiment/portfolio-redesign`; approved GitHub pushes target the same branch. The Creative Lab experiment remains separate on `experiment/creative-lab`. `main`, `CNAME`, DNS, and deployment settings are unchanged, and website deployment requires separate authorization.
 
 | Version | Recoverable local checkpoint |
 | --- | --- |
@@ -139,7 +146,7 @@ All work remains on `experiment/portfolio-redesign`. Nothing was pushed, merged,
 | Before final polish | `portfolio-redesign-v4-before-final-polish-2026-11-09` at `572fca4` |
 | Final polish | `portfolio-final-polish-2026-11-09` and `experiment/portfolio-redesign` |
 
-The working tree was clean before this pass. No existing tag was overwritten. The approved Version 4 gallery assets, renames/replacements, and résumé remain in its checkpoint; earlier filenames remain recoverable in Version 3.
+The working tree was clean before the original final-polish pass. No existing tag was overwritten. The approved Version 4 gallery assets, renames/replacements, and résumé remain in its checkpoint; earlier filenames remain recoverable in Version 3. Subsequent approved content, layout, appearance, and résumé updates are recorded on the same polished branch.
 
 After preserving any future uncommitted work:
 

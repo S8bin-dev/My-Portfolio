@@ -426,6 +426,7 @@ strong {
 .publication-grid {
   display: grid;
   grid-template-columns: repeat(2,minmax(0,1fr));
+  grid-auto-rows: 1fr;
   gap: 22px;
   align-items: stretch;
 }
@@ -470,9 +471,21 @@ strong {
   margin-bottom: 0;
   margin: 0;
 }
-.paper-card .project-link {
-  margin-top: 20px;
+.paper-footer {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+  margin-top: auto;
+  padding-top: 20px;
+}
+.paper-footer .project-link {
+  margin-top: 0;
   align-self: flex-start;
+}
+.paper-summary + .paper-citation {
+  margin-top: 16px;
+  margin-bottom: 0;
 }
 .collaborators {
   margin-top: 28px;
@@ -1250,6 +1263,7 @@ strong {
   }
   .publication-grid {
     grid-template-columns: 1fr;
+    grid-auto-rows: auto;
   }
   .skills-grid {
     grid-template-columns: 1fr;
@@ -1440,48 +1454,13 @@ strong {
   border-color: var(--accent);
   box-shadow: var(--shadow);
 }
-.manuscript-card .paper-summary {
-  margin-top: auto;
-}
 .status-progress {
   background: var(--secondary-soft);
   color: var(--text);
 }
-.conference-card {
-  margin-top: 22px;
-  padding: 26px 28px;
-  border: 1px solid var(--line);
-  border-radius: var(--radius);
-  background: var(--surface);
-}
-.conference-heading {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 16px;
-  margin-bottom: 18px;
-}
-.conference-heading h3 {
-  margin: 0;
-  font-size: 24px;
-  line-height: 1.3;
-}
-.conference-content {
-  display: grid;
-  grid-template-columns: minmax(0,1.45fr) minmax(0,1fr);
-  gap: 36px;
-}
-.conference-content h4 {
-  font-size: 20px;
-  line-height: 1.4;
-  margin: 0 0 12px;
-}
-.conference-content p {
-  font-size: 16px;
-  margin-bottom: 0;
-}
 .conference-meta {
-  margin: 0;
+  margin: auto 0 0;
+  padding-top: 20px;
   font-size: 14px;
   line-height: 1.6;
 }
@@ -1491,24 +1470,15 @@ strong {
   gap: 12px;
   margin-bottom: 8px;
 }
+.conference-meta>div:last-child {
+  margin-bottom: 0;
+}
 .conference-meta dt {
   color: var(--muted);
 }
 .conference-meta dd {
   margin: 0;
   color: var(--text);
-}
-@media (max-width: 920px) {
-  .publication-grid {
-    grid-template-columns: 1fr;
-  }
-  .manuscript-card .paper-summary {
-    margin-top: 0;
-  }
-  .conference-content {
-    grid-template-columns: 1fr;
-    gap: 20px;
-  }
 }
 @media (max-width: 440px) {
   .social-links {
@@ -1527,16 +1497,6 @@ strong {
   }
   .paper-card {
     padding: 24px;
-  }
-  .conference-card {
-    padding: 24px;
-  }
-  .conference-heading {
-    align-items: start;
-    flex-direction: column;
-  }
-  .conference-heading h3 {
-    font-size: 23px;
   }
   .conference-meta>div {
     grid-template-columns: 1fr;
