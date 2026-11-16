@@ -1,0 +1,61 @@
+/* Editorial Copper: light/dark colors and shared semantic tokens. */
+:root,
+:root[data-theme="light"] {
+  --bg: #faf6f0;
+  --surface: #ffffff;
+  --text: #282724;
+  --muted: #6e655d;
+  --accent: #b44b23;
+  --secondary: #2a7e87;
+  --line: #e9dccf;
+}
+:root[data-theme="dark"] {
+  --bg: #191919;
+  --surface: #2a2926;
+  --text: #f8f3eb;
+  --muted: #c2b5a8;
+  --accent: #ffa274;
+  --secondary: #71c5c9;
+  --line: #554d44;
+}
+
+:root {
+  color-scheme: light;
+  --surface-soft: color-mix(in srgb, var(--bg) 97%, var(--accent));
+  --surface-strong: color-mix(in srgb, var(--bg) 90%, var(--accent));
+  --hero: var(--bg);
+  --section-bg: color-mix(in srgb, var(--bg) 60%, var(--surface));
+  --subtle: var(--muted);
+  --accent-soft: color-mix(in srgb, var(--surface) 92%, var(--accent));
+  --secondary-soft: color-mix(in srgb, var(--surface) 90%, var(--secondary));
+  --accent-hover: color-mix(in srgb, var(--accent) 82%, var(--text));
+  --interactive-text: color-mix(in srgb, var(--accent) 84%, var(--text));
+  --hover-surface: color-mix(in srgb, var(--surface) 94%, var(--accent));
+  --button-bg: var(--accent);
+  --button-text: #ffffff;
+  --button-hover: color-mix(in srgb, var(--accent) 85%, var(--text));
+  --control-line: color-mix(in srgb, var(--muted) 78%, var(--surface));
+  --focus-ring: var(--accent);
+  --error: #b42318;
+  --shadow: 0 22px 60px rgb(24 30 40 / 8%);
+  --overlay: rgb(3 8 16 / 88%);
+  --image-bg: #ffffff;
+  --media-bg: #000000;
+  --image-text: #152237;
+  --viewer-text: #f4f8ff;
+  --viewer-muted: #acbdd4;
+}
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --surface-soft: color-mix(in srgb, var(--bg) 70%, var(--surface));
+  --surface-strong: color-mix(in srgb, var(--surface) 88%, var(--accent));
+  --accent-soft: color-mix(in srgb, var(--surface) 86%, var(--accent));
+  --secondary-soft: color-mix(in srgb, var(--surface) 88%, var(--secondary));
+  --accent-hover: color-mix(in srgb, var(--accent) 85%, var(--text));
+  --interactive-text: var(--accent);
+  --hover-surface: color-mix(in srgb, var(--surface) 91%, var(--accent));
+  --button-text: var(--bg);
+  --button-hover: color-mix(in srgb, var(--accent) 85%, var(--text));
+  --error: #ffb4ab;
+  --shadow: 0 22px 60px rgb(0 0 0 / 18%);
+}
